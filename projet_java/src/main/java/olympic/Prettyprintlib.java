@@ -49,7 +49,9 @@ public abstract class Prettyprintlib {
 		int col = 8;
 		List<String> header_f = cuteighty(header);
 		List<String> render = new ArrayList<String>();
-		if (poss==null){poss = new ArrayList<>();}
+		if (poss == null) {
+			poss = new ArrayList<>();
+		}
 		for (String pos : poss) {
 			List<String> render_f = cuteighty(pos);
 			for (String rend_e : render_f) {
@@ -64,7 +66,7 @@ public abstract class Prettyprintlib {
 		for (String p_one : render) {
 			col = Math.max(col, p_one.length());
 		}
-		
+
 		System.out.println("╭" + "─".repeat(col + 2) + "╮");
 
 		for (String h_one : header_f) {
@@ -87,7 +89,7 @@ public abstract class Prettyprintlib {
 	 * @param inp HashMap
 	 * @return List[String]
 	 */
-	public static <K,V> List<String> hash_to_str(HashMap<K,V> inp) {
+	public static <K, V> List<String> hash_to_str(HashMap<K, V> inp) {
 		List<String> ret = new ArrayList<>();
 		Set<K> keys = inp.keySet();
 		keys.forEach(key -> {
@@ -97,13 +99,13 @@ public abstract class Prettyprintlib {
 	}
 
 	/**
-	 * enumerate_i i : [i]
+	 * enumerate_i -> i : [i]
 	 * 
 	 * @param inp  String []
 	 * @param mini int
 	 * @return List[String]
 	 */
-	public static List<String> enumerate_i(String [] inp, int mini) {
+	public static List<String> enumerate_i(String[] inp, int mini) {
 		List<String> tmp = new ArrayList<>();
 		for (int i = 0; i < inp.length; i++) {
 			tmp.add(String.valueOf(i + mini) + " : " + inp[i].toString());
@@ -117,7 +119,7 @@ public abstract class Prettyprintlib {
 	 * @param inp String []
 	 * @return List[String]
 	 */
-	public static List<String> enumerate_i(String [] inp) {
+	public static List<String> enumerate_i(String[] inp) {
 		return enumerate_i(inp, 0);
 	}
 
@@ -127,7 +129,7 @@ public abstract class Prettyprintlib {
 	 * @param inp             List[String]
 	 * @param delimiter_regex String
 	 * @param mini            int
-	 * @return				  List[String]
+	 * @return List[String]
 	 */
 	public static List<String> enumerate_i(String inp, String delimiter_regex, int mini) {
 		return enumerate_i(inp.split(delimiter_regex), mini);
@@ -145,40 +147,47 @@ public abstract class Prettyprintlib {
 	}
 
 	/**
-	 * enumerate_m
-	 * @param inp String[]
+	 * enumerate_mm goto enumerate_m
+	 * 
+	 * @param inp  String[]
 	 * @param mini int
 	 * @return List[String]
 	 */
-	public static List<String> enumerate_mm(String [] inp, int mini) {
+	public static List<String> enumerate_mm(String[] inp, int mini) {
 		List<String> tmp = new ArrayList<>();
 		for (int i = 0; i < inp.length; i++) {
-			tmp.add(inp[i].toUpperCase().charAt(0)+inp[i].toUpperCase().charAt(1)+" : "+ inp[i].toString());
+			tmp.add(inp[i].toUpperCase().charAt(0) + inp[i].toUpperCase().charAt(1) + " : " + inp[i].toString());
 		}
 		return tmp;
 	}
-    
-    /**
-	 * enumerate_m
-	 * @param inp String[]
+
+	/**
+	 * enumerate_m -> String[0].toupper() : String
+	 * 
+	 * @param inp  String[]
 	 * @param mini int
 	 * @return List[String]
 	 */
-	public static List<String> enumerate_m(String [] inp, int mini) {
+	public static List<String> enumerate_m(String[] inp, int mini) {
 		List<String> tmp = new ArrayList<>();
-        List<String> taken = new ArrayList<>();
+		List<String> taken = new ArrayList<>();
 		boolean mm = false;
-        for (int i = 0; i < inp.length; i++) {
-			if (taken.contains(String.valueOf(inp[i].toUpperCase().charAt(0)))) {mm = true; break;}
-            tmp.add(inp[i].toUpperCase().charAt(0)+" : "+ inp[i]);
-            taken.add(String.valueOf(inp[i].toUpperCase().charAt(0)));
+		for (int i = 0; i < inp.length; i++) {
+			if (taken.contains(String.valueOf(inp[i].toUpperCase().charAt(0)))) {
+				mm = true;
+				break;
+			}
+			tmp.add(inp[i].toUpperCase().charAt(0) + " : " + inp[i]);
+			taken.add(String.valueOf(inp[i].toUpperCase().charAt(0)));
 		}
-        if (mm) return enumerate_mm(inp, mini);
+		if (mm)
+			return enumerate_mm(inp, mini);
 		return tmp;
 	}
 
 	/**
 	 * enumerate_m
+	 * 
 	 * @param inp String[]
 	 * @return List[String]
 	 */
@@ -188,9 +197,10 @@ public abstract class Prettyprintlib {
 
 	/**
 	 * enumerate_m
-	 * @param inp String[]
+	 * 
+	 * @param inp             String[]
 	 * @param delimiter_regex String
-	 * @param mini int
+	 * @param mini            int
 	 * @return List[String]
 	 */
 	public static List<String> enumerate_m(String inp, String delimiter_regex, int mini) {
@@ -199,9 +209,10 @@ public abstract class Prettyprintlib {
 
 	/**
 	 * enumerate_m
-	 * @param inp String[]
+	 * 
+	 * @param inp             String[]
 	 * @param delimiter_regex String
-	 * @return List[String] 
+	 * @return List[String]
 	 */
 	public static List<String> enumerate_m(String inp, String delimiter_regex) {
 		return enumerate_m(inp.split(delimiter_regex), 0);

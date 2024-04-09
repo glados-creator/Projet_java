@@ -8,7 +8,7 @@ public abstract class Sport {
     private String nom;
     private String uniter;
 
-    public Sport(String nom,String uniter) {
+    public Sport(String nom, String uniter) {
         this.nom = nom;
         this.uniter = uniter;
     }

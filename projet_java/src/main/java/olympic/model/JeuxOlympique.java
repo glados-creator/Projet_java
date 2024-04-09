@@ -1,4 +1,5 @@
 package olympic.model;
+
 import java.util.Objects;
 
 /**
@@ -8,7 +9,6 @@ public class JeuxOlympique {
 
     private String annee;
     private String lieux;
-
 
     public JeuxOlympique() {
     }
@@ -63,10 +63,9 @@ public class JeuxOlympique {
     @Override
     public String toString() {
         return "{" +
-            " annee='" + getAnnee() + "'" +
-            ", lieux='" + getLieux() + "'" +
-            "}";
+                " annee='" + getAnnee() + "'" +
+                ", lieux='" + getLieux() + "'" +
+                "}";
     }
-    
 
 }

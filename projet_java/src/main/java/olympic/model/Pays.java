@@ -1,4 +1,5 @@
 package olympic.model;
+
 import java.util.Objects;
 
 /**
@@ -13,7 +14,6 @@ public class Pays {
     private int medaille_argent;
     /** int medaille_bronze */
     private int medaille_bronze;
-
 
     public Pays() {
     }
@@ -85,7 +85,9 @@ public class Pays {
             return false;
         }
         Pays pays = (Pays) o;
-        return Objects.equals(nom, pays.nom) && Objects.equals(medaille_or, pays.medaille_or) && Objects.equals(medaille_argent, pays.medaille_argent) && Objects.equals(medaille_bronze, pays.medaille_bronze);
+        return Objects.equals(nom, pays.nom) && Objects.equals(medaille_or, pays.medaille_or)
+                && Objects.equals(medaille_argent, pays.medaille_argent)
+                && Objects.equals(medaille_bronze, pays.medaille_bronze);
     }
 
     @Override
@@ -96,12 +98,11 @@ public class Pays {
     @Override
     public String toString() {
         return "{" +
-            " nom='" + getNom() + "'" +
-            ", medaille_or='" + getMedaille_or() + "'" +
-            ", medaille_argent='" + getMedaille_argent() + "'" +
-            ", medaille_bronze='" + getMedaille_bronze() + "'" +
-            "}";
+                " nom='" + getNom() + "'" +
+                ", medaille_or='" + getMedaille_or() + "'" +
+                ", medaille_argent='" + getMedaille_argent() + "'" +
+                ", medaille_bronze='" + getMedaille_bronze() + "'" +
+                "}";
     }
 
-    
 }

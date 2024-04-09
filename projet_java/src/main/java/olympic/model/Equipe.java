@@ -1,4 +1,5 @@
 package olympic.model;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -6,7 +7,7 @@ import java.util.Objects;
 /**
  * Equipe
  */
-public class Equipe implements Participant{
+public class Equipe implements Participant {
 
     private String nom;
     private List<Athlete> les_athletes;
@@ -20,7 +21,7 @@ public class Equipe implements Participant{
         les_athletes = new ArrayList<>();
     }
 
-    public List<Athlete> get_athletes(){
+    public List<Athlete> get_athletes() {
         return les_athletes;
     }
 
@@ -56,7 +57,7 @@ public class Equipe implements Participant{
     @Override
     public String toString() {
         return "{" +
-            " nom='" + getNom() + "'" +
-            "}";
+                " nom='" + getNom() + "'" +
+                "}";
     }
 }
