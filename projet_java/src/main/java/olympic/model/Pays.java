@@ -7,18 +7,18 @@ import java.util.Objects;
 public class Pays {
     /** String nom */
     private String nom;
-    /** Int medaille_or */
-    private Int medaille_or;
-    /** Int medaille_argent */
-    private Int medaille_argent;
-    /** Int medaille_bronze */
-    private Int medaille_bronze;
+    /** int medaille_or */
+    private int medaille_or;
+    /** int medaille_argent */
+    private int medaille_argent;
+    /** int medaille_bronze */
+    private int medaille_bronze;
 
 
     public Pays() {
     }
 
-    public Pays(String nom, Int medaille_or, Int medaille_argent, Int medaille_bronze) {
+    public Pays(String nom, int medaille_or, int medaille_argent, int medaille_bronze) {
         this.nom = nom;
         this.medaille_or = medaille_or;
         this.medaille_argent = medaille_argent;
@@ -33,27 +33,27 @@ public class Pays {
         this.nom = nom;
     }
 
-    public Int getMedaille_or() {
+    public int getMedaille_or() {
         return this.medaille_or;
     }
 
-    public void setMedaille_or(Int medaille_or) {
+    public void setMedaille_or(int medaille_or) {
         this.medaille_or = medaille_or;
     }
 
-    public Int getMedaille_argent() {
+    public int getMedaille_argent() {
         return this.medaille_argent;
     }
 
-    public void setMedaille_argent(Int medaille_argent) {
+    public void setMedaille_argent(int medaille_argent) {
         this.medaille_argent = medaille_argent;
     }
 
-    public Int getMedaille_bronze() {
+    public int getMedaille_bronze() {
         return this.medaille_bronze;
     }
 
-    public void setMedaille_bronze(Int medaille_bronze) {
+    public void setMedaille_bronze(int medaille_bronze) {
         this.medaille_bronze = medaille_bronze;
     }
 
@@ -62,17 +62,17 @@ public class Pays {
         return this;
     }
 
-    public Pays medaille_or(Int medaille_or) {
+    public Pays medaille_or(int medaille_or) {
         setMedaille_or(medaille_or);
         return this;
     }
 
-    public Pays medaille_argent(Int medaille_argent) {
+    public Pays medaille_argent(int medaille_argent) {
         setMedaille_argent(medaille_argent);
         return this;
     }
 
-    public Pays medaille_bronze(Int medaille_bronze) {
+    public Pays medaille_bronze(int medaille_bronze) {
         setMedaille_bronze(medaille_bronze);
         return this;
     }

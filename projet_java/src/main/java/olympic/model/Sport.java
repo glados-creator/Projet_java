@@ -5,9 +5,19 @@ package olympic.model;
  */
 public abstract class Sport {
 
-    protected String nom;
-    protected String uniter;
+    private String nom;
+    private String uniter;
 
-    public String GetNom(){return this.nom;} 
-    public String GetUniter(){return this.uniter;}
+    public Sport(String nom,String uniter) {
+        this.nom = nom;
+        this.uniter = uniter;
+    }
+
+    public String GetNom() {
+        return this.nom;
+    }
+
+    public String GetUniter() {
+        return this.uniter;
+    }
 }

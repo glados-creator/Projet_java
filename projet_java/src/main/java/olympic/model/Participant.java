@@ -5,5 +5,5 @@ package olympic.model;
  */
 public interface Participant {
     public String getNom();
-    public double participe();
+    // public double participe();
 }

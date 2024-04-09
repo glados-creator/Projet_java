@@ -20,7 +20,7 @@ public class Equipe implements Participant{
         les_athletes = new ArrayList<>();
     }
 
-    public getLes_athletes(){
+    public List<Athlete> get_athletes(){
         return les_athletes;
     }
 
@@ -50,7 +50,7 @@ public class Equipe implements Participant{
 
     @Override
     public int hashCode() {
-        return super.hashCode()(nom);
+        return Objects.hash(this.nom);
     }
 
     @Override

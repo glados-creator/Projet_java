@@ -3,7 +3,8 @@ package olympic.model;
 /**
  * VolleyBall
  */
-public class VolleyBall extends Sport{
-    private String nom = "VolleyBall";
-    private String uniter = "m";
+public class VolleyBall extends Sport {
+    public VolleyBall() {
+        super("VolleyBall", "m");
+    }
 }

@@ -32,10 +32,6 @@ public class Athlete implements Participant{
         this.nom = nom;
     }
 
-    public boolean isSex() {
-        return this.Sex;
-    }
-
     public boolean getSex() {
         return this.Sex;
     }
@@ -113,7 +109,7 @@ public class Athlete implements Participant{
     public String toString() {
         return "{" +
             " nom='" + getNom() + "'" +
-            ", Sex='" + isSex() + "'" +
+            ", Sex='" + getSex() + "'" +
             ", force='" + getForce() + "'" +
             ", agilité='" + getAgilité() + "'" +
             ", endurance='" + getEndurance() + "'" +
