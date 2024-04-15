@@ -5,6 +5,8 @@ package olympic;
  * oui elle sert un peu a rien
  */
 class App {
+    /** private App */
+    private App(){}
     /**
      * main entry point
      * switch between term and GUI

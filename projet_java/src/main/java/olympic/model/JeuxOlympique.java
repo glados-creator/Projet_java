@@ -1,5 +1,7 @@
 package olympic.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -7,43 +9,70 @@ import java.util.Objects;
  */
 public class JeuxOlympique {
 
+    /** String annee */
     private String annee;
+    /** String lieux */
     private String lieux;
+    /** List[Sport] les_sports */
+    private List<Sport> les_sports;
 
-    public JeuxOlympique() {
+    /** 
+     * ajouter_sports
+     * @param sport Sport
+     */
+    public void ajouter_sports(Sport sport){
+        les_sports.add(sport);
+    }
+    /**
+     * les_sports admin
+     * @return List[Sport]
+     */
+    public List<Sport> les_sports(){
+        return les_sports;
     }
 
+    /**
+     * JeuxOlympique
+     * @param annee String
+     * @param lieux String
+     */
     public JeuxOlympique(String annee, String lieux) {
         this.annee = annee;
         this.lieux = lieux;
+        les_sports = new ArrayList<>();
     }
 
+    /**
+     * getAnnee
+     * @return String
+     */
     public String getAnnee() {
         return this.annee;
     }
 
-    public void setAnnee(String annee) {
-        this.annee = annee;
-    }
-
+    /**
+     * getLieux
+     * @return String
+     */
     public String getLieux() {
         return this.lieux;
     }
 
-    public void setLieux(String lieux) {
-        this.lieux = lieux;
-    }
-
-    public JeuxOlympique annee(String annee) {
-        setAnnee(annee);
-        return this;
-    }
-
+    /**
+     * lieux admin
+     * @param lieux String
+     * @return JeuxOlympique
+     */
     public JeuxOlympique lieux(String lieux) {
-        setLieux(lieux);
+        this.lieux = lieux;
         return this;
     }
 
+    /**
+     * equals
+     * @param o Object
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -55,11 +84,19 @@ public class JeuxOlympique {
         return Objects.equals(annee, jeuxOlympique.annee) && Objects.equals(lieux, jeuxOlympique.lieux);
     }
 
+    /**
+     * hashCode
+     * @return int
+     */
     @Override
     public int hashCode() {
         return Objects.hash(annee, lieux);
     }
 
+    /**
+     * toString
+     * @return String
+     */
     @Override
     public String toString() {
         return "{" +

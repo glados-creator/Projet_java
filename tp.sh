@@ -8,7 +8,7 @@ cd ..
 echo "" 
 mkdir doc 
 echo "doc" 
-javadoc -d ./doc/ ./projet_java/src/main/java/olympic/*.java ./projet_java/src/main/java/olympic/model/*.java &&
+javadoc -d doc/ -charset utf8 -private -noqualifier all ./projet_java/src/main/java/olympic/*.java ./projet_java/src/main/java/olympic/model/*.java &&
 echo "" 
 echo "running" 
 cd ./bin/ 

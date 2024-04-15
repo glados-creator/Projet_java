@@ -9,7 +9,7 @@ package olympic.graphic;
 // import javafx.scene.text.Text;
 // import javafx.stage.Stage;
 
-public class graphic { // extends Application{
+public class RoleChooser { // extends Application{
 
     public static void main(String[] args) {
         // Application.launch();

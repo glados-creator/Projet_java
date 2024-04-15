@@ -7,6 +7,8 @@ import java.util.Set;
 
 /** class prettyprint */
 public abstract class Prettyprintlib {
+	/** private Prettyprintlib */
+	private Prettyprintlib(){}
 	// System.out.println("╭──────────────╮");
 	// System.out.println("│ header │");
 	// System.out.println("├───delimiter──┨");
@@ -86,6 +88,8 @@ public abstract class Prettyprintlib {
 	/**
 	 * hash_to_str hash map key : value
 	 * 
+	 * @param <K> object
+	 * @param <V> object
 	 * @param inp HashMap
 	 * @return List[String]
 	 */

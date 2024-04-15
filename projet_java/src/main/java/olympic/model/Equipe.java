@@ -9,32 +9,65 @@ import java.util.Objects;
  */
 public class Equipe implements Participant {
 
+    /** String nom */
     private String nom;
+    /** List[Athlete] les_athletes */
     private List<Athlete> les_athletes;
 
-    public Equipe() {
-        les_athletes = new ArrayList<>();
+    /**
+     * participe
+     * see Participant
+     * @return double
+     */
+    public double participe(){
+        /// TODO : here
+        return 0.0;
     }
 
+    /**
+     * Equipe
+     * 
+     * @param nom String
+     */
     public Equipe(String nom) {
         this.nom = nom;
         les_athletes = new ArrayList<>();
     }
 
-    public List<Athlete> get_athletes() {
+    /**
+     * ajouter_athlete
+     * 
+     * @param ath Athlete
+     */
+    public void ajouter_athlete(Athlete ath) {
+        this.les_athletes.add(ath);
+    }
+
+    /**
+     * les_athletes admin
+     * 
+     * @return List[Athlete]
+     */
+    public List<Athlete> les_athletes() {
         return les_athletes;
     }
 
+    /**
+     * getNom
+     * 
+     * @return String
+     */
     public String getNom() {
         return this.nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
+    /**
+     * nom admin
+     * @param nom String
+     * @return Equipe
+     */
     public Equipe nom(String nom) {
-        setNom(nom);
+        this.nom = nom;
         return this;
     }
 

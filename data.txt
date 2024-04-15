@@ -1,0 +1,71 @@
+Athlétisme 
+Aviron
+Badminton
+Baseball Softball
+Basketball
+Basketball 3x3
+Beach Handball
+Biathlon
+Bobsleigh
+Boxe
+Breaking
+Canoë Slalom
+Canoë Sprint
+Combiné nordique
+Cricket
+Crosse
+Curling
+Cyclisme BMX Freestyle
+Cyclisme BMX Racing
+Cyclisme sur piste
+Cyclisme sur route
+Cyclisme VTT
+Escalade Sportive
+Escrime
+Flag Football
+Football
+Futsal
+Golf
+Gymnastique Acrobatique
+Gymnastique Artistique
+Gymnastique Rythmique
+Haltérophilie
+Handball
+Hockey sur Gazon 
+Hockey sur glace
+Judo
+Karaté
+Luge
+Lutte
+Natation
+Natation Artistique
+Natation, marathon
+Patinage artistique
+Patinage de vitesse
+Patinage de vitesse sur piste courte
+Pentathlon Moderne
+Plongeon
+Roller de Vitesse
+Rugby à 7
+Saut à ski
+Skateboard
+Skeleton
+Ski acrobatique
+Ski alpin
+Ski de fond
+Ski-Alpinisme
+Snowboard
+Sports Équestres
+Squash
+Surf
+Taekwondo
+Tennis
+Tennis de Table
+Tir
+Tir à L'Arc
+Trampoline
+Triathlon
+Voile
+Volleyball
+Volleyball de plage
+Water-Polo

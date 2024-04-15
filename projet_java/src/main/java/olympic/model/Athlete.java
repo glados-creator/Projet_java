@@ -19,6 +19,16 @@ public class Athlete implements Participant {
     private double endurance;
 
     /**
+     * participe
+     * see Participant
+     * @return double
+     */
+    public double participe(){
+        /// TODO : here
+        return 0.0;
+    }
+
+    /**
      * constructeur
      * 
      * @param nom       String
@@ -139,8 +149,8 @@ public class Athlete implements Participant {
             return false;
         }
         Athlete athlete = (Athlete) o;
-        return Objects.equals(nom, athlete.nom) && Sex == athlete.Sex && force == athlete.force
-                && agilité == athlete.agilité && endurance == athlete.endurance;
+        return Objects.equals(nom, athlete.nom) && this.Sex == athlete.Sex && this.force == athlete.force
+                && this.agilité == athlete.agilité && this.endurance == athlete.endurance;
     }
 
     /**

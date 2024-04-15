@@ -9,10 +9,15 @@ import java.util.Scanner;
  * class for terminal interface
  */
 public class Launcher {
+    /** private Launcher */
+    private Launcher(){}
     /** enum user_t [admin,presentateur,organistateur] */
     enum user_t {
+        /** admin */
         admin,
+        /** presentateur */
         presentateur,
+        /** organistateur */
         organistateur
     }
 
@@ -30,6 +35,7 @@ public class Launcher {
                 Arrays.asList(user_t.values())
                         .stream().map(elem -> elem.toString())
                         .toArray(String[]::new));
+        proposition.add("Q : quitter");
         while (user == null) {
             Prettyprintlib.print_header("Qui êtez-vous ?", false, proposition);
             String[] raw_in = scan.nextLine().split(" ");
@@ -46,6 +52,9 @@ public class Launcher {
                 case "organistateur":
                     user = user_t.organistateur;
                     break;
+                case "q":
+                case "quitter":
+                    return;
                 default:
                     System.out.println("inconnu : '" + raw_in[0].toLowerCase() + "'");
                     break;
