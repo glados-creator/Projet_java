@@ -135,6 +135,10 @@ public class Athlete implements Participant {
         this.endurance = endurance;
     }
 
+    public double getCapa(){
+        return (this.endurance + this.force + this.agilité);
+    }
+
     /**
      * equals
      * 

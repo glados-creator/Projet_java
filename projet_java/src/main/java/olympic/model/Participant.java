@@ -13,5 +13,10 @@ public interface Participant {
      * participe
      * @return score
      */
-    public double participe();
+    default public double participe(Epreuve ep){
+        return ep.simuleEpreuve().indexOf(this);
+    }
+
+    public double getCapa();
+
 }
