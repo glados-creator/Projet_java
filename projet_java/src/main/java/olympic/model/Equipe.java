@@ -71,6 +71,14 @@ public class Equipe implements Participant {
         return this;
     }
 
+    public double getCapa(){
+        double res = 0;
+        for (Athlete ath: this.les_athletes){
+            res += ath.getCapa();
+        }
+        return (res / this.les_athletes.size());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)

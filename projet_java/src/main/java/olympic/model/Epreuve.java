@@ -1,6 +1,8 @@
 package olympic.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,6 +16,8 @@ public class Epreuve {
     private String nom;
     /** List[Participant] les_participants */
     private List<Participant> les_participants;
+    /** boolean listTri */
+    private boolean listTri = false;
 
     /**
      * ajouter_Participant
@@ -83,6 +87,16 @@ public class Epreuve {
     public Epreuve nom(String nom) {
         this.nom = nom;
         return this;
+    }
+
+    public List<Participant> simuleEpreuve(){
+        if (this.listTri){
+            return this.les_participants;
+        }
+
+        Collections.sort(this.les_participants, new TriParticipant());
+        this.listTri = true;
+        return this.les_participants;
     }
 
     /**
