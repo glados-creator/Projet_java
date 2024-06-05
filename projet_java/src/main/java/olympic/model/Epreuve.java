@@ -20,6 +20,20 @@ public class Epreuve {
     private boolean listTri = false;
 
     /**
+     * Constructeur Epreuve
+     *
+     * @param sex boolean
+     * @param nom String
+     */
+    public Epreuve(boolean sex, String nom) {
+        this.sex = sex;
+        this.nom = nom;
+        les_participants = new ArrayList<>();
+    }
+
+
+    
+    /**
      * ajouter_Participant
      * 
      * @param participant Participant
@@ -35,18 +49,6 @@ public class Epreuve {
      */
     public List<Participant> les_participants() {
         return les_participants;
-    }
-
-    /**
-     * Epreuve
-     * 
-     * @param sex boolean
-     * @param nom String
-     */
-    public Epreuve(boolean sex, String nom) {
-        this.sex = sex;
-        this.nom = nom;
-        les_participants = new ArrayList<>();
     }
 
     /**
