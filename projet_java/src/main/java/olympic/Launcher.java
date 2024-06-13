@@ -1,8 +1,11 @@
 package olympic;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import olympic.model.JeuxOlympique;
 
@@ -36,6 +39,7 @@ public class Launcher {
         datamanager.load_data("", "", "", "");
 
         // yes i know ugly but trust me bro
+        // enum name to array
         List<String> proposition = Prettyprintlib.enumerate_m(
                 Arrays.asList(user_t.values())
                         .stream().map(elem -> elem.toString())
@@ -85,6 +89,116 @@ public class Launcher {
         Prettyprintlib.print_header("Au Revoir", false, null);
     }
 
+    static void inspect_jo(Scanner scan, boolean admin) {
+        while (true) {
+            Prettyprintlib.print_header("que voulez vous faire ?", false,
+                    Prettyprintlib.enumerate_m(
+                            new String[] { "retour", "cree", "list", "select" }));
+            switch ((scan.nextLine().split(" ")[0]).toLowerCase()) {
+                case "q":
+                case "quitte":
+                case "retour":
+                case "r":
+                    return;
+                case "c":
+                case "cree":
+                case "crée": {
+                    String annee = null;
+                    String lieux = null;
+                    loop: while (true) {
+                        Prettyprintlib.print_header("que voulez vous faire ?", false,
+                                Arrays.asList("retour", (annee == null) ? "annee?" : "annee",
+                                        (lieux == null) ? "lieux?" : "lieux"));
+                        switch ((scan.nextLine().split(" ")[0]).toLowerCase()) {
+                            case "q":
+                            case "quitte":
+                            case "retour":
+                            case "r":
+                                break loop;
+                            case "a":
+                            case "annee":
+                            case "année":
+                                annee = scan.nextLine().split(" ")[0];
+                            case "l":
+                            case "lieux":
+                                lieux = scan.nextLine().split(" ")[0];
+                        }
+                    }
+                    if (annee != null && lieux != null) {
+                        try {
+                            datamanager.create_jo(new JeuxOlympique(annee, lieux));
+                        } catch (Exception e) {
+                            // TODO: handle exception
+                            e.printStackTrace();
+                        }
+                    } else {
+                        System.out.println("annuler");
+                    }
+
+                }
+                case "l":
+                case "list":
+                case "s":
+                case "select":
+                case "selection": {
+                    List<JeuxOlympique> jos = datamanager.load_jo();
+                    List<String> copy = new ArrayList<>();
+                    for (JeuxOlympique jeuxOlympique : jos) {
+                        copy.add(jeuxOlympique.toString());
+                    }
+                    List<String> tmp = Prettyprintlib.enumerate_i((String[]) copy.toArray());
+                    tmp.add(0, "-1 retour");
+                    Prettyprintlib.print_header("JeuxOlympique", false, tmp);
+                    int index = scan.nextInt();
+                    if (index == -1) {
+                        System.out.println("retour");
+                        break;
+                    }
+                    if (index < 0) {
+                        System.out.println("index négatif");
+                        break;
+                    }
+                    if (index > jos.size()) {
+                        System.out.println("trop grand");
+                        break;
+                    }
+
+                    //// JO selected
+
+                    loop: while (true) {
+                        Prettyprintlib.print_header("que voulez vous faire ?", false,
+                                Prettyprintlib.enumerate_m(
+                                        new String[] { "retour", "annee", "lieux", "sports" }));
+                        switch ((scan.nextLine().split(" ")[0]).toLowerCase()) {
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    static void inspect_sport(boolean admin) {
+
+    }
+
+    static void inspect_epreuve(boolean admin) {
+
+    }
+
+    static void inspect_equipe(boolean admin) {
+
+    }
+
+    static void inspect_athlete(boolean admin) {
+
+    }
+
+    static void inspect_pay(boolean admin) {
+
+    }
+
     /**
      * void admin_menu
      * menu for admin panel
@@ -98,15 +212,15 @@ public class Launcher {
         loop: while (true) {
             Prettyprintlib.print_header("que voulez vous faire ?", false,
                     Prettyprintlib.enumerate_m(
-                            new String[] { "quitter", "connection sql", "jo", "sport", "athlete", "epreuve", }));
-            String[] raw_in = scan.nextLine().split(" ");
-            switch (raw_in[0].toLowerCase()) {
+                            new String[] { "quitter", "connection sql", "jo", "pays", "athlete" }));
+            switch ((scan.nextLine().split(" ")[0]).toLowerCase()) {
                 case "q":
                 case "quitter":
                     break loop;
 
                 case "c":
                 case "connection":
+                case "s":
                 case "sql":
                 case "connection sql": {
                     String nomServeur = "";
@@ -128,16 +242,6 @@ public class Launcher {
 
                 case "j":
                 case "jo": {
-                    Prettyprintlib.print_header("que voulez vous faire ?", false,
-                    Prettyprintlib.enumerate_m(
-                            new String[] { "retour", "cree", "list", "", "athlete", "epreuve", }));
-            String[] raw_in = scan.nextLine().split(" ");
-            switch (raw_in[0].toLowerCase()) {
-            }
-                }
-
-                case "s":
-                case "sport": {
 
                 }
 
@@ -146,8 +250,8 @@ public class Launcher {
 
                 }
 
-                case "e":
-                case "epreuve": {
+                case "p":
+                case "pays": {
 
                 }
 

@@ -33,6 +33,7 @@ public final class datamanager {
 
     public static void default_dataset() {
         JeuxOlympique jo = new JeuxOlympique("2024", "Paris");
+        // JO -> sports -> epreuves | equipes <- atheletes <- pays
         
         // epreuves = ["Natation 100 brasse", "Natation relais libre", "Handball",
         // "Volley-Ball", "Escrime fleuret", "Escrime épée", "Athétisme 110 haies",
