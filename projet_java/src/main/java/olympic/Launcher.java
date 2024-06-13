@@ -2,10 +2,8 @@ package olympic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 import olympic.model.JeuxOlympique;
 
@@ -69,22 +67,22 @@ public class Launcher {
                     break;
             }
         }
-        scan.close();
         /// user type selected dispatch to menu
         switch (user) {
             case admin:
-                admin_menu();
+                admin_menu(scan);
                 break;
             case presentateur:
                 presentateur_menu();
                 break;
             case organistateur:
-                organistateur_menu();
+                organistateur_menu(scan);
                 break;
             default:
                 System.out.println("[ERROR] : user type unknown : '" + user + "'");
                 break;
         }
+        scan.close();
         datamanager.save_data();
         Prettyprintlib.print_header("Au Revoir", false, null);
     }
@@ -170,32 +168,36 @@ public class Launcher {
                                 Prettyprintlib.enumerate_m(
                                         new String[] { "retour", "annee", "lieux", "sports" }));
                         switch ((scan.nextLine().split(" ")[0]).toLowerCase()) {
+                            case "q":
+                            case "quitte":
+                            case "retour":
+                            case "r":
+                                break loop;
+                            // TODO : next
                         }
                     }
-
                 }
             }
         }
+    }
+
+    static void inspect_sport(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_sport(boolean admin) {
+    static void inspect_epreuve(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_epreuve(boolean admin) {
+    static void inspect_equipe(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_equipe(boolean admin) {
+    static void inspect_athlete(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_athlete(boolean admin) {
-
-    }
-
-    static void inspect_pay(boolean admin) {
+    static void inspect_pay(Scanner scan, boolean admin) {
 
     }
 
@@ -204,16 +206,17 @@ public class Launcher {
      * menu for admin panel
      * can do anything , no safegard
      */
-    static void admin_menu() {
+    static void admin_menu(Scanner scan) {
         System.out.println("admin panel");
 
         // String newLine = System.getProperty("line.separator");
-        Scanner scan = new Scanner(System.in).useDelimiter("\n");
         loop: while (true) {
             Prettyprintlib.print_header("que voulez vous faire ?", false,
                     Prettyprintlib.enumerate_m(
                             new String[] { "quitter", "connection sql", "jo", "pays", "athlete" }));
-            switch ((scan.nextLine().split(" ")[0]).toLowerCase()) {
+
+            String[] raw_inp = scan.nextLine().split(" ");
+            switch ((raw_inp[0]).toLowerCase()) {
                 case "q":
                 case "quitter":
                     break loop;
@@ -242,17 +245,17 @@ public class Launcher {
 
                 case "j":
                 case "jo": {
-
+                    inspect_jo(scan, true);
                 }
 
                 case "a":
                 case "athlete": {
-
+                    inspect_athlete(scan, true);
                 }
 
                 case "p":
                 case "pays": {
-
+                    inspect_pay(scan, true);
                 }
 
                 default:
@@ -260,9 +263,6 @@ public class Launcher {
                     break;
             }
         }
-
-        scan.close();
-
     }
 
     /**
@@ -273,7 +273,7 @@ public class Launcher {
      */
     static void presentateur_menu() {
         System.out.println("presentateur panel");
-        olympic.graphic.GUI_presentateur.GUI_presentateur.launch();
+        olympic.graphic.GUI_presentateur.GUI_presentateur.main(new String[] {});
     }
 
     /**
@@ -281,7 +281,62 @@ public class Launcher {
      * menu for organistateur
      * used for inputing values
      */
-    static void organistateur_menu() {
+    static void organistateur_menu(Scanner scan) {
         System.out.println("organisateur panel");
+
+        // String newLine = System.getProperty("line.separator");
+        loop: while (true) {
+            Prettyprintlib.print_header("que voulez vous faire ?", false,
+                    Prettyprintlib.enumerate_m(
+                            new String[] { "quitter", "connection sql", "jo", "pays", "athlete" }));
+
+            String[] raw_inp = scan.nextLine().split(" ");
+            switch ((raw_inp[0]).toLowerCase()) {
+                case "q":
+                case "quitter":
+                    break loop;
+
+                case "c":
+                case "connection":
+                case "s":
+                case "sql":
+                case "connection sql": {
+                    String nomServeur = "";
+                    String nomBase = "";
+                    String nomLogin = "";
+                    String motDePasse = "";
+
+                    System.out.println("nomServeur : ");
+                    nomServeur = scan.nextLine();
+                    System.out.println("nomBase : ");
+                    nomBase = scan.nextLine();
+                    System.out.println("nomLogin : ");
+                    nomLogin = scan.nextLine();
+                    System.out.println("motDePasse : ");
+                    motDePasse = scan.nextLine();
+
+                    datamanager.load_data(nomServeur, nomBase, nomLogin, motDePasse);
+                }
+
+                case "j":
+                case "jo": {
+                    inspect_jo(scan, false);
+                }
+
+                case "a":
+                case "athlete": {
+                    inspect_athlete(scan, false);
+                }
+
+                case "p":
+                case "pays": {
+                    inspect_pay(scan, false);
+                }
+
+                default:
+                    System.out.println("erreur");
+                    break;
+            }
+        }
     }
 }

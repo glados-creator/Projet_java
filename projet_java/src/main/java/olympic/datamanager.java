@@ -1,7 +1,6 @@
 package olympic;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import olympic.model.Athlete;
@@ -125,7 +124,8 @@ public final class datamanager {
     }
 
     public static List<Athlete> list_athlete() {
-        return glob_athlete;
+        return null;
+        // return glob_athlete;
     }
 
     public static void create_equipe(Equipe equipe) {
@@ -142,7 +142,8 @@ public final class datamanager {
     }
 
     public static List<Equipe> list_Equipes() {
-        return glob_equipe;
+        return null;
+        // return glob_equipe;
     }
 
     public static void create_pays(Pays pays) {
@@ -176,7 +177,8 @@ public final class datamanager {
     }
 
     public static List<Sport> list_sport() {
-        return glob_sport;
+        return null;
+        // return glob_sport;
     }
 
 }
