@@ -1,4 +1,4 @@
-package olympic.graphic.GUI_presentateur;
+package olympic.graphic;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -6,21 +6,31 @@ import javafx.stage.Stage;
 import javafx.application.Platform;
 import javafx.scene.layout.VBox;
 
-public class GUI_presentateur extends Application {
+/** class GUI_organistateur extends Application
+ * interface graphique pour les organisateurs
+ */
+public class GUI_organistateur extends Application {
 
+    /**
+     * main launch
+     * @param args String launch term args
+     */
     public static void main(String[] args) {
         Application.launch();
     }
-    
+    /** void init() */
     @Override
     public void init() {
 
     }
-
+    /** void quitte() */
     public void quitte() {
         Platform.exit();
     }
-
+    /**
+     * start
+     * @param stage Stage la fenetre
+    */
     @Override
     public void start(Stage stage) {
         VBox root = new VBox();
@@ -29,5 +39,4 @@ public class GUI_presentateur extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
 }

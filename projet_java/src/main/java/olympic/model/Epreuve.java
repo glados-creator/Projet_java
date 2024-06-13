@@ -91,7 +91,12 @@ public class Epreuve {
         return this;
     }
 
+    /**
+     * simuleEpreuve
+     * @return List[Participant] la list ordonné ??
+     */
     public List<Participant> simuleEpreuve(){
+        // TODO : a refaire ??
         if (this.listTri){
             return this.les_participants;
         }

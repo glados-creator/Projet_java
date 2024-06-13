@@ -30,7 +30,7 @@ public class Launcher {
      * static void run_term()
      * entry point for term interface
      */
-    public static void run_term() {
+    public final static void run_term() {
         // String newLine = System.getProperty("line.separator");
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         user_t user = null;
@@ -87,7 +87,11 @@ public class Launcher {
         Prettyprintlib.print_header("Au Revoir", false, null);
     }
 
-    static void inspect_jo(Scanner scan, boolean admin) {
+    /**     private final static void inspect_jo(Scanner scan, boolean admin)
+     * @param scan Scanner of the term
+     * @param admin boolean wheather the user is admin
+     */
+    private final static void inspect_jo(Scanner scan, boolean admin) {
         while (true) {
             Prettyprintlib.print_header("que voulez vous faire ?", false,
                     Prettyprintlib.enumerate_m(
@@ -181,23 +185,43 @@ public class Launcher {
         }
     }
 
-    static void inspect_sport(Scanner scan, boolean admin) {
+    /**     private final static void inspect_sport(Scanner scan, boolean admin)
+     * @param scan Scanner of the term
+     * @param admin boolean wheather the user is admin
+     */
+    private final static void inspect_sport(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_epreuve(Scanner scan, boolean admin) {
+    /**     private final static void inspect_epreuve(Scanner scan, boolean admin)
+     * @param scan Scanner of the term
+     * @param admin boolean wheather the user is admin
+     */
+    private final static void inspect_epreuve(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_equipe(Scanner scan, boolean admin) {
+    /**     private final static void inspect_equipe(Scanner scan, boolean admin)
+     * @param scan Scanner of the term
+     * @param admin boolean wheather the user is admin
+     */
+    private final static void inspect_equipe(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_athlete(Scanner scan, boolean admin) {
+    /**     private final static void inspect_athlete(Scanner scan, boolean admin)
+     * @param scan Scanner of the term
+     * @param admin boolean wheather the user is admin
+     */
+    private final static void inspect_athlete(Scanner scan, boolean admin) {
 
     }
 
-    static void inspect_pay(Scanner scan, boolean admin) {
+    /**     private final static void inspect_pay(Scanner scan, boolean admin)
+     * @param scan Scanner of the term
+     * @param admin boolean wheather the user is admin
+     */
+    private final static void inspect_pay(Scanner scan, boolean admin) {
 
     }
 
@@ -206,7 +230,10 @@ public class Launcher {
      * menu for admin panel
      * can do anything , no safegard
      */
-    static void admin_menu(Scanner scan) {
+    /**     private final static void admin_menu(Scanner scan)
+     * @param scan Scanner of the term
+     */
+     private final static void admin_menu(Scanner scan) {
         System.out.println("admin panel");
 
         // String newLine = System.getProperty("line.separator");
@@ -265,23 +292,24 @@ public class Launcher {
         }
     }
 
-    /**
+    /**     private final static void presentateur_menu()
      * void presentateur_menu()
      * menu for presentateur panel
      * mainly for display so idk if we won't just
      * launch the GUI for that
      */
-    static void presentateur_menu() {
+    private final static void presentateur_menu() {
         System.out.println("presentateur panel");
-        olympic.graphic.GUI_presentateur.GUI_presentateur.main(new String[] {});
+        olympic.graphic.GUI_presentateur.main(new String[] {});
     }
 
-    /**
+    /**     private final static void organistateur_menu(Scanner scan)
      * void organistateur_menu
      * menu for organistateur
      * used for inputing values
+     * @param scan Scanner of the term
      */
-    static void organistateur_menu(Scanner scan) {
+     private final static void organistateur_menu(Scanner scan) {
         System.out.println("organisateur panel");
 
         // String newLine = System.getProperty("line.separator");

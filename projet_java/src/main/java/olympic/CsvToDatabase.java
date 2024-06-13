@@ -4,13 +4,26 @@ import java.sql.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+/** class CsvToDatabase
+ * petite app qui va lire le csv et le mettre en sql
+ */
 public class CsvToDatabase {
+    /** ConnexionMySQL laConnexion the conn to the DB */
     ConnexionMySQL laConnexion;
 
+    /**
+     * CsvToDatabase
+     * @param laConnexion la conn to the DB
+     */
     CsvToDatabase(ConnexionMySQL laConnexion) {
         this.laConnexion = laConnexion;
     }
 
+    /**
+     * main launch
+     * petite app qui va lire le csv et le mettre en sql
+     * @param args term args
+     */
     public static void main(String[] args) {
         String csvFilePath = "./donnees.csv";
         try {
@@ -24,6 +37,10 @@ public class CsvToDatabase {
         }
     }
 
+    /**
+     * insertData
+     * @param csvFilePath String path
+     */
     private void insertData(String csvFilePath){
         String sqlInsertPays = "INSERT INTO Pays (nom_pays) VALUES (?) ON DUPLICATE KEY UPDATE pays_id=LAST_INSERT_ID(pays_id)";
         String sqlInsertSport = "INSERT INTO Sport (nom_sport) VALUES (?) ON DUPLICATE KEY UPDATE sport_id=LAST_INSERT_ID(sport_id)";
