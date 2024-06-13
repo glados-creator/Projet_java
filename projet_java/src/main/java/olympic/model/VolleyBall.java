@@ -6,6 +6,6 @@ package olympic.model;
 public class VolleyBall extends Sport {
     /** VolleyBall constructor */
     public VolleyBall() {
-        super("VolleyBall", "m");
+        super("VolleyBall", "points",1,1,1);
     }
 }

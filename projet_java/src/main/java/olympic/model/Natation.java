@@ -6,6 +6,6 @@ package olympic.model;
 public class Natation extends Sport {
     /** Natation constructor */
     public Natation() {
-        super("Natation", "m");
+        super("Natation", "s",1,1,1);
     }
 }

@@ -6,6 +6,6 @@ package olympic.model;
 public class Athletisme extends Sport {
     /** Athletisme constructor */
     public Athletisme() {
-        super("Athletisme", "m");
+        super("Athletisme", "m/s",1,1,1);
     }
 }

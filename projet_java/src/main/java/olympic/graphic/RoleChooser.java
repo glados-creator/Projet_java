@@ -1,23 +1,42 @@
 package olympic.graphic;
 
-// import javafx.application.Application;
-// import javafx.event.EventHandler;
-// import javafx.scene.Group;
-// import javafx.scene.Scene;
-// import javafx.scene.input.*;
-// import javafx.scene.paint.Color;
-// import javafx.scene.text.Text;
-// import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.application.Platform;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.beans.value.*;
 
-public class RoleChooser { // extends Application{
+public class RoleChooser extends Application {
 
     public static void main(String[] args) {
-        // Application.launch();
+        Application.launch();
+    }
+    
+    @Override
+    public void init() {
+
     }
 
-    // @Override public void start(Stage stage) {
-    //     stage.setTitle("Hello Drag And Drop");
-    // }
+    public void quitte() {
+        Platform.exit();
+    }
 
-    
+    @Override
+    public void start(Stage stage) {
+        VBox root = new VBox();
+        Scene scene = new Scene(root);
+        stage.setTitle("Jeux olympique");
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

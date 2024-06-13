@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import olympic.datamanager;
+
 /**
  * Equipe
  */
@@ -20,7 +22,7 @@ public class Equipe implements Participant {
      * @return double
      */
     public double participe(){
-        /// TODO : here
+        /// TODO : get value from db
         return 0.0;
     }
 

@@ -4,13 +4,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import olympic.model.JeuxOlympique;
+
 /**
  * Launcher
  * class for terminal interface
  */
 public class Launcher {
     /** private Launcher */
-    private Launcher(){}
+    private Launcher() {
+    }
+
     /** enum user_t [admin,presentateur,organistateur] */
     enum user_t {
         /** admin */
@@ -29,6 +33,7 @@ public class Launcher {
         // String newLine = System.getProperty("line.separator");
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         user_t user = null;
+        datamanager.load_data("", "", "", "");
 
         // yes i know ugly but trust me bro
         List<String> proposition = Prettyprintlib.enumerate_m(
@@ -60,6 +65,7 @@ public class Launcher {
                     break;
             }
         }
+        scan.close();
         /// user type selected dispatch to menu
         switch (user) {
             case admin:
@@ -75,9 +81,8 @@ public class Launcher {
                 System.out.println("[ERROR] : user type unknown : '" + user + "'");
                 break;
         }
-
+        datamanager.save_data();
         Prettyprintlib.print_header("Au Revoir", false, null);
-        scan.close();
     }
 
     /**
@@ -87,6 +92,73 @@ public class Launcher {
      */
     static void admin_menu() {
         System.out.println("admin panel");
+
+        // String newLine = System.getProperty("line.separator");
+        Scanner scan = new Scanner(System.in).useDelimiter("\n");
+        loop: while (true) {
+            Prettyprintlib.print_header("que voulez vous faire ?", false,
+                    Prettyprintlib.enumerate_m(
+                            new String[] { "quitter", "connection sql", "jo", "sport", "athlete", "epreuve", }));
+            String[] raw_in = scan.nextLine().split(" ");
+            switch (raw_in[0].toLowerCase()) {
+                case "q":
+                case "quitter":
+                    break loop;
+
+                case "c":
+                case "connection":
+                case "sql":
+                case "connection sql": {
+                    String nomServeur = "";
+                    String nomBase = "";
+                    String nomLogin = "";
+                    String motDePasse = "";
+
+                    System.out.println("nomServeur : ");
+                    nomServeur = scan.nextLine();
+                    System.out.println("nomBase : ");
+                    nomBase = scan.nextLine();
+                    System.out.println("nomLogin : ");
+                    nomLogin = scan.nextLine();
+                    System.out.println("motDePasse : ");
+                    motDePasse = scan.nextLine();
+
+                    datamanager.load_data(nomServeur, nomBase, nomLogin, motDePasse);
+                }
+
+                case "j":
+                case "jo": {
+                    Prettyprintlib.print_header("que voulez vous faire ?", false,
+                    Prettyprintlib.enumerate_m(
+                            new String[] { "retour", "cree", "list", "", "athlete", "epreuve", }));
+            String[] raw_in = scan.nextLine().split(" ");
+            switch (raw_in[0].toLowerCase()) {
+            }
+                }
+
+                case "s":
+                case "sport": {
+
+                }
+
+                case "a":
+                case "athlete": {
+
+                }
+
+                case "e":
+                case "epreuve": {
+
+                }
+
+                default:
+                    System.out.println("erreur");
+                    break;
+            }
+        }
+
+        scan.close();
+
     }
 
     /**
@@ -97,6 +169,7 @@ public class Launcher {
      */
     static void presentateur_menu() {
         System.out.println("presentateur panel");
+        olympic.graphic.GUI_presentateur.GUI_presentateur.launch();
     }
 
     /**

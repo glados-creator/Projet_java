@@ -6,6 +6,6 @@ package olympic.model;
 public class Escrime extends Sport {
     /** Escrime constructor */
     public Escrime() {
-        super("Escrime", "m");
+        super("Escrime", "points",1,1,1);
     }
 }
