@@ -18,16 +18,7 @@ public class Athlete implements Participant {
     /** double endurance */
     private double endurance;
 
-    /**
-     * participe
-     * see Participant
-     * @return double
-     */
-    public double participe(){
-        /// TODO : here
-        return 0.0;
-    }
-
+   
     /**
      * constructeur
      * 
