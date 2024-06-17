@@ -21,6 +21,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class VueJeu extends Application {
@@ -52,7 +53,7 @@ private Pane titre() {
     Label Titre = new Label("Jeux IUT'Olympiques");
     Font font = Font.font("Arial", 24);
     Titre.setFont(font);
-    banniere.setBackground(new Background(new BackgroundFill(Color.valueOf("#c9dfff"), CornerRadii.EMPTY, Insets.EMPTY)));
+    banniere.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
 
 
     // Center the title in the BorderPane
@@ -70,29 +71,45 @@ public void modeLog() {
     buttonbox.setAlignment(Pos.CENTER);
     buttonbox.setPadding(new Insets(20)); 
     
-
     buttonbox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+    panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
 
-    panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#c9dfff"), CornerRadii.EMPTY, Insets.EMPTY)));
+    // Add the "Connexion" label
+    Label connexionLabel = new Label("CONNEXION");
+    connexionLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
+    connexionLabel.setTextFill(Color.BLACK);
+    connexionLabel.setAlignment(Pos.CENTER);
+    VBox.setMargin(connexionLabel, new Insets(0, 0, 40, 0)); // Adjust this value as needed to move the label up
 
     Visiteur = new Button("Visiteur");
     Organisateur = new Button("Organisateur");
     Administrateur = new Button("Administrateur");
     
-    Visiteur.setMinWidth(150);
+    // Set button styles
+    String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+
+    Visiteur.setStyle(buttonStyle);
+    Organisateur.setStyle(buttonStyle);
+    Administrateur.setStyle(buttonStyle);
+
+    Visiteur.setMinWidth(175);
     Visiteur.setMinHeight(50);
-    Organisateur.setMinWidth(150);
+    Organisateur.setMinWidth(175);
     Organisateur.setMinHeight(50);
-    Administrateur.setMinWidth(150);
+    Administrateur.setMinWidth(175);
     Administrateur.setMinHeight(50);
     
-    buttonbox.getChildren().addAll(Visiteur, Organisateur, Administrateur);
+    // Add the label and buttons to the VBox
+    buttonbox.getChildren().addAll(connexionLabel, Visiteur, Organisateur, Administrateur);
     
-    buttonbox.setMaxWidth(250);
+    buttonbox.setMaxWidth(300);
     buttonbox.setMaxHeight(400);
     
     panelCentral.setCenter(buttonbox);
 }
+
+
+
 
 
 
