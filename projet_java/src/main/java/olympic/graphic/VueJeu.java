@@ -2,7 +2,7 @@ package olympic.graphic;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.scene.Cursor;
+// import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -39,8 +39,7 @@ public class VueJeu extends Application {
                 new SeparatorMenuItem(),
                 new MenuItem("Preferences…"),
                 new SeparatorMenuItem(),
-                new MenuItem("Quit")
-        );
+                new MenuItem("Quit"));
 
         // Add menu items to Edit menu
         editMenu.getItems().addAll(
@@ -53,13 +52,11 @@ public class VueJeu extends Application {
                 new MenuItem("Delete"),
                 new SeparatorMenuItem(),
                 new MenuItem("Select All"),
-                new MenuItem("Unselect All")
-        );
+                new MenuItem("Unselect All"));
 
         // Add menu items to Help menu
         helpMenu.getItems().addAll(
-                new MenuItem("About MyHelloApp")
-        );
+                new MenuItem("About MyHelloApp"));
 
         // Add menus to menu bar
         menuBar.getMenus().addAll(fileMenu, editMenu, helpMenu);

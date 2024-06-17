@@ -1,26 +1,56 @@
 package olympic.model;
 
+// TODO: sync with datamanager
+
+// TODO : implement comparable ?
+
 /**
  * Participant
  */
 public interface Participant {
     /**
-     * getNom
-     * @return nom de l equipe ou du joueur
-     */
-    public String getNom();
-    /**
      * participe
-     * @param ep Epreuve  
+     * 
+     * @param ep Epreuve
      * @return double
      */
-    default public double participe(Epreuve ep){
-        return ep.simuleEpreuve().indexOf(this);
+    default public double participe(Epreuve ep) {
+        return (getForce() * ep.getSport().getCoef_Force()) + (getAgilite() * ep.getSport().getCoef_Agilite())
+                + (getEndurance() * ep.getSport().getCoef_Endurance());
     }
-    /**
-     * getCapa pour avoir les capacité calculé
-     * @return double , moyenne des capacité d'équipe / sum coef epreuve x coef athlete
-     */
-    public double getCapa();
 
+    /**
+     * getNom
+     * 
+     * @return String
+     */
+    public String getNom();
+
+    /**
+     * getForce
+     * 
+     * @return double
+     */
+    public double getForce();
+
+    /**
+     * getagilite
+     * 
+     * @return double
+     */
+    public double getAgilite();
+
+    /**
+     * getEndurance
+     * 
+     * @return double
+     */
+    public double getEndurance();
+
+    /**
+     * getOrigine
+     * 
+     * @return double
+     */
+    public Pays getOrigine();
 }

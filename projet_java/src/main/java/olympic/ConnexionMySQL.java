@@ -1,4 +1,5 @@
 package olympic;
+
 import java.sql.*;
 
 /** class ConnexionMySQL */
@@ -10,6 +11,7 @@ public class ConnexionMySQL {
 
     /**
      * load the mariadb driver
+     * 
      * @throws ClassNotFoundException not found
      */
     public ConnexionMySQL() throws ClassNotFoundException {
@@ -18,9 +20,10 @@ public class ConnexionMySQL {
 
     /**
      * connecter au server
+     * 
      * @param nomServeur String nomServeur
-     * @param nomBase String nomBase
-     * @param nomLogin String nomLogin
+     * @param nomBase    String nomBase
+     * @param nomLogin   String nomLogin
      * @param motDePasse String motDePasse
      * @throws SQLException Execption
      */
@@ -34,6 +37,7 @@ public class ConnexionMySQL {
 
     /**
      * close
+     * 
      * @throws SQLException not found
      */
     public void close() throws SQLException {
@@ -46,6 +50,7 @@ public class ConnexionMySQL {
 
     /**
      * isConnecte
+     * 
      * @return boolean isConnecte
      */
     public boolean isConnecte() {
@@ -54,6 +59,7 @@ public class ConnexionMySQL {
 
     /**
      * createStatement
+     * 
      * @return Statement
      * @throws SQLException not executed
      */
@@ -63,6 +69,7 @@ public class ConnexionMySQL {
 
     /**
      * prepareStatement
+     * 
      * @param requete String the sql
      * @return PreparedStatement to be formated by %
      * @throws SQLException not executed

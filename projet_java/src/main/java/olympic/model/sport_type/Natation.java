@@ -1,4 +1,6 @@
-package olympic.model;
+package olympic.model.sport_type;
+
+import olympic.model.Sport;
 
 /**
  * Natation
@@ -6,6 +8,6 @@ package olympic.model;
 public class Natation extends Sport {
     /** Natation constructor */
     public Natation() {
-        super("Natation", "s",1,1,1);
+        super("Natation", "s", 0.30, 0.30, 0.40);
     }
 }

@@ -1,5 +1,7 @@
 package olympic.model;
 
+// TODO: sync with datamanager
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,23 +18,36 @@ public class JeuxOlympique {
     /** List[Sport] les_sports */
     private List<Sport> les_sports;
 
-    /** 
+    public void simule() {
+        for (Sport sp : les_sports) {
+            for (Epreuve ep : sp.getLes_epreuves()) {
+                System.out.println(
+                        "Sport : " + sp.getNom() + " Epreuve : " + ep.getNom() + " result : " + ep.simule());
+            }
+        }
+    }
+
+    /**
      * ajouter_sports
+     * 
      * @param sport Sport
      */
-    public void ajouter_sports(Sport sport){
+    public void ajouter_sports(Sport sport) {
         les_sports.add(sport);
     }
+
     /**
      * les_sports admin
+     * 
      * @return List[Sport]
      */
-    public List<Sport> les_sports(){
+    public List<Sport> les_sports() {
         return les_sports;
     }
 
     /**
      * JeuxOlympique
+     * 
      * @param annee String
      * @param lieux String
      */
@@ -44,6 +59,7 @@ public class JeuxOlympique {
 
     /**
      * getAnnee
+     * 
      * @return String
      */
     public String getAnnee() {
@@ -52,6 +68,7 @@ public class JeuxOlympique {
 
     /**
      * getLieux
+     * 
      * @return String
      */
     public String getLieux() {
@@ -60,6 +77,7 @@ public class JeuxOlympique {
 
     /**
      * lieux admin
+     * 
      * @param lieux String
      * @return JeuxOlympique
      */
@@ -70,6 +88,7 @@ public class JeuxOlympique {
 
     /**
      * equals
+     * 
      * @param o Object
      * @return boolean
      */
@@ -86,6 +105,7 @@ public class JeuxOlympique {
 
     /**
      * hashCode
+     * 
      * @return int
      */
     @Override
@@ -95,6 +115,7 @@ public class JeuxOlympique {
 
     /**
      * toString
+     * 
      * @return String
      */
     @Override
