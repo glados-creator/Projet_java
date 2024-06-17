@@ -2,6 +2,7 @@ package olympic.graphic;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 // import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,130 +12,99 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class VueJeu extends Application {
 
+    private BorderPane panelCentral;
+
+private Button Visiteur;
+private Button Organisateur;
+private Button Administrateur;
+
+
+@Override
+public void init() {
+}
+
+private Scene laScene() {
+    BorderPane fenetre = new BorderPane();
+    fenetre.setTop(this.titre());
+    panelCentral = new BorderPane();
+    fenetre.setCenter(panelCentral);
+    Scene scene = new Scene(fenetre, 800, 600);
+    return scene;
+}
+
+private Pane titre() {
+    BorderPane banniere = new BorderPane();
+    banniere.setPadding(new Insets(20));
+
+    Label Titre = new Label("Jeux IUT'Olympiques");
+    Font font = Font.font("Arial", 24);
+    Titre.setFont(font);
+
+    // Center the title in the BorderPane
+    HBox titleBox = new HBox();
+    titleBox.setAlignment(Pos.CENTER);
+    titleBox.getChildren().add(Titre);
+    banniere.setCenter(titleBox);
+
+    return banniere;
+}
+
+public void modeLog() {
+    panelCentral.getChildren().clear();
+    VBox buttonbox = new VBox(20); 
+    buttonbox.setAlignment(Pos.CENTER);
+    buttonbox.setPadding(new Insets(20)); 
+    
+    // Création et application du fond pour buttonbox
+    BackgroundFill buttonboxBackgroundFill = new BackgroundFill(Color.valueOf("#dededf"), new CornerRadii(10), Insets.EMPTY);
+    Background buttonboxBackground = new Background(buttonboxBackgroundFill);
+    buttonbox.setBackground(buttonboxBackground);
+
+    // Création et application du fond pour panelCentral
+    BackgroundFill panelCentralBackgroundFill = new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY);
+    Background panelCentralBackground = new Background(panelCentralBackgroundFill);
+    panelCentral.setBackground(panelCentralBackground);
+    
+    Visiteur = new Button("Visiteur");
+    Organisateur = new Button("Organisateur");
+    Administrateur = new Button("Administrateur");
+    
+    Visiteur.setMinWidth(150);
+    Visiteur.setMinHeight(50);
+    Organisateur.setMinWidth(150);
+    Organisateur.setMinHeight(50);
+    Administrateur.setMinWidth(150);
+    Administrateur.setMinHeight(50);
+    
+    buttonbox.getChildren().addAll(Visiteur, Organisateur, Administrateur);
+    
+    buttonbox.setMaxWidth(250);
+    buttonbox.setMaxHeight(400);
+    
+    panelCentral.setCenter(buttonbox);
+}
+
+
+
     @Override
-    public void start(Stage primaryStage) {
-        // Create the menu bar and menus
-        MenuBar menuBar = new MenuBar();
-        Menu fileMenu = new Menu("File");
-        Menu editMenu = new Menu("Edit");
-        Menu helpMenu = new Menu("Help");
-
-        // Add menu items to File menu
-        fileMenu.getItems().addAll(
-                new MenuItem("New"),
-                new MenuItem("Open…"),
-                new Menu("Open Recent"),
-                new SeparatorMenuItem(),
-                new MenuItem("Close"),
-                new MenuItem("Save"),
-                new MenuItem("Save As…"),
-                new MenuItem("Revert"),
-                new SeparatorMenuItem(),
-                new MenuItem("Preferences…"),
-                new SeparatorMenuItem(),
-                new MenuItem("Quit"));
-
-        // Add menu items to Edit menu
-        editMenu.getItems().addAll(
-                new MenuItem("Undo"),
-                new MenuItem("Redo"),
-                new SeparatorMenuItem(),
-                new MenuItem("Cut"),
-                new MenuItem("Copy"),
-                new MenuItem("Paste"),
-                new MenuItem("Delete"),
-                new SeparatorMenuItem(),
-                new MenuItem("Select All"),
-                new MenuItem("Unselect All"));
-
-        // Add menu items to Help menu
-        helpMenu.getItems().addAll(
-                new MenuItem("About MyHelloApp"));
-
-        // Add menus to menu bar
-        menuBar.getMenus().addAll(fileMenu, editMenu, helpMenu);
-
-        // Create the main layout
-        VBox mainLayout = new VBox();
-        mainLayout.setPrefSize(640, 400);
-
-        // Add the menu bar to the layout
-        mainLayout.getChildren().add(menuBar);
-
-        // Create the BorderPane for the content
-        BorderPane borderPane = new BorderPane();
-        borderPane.setPrefSize(640, 373);
-
-        // Create the top label
-        Label topLabel = new Label("Jeux IUT'Olympique");
-        topLabel.setFont(new Font(24));
-        topLabel.setStyle("");
-        topLabel.setAlignment(javafx.geometry.Pos.CENTER);
-        borderPane.setTop(topLabel);
-
-        // Create the center VBox
-        VBox centerVBox = new VBox();
-        centerVBox.setAlignment(javafx.geometry.Pos.TOP_CENTER);
-        centerVBox.setPrefSize(444, 241);
-
-        // Create the main label
-        Label mainLabel = new Label("Label");
-        mainLabel.setFont(new Font(18));
-        mainLabel.setPadding(new Insets(50, 0, 0, 0));
-        centerVBox.getChildren().add(mainLabel);
-
-        // Create the buttons
-        Button administrateurButton = new Button("Administrateur");
-        administrateurButton.setPadding(new Insets(15, 0, 15, 0));
-        administrateurButton.setOnAction(e -> handleAdministrateurButton(mainLabel));
-        centerVBox.getChildren().add(administrateurButton);
-
-        Button organisateurButton = new Button("Organisateur");
-        organisateurButton.setPadding(new Insets(15, 0, 15, 0));
-        organisateurButton.setOnAction(e -> handleOrganisateurButton(mainLabel));
-        centerVBox.getChildren().add(organisateurButton);
-
-        Button visiteurButton = new Button("Visiteur");
-        visiteurButton.setPadding(new Insets(15, 0, 15, 0));
-        visiteurButton.setOnAction(e -> handleVisiteurButton(mainLabel));
-        centerVBox.getChildren().add(visiteurButton);
-
-        borderPane.setCenter(centerVBox);
-        borderPane.setPadding(new Insets(15, 0, 5, 0));
-
-        // Add the BorderPane to the AnchorPane
-        AnchorPane anchorPane = new AnchorPane();
-        anchorPane.getChildren().add(borderPane);
-
-        // Add the AnchorPane to the main layout
-        mainLayout.getChildren().add(anchorPane);
-
-        // Create the scene and add the main layout
-        Scene scene = new Scene(mainLayout);
-
-        // Configure the stage
-        primaryStage.setTitle("Jeux IUT'Olympique");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    private void handleAdministrateurButton(Label mainLabel) {
-        mainLabel.setText("Administrateur bouton cliqué");
-    }
-
-    private void handleOrganisateurButton(Label mainLabel) {
-        mainLabel.setText("Organisateur bouton cliqué");
-    }
-
-    private void handleVisiteurButton(Label mainLabel) {
-        mainLabel.setText("Visiteur bouton cliqué");
+    public void start(Stage stage) {
+        stage.setTitle("Jeu IUT'Olympiques");
+        stage.setScene(this.laScene());
+        this.modeLog();
+        stage.show();
     }
 
     public static void main(String[] args) {
