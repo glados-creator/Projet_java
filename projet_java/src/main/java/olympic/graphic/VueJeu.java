@@ -52,6 +52,8 @@ private Pane titre() {
     Label Titre = new Label("Jeux IUT'Olympiques");
     Font font = Font.font("Arial", 24);
     Titre.setFont(font);
+    banniere.setBackground(new Background(new BackgroundFill(Color.valueOf("#c9dfff"), CornerRadii.EMPTY, Insets.EMPTY)));
+
 
     // Center the title in the BorderPane
     HBox titleBox = new HBox();
@@ -68,16 +70,11 @@ public void modeLog() {
     buttonbox.setAlignment(Pos.CENTER);
     buttonbox.setPadding(new Insets(20)); 
     
-    // Création et application du fond pour buttonbox
-    BackgroundFill buttonboxBackgroundFill = new BackgroundFill(Color.valueOf("#dededf"), new CornerRadii(10), Insets.EMPTY);
-    Background buttonboxBackground = new Background(buttonboxBackgroundFill);
-    buttonbox.setBackground(buttonboxBackground);
 
-    // Création et application du fond pour panelCentral
-    BackgroundFill panelCentralBackgroundFill = new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY);
-    Background panelCentralBackground = new Background(panelCentralBackgroundFill);
-    panelCentral.setBackground(panelCentralBackground);
-    
+    buttonbox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+    panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#c9dfff"), CornerRadii.EMPTY, Insets.EMPTY)));
+
     Visiteur = new Button("Visiteur");
     Organisateur = new Button("Organisateur");
     Administrateur = new Button("Administrateur");
