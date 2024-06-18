@@ -1,401 +1,801 @@
-Nom,Prénom,Sexe,Pays,Épreuve,Force,Endurance,agilite
-Saito,Yui,M,Maroc,Volley-Ball,true,9,11,8
-Lefevre,Maëlys,F,Japon,Volley-Ball,true,4,10,10
-Kobayashi,Shiori,F,USA,Handball,true,10,1,3
-Thomas,Zoé,M,France,Natation 100 brasse,false,10,14,17
-Ma,Yan,F,USA,Escrime fleuret,false,9,2,17
-Kobayashi,Yuna,M,Kenya,Natation 100 brasse,false,13,10,18
-Roux,Clara,F,Kenya,Volley-Ball,true,14,18,9
-Li,Zhu,M,Japon,Handball,true,7,13,13
-Maeda,Yui,M,Australie,Escrime épée,false,13,13,2
-Kato,Takumi,F,USA,Natation 100 brasse,false,11,18,2
-Thomas,Nolan,M,Maroc,Escrime épée,false,1,10,16
-Takahashi,Takeshi,M,Allemagne,Escrime épée,false,12,11,7
-Dubois,Arthur,M,Australie,Escrime fleuret,false,8,20,16
-Thomas,Camille,F,Chine,Escrime fleuret,false,17,17,17
-Sakai,Yuna,M,Maroc,Escrime épée,false,9,12,1
-Lefebvre,Zoé,M,Australie,Natation relais libre,true,20,17,1
-Michel,Clara,M,Turquie,Natation relais libre,true,10,16,6
-Hu,Hong,M,Brésil,Escrime fleuret,false,15,4,2
-Tanaka,Hana,F,USA,Escrime fleuret,false,8,18,11
-Inoue,Yuna,M,Australie,Athétisme 110 haies,false,5,8,6
-Ishikawa,Takumi,F,Maroc,Athétisme 110 haies,false,15,2,9
-Sasaki,Nana,M,Allemagne,Escrime fleuret,false,18,9,8
-Kondo,Ryota,F,Australie,Escrime épée,false,17,15,8
-Murakami,Aoi,F,France,Volley-Ball,true,14,17,12
-Yamaguchi,Yusuke,F,Allemagne,Volley-Ball,true,15,13,17
-Girard,Gabriel,F,Brésil,Handball,true,19,4,8
-Inoue,Yuna,M,USA,Handball,true,20,14,2
-Simon,Zoé,F,Brésil,Natation 100 brasse,false,20,17,19
-He,Jing,M,Kenya,Natation relais libre,true,18,7,15
-Fournier,Léa,M,Japon,Volley-Ball,true,14,16,13
-Ma,Wang,F,Kenya,Athlétisme relais 400m,false,7,9,17
-Lin,Jing,M,Chine,Volley-Ball,true,9,13,6
-Petit,Lola,M,Brésil,Natation 100 brasse,false,18,7,6
-Zhao,Sun,F,Maroc,Handball,true,13,9,9
-Lehmann,Lina,F,Kenya,Athlétisme relais 400m,false,6,2,1
-Sakai,Sakura,F,Kenya,Escrime fleuret,false,19,17,17
-Lefebvre,Inès,M,Brésil,Natation 100 brasse,false,20,18,10
-Liu,Jun,M,Kenya,Natation 100 brasse,false,10,16,12
-Ma,Xu,M,USA,Handball,true,1,14,3
-Durand,Chloé,F,USA,Athlétisme relais 400m,false,11,18,2
-Robin,Tom,M,Brésil,Volley-Ball,true,16,18,15
-Sato,Sakura,M,Chine,Athétisme 110 haies,false,7,7,15
-Roux,Léa,F,Maroc,Escrime fleuret,false,5,7,3
-Yamaguchi,Yui,M,Japon,Escrime fleuret,false,18,6,7
-Morel,Lola,M,Maroc,Volley-Ball,true,19,8,20
-Kondo,Aoi,M,Maroc,Handball,true,12,20,7
-Takahashi,Daiki,F,France,Escrime fleuret,false,5,18,7
-Inoue,Ryota,F,Kenya,Athlétisme relais 400m,false,17,8,15
-Guo,Jing,F,Turquie,Natation relais libre,true,11,19,4
-Braun,Hannah,M,Japon,Escrime fleuret,false,17,13,13
-Sasaki,Naoki,F,Turquie,Athlétisme relais 400m,false,18,7,15
-Ma,Jing,F,Chine,Natation 100 brasse,false,9,14,1
-Nakamura,Takumi,M,Turquie,Escrime fleuret,false,5,6,11
-Saito,Kaito,M,Australie,Natation relais libre,true,20,15,3
-Saito,Riko,F,Kenya,Volley-Ball,true,1,13,15
-He,Ting,F,Allemagne,Handball,true,13,17,14
-Girard,Chloé,M,USA,Volley-Ball,true,5,19,10
-Robin,Chloé,M,Kenya,Athlétisme relais 400m,false,9,1,9
-Maeda,Kazuki,F,Japon,Escrime fleuret,false,14,19,14
-Hofmann,Johanna,M,Chine,Athétisme 110 haies,false,9,3,13
-Watanabe,Saki,F,Kenya,Escrime épée,false,5,7,5
-Kimura,Kazuki,M,Chine,Escrime épée,false,16,12,17
-He,Min,F,Brésil,Handball,true,16,14,11
-Saito,Rin,M,Turquie,Escrime fleuret,false,17,14,12
-Perez,Léna,F,Chine,Handball,true,13,1,17
-Saito,Mio,F,Brésil,Athétisme 110 haies,false,19,16,8
-Morel,Chloé,F,Chine,Natation 100 brasse,false,9,14,20
-Kobayashi,Yuna,M,Maroc,Natation relais libre,true,9,4,2
-Ishii,Takeshi,F,Brésil,Volley-Ball,true,1,9,11
-Xu,Wu,M,Turquie,Handball,true,20,14,10
-Michel,Léa,F,France,Escrime fleuret,false,19,8,17
-Sasaki,Rina,M,Brésil,Athlétisme relais 400m,false,11,3,3
-Zhu,Xu,F,Chine,Natation 100 brasse,false,18,4,15
-Zhao,Lan,F,Allemagne,Athétisme 110 haies,false,3,9,19
-Hayashi,Riku,M,Japon,Volley-Ball,true,18,4,7
-Yamada,Shiori,F,France,Handball,true,13,7,9
-Hu,Xiang,M,Brésil,Volley-Ball,true,1,20,7
-Maier,Finn,M,Brésil,Athlétisme relais 400m,false,7,12,13
-Mercier,Emma,F,Kenya,Natation relais libre,true,4,11,19
-Michel,Noé,F,USA,Natation relais libre,true,2,12,20
-Herrmann,Emilia,F,Brésil,Natation relais libre,true,6,12,12
-Tanaka,Haruka,M,Chine,Escrime fleuret,false,8,6,16
-Ogawa,Naoki,M,Kenya,Natation relais libre,true,4,7,3
-Sato,Daiki,M,Chine,Natation relais libre,true,18,19,7
-Schwarz,Tom,F,Japon,Athétisme 110 haies,false,2,1,9
-Müller,Luisa,M,USA,Natation relais libre,true,1,17,1
-Blanc,Lucas,F,France,Athlétisme relais 400m,false,4,3,13
-Chen,Zhu,F,USA,Escrime fleuret,false,20,15,19
-Suzuki,Yui,M,Maroc,Athlétisme relais 400m,false,11,16,18
-Fujita,Sosuke,M,France,Escrime épée,false,7,12,10
-Liu,Shuang,F,Australie,Natation relais libre,true,17,16,15
-Hasegawa,Akira,M,France,Natation relais libre,true,7,1,4
-Takahashi,Daiki,M,Maroc,Handball,true,16,6,5
-Fontaine,Arthur,F,Australie,Volley-Ball,true,10,2,14
-Chen,Xia,F,Chine,Natation 100 brasse,false,19,6,4
-Dupont,Théo,M,Chine,Handball,true,5,17,9
-Leroy,Maëlys,F,Kenya,Natation 100 brasse,false,4,2,12
-Saito,Haruka,M,Japon,Escrime fleuret,false,20,5,9
-Robin,Léa,F,Kenya,Escrime épée,false,3,10,17
-Li,Huang,M,USA,Athétisme 110 haies,false,20,2,10
-Sun,Jun,M,Allemagne,Natation relais libre,true,8,1,4
-Ogawa,Sakura,M,Brésil,Athétisme 110 haies,false,7,3,6
-Takahashi,Kazuki,F,USA,Volley-Ball,true,2,2,19
-Kato,Sakura,M,Turquie,Athlétisme relais 400m,false,9,18,19
-Ma,Ling,M,Allemagne,Handball,true,20,16,20
-Yamada,Riko,F,France,Volley-Ball,true,3,13,11
-Watanabe,Yuna,M,Turquie,Escrime épée,false,13,6,9
-Chen,Chen,F,Allemagne,Natation 100 brasse,false,4,7,20
-Xu,Jun,F,Kenya,Natation 100 brasse,false,12,12,1
-Takahashi,Ryota,M,Japon,Volley-Ball,true,2,16,4
-Kondo,Yuki,M,Chine,Athlétisme relais 400m,false,2,1,10
-Yoshida,Haruto,F,Japon,Natation relais libre,true,20,10,4
-Inoue,Ren,M,Allemagne,Escrime fleuret,false,17,12,9
-Girard,Anna,F,Turquie,Escrime épée,false,1,3,2
-Maeda,Hinata,F,France,Handball,true,3,3,13
-Yoshida,Nana,M,USA,Natation relais libre,true,17,10,3
-Rousseau,Lola,M,Chine,Volley-Ball,true,15,19,12
-Sakai,Aoi,M,Maroc,Athétisme 110 haies,false,16,20,20
-Krüger,Emily,F,Turquie,Handball,true,3,14,10
-Gao,Yan,F,Japon,Natation relais libre,true,9,18,7
-Sakai,Sakura,M,Brésil,Natation 100 brasse,false,16,15,6
-Moreau,Gabin,F,Allemagne,Natation 100 brasse,false,19,10,7
-Fournier,Lola,M,USA,Volley-Ball,true,6,20,4
-Zhang,Liu,M,Japon,Natation relais libre,true,6,19,17
-Chen,Xu,M,Kenya,Escrime épée,false,1,17,3
-Kimura,Takeshi,M,Kenya,Handball,true,2,16,16
-Watanabe,Akira,F,Japon,Natation relais libre,true,11,16,11
-Richard,Ethan,F,Chine,Athlétisme relais 400m,false,5,11,8
-Weber,Johanna,M,Turquie,Athlétisme relais 400m,false,15,13,19
-Wu,Ling,M,Allemagne,Natation 100 brasse,false,8,19,11
-Muller,Emma,F,Japon,Athétisme 110 haies,false,7,14,19
-Sakamoto,Yui,F,Maroc,Handball,true,6,14,8
-Murakami,Rin,F,France,Escrime fleuret,false,17,8,11
-Saito,Yuna,M,France,Athlétisme relais 400m,false,13,6,13
-Huang,Yan,M,Allemagne,Handball,true,20,20,19
-Simon,Jade,F,USA,Athlétisme relais 400m,false,18,13,5
-Lefebvre,Juliette,F,Japon,Volley-Ball,true,8,6,15
-Hasegawa,Haruto,F,USA,Escrime épée,false,14,7,19
-Köhler,Anna,F,Turquie,Volley-Ball,true,20,6,1
-Ma,Jun,M,Australie,Natation 100 brasse,false,17,1,12
-Müller,Elias,F,Allemagne,Athétisme 110 haies,false,6,12,5
-Sakai,Takeshi,F,Turquie,Natation 100 brasse,false,10,13,4
-Huang,Wei,F,Turquie,Natation 100 brasse,false,12,9,18
-Blanc,Théo,F,Allemagne,Escrime épée,false,10,6,8
-Fujita,Riko,F,France,Escrime fleuret,false,12,9,13
-Yamamoto,Rin,F,France,Escrime fleuret,false,16,10,15
-Thomas,Léa,M,Chine,Escrime épée,false,6,2,9
-Sato,Rin,F,USA,Escrime épée,false,5,17,3
-Sato,Mio,F,Turquie,Athlétisme relais 400m,false,13,7,19
-Kondo,Kaito,M,Kenya,Athlétisme relais 400m,false,20,19,4
-Wang,Ting,M,USA,Natation relais libre,true,9,20,7
-Kobayashi,Asuka,F,Turquie,Escrime épée,false,6,6,20
-Dubois,Paul,F,USA,Natation 100 brasse,false,16,16,6
-Wang,Chen,M,Japon,Escrime fleuret,false,3,4,16
-Ma,Hui,M,Japon,Escrime fleuret,false,16,13,3
-Durand,Raphaël,M,Chine,Athlétisme relais 400m,false,16,14,8
-Yang,Jing,M,Japon,Escrime fleuret,false,2,8,15
-Fujita,Ren,M,Australie,Natation relais libre,true,15,20,9
-Guo,Xu,F,Kenya,Athétisme 110 haies,false,18,8,1
-Zhu,Hong,F,Allemagne,Handball,true,2,11,11
-Takahashi,Yuna,M,USA,Natation 100 brasse,false,8,2,14
-Wu,Xiang,F,Allemagne,Escrime épée,false,4,10,19
-Vincent,Théo,F,Brésil,Escrime épée,false,2,12,10
-Lange,Anna,M,Turquie,Natation relais libre,true,1,8,15
-Petit,Zoé,F,France,Athlétisme relais 400m,false,1,15,1
-Yamaguchi,Rina,M,Chine,Athlétisme relais 400m,false,3,14,2
-Roux,Ethan,F,France,Escrime épée,false,11,16,4
-Kobayashi,Ryota,F,Chine,Handball,true,12,10,1
-Guo,He,F,Japon,Escrime épée,false,16,3,9
-Sakai,Yui,F,France,Athétisme 110 haies,false,2,18,18
-Inoue,Yuto,F,Brésil,Athétisme 110 haies,false,16,4,9
-Maeda,Kazuki,M,Allemagne,Athlétisme relais 400m,false,12,18,2
-Martin,Zoé,F,Chine,Athlétisme relais 400m,false,16,3,11
-Giraud,Emma,M,USA,Natation 100 brasse,false,12,6,9
-Sasaki,Sakura,M,Australie,Volley-Ball,true,15,6,15
-Mori,Sora,M,France,Natation relais libre,true,9,7,18
-He,Yang,F,Australie,Natation 100 brasse,false,3,17,14
-Wang,Yan,M,Kenya,Volley-Ball,true,9,12,17
-Hu,Zhang,M,Australie,Natation relais libre,true,4,4,13
-Zhang,Fang,F,Allemagne,Volley-Ball,true,7,12,5
-Gao,Hu,F,France,Athlétisme relais 400m,false,9,12,2
-Saito,Daiki,F,Brésil,Natation relais libre,true,6,16,12
-Neumann,Emilia,F,Brésil,Athétisme 110 haies,false,2,16,3
-Hu,Jun,M,Kenya,Escrime fleuret,false,20,5,12
-Tanaka,Rina,F,Maroc,Escrime épée,false,1,13,12
-Kobayashi,Yuto,M,USA,Volley-Ball,true,8,17,3
-Yamamoto,Sosuke,F,Japon,Athétisme 110 haies,false,12,13,15
-Rousseau,Zoé,M,Maroc,Natation relais libre,true,7,3,16
-Goto,Nana,F,Maroc,Handball,true,9,12,1
-Sakamoto,Yuto,F,Japon,Natation 100 brasse,false,3,8,16
-Hayashi,Riku,F,Kenya,Athétisme 110 haies,false,11,8,6
-Lin,Ting,F,Brésil,Natation 100 brasse,false,7,4,12
-Zhu,Xiang,M,Brésil,Athétisme 110 haies,false,8,10,2
-Hayashi,Asuka,M,Japon,Volley-Ball,true,14,19,3
-Zhao,Xiang,F,USA,Athlétisme relais 400m,false,3,12,11
-Nakamura,Ren,M,Allemagne,Escrime fleuret,false,17,13,14
-Hu,Sun,M,France,Escrime fleuret,false,9,4,3
-Meier,Maja,M,Kenya,Natation 100 brasse,false,14,7,9
-Mercier,Camille,F,Chine,Handball,true,16,10,12
-Robert,Mathis,F,Kenya,Escrime fleuret,false,16,19,9
-Ishii,Kaito,M,Chine,Handball,true,14,7,15
-Wu,Wu,M,Kenya,Escrime fleuret,false,5,12,10
-Fournier,Noé,M,Japon,Escrime épée,false,20,10,8
-Ma,Sun,M,Maroc,Athlétisme relais 400m,false,1,6,8
-Bernard,Lola,F,Japon,Athétisme 110 haies,false,10,10,1
-Li,Sun,F,Brésil,Handball,true,6,7,1
-Nakamura,Sosuke,F,Allemagne,Athétisme 110 haies,false,11,19,10
-Mori,Shiori,M,Maroc,Escrime épée,false,1,12,13
-Ishikawa,Sakura,M,Japon,Athlétisme relais 400m,false,20,6,2
-Wu,Liu,F,Australie,Natation 100 brasse,false,6,15,11
-Goto,Daiki,M,Japon,Athlétisme relais 400m,false,20,20,1
-Kato,Ryota,M,Allemagne,Volley-Ball,true,2,16,18
-Laurent,Nolan,M,Brésil,Escrime épée,false,4,18,19
-Zhou,Zhao,M,France,Natation relais libre,true,8,10,20
-Sato,Ryota,F,Kenya,Athétisme 110 haies,false,15,2,12
-Mercier,Alice,M,Turquie,Athlétisme relais 400m,false,8,3,17
-Ito,Shiori,F,Japon,Escrime fleuret,false,7,8,19
-Kobayashi,Saki,M,Kenya,Escrime épée,false,6,16,8
-Schröder,Luisa,M,Turquie,Natation relais libre,true,17,17,10
-Leroy,Nolan,F,USA,Escrime épée,false,19,1,19
-Xu,Jing,M,USA,Natation 100 brasse,false,9,7,18
-He,Hu,M,Australie,Volley-Ball,true,20,16,2
-Wang,Zhu,F,Kenya,Athlétisme relais 400m,false,19,5,5
-Faure,Léa,F,Kenya,Escrime épée,false,10,3,7
-Zhang,Hui,F,Kenya,Volley-Ball,true,14,10,19
-Guerin,Lucas,F,France,Athlétisme relais 400m,false,8,6,10
-Huang,Min,M,Brésil,Volley-Ball,true,9,19,7
-Wu,Zhu,F,Turquie,Natation relais libre,true,2,9,15
-Liu,Jing,F,Maroc,Athétisme 110 haies,false,10,1,18
-Hu,Chen,M,Brésil,Natation 100 brasse,false,15,17,4
-Chen,Xia,F,Brésil,Athétisme 110 haies,false,10,10,20
-Simon,Raphaël,F,Brésil,Natation relais libre,true,16,16,2
-Faure,Léa,M,France,Natation 100 brasse,false,10,15,17
-Garcia,Jade,F,Turquie,Natation relais libre,true,9,9,5
-Suzuki,Ren,F,Chine,Athlétisme relais 400m,false,14,11,1
-Saito,Hinata,F,Chine,Athlétisme relais 400m,false,11,16,20
-Mori,Kazuki,M,Chine,Athlétisme relais 400m,false,7,12,8
-Becker,Finn,F,Maroc,Athétisme 110 haies,false,18,16,8
-Yang,Xiang,M,Allemagne,Athlétisme relais 400m,false,1,11,6
-Sato,Hiroshi,M,Kenya,Escrime fleuret,false,15,20,7
-Nakamura,Rina,F,Chine,Volley-Ball,true,8,6,12
-Wolf,Maja,M,Kenya,Handball,true,4,4,1
-Zhang,Xue,F,Maroc,Escrime fleuret,false,11,9,4
-Richard,Lucas,F,Maroc,Escrime fleuret,false,8,19,11
-Robin,Anna,M,Maroc,Athlétisme relais 400m,false,13,11,7
-Yamamoto,Yuna,M,Maroc,Athétisme 110 haies,false,14,20,16
-He,Xu,M,Brésil,Escrime fleuret,false,14,5,17
-Zhou,Li,M,Turquie,Natation 100 brasse,false,15,12,18
-Hayashi,Hana,M,Kenya,Athlétisme relais 400m,false,13,13,18
-Zhu,Sun,F,Kenya,Athétisme 110 haies,false,1,5,3
-Sasaki,Nana,M,USA,Natation relais libre,true,7,10,6
-Ma,Yan,M,Allemagne,Natation relais libre,true,17,15,2
-Moreau,Noé,F,France,Volley-Ball,true,17,18,6
-Mori,Sora,F,Turquie,Natation 100 brasse,false,2,9,15
-Zhou,Fang,M,Maroc,Athétisme 110 haies,false,2,15,2
-Fournier,Juliette,F,Turquie,Volley-Ball,true,19,10,1
-Zhao,Yang,F,Japon,Natation relais libre,true,7,7,16
-Guo,Shuang,M,USA,Handball,true,20,18,12
-Schulze,Elias,M,Turquie,Athétisme 110 haies,false,9,1,10
-Lefebvre,Léa,M,Brésil,Natation relais libre,true,6,5,8
-Robert,Hugo,M,Australie,Escrime épée,false,17,16,15
-Takahashi,Daiki,F,Maroc,Volley-Ball,true,19,9,12
-Kato,Ryota,M,Maroc,Volley-Ball,true,9,12,10
-He,Ting,F,France,Natation relais libre,true,5,20,4
-Krüger,Leon,F,Japon,Volley-Ball,true,14,18,7
-Guo,Sun,M,Japon,Escrime fleuret,false,1,1,10
-Xu,He,F,USA,Volley-Ball,true,11,20,6
-Durand,Sarah,F,Japon,Handball,true,18,5,3
-Hoffmann,Simon,F,USA,Handball,true,10,8,1
-Mercier,Camille,M,USA,Handball,true,5,17,10
-Laurent,Louis,M,Japon,Volley-Ball,true,3,17,4
-Nakamura,Ren,F,Brésil,Escrime fleuret,false,18,19,17
-Laurent,Emma,F,Kenya,Athétisme 110 haies,false,6,12,16
-Mercier,Anna,M,Australie,Natation relais libre,true,5,10,15
-Kimura,Yusuke,M,USA,Natation 100 brasse,false,7,20,7
-Yamada,Rin,F,Brésil,Athlétisme relais 400m,false,11,13,15
-Yamamoto,Haruka,F,France,Escrime épée,false,6,16,2
-Ogawa,Haruka,F,Allemagne,Natation 100 brasse,false,1,9,17
-Murakami,Rin,F,Kenya,Volley-Ball,true,12,4,5
-Roux,Jade,M,Kenya,Natation relais libre,true,2,14,17
-Ishikawa,Rin,F,Japon,Natation 100 brasse,false,9,20,17
-Sakai,Shiori,F,Australie,Athlétisme relais 400m,false,4,10,2
-Sato,Haruka,F,Kenya,Athétisme 110 haies,false,14,18,3
-Saito,Takumi,F,Brésil,Natation 100 brasse,false,3,15,1
-Kimura,Aoi,M,Japon,Natation 100 brasse,false,3,2,17
-Xu,Ma,M,USA,Handball,true,16,11,8
-Sun,Ma,F,Allemagne,Volley-Ball,true,1,9,1
-Hu,Liu,F,Brésil,Natation relais libre,true,10,19,15
-Michel,Juliette,M,Japon,Natation relais libre,true,10,14,10
-Zhu,Min,F,Maroc,Athlétisme relais 400m,false,12,1,8
-Yamamoto,Yuna,F,Turquie,Natation 100 brasse,false,10,20,11
-Schulz,David,F,Turquie,Escrime épée,false,9,5,12
-Shibata,Yuna,F,Kenya,Natation relais libre,true,4,14,13
-Liu,Jun,F,USA,Escrime fleuret,false,13,14,12
-Zhang,Xia,F,USA,Athlétisme relais 400m,false,18,15,4
-Bauer,Lina,F,Maroc,Athlétisme relais 400m,false,19,6,4
-Zhou,Ma,M,France,Natation 100 brasse,false,9,16,6
-Yamamoto,Shiori,F,Japon,Escrime épée,false,4,10,19
-Ito,Yuki,F,Chine,Volley-Ball,true,20,8,8
-Nakamura,Yuki,F,Kenya,Athétisme 110 haies,false,9,3,10
-Inoue,Rina,M,Turquie,Handball,true,7,13,11
-Hartmann,Elias,F,Australie,Volley-Ball,true,11,18,19
-Kobayashi,Sakura,M,Allemagne,Escrime fleuret,false,15,1,1
-Yamamoto,Aoi,F,Kenya,Escrime fleuret,false,19,20,9
-Thomas,Ethan,M,Chine,Athétisme 110 haies,false,5,1,14
-Li,Jun,F,Allemagne,Athétisme 110 haies,false,9,19,15
-Perez,Inès,M,Australie,Natation relais libre,true,15,15,3
-Meier,Maja,F,Australie,Handball,true,19,17,17
-Hofmann,Tim,M,Chine,Escrime fleuret,false,18,1,16
-Robert,Alice,M,Allemagne,Athlétisme relais 400m,false,18,9,10
-Ishii,Rina,M,Turquie,Athlétisme relais 400m,false,16,3,15
-Fujita,Shiori,M,Maroc,Escrime fleuret,false,18,4,4
-Ishikawa,Hiroshi,M,Turquie,Athétisme 110 haies,false,1,15,10
-Wagner,Paul,M,Allemagne,Escrime fleuret,false,6,19,12
-Hu,Lan,F,Turquie,Escrime épée,false,1,14,17
-Sakai,Haruka,M,France,Volley-Ball,true,3,10,7
-Garcia,Noé,M,Allemagne,Volley-Ball,true,19,6,1
-Roux,Lucas,M,Chine,Natation relais libre,true,3,13,18
-Zhao,Chen,M,Turquie,Handball,true,2,16,20
-Liu,Zhu,M,Turquie,Athétisme 110 haies,false,12,9,18
-Muller,Gabriel,F,Australie,Natation relais libre,true,20,19,15
-Huang,Hu,M,France,Athlétisme relais 400m,false,3,8,8
-Wu,Xin,M,Kenya,Athlétisme relais 400m,false,3,16,1
-Murakami,Nana,F,Turquie,Handball,true,4,4,18
-Sasaki,Akira,M,Kenya,Athétisme 110 haies,false,14,18,6
-Blanc,Ethan,F,Allemagne,Escrime fleuret,false,11,13,15
-Wang,Huang,F,Allemagne,Athlétisme relais 400m,false,12,12,7
-Michel,Manon,F,Japon,Athétisme 110 haies,false,3,8,1
-Chen,Shuang,F,Allemagne,Volley-Ball,true,19,20,1
-Thomas,Alice,F,Turquie,Escrime fleuret,false,14,1,20
-Hu,Fang,F,Australie,Natation 100 brasse,false,13,3,6
-Schmidt,Ben,M,Kenya,Athétisme 110 haies,false,6,10,3
-Girard,Tom,F,Kenya,Escrime épée,false,17,16,3
-Lefebvre,Lucas,M,France,Handball,true,8,3,9
-Leroy,Manon,M,Japon,Escrime épée,false,18,2,16
-Fournier,Nolan,F,USA,Escrime fleuret,false,2,8,4
-Vincent,Emma,F,France,Natation relais libre,true,13,19,12
-Durand,Chloé,M,France,Handball,true,11,17,9
-Morel,Tom,M,Turquie,Natation 100 brasse,false,13,11,20
-Gao,Xu,M,Brésil,Natation 100 brasse,false,2,6,11
-Lin,Xue,M,Australie,Handball,true,13,1,2
-Yamada,Rin,F,Brésil,Athlétisme relais 400m,false,15,5,3
-Tanaka,Sakura,M,USA,Handball,true,5,20,3
-Yoshida,Saki,F,Japon,Natation 100 brasse,false,14,14,20
-Leroy,Anna,F,France,Natation relais libre,true,8,1,10
-Morel,Jade,M,Allemagne,Athétisme 110 haies,false,1,18,19
-Ma,He,M,Chine,Natation relais libre,true,17,11,12
-Mori,Nana,F,Brésil,Handball,true,9,6,15
-Liu,Yan,F,Maroc,Escrime fleuret,false,13,19,20
-Yamamoto,Kokoro,F,USA,Natation 100 brasse,false,3,4,5
-Kondo,Aoi,M,Maroc,Volley-Ball,true,10,11,16
-Saito,Yusuke,M,Kenya,Natation 100 brasse,false,15,1,19
-Sun,Xia,M,Kenya,Volley-Ball,true,16,3,19
-Sakai,Riku,M,Turquie,Natation relais libre,true,9,9,7
-Hu,Xu,M,Japon,Natation relais libre,true,4,6,19
-Yoshida,Mio,M,Allemagne,Escrime fleuret,false,4,19,4
-Gao,Zhao,M,Turquie,Natation 100 brasse,false,19,10,5
-Matsumoto,Ryota,F,Kenya,Natation 100 brasse,false,7,18,17
-Murakami,Yuki,M,Chine,Natation 100 brasse,false,16,11,12
-Ito,Hiroshi,F,Australie,Athétisme 110 haies,false,8,14,20
-Inoue,Saki,M,Allemagne,Escrime fleuret,false,8,18,2
-Wang,Hui,F,Kenya,Handball,true,7,13,8
-Tanaka,Yuna,M,Kenya,Escrime fleuret,false,8,1,13
-Robert,Manon,M,Maroc,Athlétisme relais 400m,false,3,4,7
-Petit,Jade,M,Allemagne,Escrime fleuret,false,6,20,10
-Ito,Saki,F,Allemagne,Natation 100 brasse,false,10,4,19
-He,Hui,F,Kenya,Natation 100 brasse,false,18,5,6
-Takahashi,Yui,M,Chine,Natation 100 brasse,false,18,9,8
-Zhao,Wang,M,France,Athétisme 110 haies,false,12,10,11
-Zhou,Yiming,F,Australie,Athétisme 110 haies,false,4,4,18
-Gao,Xiang,M,Australie,Athétisme 110 haies,false,10,15,13
-Liu,Li,M,Turquie,Athlétisme relais 400m,false,7,6,11
-Ishikawa,Asuka,M,Chine,Natation relais libre,true,16,11,9
-Simon,Noé,F,Chine,Athlétisme relais 400m,false,19,14,4
-Chen,Xue,F,Japon,Escrime fleuret,false,16,3,12
-Zhang,Zhang,M,Allemagne,Volley-Ball,true,13,19,9
-Kondo,Kazuki,F,Chine,Athétisme 110 haies,false,9,1,10
-Perez,Inès,F,Chine,Handball,true,11,4,12
-Gao,Zhao,M,Maroc,Escrime fleuret,false,6,20,19
-Moreau,Chloé,F,Chine,Natation 100 brasse,false,6,3,16
-Zhao,Hong,M,Chine,Escrime fleuret,false,9,19,20
-Moreau,Noé,M,USA,Escrime épée,false,13,11,4
-Hartmann,Elias,F,Brésil,Natation relais libre,true,18,17,16
-Guerin,Emma,M,USA,Volley-Ball,true,16,16,3
-Li,Lan,M,Turquie,Natation 100 brasse,false,1,1,4
-Inoue,Naoki,F,Turquie,Escrime fleuret,false,15,6,12
-Fournier,Mathis,M,USA,Natation relais libre,true,5,9,18
-Ogawa,Saki,F,USA,Natation relais libre,true,10,1,20
-Watanabe,Takumi,M,Chine,Volley-Ball,true,13,7,8
-Zhang,Zhao,F,Australie,Escrime épée,false,1,17,15
-Hayashi,Yuna,M,Japon,Athétisme 110 haies,false,12,17,1
-Fujita,Rina,F,USA,Volley-Ball,true,18,7,14
-Chen,Jing,M,France,Athlétisme relais 400m,false,3,7,2
-Inoue,Hana,M,Japon,Escrime fleuret,false,5,7,17
-Ogawa,Ren,M,Maroc,Natation 100 brasse,false,19,3,15
-Sato,Sakura,F,Australie,Athlétisme relais 400m,false,8,8,5
-Ogawa,Kazuki,F,Turquie,Athlétisme relais 400m,false,9,12,19
-Sakamoto,Takeshi,M,Chine,Natation relais libre,true,17,6,15
-Kondo,Yuna,M,Brésil,Natation relais libre,true,19,11,14
-Huang,Fang,F,France,Escrime épée,false,1,10,16
+Nom,Prénom,Sexe,Pays,Épreuve,Collectif,Force,Endurance,agilite
+2024,France,Chen,Chen,M,Allemagne,Natation relais libre,true,2,12,13
+2032,Australie,Saito,Sora,M,USA,Escrime épée,false,11,6,11
+2032,Australie,Sato,Riku,F,Maroc,Athlétisme relais 400m,false,1,2,1
+2024,France,Wang,Hui,F,Chine,Athétisme 110 haies,false,7,14,19
+2024,France,Mori,Asuka,F,Chine,Athétisme 110 haies,false,18,19,5
+2032,Australie,Yamaguchi,Naoki,F,Japon,Natation 100 brasse,false,15,6,12
+2028,Etats-Unis,Zhu,Xin,M,Allemagne,Volley-Ball,true,4,5,16
+2024,France,Saito,Sora,F,USA,Volley-Ball,true,10,10,3
+2032,Australie,Guerin,Lola,F,Australie,Volley-Ball,true,5,12,10
+2032,Australie,Moreau,Emma,F,Chine,Volley-Ball,true,20,17,1
+2028,Etats-Unis,Ogawa,Shiori,F,Allemagne,Athlétisme relais 400m,false,3,20,14
+2024,France,Petit,Lucas,M,Maroc,Escrime fleuret,false,10,17,15
+2032,Australie,Garcia,Arthur,M,Turquie,Athlétisme relais 400m,false,17,7,10
+2028,Etats-Unis,Zhou,Jing,M,Allemagne,Handball,true,16,7,20
+2024,France,Hasegawa,Hiroshi,M,Japon,Natation 100 brasse,false,3,7,7
+2032,Australie,Yang,Xu,F,Kenya,Natation relais libre,true,2,16,17
+2032,Australie,Fujita,Yuna,M,Chine,Natation relais libre,true,18,5,14
+2032,Australie,Watanabe,Nana,F,Maroc,Athétisme 110 haies,false,17,2,17
+2028,Etats-Unis,Guo,Wang,F,France,Athlétisme relais 400m,false,15,2,3
+2024,France,Zhao,Xue,F,Chine,Handball,true,17,6,6
+2024,France,Xu,Zhou,F,Japon,Athlétisme relais 400m,false,3,10,3
+2032,Australie,Nakamura,Yuto,F,Maroc,Natation relais libre,true,10,6,16
+2028,Etats-Unis,Schmid,Luca,M,Brésil,Natation 100 brasse,false,13,12,2
+2032,Australie,Yamaguchi,Sosuke,M,Australie,Escrime fleuret,false,9,11,12
+2032,Australie,Kondo,Sora,F,Allemagne,Handball,true,14,13,20
+2024,France,Lange,Mia,F,France,Natation relais libre,true,3,9,17
+2024,France,Sato,Hana,F,Kenya,Volley-Ball,true,13,11,1
+2028,Etats-Unis,Richard,Lucas,M,France,Volley-Ball,true,11,18,15
+2032,Australie,Martin,Maëlys,F,Turquie,Natation relais libre,true,3,11,4
+2032,Australie,Mercier,Tom,F,Allemagne,Athlétisme relais 400m,false,18,6,6
+2028,Etats-Unis,Ito,Sora,F,France,Handball,true,19,14,13
+2032,Australie,Dupont,Chloé,M,Brésil,Natation 100 brasse,false,12,19,2
+2032,Australie,Ishii,Akira,F,USA,Athlétisme relais 400m,false,17,2,16
+2032,Australie,Yamada,Nana,F,Chine,Natation relais libre,true,9,3,18
+2028,Etats-Unis,Roux,Inès,F,USA,Escrime épée,false,17,6,8
+2024,France,Dupont,Arthur,M,Australie,Athlétisme relais 400m,false,5,13,9
+2032,Australie,Kobayashi,Ryota,F,Australie,Natation relais libre,true,1,17,10
+2024,France,Ishii,Haruka,F,USA,Athétisme 110 haies,false,2,5,6
+2032,Australie,Fontaine,Mathis,F,France,Athétisme 110 haies,false,18,17,13
+2028,Etats-Unis,Saito,Kaito,M,USA,Escrime épée,false,4,10,11
+2028,Etats-Unis,Shimizu,Yuna,F,Japon,Natation 100 brasse,false,9,4,18
+2028,Etats-Unis,Fontaine,Arthur,M,Japon,Handball,true,16,5,2
+2028,Etats-Unis,Moreau,Hugo,M,France,Natation 100 brasse,false,10,12,13
+2032,Australie,Barbier,Clara,M,Japon,Escrime fleuret,false,7,9,13
+2032,Australie,He,Yiming,F,Allemagne,Athétisme 110 haies,false,3,17,2
+2032,Australie,Perez,Alice,F,France,Handball,true,1,1,7
+2032,Australie,Dubois,Raphaël,M,Japon,Natation relais libre,true,14,10,4
+2032,Australie,Herrmann,Lina,F,Australie,Natation relais libre,true,4,4,10
+2024,France,Zhao,Zhao,M,Maroc,Natation relais libre,true,12,6,2
+2024,France,Matsumoto,Yuna,M,Turquie,Athétisme 110 haies,false,14,8,15
+2024,France,Hasegawa,Yuna,F,Maroc,Escrime fleuret,false,19,16,12
+2028,Etats-Unis,Schäfer,Anna,M,Maroc,Volley-Ball,true,8,18,14
+2024,France,Zhu,Liu,M,Japon,Natation 100 brasse,false,8,9,19
+2024,France,Suzuki,Asuka,M,France,Volley-Ball,true,15,4,3
+2032,Australie,Yamada,Yusuke,M,Chine,Natation 100 brasse,false,12,6,4
+2032,Australie,Bernard,Chloé,F,Australie,Athlétisme relais 400m,false,1,19,9
+2028,Etats-Unis,Gao,Guo,M,Turquie,Volley-Ball,true,15,8,11
+2028,Etats-Unis,Blanc,Ethan,M,Australie,Athétisme 110 haies,false,20,10,19
+2024,France,Schmid,Maja,M,Kenya,Athlétisme relais 400m,false,12,9,20
+2024,France,Schwarz,Mia,F,Australie,Athétisme 110 haies,false,11,11,20
+2032,Australie,Watanabe,Rin,M,Australie,Natation relais libre,true,20,11,18
+2024,France,Yamada,Riko,F,Brésil,Escrime épée,false,3,10,18
+2032,Australie,Inoue,Ren,F,Chine,Escrime épée,false,4,7,13
+2032,Australie,Fontaine,Manon,F,Allemagne,Athlétisme relais 400m,false,13,17,4
+2024,France,Nakamura,Akira,M,Allemagne,Handball,true,9,16,10
+2028,Etats-Unis,Richard,Jade,F,Turquie,Natation relais libre,true,10,11,2
+2032,Australie,Goto,Takeshi,M,Chine,Escrime fleuret,false,6,3,9
+2032,Australie,Hu,Wang,M,France,Athlétisme relais 400m,false,6,3,18
+2032,Australie,Faure,Manon,M,Japon,Natation relais libre,true,6,13,10
+2032,Australie,Dupont,Louis,F,France,Escrime fleuret,false,9,4,13
+2028,Etats-Unis,Klein,Tom,F,Australie,Natation relais libre,true,11,6,8
+2028,Etats-Unis,Fournier,Juliette,F,Chine,Escrime épée,false,2,4,3
+2032,Australie,Barbier,Raphaël,M,Turquie,Natation relais libre,true,20,8,8
+2032,Australie,Takahashi,Haruto,M,Brésil,Athlétisme relais 400m,false,3,17,19
+2024,France,Nakamura,Takumi,M,Australie,Natation 100 brasse,false,7,14,2
+2028,Etats-Unis,Matsumoto,Daiki,F,Maroc,Natation 100 brasse,false,4,6,19
+2024,France,Durand,Nolan,F,Chine,Athlétisme relais 400m,false,9,18,7
+2032,Australie,Neumann,Luisa,M,Kenya,Natation 100 brasse,false,4,11,9
+2028,Etats-Unis,Vincent,Jade,M,France,Volley-Ball,true,13,8,3
+2032,Australie,Takahashi,Sakura,F,France,Escrime fleuret,false,11,14,8
+2024,France,Leroy,Maëlys,M,France,Natation 100 brasse,false,7,12,7
+2024,France,Faure,Maëlys,F,Kenya,Volley-Ball,true,2,8,11
+2032,Australie,Zhao,Wei,M,Chine,Athétisme 110 haies,false,18,10,8
+2032,Australie,He,Jing,M,Kenya,Natation relais libre,true,20,2,17
+2028,Etats-Unis,Wu,Guo,F,Kenya,Natation 100 brasse,false,4,13,1
+2024,France,Saito,Kaito,M,USA,Escrime fleuret,false,15,11,13
+2024,France,Michel,Alice,F,Maroc,Escrime fleuret,false,12,1,19
+2032,Australie,Durand,Mathis,M,Maroc,Natation 100 brasse,false,5,5,14
+2028,Etats-Unis,Shibata,Sosuke,F,France,Escrime épée,false,13,15,18
+2028,Etats-Unis,Barbier,Sacha,M,Chine,Escrime épée,false,12,2,3
+2028,Etats-Unis,Chen,Xu,M,France,Handball,true,18,6,3
+2028,Etats-Unis,Blanc,Emma,F,Australie,Escrime épée,false,14,15,12
+2024,France,Inoue,Riko,F,Brésil,Natation relais libre,true,1,3,18
+2032,Australie,Yoshida,Haruto,F,Japon,Natation 100 brasse,false,15,20,4
+2032,Australie,Wang,Chen,F,Brésil,Escrime épée,false,13,10,11
+2032,Australie,Zhang,Yang,M,France,Natation relais libre,true,20,1,14
+2032,Australie,Fournier,Hugo,M,USA,Volley-Ball,true,7,19,5
+2024,France,Mori,Takeshi,F,Maroc,Athlétisme relais 400m,false,12,14,15
+2028,Etats-Unis,Yamamoto,Yuma,F,Turquie,Natation 100 brasse,false,15,6,16
+2028,Etats-Unis,Yamaguchi,Riku,F,Japon,Escrime fleuret,false,13,16,16
+2032,Australie,Bernard,Clara,F,Brésil,Athétisme 110 haies,false,12,5,2
+2028,Etats-Unis,Zhou,Sun,M,Allemagne,Volley-Ball,true,6,9,4
+2032,Australie,Hoffmann,Finn,F,USA,Natation 100 brasse,false,17,10,13
+2028,Etats-Unis,Fujita,Saki,M,Brésil,Athétisme 110 haies,false,20,20,18
+2028,Etats-Unis,Fournier,Louis,M,Brésil,Handball,true,20,2,14
+2024,France,Goto,Yuna,M,France,Athlétisme relais 400m,false,20,6,13
+2028,Etats-Unis,Kato,Riku,M,Allemagne,Handball,true,14,5,14
+2024,France,Richard,Louis,F,Australie,Athlétisme relais 400m,false,10,20,10
+2032,Australie,Ishikawa,Naoki,F,Turquie,Volley-Ball,true,12,17,13
+2028,Etats-Unis,Durand,Lucas,F,Allemagne,Athlétisme relais 400m,false,17,14,16
+2024,France,Roux,Louis,M,Turquie,Escrime épée,false,13,6,1
+2024,France,Kobayashi,Asuka,M,USA,Athétisme 110 haies,false,6,17,3
+2032,Australie,Blanc,Jules,M,USA,Handball,true,5,15,17
+2024,France,Xu,Ting,F,Allemagne,Escrime épée,false,4,14,19
+2024,France,Sun,Guo,F,Chine,Escrime épée,false,8,4,20
+2024,France,Saito,Asuka,F,USA,Escrime épée,false,2,16,5
+2028,Etats-Unis,Dupont,Gabriel,F,Japon,Natation 100 brasse,false,12,20,20
+2024,France,Leroy,Juliette,M,Japon,Natation 100 brasse,false,9,13,18
+2032,Australie,Mori,Riko,M,Turquie,Escrime épée,false,12,10,15
+2024,France,Gao,Hong,M,USA,Athlétisme relais 400m,false,3,7,14
+2028,Etats-Unis,Chen,Liu,F,Allemagne,Athétisme 110 haies,false,17,1,12
+2024,France,Sato,Riko,M,Kenya,Athétisme 110 haies,false,4,7,11
+2028,Etats-Unis,Huang,Xia,F,Australie,Escrime épée,false,9,3,3
+2032,Australie,Hasegawa,Mio,M,France,Escrime épée,false,17,17,7
+2024,France,He,Liu,F,Allemagne,Volley-Ball,true,3,2,6
+2024,France,Wang,Guo,M,Australie,Volley-Ball,true,12,14,9
+2024,France,Robin,Lola,M,Kenya,Athlétisme relais 400m,false,20,3,14
+2028,Etats-Unis,Chen,Hong,M,Brésil,Natation 100 brasse,false,8,13,4
+2032,Australie,Yamamoto,Riko,F,Brésil,Escrime fleuret,false,6,19,1
+2032,Australie,Zhao,Ling,F,Chine,Escrime épée,false,20,14,11
+2024,France,Saito,Daiki,F,Maroc,Athétisme 110 haies,false,6,6,7
+2024,France,Kobayashi,Yuto,F,Japon,Athlétisme relais 400m,false,10,14,5
+2024,France,He,Wei,F,Australie,Handball,true,3,15,12
+2032,Australie,Xu,Zhang,M,Australie,Natation 100 brasse,false,12,15,5
+2032,Australie,Martin,Raphaël,M,Japon,Escrime fleuret,false,11,11,2
+2028,Etats-Unis,Yamamoto,Riku,M,USA,Natation relais libre,true,17,19,15
+2032,Australie,Leroy,Noé,M,USA,Athlétisme relais 400m,false,13,6,13
+2032,Australie,Yamaguchi,Yuto,F,Turquie,Escrime épée,false,17,4,20
+2032,Australie,Perez,Alice,F,Brésil,Escrime épée,false,1,13,12
+2028,Etats-Unis,Saito,Riku,M,Allemagne,Escrime fleuret,false,19,17,14
+2024,France,Sasaki,Takeshi,F,Allemagne,Athétisme 110 haies,false,8,10,9
+2028,Etats-Unis,Li,Wu,F,Maroc,Escrime fleuret,false,14,10,6
+2024,France,Mori,Sosuke,M,Australie,Escrime épée,false,4,18,9
+2032,Australie,Lefebvre,Théo,F,Australie,Escrime fleuret,false,8,15,6
+2032,Australie,Schmitz,Mia,F,Brésil,Escrime épée,false,8,15,7
+2024,France,Kobayashi,Yuna,F,Japon,Handball,true,15,1,16
+2028,Etats-Unis,Tanaka,Yuna,F,Maroc,Escrime épée,false,3,5,4
+2032,Australie,Ogawa,Kokoro,F,USA,Escrime fleuret,false,3,20,9
+2024,France,Zhang,Huang,M,France,Escrime fleuret,false,18,10,14
+2024,France,Saito,Naoki,M,France,Escrime épée,false,4,8,17
+2024,France,Guo,Xue,F,Allemagne,Escrime fleuret,false,7,19,7
+2024,France,Liu,Jun,M,Chine,Athlétisme relais 400m,false,17,10,6
+2024,France,Perez,Gabriel,F,Kenya,Volley-Ball,true,7,18,1
+2024,France,Li,Xue,F,Brésil,Escrime épée,false,9,11,15
+2024,France,Schmitz,Laura,F,Maroc,Natation 100 brasse,false,8,7,4
+2032,Australie,Chen,Xue,M,Japon,Escrime fleuret,false,2,16,1
+2024,France,Hu,Xu,F,France,Natation 100 brasse,false,7,8,3
+2028,Etats-Unis,Robert,Mathis,F,Japon,Handball,true,2,7,16
+2028,Etats-Unis,Mercier,Zoé,M,Chine,Athétisme 110 haies,false,14,1,10
+2024,France,Ishikawa,Saki,F,Chine,Handball,true,19,8,13
+2032,Australie,Chen,Hui,M,France,Natation 100 brasse,false,12,17,10
+2032,Australie,Suzuki,Haruka,F,France,Escrime épée,false,1,3,20
+2028,Etats-Unis,Maier,Lea,M,USA,Volley-Ball,true,11,2,17
+2028,Etats-Unis,Chen,Xin,F,France,Escrime épée,false,3,12,13
+2032,Australie,Moreau,Tom,F,Allemagne,Athlétisme relais 400m,false,2,15,19
+2032,Australie,Yamada,Hinata,M,France,Natation relais libre,true,4,20,6
+2028,Etats-Unis,Roux,Juliette,F,Turquie,Athlétisme relais 400m,false,17,14,4
+2028,Etats-Unis,Mori,Hiroshi,F,USA,Natation 100 brasse,false,17,2,8
+2024,France,Xu,Xue,M,Brésil,Athétisme 110 haies,false,13,19,17
+2032,Australie,Ishikawa,Sosuke,F,USA,Athétisme 110 haies,false,11,18,12
+2024,France,Li,Yan,F,Brésil,Natation 100 brasse,false,3,14,5
+2024,France,Mercier,Inès,M,France,Escrime fleuret,false,15,12,13
+2032,Australie,Simon,Léa,M,Maroc,Natation 100 brasse,false,10,3,1
+2032,Australie,Barbier,Nolan,F,Australie,Escrime fleuret,false,11,5,3
+2024,France,Barbier,Alice,F,Kenya,Natation relais libre,true,11,4,5
+2028,Etats-Unis,Xu,Min,M,Allemagne,Handball,true,13,8,4
+2024,France,Blanc,Léa,M,Brésil,Escrime fleuret,false,13,2,17
+2028,Etats-Unis,Zhu,Li,M,Brésil,Athlétisme relais 400m,false,18,15,16
+2024,France,Schneider,Mia,F,Kenya,Natation relais libre,true,20,14,3
+2024,France,Petit,Gabriel,F,Kenya,Escrime épée,false,7,16,2
+2028,Etats-Unis,Sasaki,Rina,F,Maroc,Athlétisme relais 400m,false,9,6,10
+2028,Etats-Unis,Shimizu,Hiroshi,F,Allemagne,Volley-Ball,true,17,2,18
+2024,France,Petit,Raphaël,F,Chine,Natation relais libre,true,11,12,3
+2032,Australie,Richter,Jakob,F,France,Escrime épée,false,20,20,7
+2032,Australie,Fujita,Yuki,M,Australie,Escrime épée,false,6,8,4
+2024,France,Schmidt,Leon,M,Maroc,Natation 100 brasse,false,18,18,12
+2032,Australie,Wu,Jun,M,Turquie,Athlétisme relais 400m,false,13,14,17
+2028,Etats-Unis,Zimmermann,Julian,F,Australie,Volley-Ball,true,18,10,4
+2028,Etats-Unis,Li,Li,F,Turquie,Escrime fleuret,false,9,9,9
+2024,France,Richard,Chloé,F,Japon,Natation 100 brasse,false,5,18,10
+2032,Australie,Shibata,Mio,F,Maroc,Handball,true,7,12,18
+2032,Australie,Robin,Lola,M,Turquie,Athlétisme relais 400m,false,6,13,15
+2024,France,Zhou,Liu,M,Japon,Natation relais libre,true,14,1,11
+2024,France,Zhu,Xiang,M,Brésil,Volley-Ball,true,13,2,8
+2032,Australie,Goto,Haruka,M,USA,Athétisme 110 haies,false,17,4,14
+2032,Australie,Perez,Noé,F,France,Natation relais libre,true,10,15,13
+2024,France,Müller,Sarah,M,USA,Natation relais libre,true,20,19,3
+2024,France,Sakamoto,Yui,M,Maroc,Handball,true,15,17,6
+2028,Etats-Unis,Kimura,Aoi,F,USA,Athétisme 110 haies,false,4,20,12
+2024,France,Simon,Inès,M,Allemagne,Volley-Ball,true,17,15,19
+2024,France,Chen,Hu,F,Turquie,Escrime épée,false,3,20,16
+2024,France,Liu,He,F,Australie,Athlétisme relais 400m,false,11,2,9
+2032,Australie,Barbier,Chloé,F,Allemagne,Natation 100 brasse,false,3,13,1
+2024,France,Kato,Takumi,F,Kenya,Volley-Ball,true,12,1,10
+2024,France,Schulz,Maja,M,Australie,Escrime fleuret,false,18,12,17
+2028,Etats-Unis,Richard,Arthur,M,Japon,Volley-Ball,true,15,12,8
+2032,Australie,Nakamura,Kaito,F,Maroc,Volley-Ball,true,18,9,5
+2024,France,Sun,Guo,M,USA,Escrime épée,false,16,19,1
+2032,Australie,Zhang,Ting,M,USA,Athétisme 110 haies,false,12,19,4
+2024,France,Rousseau,Camille,M,Chine,Athlétisme relais 400m,false,13,12,18
+2032,Australie,Goto,Yuki,F,Japon,Volley-Ball,true,16,4,3
+2028,Etats-Unis,Muller,Emma,F,Brésil,Natation relais libre,true,18,20,2
+2032,Australie,Xu,Guo,M,Japon,Escrime épée,false,5,2,16
+2024,France,Saito,Ren,F,Allemagne,Handball,true,19,1,4
+2024,France,Fujita,Daiki,M,USA,Escrime fleuret,false,10,15,1
+2024,France,Yoshida,Shiori,F,Australie,Natation relais libre,true,18,19,15
+2028,Etats-Unis,Robin,Maëlys,M,Brésil,Volley-Ball,true,18,9,11
+2024,France,Richard,Chloé,F,Brésil,Athétisme 110 haies,false,7,7,4
+2028,Etats-Unis,Wu,Yan,M,Kenya,Athétisme 110 haies,false,19,15,7
+2024,France,Schwarz,Ben,M,Allemagne,Athétisme 110 haies,false,15,1,6
+2024,France,Kimura,Kokoro,M,Brésil,Handball,true,17,2,3
+2028,Etats-Unis,He,Shuang,F,Turquie,Athlétisme relais 400m,false,9,3,7
+2028,Etats-Unis,Lefevre,Théo,F,Turquie,Handball,true,14,7,12
+2028,Etats-Unis,Wang,Lan,M,Kenya,Handball,true,20,4,8
+2032,Australie,Gao,Zhao,M,Brésil,Handball,true,10,13,20
+2032,Australie,Goto,Takeshi,F,Japon,Escrime épée,false,8,18,19
+2032,Australie,Sakamoto,Nana,M,France,Escrime fleuret,false,2,12,7
+2032,Australie,Kimura,Haruka,F,USA,Natation relais libre,true,5,8,5
+2028,Etats-Unis,Kobayashi,Hinata,M,Chine,Athlétisme relais 400m,false,9,7,11
+2028,Etats-Unis,Murakami,Ryota,M,Chine,Natation 100 brasse,false,1,6,5
+2024,France,Zhu,Wei,M,Kenya,Athlétisme relais 400m,false,5,20,2
+2032,Australie,Chen,Xia,F,Maroc,Natation relais libre,true,17,16,12
+2032,Australie,Lambert,Mathis,F,Japon,Escrime épée,false,20,12,7
+2028,Etats-Unis,Wu,Yan,M,Maroc,Volley-Ball,true,16,8,16
+2024,France,Yang,He,F,Maroc,Handball,true,9,14,17
+2024,France,Yamada,Nana,F,Maroc,Natation relais libre,true,20,18,1
+2024,France,Shimizu,Kokoro,M,Kenya,Handball,true,11,13,16
+2024,France,Weber,Simon,F,Chine,Handball,true,13,3,6
+2024,France,Inoue,Kaito,M,Maroc,Volley-Ball,true,6,15,9
+2032,Australie,Tanaka,Sosuke,M,USA,Athlétisme relais 400m,false,5,13,11
+2024,France,Robin,Zoé,M,Australie,Escrime fleuret,false,1,17,6
+2024,France,He,Zhang,M,Chine,Athétisme 110 haies,false,14,6,13
+2032,Australie,Zhao,Yan,M,Kenya,Natation relais libre,true,16,3,2
+2032,Australie,Chen,Xia,M,Allemagne,Athlétisme relais 400m,false,3,1,18
+2032,Australie,Simon,Nolan,M,Brésil,Natation relais libre,true,9,5,3
+2028,Etats-Unis,Shimizu,Ren,M,USA,Athétisme 110 haies,false,20,9,12
+2028,Etats-Unis,Rousseau,Léa,F,USA,Athétisme 110 haies,false,13,12,9
+2028,Etats-Unis,He,Wei,M,USA,Escrime épée,false,19,20,15
+2024,France,Fontaine,Inès,M,Chine,Handball,true,4,4,14
+2028,Etats-Unis,Kondo,Mio,M,Japon,Volley-Ball,true,6,3,20
+2032,Australie,Fournier,Louis,F,Chine,Natation 100 brasse,false,8,13,11
+2032,Australie,He,Jing,F,Kenya,Escrime fleuret,false,18,20,1
+2024,France,Fournier,Emma,F,Maroc,Natation 100 brasse,false,17,4,18
+2024,France,Li,Zhao,M,France,Natation 100 brasse,false,2,14,20
+2032,Australie,Shimizu,Naoki,M,USA,Escrime fleuret,false,2,2,16
+2028,Etats-Unis,Takahashi,Rina,F,USA,Volley-Ball,true,16,15,9
+2024,France,Kondo,Hinata,M,Australie,Escrime fleuret,false,20,4,10
+2032,Australie,Becker,Lea,F,USA,Handball,true,4,18,6
+2028,Etats-Unis,Ma,Hui,F,Turquie,Volley-Ball,true,18,10,18
+2024,France,Roux,Raphaël,M,Australie,Athlétisme relais 400m,false,19,5,16
+2024,France,Krause,Jakob,M,Australie,Escrime fleuret,false,1,7,2
+2032,Australie,Shibata,Aoi,M,Japon,Athétisme 110 haies,false,19,13,19
+2028,Etats-Unis,Sato,Sora,F,Maroc,Escrime fleuret,false,16,7,14
+2032,Australie,Sun,Yan,F,Brésil,Natation relais libre,true,9,7,20
+2032,Australie,Mercier,Anna,F,Maroc,Natation 100 brasse,false,20,10,19
+2032,Australie,Blanc,Paul,M,Kenya,Escrime épée,false,20,4,18
+2028,Etats-Unis,Martin,Anna,M,Brésil,Handball,true,16,19,4
+2028,Etats-Unis,Tanaka,Ren,M,Allemagne,Escrime fleuret,false,7,5,8
+2032,Australie,Lefevre,Raphaël,M,Brésil,Escrime fleuret,false,20,6,4
+2028,Etats-Unis,Schulze,Jakob,F,Allemagne,Natation relais libre,true,12,1,13
+2028,Etats-Unis,Chen,Huang,F,Japon,Volley-Ball,true,20,9,18
+2028,Etats-Unis,Ma,Xu,M,Australie,Natation relais libre,true,6,20,12
+2028,Etats-Unis,Mori,Rina,F,Allemagne,Escrime fleuret,false,6,8,19
+2028,Etats-Unis,Schneider,Paul,F,Turquie,Natation 100 brasse,false,6,7,12
+2028,Etats-Unis,Michel,Sacha,M,Turquie,Escrime fleuret,false,11,11,1
+2024,France,Maeda,Takeshi,F,Australie,Natation 100 brasse,false,18,19,16
+2028,Etats-Unis,Watanabe,Daiki,M,Australie,Escrime épée,false,13,3,17
+2032,Australie,Tanaka,Naoki,M,Australie,Natation 100 brasse,false,20,16,18
+2024,France,Tanaka,Daiki,M,Turquie,Athlétisme relais 400m,false,4,13,8
+2024,France,Becker,Maja,M,USA,Volley-Ball,true,16,1,4
+2024,France,Matsumoto,Yuna,F,USA,Volley-Ball,true,2,18,12
+2028,Etats-Unis,Vincent,Gabriel,M,Chine,Escrime épée,false,20,19,15
+2032,Australie,Li,Shuang,F,Chine,Natation 100 brasse,false,16,11,14
+2028,Etats-Unis,Maeda,Riko,F,Australie,Volley-Ball,true,2,1,2
+2028,Etats-Unis,Wu,Wei,F,Japon,Athétisme 110 haies,false,5,18,13
+2028,Etats-Unis,Morel,Camille,F,Chine,Athétisme 110 haies,false,11,6,17
+2032,Australie,Hasegawa,Ryota,F,Japon,Natation 100 brasse,false,12,5,6
+2028,Etats-Unis,Ogawa,Yusuke,F,Japon,Escrime épée,false,16,10,19
+2032,Australie,Hartmann,Luca,F,Japon,Natation 100 brasse,false,1,7,6
+2028,Etats-Unis,Roux,Hugo,F,Turquie,Natation relais libre,true,3,15,3
+2028,Etats-Unis,Sakai,Ren,F,Turquie,Natation relais libre,true,4,15,16
+2032,Australie,Lin,Xia,F,Chine,Volley-Ball,true,6,12,1
+2032,Australie,Guo,Yan,M,Turquie,Athlétisme relais 400m,false,13,8,7
+2024,France,Shibata,Haruto,M,France,Athlétisme relais 400m,false,10,15,12
+2032,Australie,Saito,Kokoro,M,Kenya,Athlétisme relais 400m,false,9,16,16
+2024,France,Schmid,Emily,M,Kenya,Escrime épée,false,18,19,5
+2028,Etats-Unis,Barbier,Gabriel,M,Allemagne,Handball,true,3,10,3
+2032,Australie,Richard,Zoé,M,Kenya,Escrime épée,false,18,6,16
+2024,France,Simon,Anna,F,Chine,Athlétisme relais 400m,false,19,18,2
+2024,France,Lehmann,Marie,F,Allemagne,Athétisme 110 haies,false,6,2,12
+2032,Australie,Murakami,Ryota,M,Turquie,Escrime épée,false,9,13,5
+2028,Etats-Unis,Morel,Jules,M,Japon,Natation relais libre,true,9,17,10
+2032,Australie,Schäfer,Simon,F,France,Volley-Ball,true,4,20,1
+2028,Etats-Unis,Sato,Kokoro,M,Japon,Escrime épée,false,19,10,13
+2028,Etats-Unis,Wang,Wei,F,Australie,Volley-Ball,true,1,9,6
+2028,Etats-Unis,Sakai,Akira,F,USA,Natation 100 brasse,false,17,11,13
+2028,Etats-Unis,Schulze,Anna,M,Turquie,Escrime fleuret,false,12,3,6
+2032,Australie,Wu,Jun,F,Turquie,Natation 100 brasse,false,17,18,5
+2032,Australie,Zhu,Zhang,F,Allemagne,Escrime épée,false,8,7,6
+2024,France,Blanc,Hugo,F,Brésil,Athétisme 110 haies,false,14,13,3
+2028,Etats-Unis,Hasegawa,Hana,M,Brésil,Natation 100 brasse,false,6,14,10
+2028,Etats-Unis,Kimura,Yusuke,M,Australie,Natation relais libre,true,7,9,12
+2032,Australie,Thomas,Lucas,F,USA,Escrime fleuret,false,18,10,7
+2032,Australie,Schmitt,Niklas,M,Turquie,Volley-Ball,true,7,14,5
+2028,Etats-Unis,Kato,Ryota,M,Kenya,Escrime épée,false,7,19,9
+2024,France,Leroy,Mathis,F,USA,Escrime épée,false,4,4,3
+2032,Australie,Robin,Nolan,M,Allemagne,Escrime fleuret,false,13,7,17
+2024,France,Takahashi,Kazuki,F,Australie,Athlétisme relais 400m,false,1,11,2
+2032,Australie,Zhou,Ma,F,Maroc,Athlétisme relais 400m,false,1,17,2
+2024,France,Zhang,Hong,F,Turquie,Natation relais libre,true,13,10,14
+2032,Australie,Yamada,Sosuke,F,Chine,Natation 100 brasse,false,3,20,4
+2024,France,Lefebvre,Arthur,M,Australie,Handball,true,6,18,16
+2024,France,Robert,Clara,M,Chine,Athétisme 110 haies,false,5,6,16
+2032,Australie,Köhler,Ben,F,Maroc,Athétisme 110 haies,false,20,16,9
+2024,France,Becker,Jakob,F,Brésil,Athlétisme relais 400m,false,5,17,1
+2032,Australie,Sato,Ren,F,Allemagne,Athétisme 110 haies,false,10,15,2
+2032,Australie,Hu,Wei,F,Maroc,Handball,true,15,8,10
+2024,France,Chen,Hu,M,USA,Athétisme 110 haies,false,14,19,5
+2028,Etats-Unis,Kobayashi,Hana,F,Maroc,Natation relais libre,true,16,18,6
+2028,Etats-Unis,Muller,Léna,M,Turquie,Athlétisme relais 400m,false,9,4,14
+2024,France,Ishikawa,Rina,M,Allemagne,Natation relais libre,true,19,4,9
+2032,Australie,Zhao,Ling,F,Allemagne,Natation 100 brasse,false,13,12,17
+2028,Etats-Unis,Yamamoto,Yui,F,Australie,Escrime fleuret,false,18,6,9
+2024,France,Mori,Hinata,F,Turquie,Natation 100 brasse,false,17,1,6
+2024,France,Kimura,Riko,M,France,Escrime épée,false,8,3,2
+2024,France,Simon,Louise,M,Australie,Athlétisme relais 400m,false,1,18,1
+2032,Australie,Kobayashi,Hiroshi,M,Allemagne,Athétisme 110 haies,false,15,19,17
+2028,Etats-Unis,Guo,Ma,M,France,Natation relais libre,true,19,12,9
+2032,Australie,Lefebvre,Chloé,F,Japon,Natation relais libre,true,8,14,16
+2024,France,Richard,Mathis,M,USA,Natation 100 brasse,false,1,16,10
+2028,Etats-Unis,Thomas,Léna,F,Kenya,Natation 100 brasse,false,19,13,20
+2028,Etats-Unis,Zhao,Chen,F,USA,Natation relais libre,true,11,20,16
+2032,Australie,Kobayashi,Yuna,M,Turquie,Volley-Ball,true,14,8,15
+2024,France,Yamamoto,Haruto,F,Maroc,Athlétisme relais 400m,false,17,2,12
+2024,France,Sasaki,Mio,F,Japon,Athlétisme relais 400m,false,15,2,10
+2032,Australie,Kobayashi,Takeshi,F,Turquie,Natation 100 brasse,false,8,18,17
+2024,France,Murakami,Kokoro,F,Maroc,Escrime épée,false,2,15,3
+2024,France,Sasaki,Riku,F,USA,Natation relais libre,true,3,5,3
+2024,France,Murakami,Rin,M,Chine,Natation 100 brasse,false,10,11,7
+2032,Australie,Fontaine,Noé,M,Turquie,Natation relais libre,true,8,18,19
+2028,Etats-Unis,Shimizu,Ren,M,USA,Handball,true,17,11,9
+2032,Australie,Xu,He,F,Australie,Athlétisme relais 400m,false,2,16,19
+2024,France,Sakai,Ren,F,France,Escrime épée,false,14,3,17
+2032,Australie,Richter,Laura,M,Chine,Escrime fleuret,false,8,17,5
+2032,Australie,Roux,Camille,M,Turquie,Athétisme 110 haies,false,7,1,3
+2032,Australie,Yamamoto,Naoki,M,USA,Natation relais libre,true,15,3,6
+2024,France,Sato,Shiori,F,Japon,Athlétisme relais 400m,false,12,7,14
+2024,France,Köhler,Hannah,F,Australie,Natation 100 brasse,false,1,12,4
+2032,Australie,Mori,Daiki,F,Australie,Volley-Ball,true,7,11,14
+2028,Etats-Unis,Martin,Noé,F,Maroc,Volley-Ball,true,20,14,13
+2028,Etats-Unis,Yang,Yiming,M,France,Athlétisme relais 400m,false,10,4,10
+2024,France,Lefebvre,Raphaël,F,Maroc,Escrime épée,false,17,6,18
+2024,France,Matsumoto,Yuki,M,Australie,Handball,true,12,19,16
+2028,Etats-Unis,Yang,Yang,M,Allemagne,Volley-Ball,true,16,2,20
+2028,Etats-Unis,Robin,Louis,F,Kenya,Escrime fleuret,false,7,16,12
+2024,France,Sakai,Haruka,F,Australie,Handball,true,1,19,8
+2032,Australie,Kondo,Nana,F,Maroc,Volley-Ball,true,2,13,12
+2024,France,Guerin,Emma,M,Australie,Athétisme 110 haies,false,15,16,16
+2032,Australie,Kimura,Kaito,F,Kenya,Natation relais libre,true,10,5,3
+2032,Australie,Yamaguchi,Daiki,F,Maroc,Athétisme 110 haies,false,14,3,8
+2032,Australie,Lefevre,Clara,F,Turquie,Athlétisme relais 400m,false,13,7,18
+2024,France,Wang,Chen,F,Japon,Escrime fleuret,false,1,17,1
+2024,France,Inoue,Yuma,F,France,Athlétisme relais 400m,false,14,5,10
+2028,Etats-Unis,Moreau,Alice,F,Kenya,Athétisme 110 haies,false,3,1,17
+2032,Australie,Zhao,Ma,F,Brésil,Athétisme 110 haies,false,1,6,13
+2032,Australie,Ito,Hinata,F,Chine,Natation 100 brasse,false,14,16,12
+2028,Etats-Unis,Zhao,Zhu,M,Japon,Athétisme 110 haies,false,3,11,19
+2032,Australie,Saito,Yuna,F,Brésil,Escrime fleuret,false,19,9,9
+2024,France,Wu,Qian,F,Brésil,Natation 100 brasse,false,20,14,1
+2028,Etats-Unis,Tanaka,Ryota,M,Maroc,Handball,true,9,20,16
+2024,France,Herrmann,Clara,M,Turquie,Handball,true,10,14,15
+2032,Australie,Kimura,Hiroshi,M,Allemagne,Natation 100 brasse,false,20,15,20
+2032,Australie,Michel,Emma,M,USA,Handball,true,17,14,8
+2028,Etats-Unis,Leroy,Léna,M,Australie,Natation relais libre,true,13,4,3
+2024,France,Roux,Manon,M,Allemagne,Athétisme 110 haies,false,5,4,15
+2028,Etats-Unis,Xu,Hui,F,Australie,Natation 100 brasse,false,5,11,14
+2032,Australie,Blanc,Ethan,F,Japon,Volley-Ball,true,15,12,8
+2024,France,Leroy,Paul,M,Kenya,Escrime fleuret,false,4,9,16
+2032,Australie,Zhang,Xia,M,Chine,Escrime épée,false,19,6,3
+2032,Australie,Barbier,Anna,F,Turquie,Volley-Ball,true,5,15,17
+2032,Australie,Xu,Yan,F,Turquie,Volley-Ball,true,1,16,6
+2028,Etats-Unis,Liu,Hui,F,Chine,Natation 100 brasse,false,7,18,11
+2024,France,Hasegawa,Shiori,F,Turquie,Escrime épée,false,7,13,11
+2032,Australie,Gao,Liu,M,Japon,Handball,true,7,12,13
+2028,Etats-Unis,Yamamoto,Sosuke,F,France,Escrime épée,false,6,9,1
+2028,Etats-Unis,Sun,He,M,Kenya,Escrime épée,false,14,2,8
+2024,France,Schulze,Elias,M,Allemagne,Athétisme 110 haies,false,20,10,19
+2032,Australie,Yamada,Hiroshi,M,Chine,Handball,true,18,14,7
+2028,Etats-Unis,Li,Yan,F,Kenya,Natation 100 brasse,false,18,16,20
+2032,Australie,Saito,Riko,F,Kenya,Natation 100 brasse,false,13,11,12
+2032,Australie,Lin,Xue,F,Maroc,Natation relais libre,true,13,6,8
+2024,France,Lefevre,Chloé,M,France,Volley-Ball,true,6,9,14
+2028,Etats-Unis,Ito,Saki,F,Australie,Natation relais libre,true,18,6,12
+2024,France,Xu,Min,F,France,Athétisme 110 haies,false,15,2,4
+2028,Etats-Unis,Yamada,Riku,M,Brésil,Athlétisme relais 400m,false,18,5,20
+2032,Australie,Gao,Zhang,F,Australie,Volley-Ball,true,12,10,12
+2024,France,Maeda,Yuna,F,Chine,Athétisme 110 haies,false,17,20,9
+2032,Australie,Li,Zhao,M,Australie,Handball,true,17,7,17
+2024,France,Hasegawa,Kokoro,M,Maroc,Escrime épée,false,17,14,4
+2032,Australie,Mori,Haruka,F,Kenya,Athlétisme relais 400m,false,12,4,6
+2032,Australie,Wolf,Emilia,F,USA,Escrime épée,false,1,17,14
+2032,Australie,Shibata,Takumi,F,Allemagne,Natation 100 brasse,false,14,9,18
+2028,Etats-Unis,Muller,Maëlys,M,Maroc,Natation 100 brasse,false,7,14,7
+2028,Etats-Unis,Gao,Yan,M,Allemagne,Natation relais libre,true,5,5,13
+2028,Etats-Unis,Lefevre,Chloé,F,USA,Volley-Ball,true,19,15,2
+2024,France,Herrmann,Lina,F,Maroc,Handball,true,17,16,20
+2032,Australie,Yang,Ting,F,USA,Athétisme 110 haies,false,3,7,5
+2032,Australie,Ito,Mio,F,Chine,Escrime épée,false,6,4,10
+2032,Australie,Sasaki,Sosuke,F,Allemagne,Volley-Ball,true,12,1,16
+2032,Australie,Matsumoto,Yuma,M,Brésil,Escrime fleuret,false,7,9,4
+2028,Etats-Unis,Schröder,Luisa,M,Kenya,Athlétisme relais 400m,false,7,5,19
+2028,Etats-Unis,Schulz,Simon,M,Allemagne,Escrime fleuret,false,2,3,13
+2028,Etats-Unis,Kondo,Asuka,M,Brésil,Volley-Ball,true,11,3,3
+2024,France,Ma,Qian,F,Australie,Escrime fleuret,false,14,10,11
+2028,Etats-Unis,Guerin,Alice,M,Japon,Escrime épée,false,9,9,5
+2028,Etats-Unis,Sasaki,Rin,M,Kenya,Natation relais libre,true,5,1,7
+2032,Australie,Simon,Inès,M,USA,Athétisme 110 haies,false,12,18,19
+2032,Australie,Kondo,Yuki,F,Brésil,Volley-Ball,true,18,6,10
+2032,Australie,Zhao,Shuang,F,Kenya,Athétisme 110 haies,false,9,11,15
+2032,Australie,Petit,Louise,M,Brésil,Volley-Ball,true,17,3,5
+2032,Australie,Li,Ting,F,Turquie,Natation 100 brasse,false,13,3,10
+2028,Etats-Unis,Schulz,Maximilian,F,Japon,Volley-Ball,true,9,12,5
+2032,Australie,Zhao,Xia,F,Chine,Natation 100 brasse,false,16,3,13
+2028,Etats-Unis,Martin,Manon,M,Maroc,Escrime fleuret,false,16,16,11
+2032,Australie,Takahashi,Rin,M,Kenya,Natation relais libre,true,19,2,18
+2032,Australie,Li,Xu,F,Japon,Athlétisme relais 400m,false,11,8,3
+2032,Australie,Hu,Jing,M,Japon,Escrime épée,false,19,7,5
+2028,Etats-Unis,Wu,Guo,M,Japon,Handball,true,5,9,20
+2028,Etats-Unis,Matsumoto,Ryota,M,Chine,Escrime fleuret,false,13,11,11
+2032,Australie,Yamaguchi,Aoi,M,USA,Athétisme 110 haies,false,18,11,10
+2032,Australie,Xu,Fang,M,Maroc,Natation 100 brasse,false,2,7,2
+2028,Etats-Unis,Robert,Nolan,F,Japon,Handball,true,13,5,7
+2024,France,Guo,Ling,F,Allemagne,Athlétisme relais 400m,false,16,18,19
+2024,France,Kimura,Saki,M,Japon,Natation 100 brasse,false,11,8,7
+2028,Etats-Unis,Mori,Riko,F,France,Handball,true,12,9,2
+2028,Etats-Unis,Li,Yan,F,Kenya,Handball,true,4,1,2
+2028,Etats-Unis,Sakamoto,Yusuke,F,Chine,Escrime épée,false,2,6,7
+2028,Etats-Unis,Xu,Ma,F,Maroc,Natation relais libre,true,12,4,12
+2024,France,Durand,Mathis,F,Chine,Handball,true,12,12,5
+2024,France,Ogawa,Yuma,M,France,Natation relais libre,true,18,3,14
+2028,Etats-Unis,Muller,Alice,F,Brésil,Athétisme 110 haies,false,2,4,9
+2028,Etats-Unis,Chen,Xin,M,Allemagne,Natation relais libre,true,6,19,20
+2024,France,Kimura,Rin,M,Brésil,Escrime épée,false,16,17,16
+2032,Australie,Gao,Yan,M,Australie,Natation 100 brasse,false,1,17,4
+2024,France,Simon,Jules,F,Brésil,Athlétisme relais 400m,false,5,5,1
+2028,Etats-Unis,Schmitt,Sarah,M,Turquie,Escrime fleuret,false,19,3,1
+2028,Etats-Unis,Saito,Riku,F,Australie,Athétisme 110 haies,false,1,18,16
+2024,France,Takahashi,Yusuke,M,Allemagne,Athlétisme relais 400m,false,4,17,1
+2024,France,Zhao,Fang,F,Australie,Athlétisme relais 400m,false,18,4,5
+2024,France,Bernard,Clara,M,Brésil,Athlétisme relais 400m,false,6,13,16
+2024,France,Guerin,Alice,M,Maroc,Escrime épée,false,1,12,19
+2028,Etats-Unis,He,Zhao,F,Japon,Natation 100 brasse,false,10,19,4
+2028,Etats-Unis,Xu,Fang,M,USA,Volley-Ball,true,7,20,11
+2028,Etats-Unis,Fontaine,Hugo,F,Maroc,Volley-Ball,true,4,11,15
+2024,France,Hayashi,Akira,F,Kenya,Natation relais libre,true,5,19,9
+2028,Etats-Unis,Wu,Wei,M,Brésil,Escrime épée,false,7,12,2
+2024,France,Yang,Wu,M,Kenya,Natation 100 brasse,false,14,20,9
+2028,Etats-Unis,Watanabe,Aoi,F,Allemagne,Athétisme 110 haies,false,20,17,19
+2032,Australie,Goto,Haruto,F,France,Escrime épée,false,11,14,17
+2024,France,Kato,Yuna,F,Brésil,Escrime épée,false,12,1,10
+2028,Etats-Unis,Fujita,Hana,F,Turquie,Natation relais libre,true,16,20,19
+2032,Australie,Thomas,Emma,M,Allemagne,Escrime fleuret,false,2,14,6
+2028,Etats-Unis,Yamamoto,Mio,F,Maroc,Athétisme 110 haies,false,2,8,8
+2032,Australie,He,Wu,M,Australie,Volley-Ball,true,17,7,6
+2032,Australie,Wang,Chen,M,Kenya,Athétisme 110 haies,false,3,20,2
+2032,Australie,Ogawa,Yuki,F,Brésil,Escrime épée,false,6,11,18
+2032,Australie,Vincent,Manon,F,Turquie,Natation relais libre,true,10,7,16
+2028,Etats-Unis,Roux,Gabin,M,USA,Athlétisme relais 400m,false,5,11,3
+2028,Etats-Unis,Guerin,Louis,M,Australie,Athlétisme relais 400m,false,10,1,6
+2032,Australie,Hu,Zhou,F,Allemagne,Natation 100 brasse,false,15,18,5
+2032,Australie,Gao,Sun,F,Allemagne,Escrime fleuret,false,20,19,1
+2032,Australie,Robin,Sacha,F,Chine,Handball,true,10,9,20
+2024,France,Sasaki,Haruto,F,Japon,Natation 100 brasse,false,13,18,8
+2032,Australie,Schwarz,Marie,F,Turquie,Athlétisme relais 400m,false,12,3,20
+2028,Etats-Unis,Nakamura,Asuka,F,France,Natation relais libre,true,18,17,18
+2028,Etats-Unis,Huang,Wu,F,Kenya,Natation relais libre,true,3,1,13
+2032,Australie,Guo,Hu,M,Maroc,Escrime fleuret,false,8,1,11
+2028,Etats-Unis,Wang,Wu,M,Chine,Athlétisme relais 400m,false,16,17,14
+2028,Etats-Unis,Hasegawa,Daiki,M,Australie,Natation relais libre,true,17,18,14
+2032,Australie,Schäfer,David,F,Allemagne,Handball,true,12,16,12
+2032,Australie,Lin,Huang,F,Australie,Athlétisme relais 400m,false,5,4,4
+2024,France,Zhu,Xiang,M,France,Natation relais libre,true,19,15,7
+2032,Australie,Kimura,Ryota,M,Brésil,Natation 100 brasse,false,14,8,1
+2024,France,Schulze,Finn,M,Maroc,Handball,true,4,18,14
+2028,Etats-Unis,Sakai,Rin,F,Maroc,Escrime épée,false,6,8,20
+2032,Australie,Zhang,Li,M,Allemagne,Escrime fleuret,false,7,15,8
+2024,France,Robert,Lucas,F,USA,Handball,true,6,10,3
+2032,Australie,Fontaine,Lucas,F,Allemagne,Natation 100 brasse,false,15,13,17
+2024,France,Dubois,Emma,F,Chine,Athétisme 110 haies,false,9,3,14
+2032,Australie,Tanaka,Hana,F,Australie,Athlétisme relais 400m,false,12,4,16
+2024,France,Hu,Shuang,M,Japon,Escrime fleuret,false,16,8,2
+2032,Australie,Kondo,Rin,F,USA,Volley-Ball,true,18,14,14
+2028,Etats-Unis,Fournier,Louis,F,Japon,Natation relais libre,true,7,7,14
+2032,Australie,Kimura,Ren,M,Japon,Handball,true,16,5,12
+2032,Australie,Maier,Sophie,F,Allemagne,Escrime épée,false,1,1,5
+2028,Etats-Unis,Ma,Xin,M,France,Volley-Ball,true,1,9,2
+2032,Australie,Giraud,Chloé,F,Chine,Athétisme 110 haies,false,10,9,14
+2028,Etats-Unis,Sun,Hui,F,Chine,Escrime épée,false,19,13,18
+2024,France,Fischer,David,M,Kenya,Escrime fleuret,false,11,14,16
+2032,Australie,Moreau,Jade,F,Japon,Athlétisme relais 400m,false,14,15,6
+2032,Australie,Tanaka,Sosuke,F,Kenya,Natation relais libre,true,1,5,7
+2032,Australie,Zhao,Hu,F,France,Natation relais libre,true,11,2,12
+2028,Etats-Unis,Michel,Louis,M,Japon,Handball,true,20,7,5
+2024,France,Li,Yiming,F,Turquie,Handball,true,4,14,15
+2032,Australie,Lin,Min,F,Allemagne,Natation relais libre,true,16,16,12
+2024,France,Murakami,Yusuke,F,Turquie,Natation relais libre,true,14,6,6
+2032,Australie,Liu,Zhu,M,Turquie,Athlétisme relais 400m,false,15,15,3
+2024,France,Sakai,Rin,M,Maroc,Escrime épée,false,3,10,8
+2024,France,Suzuki,Yuma,F,Japon,Athlétisme relais 400m,false,12,9,6
+2024,France,Matsumoto,Hiroshi,F,Maroc,Natation relais libre,true,20,20,11
+2032,Australie,Weber,Lena,M,Australie,Handball,true,6,14,12
+2024,France,Ma,Fang,F,Australie,Volley-Ball,true,17,10,2
+2032,Australie,Bernard,Juliette,F,Chine,Athlétisme relais 400m,false,10,8,17
+2024,France,Wolf,Sarah,M,Turquie,Athétisme 110 haies,false,20,16,6
+2024,France,Hoffmann,Mia,F,Chine,Natation 100 brasse,false,8,2,19
+2024,France,Inoue,Yuto,F,Japon,Natation 100 brasse,false,5,3,5
+2024,France,Ogawa,Shiori,F,Maroc,Escrime fleuret,false,19,20,5
+2028,Etats-Unis,Kato,Yuna,M,France,Volley-Ball,true,1,3,14
+2024,France,Ogawa,Mio,F,USA,Natation relais libre,true,14,15,14
+2028,Etats-Unis,Petit,Léna,M,Japon,Athétisme 110 haies,false,2,17,6
+2032,Australie,Hasegawa,Sosuke,M,Maroc,Athétisme 110 haies,false,13,11,12
+2024,France,Saito,Kaito,M,Allemagne,Handball,true,5,7,2
+2032,Australie,Gao,Chen,F,USA,Natation relais libre,true,20,1,10
+2032,Australie,Kobayashi,Yui,F,Japon,Escrime épée,false,14,1,17
+2024,France,Fujita,Yuki,F,USA,Athlétisme relais 400m,false,15,15,8
+2032,Australie,Martin,Chloé,M,Allemagne,Natation 100 brasse,false,3,11,16
+2024,France,Perez,Jade,F,Turquie,Natation 100 brasse,false,12,1,2
+2032,Australie,Guo,Jing,M,Australie,Escrime fleuret,false,17,2,14
+2028,Etats-Unis,Yamada,Aoi,M,Japon,Volley-Ball,true,6,8,18
+2024,France,Yoshida,Riko,M,Kenya,Escrime épée,false,15,6,3
+2032,Australie,Gao,Zhao,F,Maroc,Athétisme 110 haies,false,19,10,5
+2032,Australie,Zhang,Yang,M,Allemagne,Athétisme 110 haies,false,1,7,16
+2024,France,Faure,Anna,M,Turquie,Athlétisme relais 400m,false,11,17,10
+2024,France,Richter,Emily,M,Japon,Escrime fleuret,false,11,17,19
+2024,France,Richard,Alice,M,Turquie,Escrime fleuret,false,19,11,6
+2028,Etats-Unis,Tanaka,Yui,F,Turquie,Natation 100 brasse,false,19,20,3
+2032,Australie,Dubois,Gabin,M,Japon,Escrime épée,false,12,1,14
+2024,France,Zhao,Yiming,F,USA,Handball,true,7,2,5
+2028,Etats-Unis,Zimmermann,Mia,F,Japon,Escrime fleuret,false,7,4,20
+2028,Etats-Unis,Dubois,Manon,F,Brésil,Escrime fleuret,false,3,20,17
+2028,Etats-Unis,Sato,Haruto,F,USA,Handball,true,15,18,3
+2028,Etats-Unis,Faure,Clara,M,Australie,Natation relais libre,true,12,10,18
+2032,Australie,Zhou,Sun,F,Chine,Handball,true,13,1,2
+2028,Etats-Unis,Sato,Sakura,F,Kenya,Escrime épée,false,8,10,18
+2024,France,Petit,Anna,M,Maroc,Natation 100 brasse,false,6,6,8
+2028,Etats-Unis,Ishii,Yuma,F,Brésil,Athétisme 110 haies,false,10,18,3
+2028,Etats-Unis,Huang,Wu,F,Maroc,Handball,true,6,5,16
+2028,Etats-Unis,Hasegawa,Yui,F,Allemagne,Escrime épée,false,15,5,18
+2024,France,Lefebvre,Sarah,F,Kenya,Natation relais libre,true,16,10,11
+2032,Australie,Thomas,Juliette,F,France,Athétisme 110 haies,false,13,13,2
+2028,Etats-Unis,Li,Min,M,Chine,Athlétisme relais 400m,false,8,19,6
+2032,Australie,Wang,Wei,F,Brésil,Escrime épée,false,11,12,18
+2032,Australie,Huang,Huang,F,Australie,Natation 100 brasse,false,6,8,9
+2028,Etats-Unis,Yoshida,Naoki,F,France,Escrime épée,false,8,13,3
+2024,France,Wang,Wei,F,Kenya,Athétisme 110 haies,false,15,5,17
+2032,Australie,Gao,Xue,F,Brésil,Natation 100 brasse,false,19,16,1
+2028,Etats-Unis,Mercier,Sacha,M,Brésil,Athlétisme relais 400m,false,19,15,7
+2024,France,Xu,Zhou,F,Maroc,Athétisme 110 haies,false,13,13,4
+2024,France,Yamaguchi,Saki,M,USA,Escrime fleuret,false,5,10,6
+2028,Etats-Unis,Klein,Finn,M,Japon,Handball,true,5,1,3
+2024,France,Shibata,Ryota,F,Kenya,Escrime épée,false,15,16,15
+2024,France,Huang,Hong,M,Maroc,Escrime fleuret,false,5,8,5
+2028,Etats-Unis,He,Wu,F,Brésil,Athétisme 110 haies,false,6,7,8
+2028,Etats-Unis,Matsumoto,Kazuki,M,Allemagne,Athétisme 110 haies,false,3,6,12
+2028,Etats-Unis,Liu,Chen,M,Kenya,Natation 100 brasse,false,2,10,5
+2024,France,Zimmermann,Lina,M,Brésil,Volley-Ball,true,19,16,19
+2028,Etats-Unis,Vincent,Jules,F,Japon,Natation 100 brasse,false,14,4,7
+2024,France,Thomas,Louis,F,Brésil,Athlétisme relais 400m,false,17,20,15
+2028,Etats-Unis,Klein,Lea,M,USA,Handball,true,7,5,10
+2024,France,Tanaka,Yuma,M,France,Volley-Ball,true,6,5,13
+2024,France,Lefevre,Lucas,F,Chine,Athétisme 110 haies,false,13,13,11
+2032,Australie,Fujita,Haruto,M,Australie,Escrime fleuret,false,2,9,10
+2028,Etats-Unis,Sakamoto,Yuma,M,Japon,Escrime épée,false,18,10,15
+2032,Australie,Richter,Julian,F,Turquie,Escrime fleuret,false,4,18,19
+2024,France,Kondo,Sakura,F,Allemagne,Natation relais libre,true,20,10,8
+2024,France,Bernard,Léna,M,Allemagne,Escrime épée,false,5,19,15
+2024,France,Lin,Guo,F,Chine,Natation relais libre,true,8,20,8
+2032,Australie,Zhou,Chen,M,USA,Volley-Ball,true,7,1,18
+2028,Etats-Unis,Huang,Ling,F,Brésil,Escrime épée,false,13,12,11
+2032,Australie,Xu,Wu,M,Chine,Athétisme 110 haies,false,1,15,18
+2024,France,Sasaki,Ryota,F,Kenya,Volley-Ball,true,14,18,15
+2032,Australie,Matsumoto,Takumi,F,Kenya,Athétisme 110 haies,false,20,17,2
+2028,Etats-Unis,Kobayashi,Shiori,M,Brésil,Athlétisme relais 400m,false,5,9,18
+2024,France,Sakamoto,Aoi,M,Turquie,Natation 100 brasse,false,9,19,14
+2028,Etats-Unis,Wu,Xin,M,Australie,Natation relais libre,true,17,15,3
+2032,Australie,Inoue,Mio,F,Kenya,Escrime épée,false,18,8,5
+2032,Australie,Yamaguchi,Yuki,M,Turquie,Athlétisme relais 400m,false,9,5,18
+2024,France,Köhler,Paul,M,Chine,Athétisme 110 haies,false,8,19,3
+2032,Australie,Klein,Anna,F,Turquie,Natation relais libre,true,10,1,13
+2028,Etats-Unis,Robert,Gabin,M,Maroc,Natation 100 brasse,false,19,5,12
+2024,France,Durand,Lola,M,Brésil,Escrime épée,false,10,12,19
+2024,France,Ishikawa,Saki,M,Kenya,Natation 100 brasse,false,13,5,10
+2028,Etats-Unis,Yamamoto,Kaito,M,Maroc,Athétisme 110 haies,false,16,19,8
+2024,France,Sasaki,Yusuke,F,Chine,Escrime épée,false,9,13,7
+2028,Etats-Unis,Schwarz,Lea,F,Brésil,Escrime fleuret,false,10,18,17
+2024,France,He,Qian,F,Allemagne,Athlétisme relais 400m,false,16,3,18
+2024,France,Faure,Emma,F,Brésil,Natation relais libre,true,9,8,6
+2028,Etats-Unis,Vincent,Léa,M,USA,Natation relais libre,true,3,11,11
+2028,Etats-Unis,Lefebvre,Manon,F,Turquie,Escrime épée,false,11,14,4
+2028,Etats-Unis,Suzuki,Ryota,M,USA,Natation 100 brasse,false,15,19,5
+2032,Australie,Morel,Gabin,M,Allemagne,Escrime fleuret,false,5,11,19
+2024,France,Yoshida,Yui,M,USA,Escrime fleuret,false,1,9,13
+2032,Australie,Thomas,Maëlys,M,Kenya,Handball,true,9,15,16
+2024,France,Becker,Jonas,F,Allemagne,Natation 100 brasse,false,14,8,7
+2032,Australie,Zhao,Xin,M,Brésil,Escrime épée,false,12,2,13
+2024,France,Takahashi,Rina,M,France,Volley-Ball,true,11,3,5
+2032,Australie,Schneider,Lena,M,Kenya,Athlétisme relais 400m,false,9,17,4
+2028,Etats-Unis,Huang,Wu,M,Maroc,Volley-Ball,true,9,7,17
+2028,Etats-Unis,Vincent,Sacha,F,Kenya,Athétisme 110 haies,false,3,3,17
+2024,France,Zhu,Xin,M,Chine,Escrime fleuret,false,19,9,11
+2028,Etats-Unis,Lin,Wei,F,Japon,Handball,true,13,1,14
+2032,Australie,Garcia,Emma,M,Japon,Natation 100 brasse,false,16,10,18
+2032,Australie,Nakamura,Sosuke,F,Turquie,Volley-Ball,true,7,3,6
+2032,Australie,Kondo,Nana,M,Kenya,Athétisme 110 haies,false,16,18,13
+2032,Australie,Yamaguchi,Saki,F,Allemagne,Athétisme 110 haies,false,17,9,17
+2032,Australie,Zhang,Xia,M,Maroc,Handball,true,9,20,8
+2028,Etats-Unis,Ito,Ryota,M,Japon,Escrime fleuret,false,7,7,9
+2032,Australie,Yang,Zhang,M,USA,Handball,true,15,6,20
+2024,France,Wagner,Ben,F,France,Escrime épée,false,19,9,16
+2024,France,Ma,Zhou,M,USA,Handball,true,5,17,17
+2028,Etats-Unis,Zhang,Ma,F,Maroc,Athlétisme relais 400m,false,9,1,4
+2024,France,Robin,Gabriel,M,Brésil,Natation relais libre,true,18,4,11
+2028,Etats-Unis,Robin,Emma,F,Australie,Escrime fleuret,false,10,1,11
+2032,Australie,Simon,Chloé,M,Maroc,Handball,true,2,11,9
+2024,France,Fujita,Sakura,F,Kenya,Natation 100 brasse,false,4,3,4
+2028,Etats-Unis,Sakai,Ren,M,Kenya,Handball,true,6,6,11
+2032,Australie,Kobayashi,Shiori,M,Turquie,Escrime épée,false,5,2,18
+2032,Australie,Lefevre,Maëlys,M,Chine,Handball,true,15,18,4
+2024,France,Zhu,Ma,M,Allemagne,Natation relais libre,true,5,20,13
+2028,Etats-Unis,Mercier,Mathis,M,France,Escrime épée,false,1,20,19
+2028,Etats-Unis,Goto,Kaito,M,Brésil,Escrime fleuret,false,17,20,14
+2032,Australie,Barbier,Nathan,F,Chine,Athétisme 110 haies,false,4,15,8
+2032,Australie,Simon,Sacha,M,Turquie,Escrime fleuret,false,5,10,10
+2024,France,Fournier,Alice,F,Brésil,Escrime épée,false,3,7,6
+2032,Australie,Michel,Lola,M,Allemagne,Handball,true,14,18,6
+2024,France,Watanabe,Takeshi,F,Turquie,Athlétisme relais 400m,false,14,14,19
+2028,Etats-Unis,Rousseau,Sarah,M,Kenya,Escrime fleuret,false,6,4,8
+2032,Australie,Yamaguchi,Yuna,F,Australie,Natation relais libre,true,7,13,3
+2028,Etats-Unis,Lambert,Tom,F,Kenya,Handball,true,11,17,9
+2028,Etats-Unis,Wagner,Simon,M,Chine,Escrime fleuret,false,17,1,2
+2028,Etats-Unis,Ito,Rin,F,Brésil,Volley-Ball,true,4,6,13
+2032,Australie,Murakami,Haruto,F,Allemagne,Natation 100 brasse,false,12,1,4
+2024,France,Huang,Lan,F,Kenya,Natation 100 brasse,false,5,1,8
+2028,Etats-Unis,Lefebvre,Camille,F,Turquie,Athlétisme relais 400m,false,20,2,10
+2024,France,Yamaguchi,Ryota,F,Turquie,Escrime fleuret,false,4,9,4
+2024,France,Zhu,Hui,M,Kenya,Escrime épée,false,18,5,20
+2024,France,Kato,Takumi,F,Australie,Athlétisme relais 400m,false,3,12,7
+2028,Etats-Unis,Tanaka,Takumi,F,Turquie,Natation 100 brasse,false,15,11,3
+2032,Australie,Zhang,Chen,F,Japon,Athlétisme relais 400m,false,3,16,15
+2024,France,Weber,Lea,F,Japon,Athétisme 110 haies,false,17,14,17
+2028,Etats-Unis,Sakamoto,Yuki,M,Turquie,Escrime épée,false,16,16,2
+2032,Australie,Ogawa,Kaito,F,Chine,Natation 100 brasse,false,18,13,1
+2028,Etats-Unis,Wu,Jing,F,Chine,Volley-Ball,true,17,11,20
+2028,Etats-Unis,Ogawa,Akira,F,Kenya,Escrime fleuret,false,9,20,5
+2024,France,Sakai,Riku,F,USA,Handball,true,3,17,8
+2024,France,Kato,Hiroshi,M,Maroc,Volley-Ball,true,17,19,11
+2032,Australie,Sun,Xiang,F,Brésil,Escrime épée,false,15,16,15
+2028,Etats-Unis,Ishii,Daiki,F,Kenya,Natation relais libre,true,16,12,6
+2028,Etats-Unis,Kondo,Takeshi,M,Japon,Escrime fleuret,false,11,12,11
+2032,Australie,Zhu,Li,F,Brésil,Natation relais libre,true,1,5,8
+2032,Australie,Muller,Jules,M,France,Volley-Ball,true,16,6,15
+2024,France,Schneider,David,F,Chine,Athétisme 110 haies,false,7,1,16
+2032,Australie,Lefebvre,Manon,M,Chine,Handball,true,17,3,19
+2028,Etats-Unis,Mori,Yuna,F,Maroc,Natation relais libre,true,6,6,5
+2028,Etats-Unis,Zimmermann,Maja,F,Australie,Escrime fleuret,false,10,10,1
+2024,France,Moreau,Emma,M,Chine,Volley-Ball,true,11,5,19
+2024,France,Kondo,Sakura,F,Allemagne,Natation 100 brasse,false,2,4,16
+2032,Australie,Yang,Xiang,F,Brésil,Athétisme 110 haies,false,9,11,11
+2024,France,Zhou,Jing,M,Japon,Escrime épée,false,2,19,10
+2032,Australie,Leroy,Sarah,M,Kenya,Athlétisme relais 400m,false,2,12,20
+2028,Etats-Unis,Girard,Mathis,F,Chine,Natation 100 brasse,false,6,14,19
+2032,Australie,Xu,Yiming,F,Japon,Volley-Ball,true,12,9,7
+2032,Australie,Zimmermann,Johanna,F,France,Athétisme 110 haies,false,8,6,11
+2028,Etats-Unis,Gao,Yiming,F,Allemagne,Escrime épée,false,7,8,7
+2028,Etats-Unis,Schäfer,Lena,F,Maroc,Volley-Ball,true,1,8,10
+2028,Etats-Unis,Yamamoto,Riko,F,Kenya,Athétisme 110 haies,false,18,5,14
+2024,France,Ishikawa,Kazuki,F,Brésil,Natation 100 brasse,false,17,7,18
+2032,Australie,Zhou,Wang,M,USA,Athétisme 110 haies,false,14,20,19
+2032,Australie,Mori,Shiori,M,Maroc,Volley-Ball,true,19,4,8
+2024,France,Zhao,Ling,M,Turquie,Volley-Ball,true,2,12,15
+2024,France,Zhang,He,F,USA,Athétisme 110 haies,false,13,4,13
+2024,France,Fontaine,Arthur,M,Japon,Natation 100 brasse,false,7,4,17
+2032,Australie,Ishikawa,Ren,F,Chine,Handball,true,14,8,11
+2024,France,Girard,Tom,M,Australie,Escrime fleuret,false,18,4,8
+2024,France,Zhu,Zhu,F,USA,Athlétisme relais 400m,false,6,11,11
+2028,Etats-Unis,Weber,Leon,M,Maroc,Volley-Ball,true,11,15,15
+2024,France,Koch,Julian,M,Turquie,Athétisme 110 haies,false,2,16,6
+2032,Australie,Giraud,Camille,M,Turquie,Natation 100 brasse,false,18,1,19
+2024,France,Hu,Xiang,M,France,Handball,true,9,7,1
+2024,France,Rousseau,Inès,M,Brésil,Escrime fleuret,false,8,3,4
+2032,Australie,Fujita,Haruka,M,Chine,Escrime épée,false,4,15,11
+2024,France,Guo,Jun,M,Maroc,Natation 100 brasse,false,16,16,4
+2032,Australie,Maier,Clara,M,Kenya,Escrime épée,false,12,12,16
+2028,Etats-Unis,Kobayashi,Yuma,M,Allemagne,Natation relais libre,true,16,1,13
+2024,France,Sato,Kokoro,F,Maroc,Handball,true,12,20,14
+2024,France,Suzuki,Hinata,F,Australie,Volley-Ball,true,16,14,19
+2028,Etats-Unis,Fischer,Luisa,F,USA,Natation 100 brasse,false,10,14,5
+2032,Australie,Tanaka,Hiroshi,F,Kenya,Athlétisme relais 400m,false,20,6,16
+2032,Australie,Mori,Yuma,M,Turquie,Athétisme 110 haies,false,8,5,20
+2028,Etats-Unis,Sun,Zhou,F,France,Escrime épée,false,4,14,4
+2024,France,Nakamura,Nana,M,France,Escrime épée,false,13,20,16
+2024,France,Moreau,Raphaël,F,Chine,Handball,true,10,2,16
+2024,France,Takahashi,Yuna,M,Allemagne,Athétisme 110 haies,false,17,18,17
+2032,Australie,Chen,Zhao,M,Chine,Handball,true,1,15,11
+2028,Etats-Unis,Zhu,Ting,M,Turquie,Escrime fleuret,false,11,15,13
+2024,France,Krüger,Luca,M,Maroc,Athlétisme relais 400m,false,10,19,8
+2032,Australie,Hu,Yan,M,Turquie,Athétisme 110 haies,false,11,3,6
+2028,Etats-Unis,Muller,Paul,F,Kenya,Natation 100 brasse,false,19,17,13
+2024,France,Nakamura,Yuna,M,Japon,Volley-Ball,true,11,12,2
+2032,Australie,Ishikawa,Yuki,M,Allemagne,Natation 100 brasse,false,16,7,12
+2024,France,Matsumoto,Sosuke,F,Australie,Athlétisme relais 400m,false,5,4,4
+2024,France,Ogawa,Shiori,M,Kenya,Natation relais libre,true,2,14,19
+2024,France,Huang,Jing,M,Allemagne,Handball,true,14,11,11
+2032,Australie,Tanaka,Sakura,M,Chine,Athlétisme relais 400m,false,12,3,7
+2032,Australie,Schmitt,Finn,M,Turquie,Athétisme 110 haies,false,19,14,3
+2032,Australie,Ogawa,Takumi,M,France,Handball,true,10,2,18
+2032,Australie,Yamada,Mio,M,Maroc,Handball,true,11,18,6
+2028,Etats-Unis,Lambert,Tom,M,Maroc,Volley-Ball,true,6,17,14
+2032,Australie,Gao,Lan,F,Chine,Escrime fleuret,false,5,12,5
+2032,Australie,Maier,Maximilian,M,Chine,Handball,true,14,3,19
+2024,France,Mercier,Emma,F,Australie,Natation 100 brasse,false,12,19,1
+2024,France,Rousseau,Théo,M,Australie,Escrime fleuret,false,3,5,4
+2028,Etats-Unis,Vincent,Inès,M,Turquie,Natation relais libre,true,10,9,12
+2032,Australie,Inoue,Hiroshi,M,Brésil,Handball,true,17,14,13
+2028,Etats-Unis,Kondo,Sora,M,Kenya,Athétisme 110 haies,false,20,14,6
+2024,France,Zhu,Xin,M,USA,Handball,true,16,2,9
+2028,Etats-Unis,Leroy,Nathan,F,Maroc,Natation relais libre,true,12,20,8
+2028,Etats-Unis,Li,Zhu,F,Turquie,Athétisme 110 haies,false,15,14,1
+2024,France,Ito,Rina,F,Chine,Handball,true,10,13,5
+2032,Australie,Lambert,Jade,M,Japon,Volley-Ball,true,3,19,2
+2028,Etats-Unis,Huang,Chen,F,Maroc,Handball,true,17,9,8
+2032,Australie,Lin,Chen,F,Chine,Athlétisme relais 400m,false,7,1,15
+2024,France,Guerin,Emma,F,Brésil,Natation relais libre,true,10,2,1
+2024,France,Schmitz,Lukas,F,France,Volley-Ball,true,8,7,19
+2032,Australie,Hu,He,F,Kenya,Escrime fleuret,false,11,13,18
+2024,France,Sun,Zhou,F,Brésil,Escrime épée,false,16,10,20
+2028,Etats-Unis,Leroy,Sarah,M,Australie,Natation relais libre,true,20,17,2
+2024,France,Moreau,Sacha,F,Maroc,Athétisme 110 haies,false,5,1,11
+2028,Etats-Unis,Lambert,Emma,F,Maroc,Natation 100 brasse,false,8,13,10
+2028,Etats-Unis,Yamada,Sosuke,F,Turquie,Natation 100 brasse,false,4,15,4
+2024,France,Chen,Wu,M,France,Escrime épée,false,1,11,9
+2024,France,Zhao,Zhang,F,Japon,Escrime épée,false,16,12,5
+2032,Australie,Mori,Riko,M,Kenya,Volley-Ball,true,16,5,9
+2032,Australie,Yamamoto,Hana,F,Kenya,Natation relais libre,true,9,17,19
+2024,France,Sasaki,Yuto,F,Japon,Escrime fleuret,false,4,14,10
+2028,Etats-Unis,Shibata,Mio,M,Japon,Natation relais libre,true,14,9,17
+2024,France,Laurent,Hugo,M,Allemagne,Natation relais libre,true,18,8,6
+2028,Etats-Unis,Barbier,Nathan,M,Japon,Athétisme 110 haies,false,10,13,4
+2032,Australie,Laurent,Tom,F,Maroc,Handball,true,20,17,14
+2024,France,Kobayashi,Haruka,M,Australie,Escrime fleuret,false,1,10,18
+2028,Etats-Unis,Nakamura,Yui,M,USA,Handball,true,5,20,7
+2024,France,Lambert,Tom,F,Chine,Natation relais libre,true,13,12,19
+2032,Australie,Ma,Wang,F,Kenya,Volley-Ball,true,9,15,20
+2024,France,Hasegawa,Haruto,M,Japon,Handball,true,12,8,12
+2028,Etats-Unis,Garcia,Zoé,M,USA,Natation 100 brasse,false,6,8,17
+2028,Etats-Unis,Weber,Jakob,M,Brésil,Natation 100 brasse,false,8,5,14
+2028,Etats-Unis,Kato,Kaito,F,Kenya,Handball,true,1,19,7
+2024,France,Wang,Xia,F,Chine,Athétisme 110 haies,false,4,1,10
+2028,Etats-Unis,Braun,Emma,F,Kenya,Natation relais libre,true,15,11,9
+2024,France,Lin,Chen,F,Allemagne,Escrime épée,false,7,12,5
+2032,Australie,Guo,He,M,France,Escrime fleuret,false,4,7,3
+2024,France,Mori,Rina,F,France,Athlétisme relais 400m,false,5,11,1
+2032,Australie,Takahashi,Ryota,M,USA,Volley-Ball,true,19,19,18
+2024,France,Tanaka,Sora,F,Kenya,Athétisme 110 haies,false,20,7,16
+2024,France,Ogawa,Asuka,M,Turquie,Escrime fleuret,false,8,16,3
+2032,Australie,Nakamura,Ryota,M,Turquie,Athlétisme relais 400m,false,19,19,11
+2028,Etats-Unis,Yang,Sun,M,Maroc,Natation relais libre,true,19,1,20
+2028,Etats-Unis,Ito,Yuna,M,Brésil,Natation relais libre,true,11,11,18
+2028,Etats-Unis,Lambert,Léna,M,Chine,Athlétisme relais 400m,false,10,8,1
+2032,Australie,Girard,Sacha,M,Chine,Natation relais libre,true,20,19,3
+2032,Australie,Gao,Fang,F,Allemagne,Natation 100 brasse,false,19,19,20
+2032,Australie,Dubois,Noé,M,France,Natation relais libre,true,18,16,14
+2028,Etats-Unis,Yamada,Rina,M,Chine,Escrime épée,false,6,7,4
+2032,Australie,Li,Yang,F,USA,Volley-Ball,true,8,4,19
+2024,France,Dubois,Jade,F,USA,Natation relais libre,true,6,2,13
+2032,Australie,Guo,Jing,F,Japon,Natation relais libre,true,10,3,18
+2024,France,Takahashi,Daiki,M,Chine,Escrime épée,false,4,1,18
+2032,Australie,Xu,Ling,M,Turquie,Natation 100 brasse,false,8,7,10
+2028,Etats-Unis,Ma,Zhang,F,Kenya,Handball,true,5,4,17
+2028,Etats-Unis,Sasaki,Naoki,M,Chine,Athlétisme relais 400m,false,2,9,6
+2032,Australie,Fontaine,Sacha,F,Brésil,Athétisme 110 haies,false,16,6,17
+2024,France,Faure,Noé,F,Chine,Athétisme 110 haies,false,6,6,7
+2032,Australie,Giraud,Jules,M,Brésil,Volley-Ball,true,9,8,10
+2028,Etats-Unis,Schäfer,Leon,F,USA,Athétisme 110 haies,false,16,5,17
+2024,France,Sasaki,Mio,F,Maroc,Handball,true,6,10,1
+2028,Etats-Unis,Kondo,Takumi,M,USA,Volley-Ball,true,18,16,4
+2028,Etats-Unis,Huang,Hong,F,Maroc,Escrime épée,false,1,17,13
+2024,France,Wu,Ting,M,USA,Athlétisme relais 400m,false,17,19,16
+2024,France,Blanc,Zoé,F,Australie,Athlétisme relais 400m,false,5,15,7
+2032,Australie,Gao,Wu,M,Maroc,Natation relais libre,true,13,15,20

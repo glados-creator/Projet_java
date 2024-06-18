@@ -94,10 +94,10 @@ public class JOsql {
     }
 
     public void ajouteAthlete(String nom, String prenom, String sexe, String force, String endurance, String agilite,
-            String pays, String epreuve) throws SQLException {
+            String pays, String epreuve, String annee) throws SQLException {
         try {
             PreparedStatement ps = this.laConnexion.prepareStatement(
-                    "insert into Athlete (athlete_id, nom, prenom, sexe, forceA, enduranceA, enduranceA, pays_id) values (?,?,?,?,?,?,?,?)");
+                    "insert into Athlete (athlete_id, nom, prenom, sexe, forceA, enduranceA, enduranceA, pays_id, annee) values (?,?,?,?,?,?,?,?,?)");
 
             st = this.laConnexion.createStatement();
             ResultSet test = st.executeQuery("select collectifs from Epreuve where nom='" + epreuve + "'");
@@ -112,6 +112,7 @@ public class JOsql {
             ps.setDouble(6, Double.parseDouble(endurance));
             ps.setDouble(7, Double.parseDouble(agilite));
             ps.setInt(8, Integer.parseInt(pays));
+            ps.setInt(9, Integer.parseInt(annee));
 
             if (coll) {
                 PreparedStatement liason = this.laConnexion

@@ -18,10 +18,10 @@ sexes = ["M", "F"]
 pays = ["USA", "Chine", "Japon", "Kenya", "France", "Maroc", "Allemagne", "Australie", "Brésil", "Turquie"]
 epreuves = ["Natation 100 brasse", "Natation relais libre", "Handball", "Volley-Ball", "Escrime fleuret", "Escrime épée", "Athétisme 110 haies", "Athlétisme relais 400m"]
 epreuve_collectif = ["Natation relais libre", "Athétisme relais 400m", "Handball", "Volley-Ball"]
-annee = [(20)]
+annee = [(2024, "France"), (2028, "Etats-Unis"), (2032, "Australie")]
 # Génération des enregistrements
 records = []
-for _ in range(400):
+for _ in range(800):
     if random.random() < 0.25:
         nom = random.choice(noms_fr)
         prenom = random.choice(prenoms_fr)
@@ -44,7 +44,9 @@ for _ in range(400):
         collectifs = "true"
     else:
         collectifs = "false"
-    records.append([nom, prenom, sexe, pays_choice, epreuve, collectifs, force,endurance, agilite])
+
+    anneeChoix, lieux = random.choice(annee)
+    records.append([anneeChoix, lieux, nom, prenom, sexe, pays_choice, epreuve, collectifs, force,endurance, agilite])
 
 # Écriture des données dans un fichier CSV
 with open('donnees.csv', 'w', newline='', encoding='utf-8') as file:
