@@ -18,6 +18,7 @@ public class Epreuve {
     private List<Participant> les_participants;
     /** boolean listTri */
     private boolean listTri = false;
+    
 
     /**
      * Constructeur Epreuve

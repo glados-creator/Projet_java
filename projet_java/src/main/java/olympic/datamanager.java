@@ -3,6 +3,7 @@ package olympic;
 import java.util.ArrayList;
 import java.util.List;
 
+import olympic.JDBC.ConnexionMySQL;
 import olympic.model.Athlete;
 import olympic.model.Athletisme;
 import olympic.model.Epreuve;
