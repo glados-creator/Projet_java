@@ -104,6 +104,26 @@ public class VueJeu extends Application {
         panelCentral.setCenter(buttonbox);
     }
 
+    public void modeVisiteur() {
+        panelCentral.getChildren().clear();
+        
+        VBox mainBox = new VBox(20);
+        mainBox.setPadding(new Insets(20)); 
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(e -> {
+            System.out.println("Bouton Retour cliqué");
+        });
+        backButton.setOnAction(new ControlerJeu(this));
+
+        HBox contBox = new HBox(20);
+        contBox.setAlignment(Pos.CENTER);
+
+    }
+
     public void modeOrga() {
         panelCentral.getChildren().clear();
         
@@ -230,7 +250,12 @@ public class VueJeu extends Application {
     }
 
     public void modeAppli() {
-
+        panelCentral.getChildren().clear();
+        
+        VBox mainBox = new VBox(20);
+        mainBox.setPadding(new Insets(20)); 
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
         
     }
 
