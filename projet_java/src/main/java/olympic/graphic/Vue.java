@@ -1,6 +1,8 @@
 package olympic.graphic;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,7 +11,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -22,14 +27,20 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import olympic.model.Athlete;
+import olympic.model.Pays;
+import olympic.model.Sport;
 
 public class Vue extends Application {
+
+
 
     private BorderPane panelCentral;
 
     private Button Connexion;
     private Button Inscription;
 
+    private Button Accueil;
     private Button Athletes;
     private Button Pays;
     private Button Sports;
@@ -250,11 +261,17 @@ public class Vue extends Application {
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerJeu(this));
     
-        Button Athletes = new Button("Athlètes");
-        Button Pays = new Button("Pays");
-        Button Sports = new Button("Sports");
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerJeu(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerJeu(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerJeu(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerJeu(this));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
@@ -263,10 +280,10 @@ public class Vue extends Application {
         topBox.setPadding(new Insets(0, 0, 0, 0));
         topBox.setAlignment(Pos.TOP_LEFT);
         topBox.getChildren().add(backButton);
-        
+    
         HBox menuBox = new HBox(10);
         menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Athletes, Pays, Sports);
+        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
     
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
@@ -293,7 +310,47 @@ public class Vue extends Application {
         mainBox.setPadding(new Insets(20)); 
         mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
         panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerJeu(this));
+    
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerJeu(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerJeu(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerJeu(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerJeu(this));
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(backButton);
+    
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+    
+        mainBox.getChildren().addAll(topPane, contentBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
         
+        panelCentral.setCenter(mainBox);
     }
 
     public void modeAdministrateur() {
@@ -303,8 +360,270 @@ public class Vue extends Application {
         mainBox.setPadding(new Insets(20)); 
         mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
         panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerJeu(this));
+    
+
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerJeu(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerJeu(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerJeu(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerJeu(this));
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(backButton);
+    
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+    
+        mainBox.getChildren().addAll(topPane, contentBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
         
+        panelCentral.setCenter(mainBox);
     }
+
+@SuppressWarnings("unchecked")
+public void modeAthletes() {
+    panelCentral.getChildren().clear();
+
+
+    VBox mainBox = new VBox(20);
+    mainBox.setPadding(new Insets(20));
+    mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+    panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+    Button backButton = new Button("Retour");
+    backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+    backButton.setOnAction(new ControlerJeu(this));
+
+
+    Accueil = new Button("Accueil");
+    Accueil.setOnAction(new ControlerJeu(this));
+    Athletes = new Button("Athlètes");
+    Athletes.setOnAction(new ControlerJeu(this));
+    Pays = new Button("Pays");
+    Pays.setOnAction(new ControlerJeu(this));
+    Sports = new Button("Sports");
+    Sports.setOnAction(new ControlerJeu(this));
+
+    String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+    Accueil.setStyle(buttonStyle);
+    Athletes.setStyle(buttonStyle);
+    Pays.setStyle(buttonStyle);
+    Sports.setStyle(buttonStyle);
+
+    HBox topBox = new HBox(10);
+    topBox.setPadding(new Insets(0, 0, 0, 0));
+    topBox.setAlignment(Pos.TOP_LEFT);
+    topBox.getChildren().add(backButton);
+
+    HBox menuBox = new HBox(10);
+    menuBox.setAlignment(Pos.TOP_RIGHT);
+    menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+
+    BorderPane topPane = new BorderPane();
+    topPane.setLeft(topBox);
+    topPane.setRight(menuBox);
+
+
+    TableView<Athlete> table = new TableView<>();
+    table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+    TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
+    prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+
+    TableColumn<Athlete, String> nomCol = new TableColumn<>("Nom");
+    nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
+
+    TableColumn<Athlete, String> sexeCol = new TableColumn<>("Sexe");
+    sexeCol.setCellValueFactory(new PropertyValueFactory<>("sexe"));
+
+    TableColumn<Athlete, String> paysCol = new TableColumn<>("Pays");
+    paysCol.setCellValueFactory(new PropertyValueFactory<>("pays"));
+
+    TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
+    sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
+
+    table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+
+
+
+
+    VBox contentBox = new VBox(20);
+    contentBox.setAlignment(Pos.CENTER);
+    contentBox.getChildren().add(table);
+
+    mainBox.getChildren().addAll(topPane, contentBox);
+    mainBox.setMaxWidth(750);
+    mainBox.setMaxHeight(500);
+
+    panelCentral.setCenter(mainBox);
+}
+
+
+
+
+@SuppressWarnings("unchecked")
+public void modePays(){
+        panelCentral.getChildren().clear();
+
+        
+        VBox mainBox = new VBox(20);
+        mainBox.setPadding(new Insets(20)); 
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerJeu(this));
+    
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerJeu(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerJeu(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerJeu(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerJeu(this));
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(backButton);
+    
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+
+
+
+        TableView<Pays> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        TableColumn<Pays, String> NomPaysCol = new TableColumn<>("Nom du Pays");
+        NomPaysCol.setCellValueFactory(new PropertyValueFactory<>("Nom du Pay"));
+
+        TableColumn<Pays, String> DrapeauCol = new TableColumn<>("Drapeau du pays");
+        DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Drapeau du pays"));
+
+
+
+        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+        contentBox.getChildren().add(table);
+    
+        mainBox.getChildren().addAll(topPane, contentBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
+        
+        panelCentral.setCenter(mainBox);
+
+}
+
+    @SuppressWarnings("unchecked")
+    public void modeSports(){
+        panelCentral.getChildren().clear();
+
+        
+        VBox mainBox = new VBox(20);
+        mainBox.setPadding(new Insets(20)); 
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerJeu(this));
+    
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerJeu(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerJeu(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerJeu(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerJeu(this));
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(backButton);
+    
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+
+        TableView<Sport> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        TableColumn<Sport, String> NomPaysCol = new TableColumn<>("Nom du Sport");
+        NomPaysCol.setCellValueFactory(new PropertyValueFactory<>("Nom du Sport"));
+
+        TableColumn<Sport, String> DrapeauCol = new TableColumn<>("Nombre de participants");
+        DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Nombre de participants"));
+
+
+
+        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+
+        
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+        contentBox.getChildren().add(table);
+
+        mainBox.getChildren().addAll(topPane, contentBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
+        
+        panelCentral.setCenter(mainBox);
+    }
+
+
+
 
     public Alert alerteEntrerOrganisateur() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Voulez-vous allez sur la page de connexion d'Organisateur ?", ButtonType.YES, ButtonType.NO);
