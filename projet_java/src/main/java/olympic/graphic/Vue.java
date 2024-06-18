@@ -28,6 +28,7 @@ import javafx.stage.Stage;
 import olympic.model.Athlete;
 import olympic.model.Pays;
 import olympic.model.Sport;
+import javafx.scene.control.ComboBox;
 
 public class Vue extends Application {
 
@@ -293,6 +294,38 @@ public class Vue extends Application {
         mainBox.getChildren().addAll(topPane, contentBox);
         mainBox.setMaxWidth(750);
         mainBox.setMaxHeight(500);
+
+
+        TextField barreDeRecherche = new TextField("Recherche par Pays et Epreuve");
+
+        ComboBox<String> comboBox = new ComboBox();
+
+        comboBox.setValue("Sports");
+        comboBox.getItems().addAll("Natation", "Volley-ball", "Escrime", "Athlétisme", "Handball");
+
+        Button bRechercher = new Button("Rechercher");
+
+        TableView<Athlete> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    
+        TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
+        prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+    
+        TableColumn<Athlete, String> nomCol = new TableColumn<>("Nom");
+        nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
+    
+        TableColumn<Athlete, String> sexeCol = new TableColumn<>("Sexe");
+        sexeCol.setCellValueFactory(new PropertyValueFactory<>("sexe"));
+    
+        TableColumn<Athlete, String> paysCol = new TableColumn<>("Pays");
+        paysCol.setCellValueFactory(new PropertyValueFactory<>("pays"));
+    
+        TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
+        sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
+    
+        table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+
+        mainBox.getChildren().addAll(barreDeRecherche, comboBox, bRechercher, table);
         
         panelCentral.setCenter(mainBox);
     }
