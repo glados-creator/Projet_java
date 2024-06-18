@@ -21,9 +21,9 @@ import javafx.stage.Stage;
 
 public class ControlerJeu implements EventHandler<ActionEvent>  {
 
-    VueJeu appli;
+    Vue appli;
 
-    public ControlerJeu(VueJeu appli){
+    public ControlerJeu(Vue appli){
         this.appli = appli;
     }
     
@@ -31,16 +31,14 @@ public class ControlerJeu implements EventHandler<ActionEvent>  {
     @Override
     public void handle(ActionEvent event){
         Button button = (Button) (event.getSource());
-        if (button.getText().contains("Visiteur")){
+        if (button.getText().contains("Connexion")){
             System.out.println("Bienvenue");
-            this.appli.modeVisiteur();
+            this.appli.modeConnexion();
         }
-        else if (button.getText().contains("Organisateur")){
-            this.appli.modeOrga();
+        else if (button.getText().contains("Inscription")){
+            this.appli.modeInscription();
             System.out.println("Bienvenue");
-        }else if (button.getText().contains("Administrateur")) {
-            this.appli.modeAdmin();
-            System.out.println("Bienvenue");
+
         }else if (button.getText().contains("Retour")){
             this.appli.modeLog();     
         }
