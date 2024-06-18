@@ -18,6 +18,7 @@ sexes = ["M", "F"]
 pays = ["USA", "Chine", "Japon", "Kenya", "France", "Maroc", "Allemagne", "Australie", "Brésil", "Turquie"]
 epreuves = ["Natation 100 brasse", "Natation relais libre", "Handball", "Volley-Ball", "Escrime fleuret", "Escrime épée", "Athétisme 110 haies", "Athlétisme relais 400m"]
 epreuve_collectif = ["Natation relais libre", "Athétisme relais 400m", "Handball", "Volley-Ball"]
+annee = [(20)]
 # Génération des enregistrements
 records = []
 for _ in range(400):

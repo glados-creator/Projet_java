@@ -7,6 +7,11 @@ DROP TABLE Sport;
 DROP TABLE Pays;
 
 
+CREATE TABLE JO(
+    annee int PRIMARY KEY,
+    lieux VARCHAR(100)
+)
+
 CREATE TABLE Pays (
     pays_id INT PRIMARY KEY,
     nom_pays VARCHAR(100)
@@ -14,7 +19,9 @@ CREATE TABLE Pays (
 
 CREATE TABLE Sport (
     sport_id INT PRIMARY KEY,
-    nom_sport VARCHAR(100)
+    nom_sport VARCHAR(100),
+    annnee int,
+    FOREIGN KEY (annee) REFERENCES JO(annee)
 );
 
 CREATE TABLE Epreuve (
@@ -46,7 +53,8 @@ CREATE TABLE Athlete (
     enduranceA INT,
     agiliteA INT,
     pays_id INT,
-
+    annnee INT,
+    FOREIGN KEY (annee) REFERENCES JO(annee),
     FOREIGN KEY (pays_id) REFERENCES Pays(pays_id),
     FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id)
 );
@@ -85,9 +93,7 @@ CREATE TABLE Role (
 )
 
 CREATE TABLE Utilisateur (
-    utilisateur_id INT PRIMARY KEY,
-    nom VARCHAR(100),
-    prenom VARCHAR(100),
+    nom VARCHAR(100) PRIMARY KEY,
     password VARCHAR(100),
     role_id INT,
     FOREIGN KEY (role_id) REFERENCES Role(role_id)

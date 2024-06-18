@@ -2,11 +2,11 @@ package olympic.JDBC;
 
 import java.sql.*;
 
-public class User {
+public class JOsql {
     ConnexionMySQL laConnexion;
     Statement st;
 
-    public User(ConnexionMySQL laConnexion) {
+    public JOsql(ConnexionMySQL laConnexion) {
         this.laConnexion = laConnexion;
     }
 
@@ -158,4 +158,6 @@ public class User {
         ps.setInt(4, this.getIdSport(sport));
         ps.executeUpdate();
     }
+
+    public void ajouteJO
 }
