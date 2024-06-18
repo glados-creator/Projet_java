@@ -1,23 +1,22 @@
 package olympic.model;
 
+// TODO: sync with datamanager
+
 import java.util.ArrayList;
-// import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Epreuve
  */
 public class Epreuve {
-    /** boolean sex */
-    private boolean sex;
-    /** String nom */
+    /** private String nom */
     private String nom;
-    /** List[Participant] les_participants */
+    /** private boolean sex */
+    private boolean sex;
+    /** private List[Participant] les_participants */
     private List<Participant> les_participants;
-    /** boolean listTri */
-    private boolean listTri = false;
+    /** private final Sport sport */
+    private final Sport sport;
 
     /**
      * Constructeur Epreuve
@@ -25,112 +24,70 @@ public class Epreuve {
      * @param sex boolean
      * @param nom String
      */
-    public Epreuve(boolean sex, String nom) {
+    public Epreuve(Sport sport, boolean sex, String nom) {
+        this.sport = sport;
         this.sex = sex;
         this.nom = nom;
         les_participants = new ArrayList<>();
     }
 
-
-    
-    /**
-     * ajouter_Participant
-     * 
-     * @param participant Participant
-     */
-    public void ajouter_sports(Participant participant) {
-        les_participants.add(participant);
-    }
-
-    /**
-     * les_Participant admin
-     * 
-     * @return List[Participant]
-     */
-    public List<Participant> les_participants() {
-        return les_participants;
-    }
-
-    /**
-     * getSex
-     * 
-     * @return boolean
-     */
-    public boolean getSex() {
-        return this.sex;
+    public List<Participant> simule() {
+        // TODO : simule
+        return null;
     }
 
     /**
      * getNom
      * 
-     * @return String
+     * @return String son nom
      */
     public String getNom() {
-        return this.nom;
+        return nom;
     }
 
     /**
-     * sex admin
+     * setNom_a admin
      * 
-     * @param sex boolean
-     * @return Epreuve
+     * @param String Nom
      */
-    public Epreuve sex(boolean sex) {
-        this.sex = sex;
-        return this;
-    }
-
-    /**
-     * nom admin
-     * 
-     * @param nom String
-     * @return Epreuve 
-     */
-    public Epreuve nom(String nom) {
+    public void setNom_a(String nom) {
         this.nom = nom;
-        return this;
     }
 
     /**
-     * simuleEpreuve
-     * @return List[Participant] la list ordonné ??
-     */
-    public List<Participant> simuleEpreuve(){
-        // TODO : a refaire ??
-        if (this.listTri){
-            return this.les_participants;
-        }
-
-        Collections.sort(this.les_participants, new TriParticipant());
-        this.listTri = true;
-        return this.les_participants;
-    }
-
-    /**
-     * equals
+     * getSex
      * 
-     * @param o Object
-     * @return boolean
+     * @return boolean sex false -> men , true -> woman
      */
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Epreuve)) {
-            return false;
-        }
-        Epreuve epreuve = (Epreuve) o;
-        return sex == epreuve.sex && Objects.equals(nom, epreuve.nom);
+    public boolean getSex() {
+        return sex;
     }
 
     /**
-     * hashCode
+     * setSex_a admin
      * 
-     * @return int
+     * @param sex boolean false -> men , true -> woman
      */
-    @Override
-    public int hashCode() {
-        return Objects.hash(sex, nom);
+    public void setSex_a(boolean sex) {
+        this.sex = sex;
+    }
+
+    /**
+     * Participant
+     * 
+     * @return List[Participant]
+     */
+    public List<Participant> getLes_participants() {
+        return les_participants;
+    }
+
+    /**
+     * getSport
+     * 
+     * @return Sport
+     */
+    public Sport getSport() {
+        return sport;
     }
 
     /**
@@ -141,8 +98,10 @@ public class Epreuve {
     @Override
     public String toString() {
         return "{" +
-                "nom='" + getNom() + "'" +
+                " nom='" + getNom() + "'" +
+                ", sport='" + getSport() + "'" +
                 ", sex='" + getSex() + "'" +
+                ", les_participants='" + getLes_participants() + "'" +
                 "}";
     }
 

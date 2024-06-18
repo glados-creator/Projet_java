@@ -1,1 +1,8 @@
 https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results
+
+
+Athlétisme - 0.40 - 0.30 - 0.30
+Escrime - 0.30 - 0.50 - 0.20
+Handball - 0.35 - 0.25 - 0.40
+Natation - 0.30 - 0.30 - 0.40
+Volleyball - 0.25 - 0.40 - 0.35

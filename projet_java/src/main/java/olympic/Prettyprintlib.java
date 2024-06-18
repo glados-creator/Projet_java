@@ -8,7 +8,8 @@ import java.util.Set;
 /** class prettyprint */
 public abstract class Prettyprintlib {
 	/** private Prettyprintlib */
-	private Prettyprintlib(){}
+	private Prettyprintlib() {
+	}
 	// System.out.println("╭──────────────╮");
 	// System.out.println("│ header │");
 	// System.out.println("├───delimiter──┨");

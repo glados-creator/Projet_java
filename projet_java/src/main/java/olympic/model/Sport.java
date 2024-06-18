@@ -1,5 +1,7 @@
 package olympic.model;
 
+// TODO : format and check later
+
 import java.util.ArrayList;
 import java.util.List;
 // import java.util.Objects;
@@ -15,32 +17,34 @@ public abstract class Sport {
     /** List[Epreuve] les_epreuves */
     private List<Epreuve> les_epreuves;
 
-    /** double coef_force */
-    private double coef_force;
-    /** double coef_agilité */
-    private double coef_agilité;
-    /** double coef_endurance */
-    private double coef_endurance;
+    /** double Coef_Force */
+    private double Coef_Force;
+    /** double Coef_Agilite */
+    private double Coef_Agilite;
+    /** double Coef_Endurance */
+    private double Coef_Endurance;
 
     /**
      * Sport
-     * @param nom String nom
-     * @param uniter String uniter
-     * @param coef_force double coef_force
-     * @param coef_agilité double coef_agilité
-     * @param coef_endurance double coef_endurance
+     * 
+     * @param nom            String nom
+     * @param uniter         String uniter
+     * @param Coef_Force     double Coef_Force
+     * @param Coef_Agilite   double Coef_Agilite
+     * @param Coef_Endurance double Coef_Endurance
      */
-    public Sport(String nom, String uniter, double coef_force, double coef_agilité, double coef_endurance) {
+    public Sport(String nom, String uniter, double Coef_Force, double Coef_Agilite, double Coef_Endurance) {
         this.nom = nom;
         this.uniter = uniter;
         les_epreuves = new ArrayList<>();
-        this.coef_force = coef_force;
-        this.coef_agilité = coef_agilité;
-        this.coef_endurance = coef_endurance;
+        this.Coef_Force = Coef_Force;
+        this.Coef_Agilite = Coef_Agilite;
+        this.Coef_Endurance = Coef_Endurance;
     }
 
     /**
      * getNom
+     * 
      * @return String
      */
     public String getNom() {
@@ -49,6 +53,7 @@ public abstract class Sport {
 
     /**
      * setNom admin
+     * 
      * @param nom String
      */
     public void setNom(String nom) {
@@ -57,6 +62,7 @@ public abstract class Sport {
 
     /**
      * getUniter
+     * 
      * @return String
      */
     public String getUniter() {
@@ -65,6 +71,7 @@ public abstract class Sport {
 
     /**
      * setUniter admin
+     * 
      * @param uniter String
      */
     public void setUniter(String uniter) {
@@ -73,6 +80,7 @@ public abstract class Sport {
 
     /**
      * getLes_epreuves admin
+     * 
      * @return List[Epreuve]
      */
     public List<Epreuve> getLes_epreuves() {
@@ -80,62 +88,58 @@ public abstract class Sport {
     }
 
     /**
-     * setLes_epreuves
-     * @param les_epreuves double
-     */
-    public void setLes_epreuves(List<Epreuve> les_epreuves) {
-        this.les_epreuves = les_epreuves;
-    }
-
-    /**
-     * getCoef_force
+     * getCoef_Force
+     * 
      * @return double
      */
-    public double getCoef_force() {
-        return this.coef_force;
+    public double getCoef_Force() {
+        return this.Coef_Force;
     }
 
     /**
-     * setCoef_force
-     * @param coef_force double
+     * setCoef_Force
+     * 
+     * @param Coef_Force double
      */
-    public void setCoef_force(double coef_force) {
-        this.coef_force = coef_force;
+    public void setCoef_Force(double Coef_Force) {
+        this.Coef_Force = Coef_Force;
     }
 
     /**
-     * getCoef_agilité
-     * @return double 
-     */
-    public double getCoef_agilité() {
-        return this.coef_agilité;
-    }
-
-    /**
-     * setCoef_agilité
-     * @param coef_agilité double
-     */
-    public void setCoef_agilité(double coef_agilité) {
-        this.coef_agilité = coef_agilité;
-    }
-
-    /**
-     * getCoef_endurance
+     * getCoef_Agilite
+     * 
      * @return double
      */
-    public double getCoef_endurance() {
-        return this.coef_endurance;
+    public double getCoef_Agilite() {
+        return this.Coef_Agilite;
     }
 
     /**
-     * setCoef_endurance
-     * @param coef_endurance double
+     * setCoef_Agilite
+     * 
+     * @param Coef_Agilite double
      */
-    public void setCoef_endurance(double coef_endurance) {
-        this.coef_endurance = coef_endurance;
+    public void setCoef_Agilite(double Coef_Agilite) {
+        this.Coef_Agilite = Coef_Agilite;
     }
 
-    
+    /**
+     * getCoef_Endurance
+     * 
+     * @return double
+     */
+    public double getCoef_Endurance() {
+        return this.Coef_Endurance;
+    }
+
+    /**
+     * setCoef_Endurance
+     * 
+     * @param Coef_Endurance double
+     */
+    public void setCoef_Endurance(double Coef_Endurance) {
+        this.Coef_Endurance = Coef_Endurance;
+    }
 
     /**
      * ajouter_epreuve
@@ -157,6 +161,7 @@ public abstract class Sport {
 
     /**
      * toString
+     * 
      * @return String la doc
      */
     @Override
@@ -165,9 +170,9 @@ public abstract class Sport {
                 " nom='" + getNom() + "'" +
                 ", uniter='" + getUniter() + "'" +
                 ", les_epreuves='" + getLes_epreuves().size() + "'" +
-                ", coef_force='" + getCoef_force() + "'" +
-                ", coef_agilité='" + getCoef_agilité() + "'" +
-                ", coef_endurance='" + getCoef_endurance() + "'" +
+                ", Coef_Force='" + getCoef_Force() + "'" +
+                ", Coef_Agilite='" + getCoef_Agilite() + "'" +
+                ", Coef_Endurance='" + getCoef_Endurance() + "'" +
                 "}";
     }
 

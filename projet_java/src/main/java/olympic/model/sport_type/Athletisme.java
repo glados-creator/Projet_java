@@ -1,4 +1,6 @@
-package olympic.model;
+package olympic.model.sport_type;
+
+import olympic.model.Sport;
 
 /**
  * Athletisme
@@ -6,6 +8,6 @@ package olympic.model;
 public class Athletisme extends Sport {
     /** Athletisme constructor */
     public Athletisme() {
-        super("Athletisme", "m/s",1,1,1);
+        super("Athletisme", "sec", 0.40, 0.30, 0.30);
     }
 }

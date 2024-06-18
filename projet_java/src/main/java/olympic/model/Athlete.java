@@ -1,39 +1,44 @@
 package olympic.model;
 
-import java.util.Objects;
+// TODO: sync with datamanager
 
 /**
  * Athlete
  */
 public class Athlete implements Participant {
 
-    /** String nom */
-    private String nom;
-    /** boolean Sex */
+    /** private String nom */
+    private final String nom;
+    /** private boolean Sex */
     private boolean Sex;
-    /** double force */
+    /** private double force */
     private double force;
-    /** double agilité */
-    private double agilité;
-    /** double endurance */
+    /** private double Agilite */
+    private double Agilite;
+    /** private double endurance */
     private double endurance;
 
-   
+    /** private Pays Origine */
+    private final Pays Origine;
+    /** private Equipe membre */
+    private Equipe membre;
+
     /**
      * constructeur
      * 
      * @param nom       String
      * @param Sex       boolean
      * @param force     double
-     * @param agilité   double
+     * @param Agilite   double
      * @param endurance double
      */
-    public Athlete(String nom, boolean Sex, double force, double agilité, double endurance) {
+    public Athlete(String nom, boolean Sex, double force, double Agilite, double endurance, Pays Origine) {
         this.nom = nom;
         this.Sex = Sex;
         this.force = force;
-        this.agilité = agilité;
+        this.Agilite = Agilite;
         this.endurance = endurance;
+        this.Origine = Origine;
     }
 
     /**
@@ -42,16 +47,7 @@ public class Athlete implements Participant {
      * @return String
      */
     public String getNom() {
-        return this.nom;
-    }
-
-    /**
-     * setNom
-     * 
-     * @param nom String
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
+        return nom;
     }
 
     /**
@@ -60,15 +56,15 @@ public class Athlete implements Participant {
      * @return boolean
      */
     public boolean getSex() {
-        return this.Sex;
+        return Sex;
     }
 
     /**
-     * setSex
+     * setSex_a admin
      * 
      * @param Sex boolean
      */
-    public void setSex(boolean Sex) {
+    public void setSex_a(boolean Sex) {
         this.Sex = Sex;
     }
 
@@ -78,34 +74,34 @@ public class Athlete implements Participant {
      * @return double
      */
     public double getForce() {
-        return this.force;
+        return force;
     }
 
     /**
-     * setForce
+     * setForce_a admin
      * 
      * @param force double
      */
-    public void setForce(double force) {
+    public void setForce_a(double force) {
         this.force = force;
     }
 
     /**
-     * getAgilité
+     * getAgilite
      * 
      * @return double
      */
-    public double getAgilité() {
-        return this.agilité;
+    public double getAgilite() {
+        return Agilite;
     }
 
     /**
-     * setAgilité
+     * setAgilite_a admin
      * 
-     * @param agilité double
+     * @param Agilite double
      */
-    public void setAgilité(double agilité) {
-        this.agilité = agilité;
+    public void setAgilite_a(double Agilite) {
+        this.Agilite = Agilite;
     }
 
     /**
@@ -114,48 +110,57 @@ public class Athlete implements Participant {
      * @return double
      */
     public double getEndurance() {
-        return this.endurance;
+        return endurance;
     }
 
     /**
-     * setEndurance
+     * setEndurance_a admin
      * 
      * @param endurance double
      */
-    public void setEndurance(double endurance) {
+    public void setEndurance_a(double endurance) {
         this.endurance = endurance;
     }
 
-    public double getCapa(){
-        return (this.endurance + this.force + this.agilité);
+    /**
+     * getOrigine
+     * 
+     * @return double
+     */
+    public Pays getOrigine() {
+        return Origine;
     }
 
     /**
-     * equals
+     * isMembre
      * 
-     * @param o Object
-     * @return boolean
+     * @return boolean , si l'athlete est dans une equipe
      */
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Athlete)) {
-            return false;
-        }
-        Athlete athlete = (Athlete) o;
-        return Objects.equals(nom, athlete.nom) && this.Sex == athlete.Sex && this.force == athlete.force
-                && this.agilité == athlete.agilité && this.endurance == athlete.endurance;
+    public boolean isMembre() {
+        return membre == null;
     }
 
     /**
-     * hashCode
+     * ajoute_equipe
      * 
-     * @return int
+     * @param membre Equipe , l'equipe auquel il fait partie
      */
-    @Override
-    public int hashCode() {
-        return Objects.hash(nom, Sex, force, agilité, endurance);
+    public void setMembre(Equipe membre) {
+        this.membre = membre;
+    }
+
+    /**
+     * getMembre
+     * 
+     * @return Equipe , equipe auquel l'athlete fait parti , null sinon
+     */
+    public Equipe getMembre() {
+        return membre;
+    }
+
+    /** void removeMembre */
+    public void removeMembre() {
+        membre = null;
     }
 
     /**
@@ -166,10 +171,10 @@ public class Athlete implements Participant {
     @Override
     public String toString() {
         return "{" +
-                " nom='" + getNom() + "'" +
+                "nom='" + getNom() + "'" +
                 ", Sex='" + getSex() + "'" +
                 ", force='" + getForce() + "'" +
-                ", agilité='" + getAgilité() + "'" +
+                ", Agilite='" + getAgilite() + "'" +
                 ", endurance='" + getEndurance() + "'" +
                 "}";
     }

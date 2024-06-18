@@ -1,55 +1,43 @@
 package olympic.model;
 
+// TODO: sync with datamanager
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+
 /**
  * Equipe
  */
 public class Equipe implements Participant {
 
-    /** String nom */
-    private String nom;
+    /** private String nom */
+    private final String nom;
+    /** private boolean Sex */
+    private final boolean Sex;
+    /** private boolean Mix */
+    private boolean Mix;
+    /** private Pays Origine */
+    private final Pays Origine;
     /** List[Athlete] les_athletes */
     private List<Athlete> les_athletes;
 
-    /**
-     * participe
-     * see Participant
-     * @return double
-     */
-    public double participe(){
-        /// TODO : get value from db
-        return 0.0;
-    }
+    // TODO : remove athlete copy
+    /** private double force */
+    private double force;
+    /** private double Agilite */
+    private double Agilite;
+    /** private double endurance */
+    private double endurance;
 
-    /**
-     * Equipe
-     * 
-     * @param nom String
-     */
-    public Equipe(String nom) {
+    public Equipe(String nom, boolean Sex, Pays Origine) {
         this.nom = nom;
-        les_athletes = new ArrayList<>();
+        this.Sex = Sex;
+        this.Origine = Origine;
+        Mix = false;
+        this.les_athletes = new ArrayList<Athlete>();
     }
 
-    /**
-     * ajouter_athlete
-     * 
-     * @param ath Athlete
-     */
-    public void ajouter_athlete(Athlete ath) {
-        this.les_athletes.add(ath);
-    }
-
-    /**
-     * les_athletes admin
-     * 
-     * @return List[Athlete]
-     */
-    public List<Athlete> les_athletes() {
-        return les_athletes;
-    }
+    // TODO : this is athlete code
 
     /**
      * getNom
@@ -57,47 +45,110 @@ public class Equipe implements Participant {
      * @return String
      */
     public String getNom() {
-        return this.nom;
+        return nom;
     }
 
     /**
-     * nom admin
-     * @param nom String
-     * @return Equipe
+     * getSex
+     * 
+     * @return boolean
      */
-    public Equipe nom(String nom) {
-        this.nom = nom;
-        return this;
+    public boolean getSex() {
+        return Sex;
     }
 
-    public double getCapa(){
-        double res = 0;
-        for (Athlete ath: this.les_athletes){
-            res += ath.getCapa();
-        }
-        return (res / this.les_athletes.size());
+    /**
+     * getForce
+     * 
+     * @return double
+     */
+    public double getForce() {
+        return force;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Equipe)) {
-            return false;
-        }
-        Equipe equipe = (Equipe) o;
-        return Objects.equals(nom, equipe.nom);
+    /**
+     * setForce_a admin
+     * 
+     * @param force double
+     */
+    public void setForce_a(double force) {
+        this.force = force;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.nom);
+    /**
+     * getAgilite
+     * 
+     * @return double
+     */
+    public double getAgilite() {
+        return Agilite;
+    }
+
+    /**
+     * setAgilite_a admin
+     * 
+     * @param Agilite double
+     */
+    public void setAgilite_a(double Agilite) {
+        this.Agilite = Agilite;
+    }
+
+    /**
+     * getEndurance
+     * 
+     * @return double
+     */
+    public double getEndurance() {
+        return endurance;
+    }
+
+    /**
+     * setEndurance_a admin
+     * 
+     * @param endurance double
+     */
+    public void setEndurance_a(double endurance) {
+        this.endurance = endurance;
+    }
+
+    /**
+     * getOrigine
+     * 
+     * @return double
+     */
+    public Pays getOrigine() {
+        return Origine;
+    }
+
+    // TODO : comment signature and remove uneccessary
+
+    public boolean getMix() {
+        return this.Mix;
+    }
+
+    public void setMix(boolean Mix) {
+        this.Mix = Mix;
+    }
+
+    public List<Athlete> getLes_athletes() {
+        return this.les_athletes;
+    }
+
+    public void setLes_athletes(List<Athlete> les_athletes) {
+        this.les_athletes = les_athletes;
     }
 
     @Override
     public String toString() {
         return "{" +
                 " nom='" + getNom() + "'" +
+                ", Origine='" + getOrigine() + "'" +
+                ", Sex='" + getSex() + "'" +
+                ", force='" + getForce() + "'" +
+                ", Agilite='" + getAgilite() + "'" +
+                ", endurance='" + getEndurance() + "'" +
+                ", les_athletes='" + getLes_athletes() + "'" +
                 "}";
     }
+
 }

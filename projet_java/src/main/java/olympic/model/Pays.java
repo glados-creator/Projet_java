@@ -1,165 +1,144 @@
 package olympic.model;
 
+// TODO: sync with datamanager
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Pays
  */
 public class Pays {
-    /** String nom */
-    private String nom;
-    /** int medaille_or */
-    private int medaille_or;
-    /** int medaille_argent */
-    private int medaille_argent;
-    /** int medaille_bronze */
-    private int medaille_bronze;
-    /** List[Athlete] les_athletes */
-    private List<Athlete> les_athletes;
-
-    /**
-     * ajouter_athletes
-     * @param athlete Athlete
-     */
-    public void ajouter_athletes(Athlete athlete){
-        les_athletes.add(athlete);
-    }
-
-    /**
-     * les_athletes admin
-     * @return List[Athlete]
-     */
-    public List<Athlete> les_athletes(){
-        return les_athletes;
-    }
+    /** String Nom */
+    private String Nom;
+    /** int Medaille_or */
+    private int Medaille_or;
+    /** int Medaille_argent */
+    private int Medaille_argent;
+    /** int Medaille_bronze */
+    private int Medaille_bronze;
+    /** List[Athlete] lesAthletes */
+    private List<Athlete> lesAthletes;
 
     /**
      * Pays
-     * @param nom String
-     * @param medaille_or int
-     * @param medaille_argent int
-     * @param medaille_bronze int
+     * 
+     * @param Nom             String
+     * @param Medaille_or     int
+     * @param Medaille_argent int
+     * @param Medaille_bronze int
      */
-    public Pays(String nom, int medaille_or, int medaille_argent, int medaille_bronze) {
-        this.nom = nom;
-        this.medaille_or = medaille_or;
-        this.medaille_argent = medaille_argent;
-        this.medaille_bronze = medaille_bronze;
-        les_athletes = new ArrayList<>();
+    public Pays(String Nom, int Medaille_or, int Medaille_argent, int Medaille_bronze) {
+        this.Nom = Nom;
+        this.Medaille_or = Medaille_or;
+        this.Medaille_argent = Medaille_argent;
+        this.Medaille_bronze = Medaille_bronze;
+        lesAthletes = new ArrayList<>();
 
     }
 
     /**
      * getNom
+     * 
      * @return String
      */
     public String getNom() {
-        return this.nom;
+        return this.Nom;
     }
 
     /**
      * getMedaille_or
+     * 
      * @return int
      */
     public int getMedaille_or() {
-        return this.medaille_or;
+        return this.Medaille_or;
     }
 
     /**
      * getMedaille_argent
+     * 
      * @return int
      */
     public int getMedaille_argent() {
-        return this.medaille_argent;
+        return this.Medaille_argent;
     }
+
     /**
      * getMedaille_bronze
+     * 
      * @return int
      */
     public int getMedaille_bronze() {
-        return this.medaille_bronze;
+        return this.Medaille_bronze;
     }
 
     /**
-     * nom admin
-     * @param nom String
-     * @return Pays
+     * ajouter_athletes
+     * 
+     * @param athlete Athlete
      */
-    public Pays nom(String nom) {
-        this.nom = nom;
-        return this;
+    public void ajouter_athletes(Athlete athlete) {
+        lesAthletes.add(athlete);
     }
 
     /**
-     * medaille_or admin
-     * @param medaille_or int
-     * @return Pays
+     * lesAthletes admin
+     * 
+     * @return List[Athlete]
      */
-    public Pays medaille_or(int medaille_or) {
-        this.medaille_or = medaille_or;
-        return this;
+    public List<Athlete> lesAthletes() {
+        return lesAthletes;
     }
 
     /**
-     * medaille_argent admin
-     * @param medaille_argent int
-     * @return Pays
+     * Nom setNom_a
+     * 
+     * @param Nom String
      */
-    public Pays medaille_argent(int medaille_argent) {
-        this.medaille_argent = medaille_argent;
-        return this;
+    public void setNom_a(String Nom) {
+        this.Nom = Nom;
     }
 
     /**
-     * medaille_bronze admin
-     * @param medaille_bronze int
-     * @return Pays
+     * setMedaille_or_a admin
+     * 
+     * @param Medaille_or int
      */
-    public Pays medaille_bronze(int medaille_bronze) {
-        this.medaille_bronze = medaille_bronze;
-        return this;
+    public void setMedaille_or_a(int Medaille_or) {
+        this.Medaille_or = Medaille_or;
     }
 
     /**
-     * equals
-     * @param o Object
-     * @return boolean
+     * setMedaille_argent_a admin
+     * 
+     * @param Medaille_argent int
      */
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Pays)) {
-            return false;
-        }
-        Pays pays = (Pays) o;
-        return Objects.equals(nom, pays.nom) && Objects.equals(medaille_or, pays.medaille_or)
-                && Objects.equals(medaille_argent, pays.medaille_argent)
-                && Objects.equals(medaille_bronze, pays.medaille_bronze);
+    public void setMedaille_argent_a(int Medaille_argent) {
+        this.Medaille_argent = Medaille_argent;
     }
 
     /**
-     * hashCode
-     * @return int
+     * setMedaille_bronze_a admin
+     * 
+     * @param Medaille_bronze int
      */
-    @Override
-    public int hashCode() {
-        return Objects.hash(nom, medaille_or, medaille_argent, medaille_bronze);
+    public void setMedaille_bronze_a(int Medaille_bronze) {
+        this.Medaille_bronze = Medaille_bronze;
     }
 
     /**
      * toString
+     * 
      * @return String
      */
     @Override
     public String toString() {
         return "{" +
-                " nom='" + getNom() + "'" +
-                ", medaille_or='" + getMedaille_or() + "'" +
-                ", medaille_argent='" + getMedaille_argent() + "'" +
-                ", medaille_bronze='" + getMedaille_bronze() + "'" +
+                " Nom='" + getNom() + "'" +
+                ", Medaille_or='" + getMedaille_or() + "'" +
+                ", Medaille_argent='" + getMedaille_argent() + "'" +
+                ", Medaille_bronze='" + getMedaille_bronze() + "'" +
                 "}";
     }
 
