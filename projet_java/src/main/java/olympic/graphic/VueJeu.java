@@ -161,14 +161,15 @@ public class VueJeu extends Application {
         connecterButton.setPrefWidth(320);
         connecterButton.setPrefHeight(25);
         
-        Label inscriptionLabel = new Label("Inscription");
-        inscriptionLabel.setTextFill(Color.valueOf("#3C5A9C"));
-        inscriptionLabel.setStyle("-fx-underline: false;");
-        inscriptionLabel.setOnMouseClicked(event -> {
-            System.out.println("Inscription cliquée");
-        });
+        Button inscription = new Button("Inscription");
+        inscription.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #3C5A9C;");
+        inscription.setPrefWidth(320);
+        inscription.setPrefHeight(25);
+        inscription.setOnAction(new ControlerJeu(this));
+
+        
     
-        contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscriptionLabel);
+        contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscription);
         
         HBox topBox = new HBox();
         topBox.getChildren().add(backButton);
@@ -227,14 +228,16 @@ public class VueJeu extends Application {
         connecterButton.setPrefWidth(320);
         connecterButton.setPrefHeight(25);
         
-        Label inscriptionLabel = new Label("Inscription");
-        inscriptionLabel.setTextFill(Color.valueOf("#3C5A9C"));
-        inscriptionLabel.setStyle("-fx-underline: false;");
-        inscriptionLabel.setOnMouseClicked(event -> {
-            System.out.println("Inscription cliquée");
-        });
+        Button inscription = new Button("Inscription");
+        inscription.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #3C5A9C;");
+        inscription.setPrefWidth(320);
+        inscription.setPrefHeight(25);
+        inscription.setOnAction(new ControlerJeu(this));
+
+
+        contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscription);
     
-        contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscriptionLabel);
+
         
         HBox topBox = new HBox();
         topBox.getChildren().add(backButton);
@@ -247,6 +250,17 @@ public class VueJeu extends Application {
         mainBox.setMaxHeight(400);
         
         panelCentral.setCenter(mainBox);
+    }
+
+    public void modeInscription(){
+
+        panelCentral.getChildren().clear();
+        
+        VBox mainBox = new VBox(20);
+        mainBox.setPadding(new Insets(20)); 
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+
     }
 
     public void modeAppli() {

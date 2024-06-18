@@ -44,5 +44,8 @@ public class ControlerJeu implements EventHandler<ActionEvent>  {
         }else if (button.getText().contains("Retour")){
             this.appli.modeLog();     
         }
+        else if (button.getText().contains("Inscription")){
+            this.appli.modeInscription();     
+        }
     }
 }
