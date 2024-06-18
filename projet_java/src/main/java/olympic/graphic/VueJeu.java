@@ -78,19 +78,19 @@ public void modeLog() {
     buttonbox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
     panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
 
-    // Add the "Connexion" label
+    
     Label connexionLabel = new Label("CONNEXION");
     connexionLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
     connexionLabel.setTextFill(Color.BLACK);
     connexionLabel.setAlignment(Pos.CENTER);
-    VBox.setMargin(connexionLabel, new Insets(0, 0, 40, 0)); // Adjust this value as needed to move the label up
+    VBox.setMargin(connexionLabel, new Insets(0, 0, 40, 0)); 
 
     Visiteur = new Button("Visiteur");
     Organisateur = new Button("Organisateur");
     // Organisateur.setOnAction(new ControleurOrga(this));
     Administrateur = new Button("Administrateur");
     
-    // Set button styles
+    
     String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
 
     Visiteur.setStyle(buttonStyle);
@@ -104,7 +104,7 @@ public void modeLog() {
     Administrateur.setMinWidth(175);
     Administrateur.setMinHeight(50);
     
-    // Add the label and buttons to the VBox
+    
     buttonbox.getChildren().addAll(connexionLabel, Visiteur, Organisateur, Administrateur);
     
     buttonbox.setMaxWidth(300);
@@ -122,7 +122,6 @@ public void modeOrga(){
     box.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
     panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
 
-    
     Label connexionLabel = new Label("Organisateur");
     connexionLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
     connexionLabel.setTextFill(Color.BLACK);
@@ -131,37 +130,35 @@ public void modeOrga(){
     
     TextField usernameField = new TextField();
     usernameField.setPromptText("Identifiant");
-    usernameField.setMaxWidth(300); 
+    usernameField.setMaxWidth(320);
 
     PasswordField passwordField = new PasswordField();
     passwordField.setPromptText("Mot de passe");
-    passwordField.setMaxWidth(300); 
+    passwordField.setMaxWidth(320);
 
     Button connecterButton = new Button("Connecter");
     connecterButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-    connecterButton.setMaxWidth(300);
-    connecterButton.setMaxHeight(300); 
+    connecterButton.setPrefWidth(320);
+    connecterButton.setPrefHeight(25);
  
+    Label inscriptionLabel = new Label("Inscription");
+    inscriptionLabel.setTextFill(Color.valueOf("#3C5A9C"));
+    inscriptionLabel.setOnMouseClicked(event -> {
+        System.out.println("Inscription clicked");
+    });
 
-    Button inscription = new Button("Inscription");
-    inscription.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-    inscription.setMaxWidth(300);
-    inscription.setMaxHeight(300); 
- 
-   
-    String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-
-    connecterButton.setStyle(buttonStyle);
-    inscription.setStyle(buttonStyle);
-    
-    
-    box.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscription);
+    box.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscriptionLabel);
     
     box.setMaxWidth(700);
     box.setMaxHeight(400);
     
     panelCentral.setCenter(box);
 }
+
+
+
+
+
 
 
 public void modeAdmin(){}
@@ -182,7 +179,7 @@ public void modeAppli(){}
     public void start(Stage stage) {
         stage.setTitle("Jeu IUT'Olympiques");
         stage.setScene(this.laScene());
-        this.modeOrga();
+        this.modeLog();
         stage.show();
     }
 
