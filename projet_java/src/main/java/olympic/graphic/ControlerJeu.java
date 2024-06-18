@@ -38,8 +38,10 @@ public class ControlerJeu implements EventHandler<ActionEvent>  {
         else if (button.getText().contains("Organisateur")){
             this.appli.modeOrga();
             System.out.println("Bienvenue");
-        }else{
+        }else if (button.getText().contains("Administrateur")) {
             this.appli.modeAdmin();
+        }else if (button.getText().contains("Retour")){
+            this.appli.modeLog();
             System.out.println("Bienvenue");     
         }
     }
