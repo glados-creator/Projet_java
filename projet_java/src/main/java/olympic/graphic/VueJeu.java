@@ -315,7 +315,7 @@ public class VueJeu extends Application {
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerJeu(this));
     
-        Button Athletes = new Button("Athlète");
+        Button Athletes = new Button("Athlètes");
         Button Pays = new Button("Pays");
         Button Sports = new Button("Sports");
     
