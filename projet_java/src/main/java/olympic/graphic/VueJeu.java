@@ -5,7 +5,9 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 // import javafx.scene.Cursor;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -83,6 +85,7 @@ public void modeLog() {
 
     Visiteur = new Button("Visiteur");
     Organisateur = new Button("Organisateur");
+    Organisateur.setOnAction(new ControleurOrga(this));
     Administrateur = new Button("Administrateur");
     
     // Set button styles
@@ -108,9 +111,63 @@ public void modeLog() {
     panelCentral.setCenter(buttonbox);
 }
 
+public void modeOrga(){
+    panelCentral.getChildren().clear();
+    VBox box = new VBox(20); 
+    box.setAlignment(Pos.CENTER);
+    box.setPadding(new Insets(20)); 
+    
+    box.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+    panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+    // Add the "Connexion" label
+    Label connexionLabel = new Label("CONNEXION");
+    connexionLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
+    connexionLabel.setTextFill(Color.BLACK);
+    connexionLabel.setAlignment(Pos.CENTER);
+    VBox.setMargin(connexionLabel, new Insets(0, 0, 40, 0)); // Adjust this value as needed to move the label up
+
+    Visiteur = new Button("Visiteur");
+    Organisateur = new Button("Organisateur");
+    Administrateur = new Button("Administrateur");
+    
+    // Set button styles
+    String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+
+    Visiteur.setStyle(buttonStyle);
+    Organisateur.setStyle(buttonStyle);
+    Administrateur.setStyle(buttonStyle);
+
+    Visiteur.setMinWidth(175);
+    Visiteur.setMinHeight(50);
+    Organisateur.setMinWidth(175);
+    Organisateur.setMinHeight(50);
+    Administrateur.setMinWidth(175);
+    Administrateur.setMinHeight(50);
+    
+    // Add the label and buttons to the VBox
+    box.getChildren().addAll(connexionLabel, Visiteur, Organisateur, Administrateur);
+    
+    box.setMaxWidth(900);
+    box.setMaxHeight(400);
+    
+    panelCentral.setCenter(box);
+
+}
 
 
+//public void modeAdmin{}
 
+
+//public void modeAppli{}
+
+
+  public Alert alerteEntrerOrganisateur() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Voulez-vous allez sur la page de connexion d'Organisateur ?", ButtonType.YES, ButtonType.NO);
+        alert.setHeaderText("Attention");
+        alert.setTitle("Jeux IUT'Olympiques");
+        return alert;
+    }
 
 
     @Override
