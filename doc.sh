@@ -6,7 +6,9 @@ javac -d bin/ \
 --module-path /usr/share/openjfx/lib/ \
 --add-modules javafx.controls \
 ./projet_java/src/main/java/olympic/*.java \
+./projet_java/src/main/java/olympic/JDBC/*.java \
 ./projet_java/src/main/java/olympic/model/*.java \
+./projet_java/src/main/java/olympic/model/sport_type/*.java \
 ./projet_java/src/main/java/olympic/graphic/*.java
 echo "" 
 mkdir doc 

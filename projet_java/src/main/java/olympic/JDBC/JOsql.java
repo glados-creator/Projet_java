@@ -160,5 +160,5 @@ public class JOsql {
         ps.executeUpdate();
     }
 
-    public void ajouteJO
+    // public void ajouteJO
 }

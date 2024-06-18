@@ -20,9 +20,8 @@ public class JeuxOlympique {
 
     public void simule() {
         for (Sport sp : les_sports) {
-            for (Epreuve ep : sp.getLes_epreuves()) {
-                System.out.println(
-                        "Sport : " + sp.getNom() + " Epreuve : " + ep.getNom() + " result : " + ep.simule());
+            for (Epreuve ep : sp.getLesEpreuves()) {
+                ep.simule();
             }
         }
     }

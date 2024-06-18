@@ -3,17 +3,24 @@ package olympic;
 import java.util.ArrayList;
 import java.util.List;
 
-import olympic.model.Athlete;
+import olympic.JDBC.ConnexionMySQL;
 import olympic.model.sport_type.*;
 import olympic.model.Epreuve;
-import olympic.model.Equipe;
 import olympic.model.JeuxOlympique;
 import olympic.model.Pays;
-import olympic.model.Sport;
-import olympic.model.sport_type.Escrime;
-import olympic.model.sport_type.HandBall;
-import olympic.model.sport_type.Natation;
-import olympic.model.sport_type.VolleyBall;
+
+// 1 début
+// 2 load-csv
+
+// 3-connection sql
+// 4 - reset obj , import les donne sql
+
+// 5 - app
+// 6- fin app
+
+// 7.1 - drop tout sql
+// 7.2 - sauvegarder sql
+// 8 - sauvegarder csv
 
 /**
  * public class datamanager
@@ -54,7 +61,6 @@ public class datamanager {
         nat.ajouter_epreuve(new Epreuve(nat, false, "Natation relais libre"));
         nat.ajouter_epreuve(new Epreuve(nat, true, "Natation relais libre"));
         jo.ajouter_sports(nat);
-        create_sport(nat);
 
         HandBall hand = new HandBall();
         hand.ajouter_epreuve(new Epreuve(hand, false, "Handball"));
@@ -106,12 +112,6 @@ public class datamanager {
 
     /** public final static void save_data() */
     public final static void save_data() {
-        save_jo();
-        save_athlete();
-        save_equipe();
-        save_pays();
-        save_sport();
-
         // export their csv
     }
 
@@ -150,76 +150,6 @@ public class datamanager {
     }
 
     /**
-     * public final static void create_athlete(Athlete athlete)
-     * 
-     * @param athlete Athlete
-     */
-    public final static void create_athlete(Athlete athlete) {
-    }
-
-    /** public final static void save_athlete() */
-    public final static void save_athlete() {
-    }
-
-    /** public final static void delete_athlete() */
-    public final static void delete_athlete() {
-    }
-
-    /**
-     * public final static List[Athlete] load_athlete()
-     * 
-     * @return List[Athlete]
-     */
-    public final static List<Athlete> load_athlete() {
-        return null;
-    }
-
-    /**
-     * public final static List[Athlete] list_athlete()
-     * 
-     * @return List[Athlete]
-     */
-    public final static List<Athlete> list_athlete() {
-        return null;
-        // return glob_athlete;
-    }
-
-    /**
-     * public final static void create_equipe(Equipe equipe)
-     * 
-     * @param equipe Equipe l'équipe a créé
-     */
-    public final static void create_equipe(Equipe equipe) {
-    }
-
-    /** public final static void save_equipe() */
-    public final static void save_equipe() {
-    }
-
-    /** public final static void delete_equipe() */
-    public final static void delete_equipe() {
-    }
-
-    /**
-     * public final static List[Equipe] load_equipe()
-     * 
-     * @return List[Equipe]
-     */
-    public final static List<Equipe> load_equipe() {
-        return null;
-    }
-
-    /**
-     * public final static List[Equipe] list_Equipes()
-     * 
-     * @return List[Equipe]
-     */
-    public final static List<Equipe> list_Equipes() {
-        return null;
-        // return glob_equipe;
-    }
-
-    /**
      * public final static void create_pays(Pays pays)
      * 
      * @param pays Pays le pays a créé
@@ -252,40 +182,4 @@ public class datamanager {
     public final static List<Pays> list_pays() {
         return glob_pays;
     }
-
-    /**
-     * public final static void create_sport(Sport sport)
-     * 
-     * @param sport Sport le sport a créé
-     */
-    public final static void create_sport(Sport sport) {
-    }
-
-    /** public final static void save_sport() */
-    public final static void save_sport() {
-    }
-
-    /** public final static void delete_sport() */
-    public final static void delete_sport() {
-    }
-
-    /**
-     * public final static List[Sport] load_sport()
-     * 
-     * @return List[Sport]
-     */
-    public final static List<Sport> load_sport() {
-        return null;
-    }
-
-    /**
-     * public final static List[Sport] list_sport()
-     * 
-     * @return List[Sport]
-     */
-    public final static List<Sport> list_sport() {
-        return null;
-        // return glob_sport;
-    }
-
 }

@@ -35,6 +35,8 @@ public class Launcher {
         System.out.println(datamanager.load_jo());
         datamanager.load_jo().get(0).simule();
 
+        System.out.println(datamanager.load_jo().get(0));
+
         System.exit(0);
 
         // String newLine = System.getProperty("line.separator");
@@ -471,7 +473,7 @@ public class Launcher {
      */
     private final static void presentateur_menu() {
         System.out.println("presentateur panel");
-        olympic.graphic.GUI_presentateur.main(new String[] {});
+        // olympic.graphic.GUI_presentateur.main(new String[] {});
     }
 
     /**

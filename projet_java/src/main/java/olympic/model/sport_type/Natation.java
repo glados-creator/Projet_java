@@ -8,6 +8,6 @@ import olympic.model.Sport;
 public class Natation extends Sport {
     /** Natation constructor */
     public Natation() {
-        super("Natation", "s", 0.30, 0.30, 0.40);
+        super("Natation", "s", 0.30, 0.30, 0.40, false);
     }
 }

@@ -8,6 +8,6 @@ import olympic.model.Sport;
 public class Athletisme extends Sport {
     /** Athletisme constructor */
     public Athletisme() {
-        super("Athletisme", "sec", 0.40, 0.30, 0.30);
+        super("Athletisme", "sec", 0.40, 0.30, 0.30, false);
     }
 }
