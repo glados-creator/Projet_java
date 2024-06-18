@@ -29,6 +29,9 @@ public class VueJeu extends Application {
     private Button Visiteur;
     private Button Organisateur;
     private Button Administrateur;
+    private Button Athletes;
+    private Button Pays;
+    private Button Sports;
 
     @Override
     public void init() {
@@ -104,25 +107,6 @@ public class VueJeu extends Application {
         panelCentral.setCenter(buttonbox);
     }
 
-    public void modeVisiteur() {
-        panelCentral.getChildren().clear();
-        
-        VBox mainBox = new VBox(20);
-        mainBox.setPadding(new Insets(20)); 
-        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        Button backButton = new Button("Retour");
-        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-        backButton.setOnAction(e -> {
-            System.out.println("Bouton Retour cliqué");
-        });
-        backButton.setOnAction(new ControlerJeu(this));
-
-        HBox contBox = new HBox(20);
-        contBox.setAlignment(Pos.CENTER);
-
-    }
 
     public void modeOrga() {
         panelCentral.getChildren().clear();
@@ -183,10 +167,6 @@ public class VueJeu extends Application {
         
         panelCentral.setCenter(mainBox);
     }
-    
-    
-    
-    
     
 
     public void modeAdmin() {
@@ -252,7 +232,7 @@ public class VueJeu extends Application {
         panelCentral.setCenter(mainBox);
     }
 
-    public void modeInscription(){
+    public void modeInscription() {
 
         panelCentral.getChildren().clear();
         
@@ -260,8 +240,116 @@ public class VueJeu extends Application {
         mainBox.setPadding(new Insets(20)); 
         mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
         panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
+    
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(e -> {
+            System.out.println("Bouton Retour cliqué");
+        });
+        backButton.setOnAction(new ControlerJeu(this));
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+        
+        Label connexionLabel = new Label("Inscription");
+        connexionLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
+        connexionLabel.setTextFill(Color.BLACK);
+        connexionLabel.setAlignment(Pos.CENTER);
+        VBox.setMargin(connexionLabel, new Insets(0, 0, 40, 0));
+        
+        TextField usernameField = new TextField();
+        usernameField.setPromptText("Identifiant");
+        usernameField.setMaxWidth(320);
+    
+        PasswordField passwordField = new PasswordField();
+        passwordField.setPromptText("Mot de passe");
+        passwordField.setMaxWidth(320);
+        
+        // New Password Confirmation Field
+        PasswordField confirmPasswordField = new PasswordField();
+        confirmPasswordField.setPromptText("Confirmez le mot de passe");
+        confirmPasswordField.setMaxWidth(320);
+    
+        Label errorLabel = new Label();
+        errorLabel.setTextFill(Color.RED);
+    
+        Button connecterButton = new Button("S'inscrire");
+        connecterButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        connecterButton.setPrefWidth(320);
+        connecterButton.setPrefHeight(25);
+        connecterButton.setOnAction(e -> {
+            if (!passwordField.getText().equals(confirmPasswordField.getText())) {
+                errorLabel.setText("Les mots de passe ne correspondent pas");
+            } else {
+                // Proceed with registration logic
+                System.out.println("Inscription réussie");
+                errorLabel.setText("");
+            }
+        });
+        
+        contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, confirmPasswordField, connecterButton, errorLabel);
+        
+        HBox topBox = new HBox();
+        topBox.getChildren().add(backButton);
+        //topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+    
+        mainBox.getChildren().addAll(topBox, contentBox);
+        
+        mainBox.setMaxWidth(700);
+        mainBox.setMaxHeight(400);
+        
+        panelCentral.setCenter(mainBox);
     }
+     
+
+    public void modeVisiteur() {
+        panelCentral.getChildren().clear();
+        
+        VBox mainBox = new VBox(20);
+        mainBox.setPadding(new Insets(20)); 
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerJeu(this));
+    
+        Button Athletes = new Button("Athlète");
+        Button Pays = new Button("Pays");
+        Button Sports = new Button("Sports");
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(backButton);
+        
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+    
+        mainBox.getChildren().addAll(topPane, contentBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
+        
+        panelCentral.setCenter(mainBox);
+    }
+    
+    
+
+    
 
     public void modeAppli() {
         panelCentral.getChildren().clear();
