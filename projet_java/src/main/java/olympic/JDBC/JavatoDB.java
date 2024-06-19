@@ -120,7 +120,7 @@ public class JavatoDB {
             st.setInt(1, this.getIdEpreuveProchain());
             st.setString(2, ep.getNom());
             st.setBoolean(3, ep.getCollectif());
-            st.setString(4, ep.getSexe());
+            st.setString(4, (ep.getSex()? "M":"F"));
             st.setString(5, ep.getSport().getNom());
             st.setString(6, ep.getSport().getJO().getAnnee());
 
