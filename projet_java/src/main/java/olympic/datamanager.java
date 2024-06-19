@@ -24,10 +24,10 @@ import olympic.model.Pays;
 // 8 - sauvegarder csv
 
 /**
- * public class datamanager
+ * public final class datamanager
  * manage the sync with the data
  */
-public class datamanager {
+public final class datamanager {
     /** private static ConnexionMySQL conn */
     private static ConnexionMySQL conn;
 
@@ -82,56 +82,60 @@ public class datamanager {
         nat.ajouter_epreuve(new Epreuve(nat, true, "Natation 100 brasse"));
         nat.ajouter_epreuve(new Epreuve(nat, false, "Natation relais libre"));
         nat.ajouter_epreuve(new Epreuve(nat, true, "Natation relais libre"));
-        jo.ajouter_sports(nat);
+        jo.ajouteSport(nat);
 
         HandBall hand = new HandBall(jo);
         hand.ajouter_epreuve(new Epreuve(hand, false, "Handball"));
         hand.ajouter_epreuve(new Epreuve(hand, true, "Handball"));
-        jo.ajouter_sports(hand);
+        jo.ajouteSport(hand);
 
         VolleyBall voley = new VolleyBall(jo);
         voley.ajouter_epreuve(new Epreuve(voley, false, "Voley-Ball"));
         voley.ajouter_epreuve(new Epreuve(voley, true, "Voley-Ball"));
-        jo.ajouter_sports(voley);
+        jo.ajouteSport(voley);
 
         Escrime escr = new Escrime(jo);
         escr.ajouter_epreuve(new Epreuve(escr, false, "Escrime fleuret"));
         escr.ajouter_epreuve(new Epreuve(escr, true, "Escrime fleuret"));
         escr.ajouter_epreuve(new Epreuve(escr, false, "Escrime épée"));
         escr.ajouter_epreuve(new Epreuve(escr, true, "Escrime épée"));
-        jo.ajouter_sports(escr);
+        jo.ajouteSport(escr);
 
         Athletisme athle = new Athletisme(jo);
         athle.ajouter_epreuve(new Epreuve(athle, false, "Athétisme 110 haies"));
         athle.ajouter_epreuve(new Epreuve(athle, true, "Athétisme 110 haies"));
         athle.ajouter_epreuve(new Epreuve(athle, false, "Athlétisme relais 400m"));
         athle.ajouter_epreuve(new Epreuve(athle, true, "Athlétisme relais 400m"));
-        jo.ajouter_sports(athle);
+        jo.ajouteSport(athle);
 
         create_jo(jo);
     }
 
-    /**
+    /*
      * public final static void load_data(String nomServeur, String nomBase, String
      * nomLogin, String motDePasse)
      * load_data
      * 
      * @param nomServeur String nomServeur
-     * @param nomBase    String nomBase
-     * @param nomLogin   String nomLogin
+     * 
+     * @param nomBase String nomBase
+     * 
+     * @param nomLogin String nomLogin
+     * 
      * @param motDePasse String motDePasse
+     * 
+     * public final static void load_data(String nomServeur, String nomBase, String
+     * nomLogin, String motDePasse) {
+     * // either get sql data or csv static
+     * try {
+     * conn = new ConnexionMySQL();
+     * conn.connecter(nomServeur, nomBase, nomLogin, motDePasse);
+     * } catch (Exception e) {
+     * // T0D0: handle exception
+     * // parse csv to data model
+     * }
+     * }
      */
-    public final static void load_data(String nomServeur, String nomBase, String nomLogin, String motDePasse) {
-        // either get sql data or csv static
-        try {
-            conn = new ConnexionMySQL();
-            conn.connecter(nomServeur, nomBase, nomLogin, motDePasse);
-        } catch (Exception e) {
-            // TODO: handle exception
-            // parse csv to data model
-        }
-    }
-
     /** public final static void save_data() */
     public final static void save_data() {
         // export their csv

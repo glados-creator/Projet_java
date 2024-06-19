@@ -46,7 +46,7 @@ public class RoleConnexion {
         try {
             // test if empty
             ResultSet rs_test = laConnexion.createStatement().executeQuery("select COUNT(role_id) from Role;");
-            System.out.println("TEST : "+(!(rs_test.next())) +" : "+ rs_test.wasNull() +" : "+ (rs_test.getInt(1) < 4) +" : "+ (getMaxIdUser() < 3));
+            // System.out.println("TEST : "+(!(rs_test.next())) +" : "+ rs_test.wasNull() +" : "+ (rs_test.getInt(1) < 4) +" : "+ (getMaxIdUser() < 3));
             
             rs_test = laConnexion.createStatement().executeQuery("select COUNT(role_id) from Role;");
             

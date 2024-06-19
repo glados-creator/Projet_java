@@ -1,7 +1,5 @@
 package olympic.model;
 
-// TODO: sync with datamanager
-
 import java.util.ArrayList;
 import java.util.List;
 

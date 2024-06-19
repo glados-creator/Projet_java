@@ -17,7 +17,20 @@ prenoms_ma = ["Youssef", "Aya", "Imane", "Mehdi", "Nour", "Hamza", "Fatima", "Ay
 sexes = ["M", "F"]
 pays = ["USA", "Chine", "Japon", "Kenya", "France", "Maroc", "Allemagne", "Australie", "Brésil", "Turquie"]
 epreuve_collectif = ["relais libre", "relais 400m", "Handball", "Volley-Ball"]
-epreuves = {"Natation" : ["100 brasse", "ralais libre"], "Handball":["Handball"]}
+
+epreuves = {
+    "Natation" : ["100 brasse", "ralais libre"]
+    ,"Handball":["Handball"]
+    
+    ,"Athletisme" : ["Athletisme"]
+    ,"Escrime" : ["Escrime"]
+    ,"HandBall" : ["HandBall"]
+    ,"generic" : ["generic"]
+
+    # ,"Natation" : ["Natation"]
+    # ,"VolleyBall" : ["VolleyBall"]
+}
+
 annee = [(2024, "France"), (2028, "Etats-Unis"), (2032, "Australie")]
 # Génération des enregistrements
 records = []
