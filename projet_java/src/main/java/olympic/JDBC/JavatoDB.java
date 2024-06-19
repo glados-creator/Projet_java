@@ -92,7 +92,7 @@ public class JavatoDB {
             PreparedStatement st = this.laConnexion.prepareStatement("insert into Sport values (?;?)");
 
             st.setString(1, sport.getNom());
-            st.setString(2, sport.getJO().getAnnee());
+            st.setInt(2, sport.getJO().getAnnee());
 
             st.executeUpdate();
         } catch (Exception e) {
@@ -119,10 +119,10 @@ public class JavatoDB {
 
             st.setInt(1, this.getIdEpreuveProchain());
             st.setString(2, ep.getNom());
-            st.setBoolean(3, ep.getCollectif());
+            st.setBoolean(3, ep.getLesParticipants().get(0) instanceof Equipe);
             st.setString(4, (ep.getSex()? "M":"F"));
             st.setString(5, ep.getSport().getNom());
-            st.setString(6, ep.getSport().getJO().getAnnee());
+            st.setInt(6, ep.getSport().getJO().getAnnee());
 
             st.executeUpdate();
         } catch (Exception e) {
@@ -137,8 +137,8 @@ public class JavatoDB {
 
             st.setInt(1, this.getIdEquipe(eq.getNom()));
             st.setString(2, eq.getNom());
-            st.setString(3, eq.getPays().getNom());
-            st.setString(4, eq.getPays().getJO().getAnnee());
+            st.setString(3, eq.getOrigine().getNom());
+            st.setInt(4, eq.getOrigine().getJO().getAnnee());
 
             st.executeUpdate();
 
@@ -154,17 +154,18 @@ public class JavatoDB {
 
             st.setInt(1, this.getIdAthleteProchain());
             st.setString(2, ath.getNom());
-            if (ath.getSex())
             st.setBoolean(3, ath.getSex());
             st.setDouble(4, ath.getForce());
             st.setDouble(5, ath.getAgilite());
             st.setDouble(6, ath.getEndurance());
             st.setString(7, ath.getOrigine().getNom());
-            st.setString(8, ath.getOrigine().getJO().getAnnee());
+            st.setInt(8, ath.getOrigine().getJO().getAnnee());
 
             st.executeUpdate();
+            
 
-            if (eq.getEpreuve().getSport().getCollectif()){
+            // juste on ajoute un athlete pk on essaie d ajouter dans groupe ?
+            /* if (eq.getEpreuve().getSport().getCollectif()){
                 PreparedStatement st2 = this.laConnexion.prepareStatement("insert into APPARTIENT values (?,?)");
 
                 st2.setInt(2, this.getAthlete(ath.getNom(), ath.getPrenom()));
@@ -177,7 +178,7 @@ public class JavatoDB {
 
                 st3.setInt(1, this.getAthlete(ath.getNom(), ath.getPrenom()));
                 st3.setInt(2, );
-            }
+            } */
         }
         catch (Exception e){
             System.out.println("Erreur : ajouteAthlete, de type : " + e);

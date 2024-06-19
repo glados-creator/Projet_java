@@ -1,15 +1,9 @@
 package olympic.graphic;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import olympic.datamanager;
-import olympic.JDBC.ConnexionMySQL;
 import olympic.JDBC.RoleConnexion;
 
 /** class ControlerJeu implements EventHandler[ActionEvent] */
@@ -58,7 +52,6 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 appli.Switch_modeAccueil();
             }
             case "Accueil":
-                // TODO : NON
                 appli.Switch_modeAccueil();
                 break;
             case "Athlètes":
@@ -75,7 +68,7 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 break;
             default:
                 System.out.println("Bouton non reconnu");
-                // TODO : alert
+                // TODO : alert peut etre
                 break;
         }
     }

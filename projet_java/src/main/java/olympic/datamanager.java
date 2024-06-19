@@ -66,7 +66,7 @@ public class datamanager {
 
     /** public final static void default_dataset() */
     public final static void default_dataset() {
-        JeuxOlympique jo = new JeuxOlympique("2024", "Paris");
+        JeuxOlympique jo = new JeuxOlympique(2024, "Paris");
         // JO -> sports -> epreuves | equipes <- atheletes <- pays
 
         // epreuves = ["Natation 100 brasse", "Natation relais libre", "Handball",
