@@ -16,8 +16,7 @@ prenoms_ma = ["Youssef", "Aya", "Imane", "Mehdi", "Nour", "Hamza", "Fatima", "Ay
 
 sexes = ["M", "F"]
 pays = ["USA", "Chine", "Japon", "Kenya", "France", "Maroc", "Allemagne", "Australie", "Brésil", "Turquie"]
-epreuves = ["Natation 100 brasse", "Natation relais libre", "Handball", "Volley-Ball", "Escrime fleuret", "Escrime épée", "Athétisme 110 haies", "Athlétisme relais 400m"]
-epreuve_collectif = ["Natation relais libre", "Athétisme relais 400m", "Handball", "Volley-Ball"]
+epreuve_collectif = ["relais libre", "relais 400m", "Handball", "Volley-Ball"]
 epreuves = {"Natation" : ["100 brasse", "ralais libre"], "Handball":["Handball"]}
 annee = [(2024, "France"), (2028, "Etats-Unis"), (2032, "Australie")]
 # Génération des enregistrements
@@ -37,7 +36,8 @@ for _ in range(800):
         prenom = random.choice(prenoms_de)
     sexe = random.choice(sexes)
     pays_choice = random.choice(pays)
-    epreuve = random.choice(epreuves)
+    sport = random.choice(list(epreuves.keys()))
+    epreuve = random.choice(epreuves[sport])
     force = random.randint(1, 20)
     endurance = random.randint(1, 20)
     agilite = random.randint(1, 20)
@@ -47,13 +47,13 @@ for _ in range(800):
         collectifs = "false"
 
     anneeChoix, lieux = random.choice(annee)
-    records.append([anneeChoix, lieux, nom, prenom, sexe, pays_choice, epreuve, collectifs, force,endurance, agilite])
+    records.append([anneeChoix, lieux, nom, prenom, sexe, pays_choice, sport, epreuve, collectifs, force,endurance, agilite])
 
 # Écriture des données dans un fichier CSV
 with open('donnees.csv', 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     # Écriture de l'en-tête
-    writer.writerow(["Nom", "Prénom", "Sexe", "Pays", "Épreuve", "Collectif", "Force","Endurance","agilite"])
+    writer.writerow(["Annee", "Lieux", "Nom", "Prénom", "Sexe", "Pays", "Sport", "Épreuve", "Collectif", "Force","Endurance","Agilite"])
     # Écriture des enregistrements
     writer.writerows(records)
 
