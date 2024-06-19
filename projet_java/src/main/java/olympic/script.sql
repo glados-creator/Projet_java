@@ -13,22 +13,21 @@ CREATE TABLE JO(
 )
 
 CREATE TABLE Pays (
-    pays_id INT PRIMARY KEY,
-    nom_pays VARCHAR(100)
+    nom_pays VARCHAR(100),
+    annee INT,
+    FOREIGN KEY (annee) REFERENCES JO(annee),
+    PRIMARY KEY (nom_pays, annee)
 );
 
 CREATE TABLE Sport (
-    sport_id INT PRIMARY KEY,
-    nom_sport VARCHAR(100),
-    annnee int,
-    FOREIGN KEY (annee) REFERENCES JO(annee)
+    nom_sport VARCHAR(100) PRIMARY KEY
 );
 
 CREATE TABLE Epreuve (
     epreuve_id INT PRIMARY KEY,
     nom_epreuve VARCHAR(100),
     collectifs boolean;
-    genre VARCHAR(20),
+    genre VARCHAR(1),
     sport_id INT,
     FOREIGN KEY (sport_id) REFERENCES Sport(sport_id)
 );
@@ -38,8 +37,9 @@ CREATE TABLE Equipe (
     equipe_id INT PRIMARY KEY,
     nom_equipe VARCHAR(100),
     pays_id INT,
+    annee int,
     epreuve_id INT,
-    FOREIGN KEY (pays_id) REFERENCES Pays(pays_id),
+    FOREIGN KEY (pays_id, annee) REFERENCES Pays(pays_id, annee),
     FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id)
 );
 
@@ -54,8 +54,7 @@ CREATE TABLE Athlete (
     agiliteA INT,
     pays_id INT,
     annnee INT,
-    FOREIGN KEY (annee) REFERENCES JO(annee),
-    FOREIGN KEY (pays_id) REFERENCES Pays(pays_id),
+    FOREIGN KEY (pays_id, annee) REFERENCES Pays(pays_id, annee),
     FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id)
 );
 
