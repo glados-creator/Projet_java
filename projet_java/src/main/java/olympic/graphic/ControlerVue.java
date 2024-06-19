@@ -1,6 +1,8 @@
 package olympic.graphic;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -41,33 +43,18 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 }
 
                 try {
-                    RoleConnexion.ajouteVisiteur(appli.usernameField.getText(), appli.passwordField.getText());
-                    System.out.println("Inscription réussie");
-                    appli.modeLog();
-
+                    RoleConnexion.ajouteVisiteur(appli.usernameField.getText(), String.valueOf(appli.passwordField.getText().hashCode()));
                 } catch (SQLException e) {
                     System.out.println("Erreur d'inscription : " + e.getMessage());
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
                 appli.Switch_modeAccueil();
             }
             case "Se Connecter": {
-                /*
-                 * TextField usernameField = appli.getUsernameField();
-                 * TextField passwordField = appli.getPasswordField();
-                 * 
-                 * String username = usernameField.getText();
-                 * String password = passwordField.getText();
-                 * 
-                 * if (roleConnexion.getPW(username, password)) {
-                 * System.out.println("Connexion réussie");
-                 * appli.modeJournaliste();
-                 * } else {
-                 * System.out.println("Échec de la connexion");
-                 * 
-                 * }
-                 */
+                String hash =  RoleConnexion.getPW(appli.usernameField.getText());
+                if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))){
+                    
+                    break;
+                }
                 appli.Switch_modeAccueil();
             }
             case "Accueil":

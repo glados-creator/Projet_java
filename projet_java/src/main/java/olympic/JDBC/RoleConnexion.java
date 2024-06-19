@@ -11,14 +11,14 @@ public class RoleConnexion {
 
     private RoleConnexion(){}
 
-    public static boolean getPW(String nom) {
+    public static String getPW(String nom) {
         try {
             Statement st = laConnexion.createStatement();
             ResultSet rs = st.executeQuery("select motDePasse from Role where nom ='" + nom + "'");
-            rs.next();
-            return rs.getString(1).equals(nom);
+            if (!(rs.next())) return null;
+            return rs.getString(0);
         } catch (SQLException e) {
-            return false;
+            return null;
         }
     }
 

@@ -560,6 +560,9 @@ public class Vue extends Application {
         PageConnexion = new HBox();
         HBox root = PageConnexion;
 
+        PageConnexion_error = new Label();
+        PageConnexion_error.setTextFill(Color.RED);
+
         usernameField = new TextField();
         usernameField.setPromptText("Identifiant");
         usernameField.setAlignment(Pos.CENTER);
@@ -601,11 +604,12 @@ public class Vue extends Application {
         paneconn.add(paneconn_mdp, 0, 2);
         
         paneconn.add(passwordField, 1, 2);
+        paneconn.add(PageConnexion_error, 0, 3,2,1);
 
         Button paneconn_connect = new Button("Se Connecter");
         paneconn_connect.setStyle(root_style_dark);
         paneconn_connect.setOnAction(new ControlerVue(this));
-        paneconn.add(paneconn_connect, 0, 3,2,1);
+        paneconn.add(paneconn_connect, 0, 4,2,1);
 
         // Partie inscription
         GridPane paneinsc = new GridPane();
@@ -643,11 +647,12 @@ public class Vue extends Application {
         paneinsc.add(paneinsc_mdpconf, 0, 3);
         
         paneinsc.add(confirmPasswordField, 1, 3);
+        paneinsc.add(PageConnexion_error, 0, 4,2,1);
 
         Button connecterButton = new Button("S'Inscrire");
         connecterButton.setStyle(root_style_dark);
         connecterButton.setOnAction(new ControlerVue(this));
-        paneinsc.add(connecterButton, 0, 4,2,1);
+        paneinsc.add(connecterButton, 0, 5,2,1);
 
         
         Region divrect = new Region();
