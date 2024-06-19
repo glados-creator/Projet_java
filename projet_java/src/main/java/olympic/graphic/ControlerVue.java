@@ -77,27 +77,24 @@ public class ControlerVue implements EventHandler<ActionEvent>  {
                 }
             }
             case "Accueil":
-                System.out.println("Page d'accueil");
-                appli.modeJournaliste();
+            // TODO : NON
+                appli.Switch_modeAccueil();
                 break;
             case "Athlètes":
-                System.out.println("Page des athlètes");
-                appli.modeAthletes();
+                appli.Switch_modeSports();
                 break;
             case "Pays":
-                System.out.println("Page des pays");
-                appli.modePays();
+                appli.Switch_modePays();
                 break;
             case "Sports":
-                System.out.println("Page des sports");
-                appli.modeSports();
+                appli.Switch_modesSports();
                 break;
             case "Retour":
-                System.out.println("Retour à la page de log");
-                appli.modeLog();
+                appli.Switch_Connexion();
                 break;
             default:
                 System.out.println("Bouton non reconnu");
+                // TODO : alert
                 break;
         }
     }

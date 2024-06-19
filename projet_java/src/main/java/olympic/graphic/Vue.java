@@ -421,7 +421,7 @@ public class Vue extends Application {
         */
     }
 
-    public void modeAthletes(boolean organisateur,boolean admin) {
+    public void Create_modeAthletes(boolean organisateur,boolean admin) {
         PanelCentral.getChildren().clear();
 
         VBox mainBox = new VBox(20);
@@ -494,7 +494,7 @@ public class Vue extends Application {
         PanelCentral.setCenter(mainBox);
     }
 
-    public void modePays(boolean organisateur,boolean admin) {
+    public void Create_modePays(boolean organisateur,boolean admin) {
         PanelCentral.getChildren().clear();
 
         VBox mainBox = new VBox(20);
@@ -536,13 +536,13 @@ public class Vue extends Application {
         topPane.setLeft(topBox);
         topPane.setRight(menuBox);
 
-        TableView<BPays> table = new TableView<>();
+        TableView<Pays> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        TableColumn<BPays, String> NomBPaysCol = new TableColumn<>("Nom du BPays");
+        TableColumn<Pays, String> NomBPaysCol = new TableColumn<>("Nom du BPays");
         NomBPaysCol.setCellValueFactory(new PropertyValueFactory<>("Nom du Pay"));
 
-        TableColumn<BPays, String> DrapeauCol = new TableColumn<>("Drapeau du BPays");
+        TableColumn<Pays, String> DrapeauCol = new TableColumn<>("Drapeau du BPays");
         DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Drapeau du BPays"));
 
         table.getColumns().addAll(NomBPaysCol, DrapeauCol);
@@ -559,7 +559,7 @@ public class Vue extends Application {
 
     }
 
-    public void modeSports(boolean organisateur,boolean admin) {
+    public void Create_modeSports(boolean organisateur,boolean admin) {
         PanelCentral.getChildren().clear();
 
         VBox mainBox = new VBox(20);
@@ -623,12 +623,23 @@ public class Vue extends Application {
         PanelCentral.setCenter(mainBox);
     }
 
-    public Pane CreatePaneLive(boolean organisateur,boolean admin){
+    Switch_modeAccueil
+    Switch_modeSports
+    Switch_modePays 
+    Switch_modesSports
+    Switch_Connexion
+
+
+
+    public Pane Create_PaneLive(boolean organisateur,boolean admin){
         // TODO : TODO
+        Create_modeAthletes(organisateur, admin);
+        Create_modePays(organisateur, admin);
+        Create_modeSports(organisateur, admin);
         return null;
     }
 
-    public Pane CreatePaneConnexion(){
+    public Pane Create_PaneConnexion(){
         // TODO : TODO
         return null;
     }
