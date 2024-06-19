@@ -1,10 +1,12 @@
 package olympic.JDBC;
 
 import java.sql.*;
+import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-/** class CsvToDatabase
+/**
+ * class CsvToDatabase
  * petite app qui va lire le csv et le mettre en sql
  */
 public class CsvToDatabase {
@@ -13,6 +15,7 @@ public class CsvToDatabase {
 
     /**
      * CsvToDatabase
+     * 
      * @param laConnexion la conn to the DB
      */
     CsvToDatabase(ConnexionMySQL laConnexion) {
@@ -22,6 +25,7 @@ public class CsvToDatabase {
     /**
      * main launch
      * petite app qui va lire le csv et le mettre en sql
+     * 
      * @param args term args
      */
     public static void main(String[] args) {
@@ -58,16 +62,23 @@ public class CsvToDatabase {
             try {
 
             String lineText;
+            lineReader.readLine();
             while ((lineText = lineReader.readLine()) != null) {
                 String[] data = lineText.split(",");
-                String nom = data[0];
-                String prenom = data[1];
-                String sexe = data[2];
-                String pays = data[3];
-                String sport = data[4];
-                int force = Integer.parseInt(data[5]);
-                int endurance = Integer.parseInt(data[6]);
-                int agilite = Integer.parseInt(data[7]);
+                
+                System.out.println(Arrays.asList(data));
+                String annee =          data[0];
+                String lieux =          data[1];
+                String nom =            data[2];
+                String prenom =         data[3];
+                String sexe =           data[4];
+                String pays =           data[5];
+                String sport =          data[6];
+                String epreuve =        data[7];
+                boolean collectifs =    data[8].equals("true");
+                int force =             Integer.parseInt(data[9]);
+                int endurance =         Integer.parseInt(data[10]);
+                int agilite =           Integer.parseInt(data[11]);
 
                 // Insert Pays
                 statementInsertPays.setString(1, pays);
@@ -107,29 +118,28 @@ public class CsvToDatabase {
         try {
             statementInsertPays.close();
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
         try {
             statementInsertSport.close();
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }    
             try {
                 statementInsertEquipe.close();
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
             try {
                 statementInsertAthlete.close();
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
             try {
                 lineReader.close();
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
-    } catch (Exception e){}
-        
+    } catch (Exception e){e.printStackTrace();}        
     }
 }

@@ -9,16 +9,16 @@ import javafx.scene.control.Button;
 import olympic.JDBC.RoleConnexion;
 
 /** class ControlerJeu implements EventHandler[ActionEvent] */
-public class ControlerVue implements EventHandler<ActionEvent> {
+public class ControlerVue_arthur implements EventHandler<ActionEvent> {
     /** Vue appli */
-    Vue appli;
+    Vue_arthur appli;
 
     /**
      * ControlerVue
      * 
      * @param appli
      */
-    public ControlerVue(Vue appli) {
+    public ControlerVue_arthur(Vue_arthur appli) {
         this.appli = appli;
     }
 
