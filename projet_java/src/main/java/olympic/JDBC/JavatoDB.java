@@ -2,9 +2,11 @@ package olympic.JDBC;
 
 import java.sql.*;
 
+import olympic.model.Athlete;
 import olympic.model.Epreuve;
-import olympic.model.JeuxOlympique;
+import olympic.model.Equipe;
 import olympic.model.Pays;
+import olympic.model.JeuxOlympique;
 import olympic.model.Sport;
 
 public class JavatoDB {
@@ -27,10 +29,10 @@ public class JavatoDB {
         }
     }
 
-    public int getIdEpreuve(String nomEpreuve) throws SQLException {
+    public int getIdEpreuve(String nomEpreuve, String nomSport) throws SQLException {
         try {
             st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("select epreuve_id from Epreuve where epreuve_id ='" + nomEpreuve + "'");
+            ResultSet rs = st.executeQuery("select epreuve_id from Epreuve natural join Sport where epreuve_id ='" + nomEpreuve + "' and nom_sport ='" + nomSport + "'");
             rs.next();
             return rs.getInt(1);
 
@@ -39,8 +41,17 @@ public class JavatoDB {
         }
     }
 
+    public int getIdAthlete(String nomAthlete, String prenomAthlete) throws SQLException {
+        try {
+            st = laConnexion.createStatement();
+            ResultSet rs = st.executeQuery("select athlete_id from Athlete where nom ='" + nomAthlete + "' and prenom = '" + prenomAthlete + "'");
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
+            return 0;
+        }
+    }
 
-    // TODO : just fait getMaxIdAthlete
     public int getIdAthleteProchain() throws SQLException {
         try {
             st = laConnexion.createStatement();
@@ -51,7 +62,6 @@ public class JavatoDB {
             return 0;
         }
     }
-    // TODO : just fait getMaxIdAthlete
 
     public int getIdEpreuveProchain() throws SQLException {
         try {
@@ -68,8 +78,7 @@ public class JavatoDB {
         try {
             PreparedStatement st = this.laConnexion.prepareStatement("insert into JO values (?,?)");
 
-            // st.setInt(1, jo.getAnnee());
-            // setint marche pas ?
+            st.setInt(1, jo.getAnnee());
             st.setString(2, jo.getLieux());
 
             st.executeUpdate();
@@ -91,12 +100,12 @@ public class JavatoDB {
         }
     }
 
-    public void ajoutePays(Pays nomPays) throws SQLException {
+    public void ajoutePays(Pays pa) throws SQLException {
         try {
             PreparedStatement st = this.laConnexion.prepareStatement("insert into Pays values (?,?)");
 
-            st.setString(1, nomPays.getNom());
-            st.setString(2, nomPays.getJO().getLieux());
+            st.setString(1, pa.getNom());
+            st.setString(2, pa.getJO().getLieux());
 
             st.executeUpdate();
         } catch (Exception e) {
@@ -110,7 +119,7 @@ public class JavatoDB {
 
             st.setInt(1, this.getIdEpreuveProchain());
             st.setString(2, ep.getNom());
-            // st.setBoolean(3, ep.getCollectif());
+            st.setBoolean(3, ep.getCollectif());
             st.setString(4, (ep.getSex()? "M":"F"));
             st.setString(5, ep.getSport().getNom());
             st.setString(6, ep.getSport().getJO().getAnnee());
@@ -118,6 +127,60 @@ public class JavatoDB {
             st.executeUpdate();
         } catch (Exception e) {
             System.out.println("Erreur : ajouteEpreuve, de type : " + e);
+        }
+
+    }
+
+    public void ajouteEquipe(Equipe eq) throws SQLException {
+        try{
+            PreparedStatement st = this.laConnexion.prepareStatement("insert into Equipe values (?,?,?,?)");
+
+            st.setInt(1, this.getIdEquipe(eq.getNom()));
+            st.setString(2, eq.getNom());
+            st.setString(3, eq.getPays().getNom());
+            st.setString(4, eq.getPays().getJO().getAnnee());
+
+            st.executeUpdate();
+
+            
+        }catch (Exception e){
+            System.out.println("Erreur : ajouteEquipe, de type : " + e);
+        }
+    }
+
+    public void ajoute(Athlete ath) throws SQLException{
+        try{
+            PreparedStatement st = this.laConnexion.prepareStatement("insert into Athlete values (?,?,?,?,?,?,?,?)");
+
+            st.setInt(1, this.getIdAthleteProchain());
+            st.setString(2, ath.getNom());
+            if (ath.getSex())
+            st.setBoolean(3, ath.getSex());
+            st.setDouble(4, ath.getForce());
+            st.setDouble(5, ath.getAgilite());
+            st.setDouble(6, ath.getEndurance());
+            st.setString(7, ath.getOrigine().getNom());
+            st.setString(8, ath.getOrigine().getJO().getAnnee());
+
+            st.executeUpdate();
+
+            if (eq.getEpreuve().getSport().getCollectif()){
+                PreparedStatement st2 = this.laConnexion.prepareStatement("insert into APPARTIENT values (?,?)");
+
+                st2.setInt(2, this.getAthlete(ath.getNom(), ath.getPrenom()));
+                st2.setInt(1, this.getIdEpreuve(ath.getMembre()));
+
+                st2.executeUpdate();
+            }
+            else{
+                PreparedStatement st3 = this.laConnexion.prepareStatement("insert into PARTICIPE_ATHLETE values (?,?)");
+
+                st3.setInt(1, this.getAthlete(ath.getNom(), ath.getPrenom()));
+                st3.setInt(2, );
+            }
+        }
+        catch (Exception e){
+            System.out.println("Erreur : ajouteAthlete, de type : " + e);
         }
 
     }

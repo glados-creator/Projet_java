@@ -12,7 +12,7 @@ import java.util.Objects;
 public class JeuxOlympique {
 
     /** String annee */
-    private final String annee;
+    private int annee;
     /** String lieux */
     private String lieux;
     /** List[Sport] les_sports */
@@ -59,7 +59,7 @@ public class JeuxOlympique {
      * @param annee String
      * @param lieux String
      */
-    public JeuxOlympique(String annee, String lieux) {
+    public JeuxOlympique(int annee, String lieux) {
         this.annee = annee;
         this.lieux = lieux;
         les_sports = new ArrayList<>();
@@ -70,7 +70,7 @@ public class JeuxOlympique {
      * 
      * @return String
      */
-    public String getAnnee() {
+    public int getAnnee() {
         return this.annee;
     }
 
