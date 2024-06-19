@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import olympic.model.Athlete;
-import olympic.model.Epreuve;
 import olympic.model.Equipe;
 import olympic.model.Pays;
 import olympic.model.JeuxOlympique;
