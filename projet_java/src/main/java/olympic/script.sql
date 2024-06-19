@@ -14,13 +14,15 @@ CREATE TABLE JO(
 
 CREATE TABLE Pays (
     nom_pays VARCHAR(100),
-    annee INT REFERENCES JO(annee),
+    annee INT,
+    FOREIGN KEY (annee) REFERENCES JO(annee),
     PRIMARY KEY (nom_pays, annee)
 );
 
 CREATE TABLE Sport (
     nom_sport VARCHAR(100),
-    annee INT REFERENCES JO(annee),
+    annee INT,
+    FOREIGN KEY (annee) REFERENCES JO(annee),
     PRIMARY KEY (nom_sport, annee)
 );
 
@@ -62,21 +64,24 @@ CREATE TABLE PARTICIPE_ATHLETE(
     athlete_id INT,
     epreuve_id INT,
     FOREIGN KEY (athlete_id) REFERENCES Athlete(athlete_id),
-    FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id)
+    FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id),
+    PRIMARY KEY (athlete_id, epreuve_id)
 )
 
 CREATE TABLE PARTICIPE_EQUIPE(
     equipe_id INT,
     epreuve_id INT,
     FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id),
-    FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id)
+    FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id),
+    PRIMARY KEY (equipe_id, epreuve_id)
 )
 
 CREATE TABLE APPARTIENT(
     equipe_id INT,
     athlete_id INT,
     FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id),
-    FOREIGN KEY (athlete_id) REFERENCES Athlete(athlete_id)
+    FOREIGN KEY (athlete_id) REFERENCES Athlete(athlete_id),
+    PRIMARY KEY (equipe_id, athlete_id)
 )
 
 
