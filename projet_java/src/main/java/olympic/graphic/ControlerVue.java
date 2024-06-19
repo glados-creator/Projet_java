@@ -2,6 +2,7 @@ package olympic.graphic;
 
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.concurrent.ExecutionException;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,6 +29,7 @@ public class ControlerVue implements EventHandler<ActionEvent> {
 
         switch (button.getText()) {
             case "S'inscrire": {
+                try {
                 System.out.println("TEST S'inscrire");
                 if (!(appli.passwordField.getText().equals(appli.confirmPasswordField.getText()))) {
                     appli.PageConnexion_error.setText("Les mots de passe ne correspondent pas");
@@ -48,9 +50,11 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     return;
                 }
                 appli.modeJournaliste();
+            } catch (Exception e){;}
             }
             case "Connecter": {
                 System.out.println("TEST Connecter");
+                try {
                 String hash = RoleConnexion.getPW(appli.usernameField.getText());
                 if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))) {
                     appli.PageConnexion_error.setText("mauvais mot de passe ou identifiant");
@@ -87,6 +91,7 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     appli.modeJournaliste();    
                     break;
                 }
+            } catch (Exception e){;}
             }
             case "Connexion":
                 appli.modeConnexion();
