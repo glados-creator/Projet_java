@@ -3,27 +3,44 @@ package olympic.JDBC;
 import java.sql.*;
 
 public class RoleConnexion {
+    /** private static ConnexionMySQL laConnexion */
     private static ConnexionMySQL laConnexion;
 
+    /**
+     * setlaConnexion
+     * 
+     * @param laConnexion_truc ConnexionMySQL
+     */
     public static void setlaConnexion(ConnexionMySQL laConnexion_truc) {
         laConnexion = laConnexion_truc;
     }
 
+    /** private RoleConnexion */
     private RoleConnexion() {
     }
 
-    public static boolean getPW(String nom) {
+    /**
+     * getPW password
+     * 
+     * @param nom String user id
+     * @return String str hash of mdp
+     */
+    public static String getPW(String nom) {
         try {
             Statement st = laConnexion.createStatement();
             ResultSet rs = st.executeQuery("select motDePasse from Role where nom ='" + nom + "'");
-            rs.next();
-            return rs.getString(1).equals(nom);
+            if (!(rs.next()))
+                return null;
+            return rs.getString(1);
         } catch (SQLException e) {
-            return false;
+            return null;
         }
     }
 
-    public static void addDefaultRole() throws SQLException {
+    /**
+     * addDefaultRole
+     */
+    public static void addDefaultRole() {
         try {
             Statement st = laConnexion.createStatement();
             st.executeUpdate("insert into Role (role_id, nom_role) values (1, 'admin')");
@@ -33,34 +50,65 @@ public class RoleConnexion {
             st.executeUpdate(
                     "insert into Utilisateur (nom, password, role_id) values (admin, admin, 1), (organisateur, organisateur, 2)");
         } catch (SQLException e) {
-            System.out.println("Erreur d'insertion : addDefaultRole");
+            System.out.println("Erreur : addDefaultRole");
         }
     }
 
-    public int getRole() throws SQLException {
+    /**
+     * getRole
+     * 
+     * @return int role
+     */
+    public static int getRole(String nom, String password) {
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("select role_id from Role where nom_role = 'admin'");
-            rs.next();
-            return rs.getInt(1);
+            ResultSet rs = st.executeQuery("select role_id from Utilisateur natural left join Role where Utilisateur.nom='"+nom+"' && Utilisateur.password='"+password+"';");
+            if (!(rs.next()))
+                return -1;
+            int tmp = rs.getInt(1);
+            return (rs.wasNull())? -1:tmp;
         } catch (SQLException e) {
-            System.out.println("Erreur d'insertion : getRole");
-            return 0;
+            System.out.println("Erreur : getRole");
+            return -1;
         }
     }
 
-    public static int getIdUserProchain() throws SQLException {
+    /**
+     * getMaxIdUser
+     * 
+     * @return int max user id
+     */
+    public static int getMaxIdUser() {
         try {
             Statement st = laConnexion.createStatement();
             ResultSet rs = st.executeQuery("select max(utilisateur_id) from Utilisateur");
-            rs.next();
-            return rs.getInt(1) + 1;
+            if (!(rs.next()))
+                return -1;
+            return rs.getInt(1);
         } catch (SQLException e) {
-            return 0;
+            System.out.println("Erreur : getIdUserProchain");
+            return -1;
         }
     }
 
-    public static void ajouteVisiteur(String nom, String password) throws SQLException {
+    /**
+     * getIdUserProchain
+     * 
+     * @return int user id +1
+     */
+    public static int getIdUserProchain() {
+        int id = getIdUserProchain();
+        return (id < 0) ? -1 : id;
+    }
+
+    /**
+     * ajouteVisiteur
+     * 
+     * @param nom      String
+     * @param password String le str du hash du mdp
+     * @return int status
+     */
+    public static int ajouteVisiteur(String nom, String password) {
         try {
             PreparedStatement ps = laConnexion.prepareStatement(
                     "insert into Visiteur (nom, password, role_id) values (?,?,?)");
@@ -70,8 +118,10 @@ public class RoleConnexion {
             ps.setInt(3, 3);
 
             ps.executeUpdate();
+            return 1;
         } catch (SQLException e) {
             System.out.println("Erreur d'insertion : ajouteVisiteur");
+            return -1;
         }
     }
 }

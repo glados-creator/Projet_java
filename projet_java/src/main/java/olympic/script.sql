@@ -97,7 +97,7 @@ CREATE TABLE APPARTIENT (
 
 CREATE TABLE Role (
     role_id INT PRIMARY KEY,
-    nom_role VARCHAR(100)
+    nom_role VARCHAR(20)
 );
 
 CREATE TABLE Utilisateur (

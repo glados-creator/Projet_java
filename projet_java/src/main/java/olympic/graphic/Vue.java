@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
@@ -36,6 +37,8 @@ public class Vue extends Application {
     private BorderPane Titre;
     /** private BorderPane PageConnexion */
     private HBox PageConnexion;
+    /** private BorderPane Menu */
+    private BorderPane Menu;
     /** private BorderPane PageAccueil */
     private BorderPane PageAccueil;
     /** private BorderPane PagePays */
@@ -44,20 +47,6 @@ public class Vue extends Application {
     private BorderPane PagesSports;
     /** private BorderPane PageSports */
     private BorderPane PageSports;
-    /** private BorderPane PanelCentral */
-    private BorderPane PanelCentral;
-    /** private Button BInscription */
-    private Button BInscription;
-    /** private Button Inscription */
-    private Button Inscription;
-    /** private Button BResultat */
-    private Button BResultat;
-    /** private Button BAthletes */
-    private Button BAthletes;
-    /** private Button BPays */
-    private Button BPays;
-    /** private Button BSports */
-    private Button BSports;
     /** TextField usernameField */
     public TextField usernameField;
     /** PasswordField passwordField */
@@ -78,291 +67,7 @@ public class Vue extends Application {
         Create_PageConnexion();
     }
 
-    public void modeLog() {
-        PanelCentral.getChildren().clear();
-        VBox buttonbox = new VBox(20);
-        buttonbox.setAlignment(Pos.CENTER);
-        buttonbox.setPadding(new Insets(20));
-
-        buttonbox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        PanelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        BInscription = new Button("BInscription");
-        BInscription.setOnAction(new ControlerVue(this));
-        Inscription = new Button("Inscription");
-        Inscription.setOnAction(new ControlerVue(this));
-
-        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff; -fx-font-size: 18px;";
-
-        BInscription.setStyle(buttonStyle);
-        Inscription.setStyle(buttonStyle);
-
-        BInscription.setMinWidth(175);
-        BInscription.setMinHeight(75);
-        Inscription.setMinWidth(175);
-        Inscription.setMinHeight(75);
-
-        Region spacer = new Region();
-        spacer.setPrefHeight(10);
-
-        buttonbox.getChildren().addAll(BInscription, spacer, Inscription);
-
-        buttonbox.setMaxWidth(300);
-        buttonbox.setMaxHeight(400);
-
-        PanelCentral.setCenter(buttonbox);
-    }
-
-    public void modeJournaliste() {
-        /*
-         * PanelCentral.getChildren().clear();
-         * 
-         * VBox mainBox = new VBox(20);
-         * mainBox.setPadding(new Insets(20));
-         * mainBox.setBackground(
-         * new Background(new BackgroundFill(Color.valueOf("#ffffff"),
-         * CornerRadii.EMPTY, Insets.EMPTY)));
-         * PanelCentral.setBackground(
-         * new Background(new BackgroundFill(Color.valueOf("#CFE4FF"),
-         * CornerRadii.EMPTY, Insets.EMPTY)));
-         * 
-         * Button backButton = new Button("Retour");
-         * backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;"
-         * );
-         * backButton.setOnAction(new ControlerVue(this));
-         * 
-         * BResultat = new Button("Résultat");
-         * BResultat.setOnAction(new ControlerVue(this));
-         * BAthletes = new Button("Athlètes");
-         * BAthletes.setOnAction(new ControlerVue(this));
-         * BPays = new Button("BPays");
-         * BPays.setOnAction(new ControlerVue(this));
-         * BSports = new Button("BSports");
-         * BSports.setOnAction(new ControlerVue(this));
-         * 
-         * String buttonStyle =
-         * "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-         * BResultat.setStyle(buttonStyle);
-         * BAthletes.setStyle(buttonStyle);
-         * BPays.setStyle(buttonStyle);
-         * BSports.setStyle(buttonStyle);
-         * 
-         * HBox topBox = new HBox(10);
-         * topBox.setPadding(new Insets(0, 0, 0, 0));
-         * topBox.setAlignment(Pos.TOP_LEFT);
-         * topBox.getChildren().add(backButton);
-         * 
-         * HBox menuBox = new HBox(10);
-         * menuBox.setAlignment(Pos.TOP_RIGHT);
-         * menuBox.getChildren().addAll(BResultat, BAthletes, BPays, BSports);
-         * 
-         * BorderPane topPane = new BorderPane();
-         * topPane.setLeft(topBox);
-         * topPane.setRight(menuBox);
-         * 
-         * VBox contentBox = new VBox(20);
-         * contentBox.setAlignment(Pos.CENTER);
-         * 
-         * mainBox.getChildren().addAll(topPane, contentBox);
-         * mainBox.setMaxWidth(750);
-         * mainBox.setMaxHeight(500);
-         * 
-         * TextField barreDeRecherche = new TextField("Recherche par BPays et Epreuve");
-         * 
-         * ComboBox<String> comboBox = new ComboBox();
-         * 
-         * comboBox.setValue("BSports");
-         * comboBox.getItems().addAll("Natation", "Volley-ball", "Escrime",
-         * "Athlétisme", "Handball");
-         * 
-         * Button bRechercher = new Button("Rechercher");
-         * 
-         * TableView<Athlete> table = new TableView<>();
-         * table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-         * 
-         * TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
-         * prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-         * 
-         * TableColumn<Athlete, String> nomCol = new TableColumn<>("Nom");
-         * nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
-         * 
-         * TableColumn<Athlete, String> sexeCol = new TableColumn<>("Sexe");
-         * sexeCol.setCellValueFactory(new PropertyValueFactory<>("sexe"));
-         * 
-         * TableColumn<Athlete, String> BPaysCol = new TableColumn<>("BPays");
-         * BPaysCol.setCellValueFactory(new PropertyValueFactory<>("BPays"));
-         * 
-         * TableColumn<Athlete, String> BSportsCol = new TableColumn<>("BSports");
-         * BSportsCol.setCellValueFactory(new PropertyValueFactory<>("BSports"));
-         * 
-         * table.getColumns().addAll(prenomCol, nomCol, sexeCol, BPaysCol, BSportsCol);
-         * 
-         * mainBox.getChildren().addAll(barreDeRecherche, comboBox, bRechercher, table);
-         * 
-         * PanelCentral.setCenter(mainBox);
-         */
-    }
-
-    public void modeOrganisateur() {
-        /*
-         * PanelCentral.getChildren().clear();
-         * 
-         * VBox mainBox = new VBox(20);
-         * mainBox.setPadding(new Insets(20));
-         * mainBox.setBackground(
-         * new Background(new BackgroundFill(Color.valueOf("#ffffff"),
-         * CornerRadii.EMPTY, Insets.EMPTY)));
-         * PanelCentral.setBackground(
-         * new Background(new BackgroundFill(Color.valueOf("#CFE4FF"),
-         * CornerRadii.EMPTY, Insets.EMPTY)));
-         * 
-         * Button backButton = new Button("Retour");
-         * backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;"
-         * );
-         * backButton.setOnAction(new ControlerVue(this));
-         * 
-         * BResultat = new Button("Résutlat");
-         * BResultat.setOnAction(new ControlerVue(this));
-         * BAthletes = new Button("Athlètes");
-         * BAthletes.setOnAction(new ControlerVue(this));
-         * BPays = new Button("BPays");
-         * BPays.setOnAction(new ControlerVue(this));
-         * BSports = new Button("BSports");
-         * BSports.setOnAction(new ControlerVue(this));
-         * 
-         * String buttonStyle =
-         * "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-         * BResultat.setStyle(buttonStyle);
-         * BAthletes.setStyle(buttonStyle);
-         * BPays.setStyle(buttonStyle);
-         * BSports.setStyle(buttonStyle);
-         * 
-         * HBox topBox = new HBox(10);
-         * topBox.setPadding(new Insets(0, 0, 0, 0));
-         * topBox.setAlignment(Pos.TOP_LEFT);
-         * topBox.getChildren().add(backButton);
-         * 
-         * HBox menuBox = new HBox(10);
-         * menuBox.setAlignment(Pos.TOP_RIGHT);
-         * menuBox.getChildren().addAll(BResultat, BAthletes, BPays, BSports);
-         * 
-         * BorderPane topPane = new BorderPane();
-         * topPane.setLeft(topBox);
-         * topPane.setRight(menuBox);
-         * 
-         * VBox contentBox = new VBox(20);
-         * contentBox.setAlignment(Pos.CENTER);
-         * 
-         * mainBox.getChildren().addAll(topPane, contentBox);
-         * mainBox.setMaxWidth(750);
-         * mainBox.setMaxHeight(500);
-         * 
-         * PanelCentral.setCenter(mainBox);
-         */
-    }
-
-    public void modeAdministrateur() {
-        /*
-         * PanelCentral.getChildren().clear();
-         * 
-         * VBox mainBox = new VBox(20);
-         * mainBox.setPadding(new Insets(20));
-         * mainBox.setBackground(
-         * new Background(new BackgroundFill(Color.valueOf("#ffffff"),
-         * CornerRadii.EMPTY, Insets.EMPTY)));
-         * PanelCentral.setBackground(
-         * new Background(new BackgroundFill(Color.valueOf("#CFE4FF"),
-         * CornerRadii.EMPTY, Insets.EMPTY)));
-         * 
-         * Button backButton = new Button("Retour");
-         * backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;"
-         * );
-         * backButton.setOnAction(new ControlerVue(this));
-         * 
-         * BResultat = new Button("Résultat");
-         * BResultat.setOnAction(new ControlerVue(this));
-         * BAthletes = new Button("Athlètes");
-         * BAthletes.setOnAction(new ControlerVue(this));
-         * BPays = new Button("BPays");
-         * BPays.setOnAction(new ControlerVue(this));
-         * BSports = new Button("BSports");
-         * BSports.setOnAction(new ControlerVue(this));
-         * 
-         * String buttonStyle =
-         * "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-         * BResultat.setStyle(buttonStyle);
-         * BAthletes.setStyle(buttonStyle);
-         * BPays.setStyle(buttonStyle);
-         * BSports.setStyle(buttonStyle);
-         * 
-         * HBox topBox = new HBox(10);
-         * topBox.setPadding(new Insets(0, 0, 0, 0));
-         * topBox.setAlignment(Pos.TOP_LEFT);
-         * topBox.getChildren().add(backButton);
-         * 
-         * HBox menuBox = new HBox(10);
-         * menuBox.setAlignment(Pos.TOP_RIGHT);
-         * menuBox.getChildren().addAll(BResultat, BAthletes, BPays, BSports);
-         * 
-         * BorderPane topPane = new BorderPane();
-         * topPane.setLeft(topBox);
-         * topPane.setRight(menuBox);
-         * 
-         * VBox contentBox = new VBox(20);
-         * contentBox.setAlignment(Pos.CENTER);
-         * 
-         * mainBox.getChildren().addAll(topPane, contentBox);
-         * mainBox.setMaxWidth(750);
-         * mainBox.setMaxHeight(500);
-         * 
-         * PanelCentral.setCenter(mainBox);
-         */
-    }
-
     public void Create_modeAthletes(boolean organisateur, boolean admin) {
-        PanelCentral.getChildren().clear();
-
-        VBox mainBox = new VBox(20);
-        mainBox.setPadding(new Insets(20));
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        PanelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        Button backButton = new Button("Retour");
-        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-        backButton.setOnAction(new ControlerVue(this));
-
-        BResultat = new Button("Résultat");
-        BResultat.setOnAction(new ControlerVue(this));
-        BAthletes = new Button("Athlètes");
-        BAthletes.setOnAction(new ControlerVue(this));
-        BPays = new Button("BPays");
-        BPays.setOnAction(new ControlerVue(this));
-        BSports = new Button("BSports");
-        BSports.setOnAction(new ControlerVue(this));
-
-        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        BResultat.setStyle(buttonStyle);
-        BAthletes.setStyle(buttonStyle);
-        BPays.setStyle(buttonStyle);
-        BSports.setStyle(buttonStyle);
-
-        HBox topBox = new HBox(10);
-        topBox.setPadding(new Insets(0, 0, 0, 0));
-        topBox.setAlignment(Pos.TOP_LEFT);
-        topBox.getChildren().add(backButton);
-
-        HBox menuBox = new HBox(10);
-        menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(BResultat, BAthletes, BPays, BSports);
-
-        BorderPane topPane = new BorderPane();
-        topPane.setLeft(topBox);
-        topPane.setRight(menuBox);
-
         TableView<Athlete> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -386,56 +91,9 @@ public class Vue extends Application {
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
         contentBox.getChildren().add(table);
-
-        mainBox.getChildren().addAll(topPane, contentBox);
-        mainBox.setMaxWidth(750);
-        mainBox.setMaxHeight(500);
-
-        PanelCentral.setCenter(mainBox);
     }
 
     public void Create_modePays(boolean organisateur, boolean admin) {
-        PanelCentral.getChildren().clear();
-
-        VBox mainBox = new VBox(20);
-        mainBox.setPadding(new Insets(20));
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        PanelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        Button backButton = new Button("Retour");
-        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-        backButton.setOnAction(new ControlerVue(this));
-
-        BResultat = new Button("Résultat");
-        BResultat.setOnAction(new ControlerVue(this));
-        BAthletes = new Button("Athlètes");
-        BAthletes.setOnAction(new ControlerVue(this));
-        BPays = new Button("BPays");
-        BPays.setOnAction(new ControlerVue(this));
-        BSports = new Button("BSports");
-        BSports.setOnAction(new ControlerVue(this));
-
-        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        BResultat.setStyle(buttonStyle);
-        BAthletes.setStyle(buttonStyle);
-        BPays.setStyle(buttonStyle);
-        BSports.setStyle(buttonStyle);
-
-        HBox topBox = new HBox(10);
-        topBox.setPadding(new Insets(0, 0, 0, 0));
-        topBox.setAlignment(Pos.TOP_LEFT);
-        topBox.getChildren().add(backButton);
-
-        HBox menuBox = new HBox(10);
-        menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(BResultat, BAthletes, BPays, BSports);
-
-        BorderPane topPane = new BorderPane();
-        topPane.setLeft(topBox);
-        topPane.setRight(menuBox);
-
         TableView<Pays> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -451,56 +109,22 @@ public class Vue extends Application {
         contentBox.setAlignment(Pos.CENTER);
         contentBox.getChildren().add(table);
 
-        mainBox.getChildren().addAll(topPane, contentBox);
-        mainBox.setMaxWidth(750);
-        mainBox.setMaxHeight(500);
-
-        PanelCentral.setCenter(mainBox);
-
     }
 
     public void Create_modeSports(boolean organisateur, boolean admin) {
-        PanelCentral.getChildren().clear();
+        TableView<Sport> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        VBox mainBox = new VBox(20);
-        mainBox.setPadding(new Insets(20));
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        PanelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+        TableColumn<Sport, String> NomBPaysCol = new TableColumn<>("Nom du Sport");
+        NomBPaysCol.setCellValueFactory(new PropertyValueFactory<>("Nom du Sport"));
 
-        Button backButton = new Button("Retour");
-        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-        backButton.setOnAction(new ControlerVue(this));
+        TableColumn<Sport, String> DrapeauCol = new TableColumn<>("Nombre de participants");
+        DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Nombre de participants"));
 
-        BResultat = new Button("Résultat");
-        BResultat.setOnAction(new ControlerVue(this));
-        BAthletes = new Button("Athlètes");
-        BAthletes.setOnAction(new ControlerVue(this));
-        BPays = new Button("BPays");
-        BPays.setOnAction(new ControlerVue(this));
-        BSports = new Button("BSports");
-        BSports.setOnAction(new ControlerVue(this));
+        table.getColumns().addAll(NomBPaysCol, DrapeauCol);
+    }
 
-        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        BResultat.setStyle(buttonStyle);
-        BAthletes.setStyle(buttonStyle);
-        BPays.setStyle(buttonStyle);
-        BSports.setStyle(buttonStyle);
-
-        HBox topBox = new HBox(10);
-        topBox.setPadding(new Insets(0, 0, 0, 0));
-        topBox.setAlignment(Pos.TOP_LEFT);
-        topBox.getChildren().add(backButton);
-
-        HBox menuBox = new HBox(10);
-        menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(BResultat, BAthletes, BPays, BSports);
-
-        BorderPane topPane = new BorderPane();
-        topPane.setLeft(topBox);
-        topPane.setRight(menuBox);
-
+    public void Create_modeAccueil(boolean organisateur, boolean admin) {
         TableView<Sport> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -515,48 +139,79 @@ public class Vue extends Application {
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
         contentBox.getChildren().add(table);
+    }
 
-        mainBox.getChildren().addAll(topPane, contentBox);
-        mainBox.setMaxWidth(750);
-        mainBox.setMaxHeight(500);
+    public void Create_Menu(boolean organisateur, boolean admin) {
+        Menu = new BorderPane();
+        // titre back
 
-        PanelCentral.setCenter(mainBox);
+        Button BResultat = new Button("Résultat");
+        BResultat.setOnAction(new ControlerVue(this));
+        Button BAthletes = new Button("Athlètes");
+        BAthletes.setOnAction(new ControlerVue(this));
+        Button BPays = new Button("BPays");
+        BPays.setOnAction(new ControlerVue(this));
+        Button BSports = new Button("BSports");
+        BSports.setOnAction(new ControlerVue(this));
+
+        String buttonStyle = "-fx-background-color: " + color_format(NotreBlue) + "; -fx-text-fill: "
+                + color_format(Color.WHITE) + ";";
+        BResultat.setStyle(buttonStyle);
+        BAthletes.setStyle(buttonStyle);
+        BPays.setStyle(buttonStyle);
+        BSports.setStyle(buttonStyle);
+
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(BAthletes, BPays, BSports);
+
+        Menu.setRight(menuBox);
+        Menu.setLeft(BResultat);
+
+        Menu.setCenter(PageAccueil);
+        fenetre.setCenter(Menu);
     }
 
     /** void Switch_modeAccueil() */
     public void Switch_modeAccueil() {
-        fenetre.setCenter(PageAccueil);
+        Menu.setCenter(PageAccueil);
     }
 
     /** void Switch_modeSports() */
     public void Switch_modeSports() {
-        fenetre.setCenter(PageSports);
+        Menu.setCenter(PageSports);
     }
 
     /** void Switch_modePays() */
     public void Switch_modePays() {
-        fenetre.setCenter(PagePays);
+        Menu.setCenter(PagePays);
     }
 
     /** void Switch_modesSports() */
     public void Switch_modesSports() {
-        fenetre.setCenter(PagesSports);
+        Menu.setCenter(PagesSports);
     }
 
     /** void Switch_Connexion() */
     public void Switch_Connexion() {
-        fenetre.setCenter(PageConnexion);
+        // titre remove back
+        Menu.setCenter(PageConnexion);
     }
 
     public void Create_PaneLive(boolean organisateur, boolean admin) {
+        Create_modeAccueil(organisateur, admin);
         Create_modeAthletes(organisateur, admin);
         Create_modePays(organisateur, admin);
         Create_modeSports(organisateur, admin);
+        Create_Menu(organisateur, admin);
+        Switch_modeAccueil();
     }
 
     public void Create_PageConnexion() {
-        String root_style_light = "-fx-background-color: "+color_format(NotreBlueClaire)+"; -fx-text-fill: "+color_format(Color.WHITE)+";";
-        String root_style_dark = "-fx-background-color: "+color_format(NotreBlue)+"; -fx-text-fill: "+color_format(Color.WHITE)+";";
+        String root_style_light = "-fx-background-color: " + color_format(NotreBlueClaire) + "; -fx-text-fill: "
+                + color_format(Color.WHITE) + ";";
+        String root_style_dark = "-fx-background-color: " + color_format(NotreBlue) + "; -fx-text-fill: "
+                + color_format(Color.WHITE) + ";";
         PageConnexion = new HBox();
         HBox root = PageConnexion;
 
@@ -575,7 +230,6 @@ public class Vue extends Application {
         confirmPasswordField.setPromptText("Mot de passe");
         confirmPasswordField.setAlignment(Pos.CENTER);
 
-
         // Partie connection
         GridPane paneconn = new GridPane();
         // paneconn.setPadding(new Insets(20));
@@ -587,14 +241,14 @@ public class Vue extends Application {
         paneconn_label.setAlignment(Pos.CENTER);
         paneconn_label.setStyle(root_style_light);
         GridPane.setMargin(paneconn_label, new Insets(0, 0, 40, 0));
-        paneconn.add(paneconn_label, 0, 0,2,1);
+        paneconn.add(paneconn_label, 0, 0, 2, 1);
 
         Label paneconn_id = new Label("identifiant");
         paneconn_id.setFont(NoteFont);
         paneconn_id.setAlignment(Pos.CENTER);
         GridPane.setMargin(paneconn_id, new Insets(0, 0, 40, 0));
         paneconn.add(paneconn_id, 0, 1);
-        
+
         paneconn.add(usernameField, 1, 1);
 
         Label paneconn_mdp = new Label("mot de passe");
@@ -602,14 +256,14 @@ public class Vue extends Application {
         paneconn_mdp.setAlignment(Pos.CENTER);
         GridPane.setMargin(paneconn_mdp, new Insets(0, 0, 40, 0));
         paneconn.add(paneconn_mdp, 0, 2);
-        
+
         paneconn.add(passwordField, 1, 2);
-        paneconn.add(PageConnexion_error, 0, 3,2,1);
+        paneconn.add(PageConnexion_error, 0, 3, 2, 1);
 
         Button paneconn_connect = new Button("Se Connecter");
         paneconn_connect.setStyle(root_style_dark);
         paneconn_connect.setOnAction(new ControlerVue(this));
-        paneconn.add(paneconn_connect, 0, 4,2,1);
+        paneconn.add(paneconn_connect, 0, 4, 2, 1);
 
         // Partie inscription
         GridPane paneinsc = new GridPane();
@@ -622,14 +276,14 @@ public class Vue extends Application {
         paneinsc_label.setAlignment(Pos.CENTER);
         paneinsc_label.setStyle(root_style_light);
         GridPane.setMargin(paneinsc_label, new Insets(0, 0, 40, 0));
-        paneinsc.add(paneinsc_label, 0, 0,2,1);
+        paneinsc.add(paneinsc_label, 0, 0, 2, 1);
 
         Label paneinsc_id = new Label("identifiant");
         paneinsc_id.setFont(NoteFont);
         paneinsc_id.setAlignment(Pos.CENTER);
         GridPane.setMargin(paneinsc_id, new Insets(0, 0, 40, 0));
         paneinsc.add(paneinsc_id, 0, 1);
-        
+
         paneinsc.add(usernameField, 1, 1);
 
         Label paneinsc_mdp = new Label("mot de passe");
@@ -637,7 +291,7 @@ public class Vue extends Application {
         paneinsc_mdp.setAlignment(Pos.CENTER);
         GridPane.setMargin(paneinsc_mdp, new Insets(0, 0, 40, 0));
         paneinsc.add(paneinsc_mdp, 0, 2);
-        
+
         paneinsc.add(passwordField, 1, 2);
 
         Label paneinsc_mdpconf = new Label("confirmer mot de passe");
@@ -645,31 +299,32 @@ public class Vue extends Application {
         paneinsc_mdpconf.setAlignment(Pos.CENTER);
         GridPane.setMargin(paneinsc_mdpconf, new Insets(0, 0, 40, 0));
         paneinsc.add(paneinsc_mdpconf, 0, 3);
-        
+
         paneinsc.add(confirmPasswordField, 1, 3);
-        paneinsc.add(PageConnexion_error, 0, 4,2,1);
+        paneinsc.add(PageConnexion_error, 0, 4, 2, 1);
 
         Button connecterButton = new Button("S'Inscrire");
         connecterButton.setStyle(root_style_dark);
         connecterButton.setOnAction(new ControlerVue(this));
-        paneinsc.add(connecterButton, 0, 5,2,1);
+        paneinsc.add(connecterButton, 0, 5, 2, 1);
 
-        
         Region divrect = new Region();
         divrect.setPrefSize(200, 200);
-        divrect.setStyle(root_style_dark+ " -fx-background-radius: 10 10 0 10;");
-        root.getChildren().addAll(paneconn,divrect,paneinsc);
+        divrect.setStyle(root_style_dark + " -fx-background-radius: 10 10 0 10;");
+        root.getChildren().addAll(paneconn, divrect, paneinsc);
     }
 
     private String color_format(Color c) {
-        int r = (int)Math.round(c.getRed() * 255.0);
-        int g = (int)Math.round(c.getGreen() * 255.0);
-        int b = (int)Math.round(c.getBlue() * 255.0);
-        int o = (int)Math.round(c.getOpacity() * 255.0);
-        return String.format("#%02x%02x%02x%02x" , r, g, b, o);
+        int r = (int) Math.round(c.getRed() * 255.0);
+        int g = (int) Math.round(c.getGreen() * 255.0);
+        int b = (int) Math.round(c.getBlue() * 255.0);
+        int o = (int) Math.round(c.getOpacity() * 255.0);
+        return String.format("#%02x%02x%02x%02x", r, g, b, o);
     }
 
-    /** start
+    /**
+     * start
+     * 
      * @param stage Stage la fenetre
      */
     @Override
@@ -684,7 +339,7 @@ public class Vue extends Application {
         Font font = Font.font("Arial", 24);
         TitreLabel.setFont(font);
         TitreLabel.setTextFill(Color.WHITE);
-        
+
         HBox titleBox = new HBox();
         titleBox.setAlignment(Pos.CENTER);
         titleBox.setBackground(new Background(new BackgroundFill(NotreBlue, CornerRadii.EMPTY, Insets.EMPTY)));
@@ -698,7 +353,8 @@ public class Vue extends Application {
         stage.show();
     }
 
-    /** main
+    /**
+     * main
      * 
      * @param args args String[] temr launch args
      */
