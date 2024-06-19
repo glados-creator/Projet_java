@@ -1,5 +1,7 @@
 package olympic.graphic;
 
+import java.util.Arrays;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -86,7 +88,7 @@ public class Vue extends Application {
         TableColumn<Athlete, String> BSportsCol = new TableColumn<>("BSports");
         BSportsCol.setCellValueFactory(new PropertyValueFactory<>("BSports"));
 
-        table.getColumns().addAll(prenomCol, nomCol, sexeCol, BPaysCol, BSportsCol);
+        table.getColumns().addAll(Arrays.asList(prenomCol, nomCol, sexeCol, BPaysCol, BSportsCol));
 
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -103,7 +105,7 @@ public class Vue extends Application {
         TableColumn<Pays, String> DrapeauCol = new TableColumn<>("Drapeau du BPays");
         DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Drapeau du BPays"));
 
-        table.getColumns().addAll(NomBPaysCol, DrapeauCol);
+        table.getColumns().addAll(Arrays.asList(NomBPaysCol, DrapeauCol));
 
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -121,7 +123,7 @@ public class Vue extends Application {
         TableColumn<Sport, String> DrapeauCol = new TableColumn<>("Nombre de participants");
         DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Nombre de participants"));
 
-        table.getColumns().addAll(NomBPaysCol, DrapeauCol);
+        table.getColumns().addAll(Arrays.asList(NomBPaysCol, DrapeauCol));
     }
 
     public void Create_modeAccueil(boolean organisateur, boolean admin) {
@@ -134,7 +136,7 @@ public class Vue extends Application {
         TableColumn<Sport, String> DrapeauCol = new TableColumn<>("Nombre de participants");
         DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Nombre de participants"));
 
-        table.getColumns().addAll(NomBPaysCol, DrapeauCol);
+        table.getColumns().addAll(Arrays.asList(NomBPaysCol, DrapeauCol));
 
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -209,7 +211,7 @@ public class Vue extends Application {
 
     public void Create_PageConnexion() {
         String root_style_light = "-fx-background-color: " + color_format(NotreBlueClaire) + "; -fx-text-fill: "
-                + color_format(Color.WHITE) + ";";
+                + color_format(Color.BLACK) + ";";
         String root_style_dark = "-fx-background-color: " + color_format(NotreBlue) + "; -fx-text-fill: "
                 + color_format(Color.WHITE) + ";";
         PageConnexion = new HBox();
@@ -236,7 +238,7 @@ public class Vue extends Application {
         paneconn.setStyle(root_style_light);
         paneconn.setAlignment(Pos.CENTER);
 
-        Label paneconn_label = new Label("Connection");
+        Label paneconn_label = new Label("Connexion");
         paneconn_label.setFont(NoteFont);
         paneconn_label.setAlignment(Pos.CENTER);
         paneconn_label.setStyle(root_style_light);
@@ -338,7 +340,7 @@ public class Vue extends Application {
         Label TitreLabel = new Label("Jeux IUT'Olympiques");
         Font font = Font.font("Arial", 24);
         TitreLabel.setFont(font);
-        TitreLabel.setTextFill(Color.WHITE);
+        TitreLabel.setTextFill(Color.BLACK);
 
         HBox titleBox = new HBox();
         titleBox.setAlignment(Pos.CENTER);
