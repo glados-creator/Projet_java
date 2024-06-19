@@ -20,7 +20,10 @@ CREATE TABLE Pays (
 );
 
 CREATE TABLE Sport (
-    nom_sport VARCHAR(100) PRIMARY KEY
+    nom_sport VARCHAR(100),
+    annee INT,
+    FOREIGN KEY (annee) REFERENCES JO(annee),
+    PRIMARY KEY (nom_sport, annee)
 );
 
 CREATE TABLE Epreuve (
@@ -28,19 +31,18 @@ CREATE TABLE Epreuve (
     nom_epreuve VARCHAR(100),
     collectifs boolean;
     genre VARCHAR(1),
-    sport_id INT,
-    FOREIGN KEY (sport_id) REFERENCES Sport(sport_id)
+    nom_sport INT,
+    annee INT,
+    FOREIGN KEY (nom_sport, annee) REFERENCES Sport(nom_sport,annee)
 );
 
 
 CREATE TABLE Equipe (
     equipe_id INT PRIMARY KEY,
     nom_equipe VARCHAR(100),
-    pays_id INT,
+    nom_pays INT,
     annee int,
-    epreuve_id INT,
-    FOREIGN KEY (pays_id, annee) REFERENCES Pays(pays_id, annee),
-    FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id)
+    FOREIGN KEY (nom_pays, annee) REFERENCES Pays(nom_pays, annee)
 );
 
 
@@ -52,10 +54,9 @@ CREATE TABLE Athlete (
     forceA INT,
     enduranceA INT,
     agiliteA INT,
-    pays_id INT,
+    nom_pays INT,
     annnee INT,
-    FOREIGN KEY (pays_id, annee) REFERENCES Pays(pays_id, annee),
-    FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id)
+    FOREIGN KEY (nom_pays, annee) REFERENCES Pays(nom_pays, annee)
 );
 
 
