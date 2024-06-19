@@ -9,16 +9,17 @@ public class RoleConnexion {
         laConnexion = laConnexion_truc;
     }
 
-    private RoleConnexion(){}
+    private RoleConnexion() {
+    }
 
-    public static String getPW(String nom) {
+    public static boolean getPW(String nom) {
         try {
             Statement st = laConnexion.createStatement();
             ResultSet rs = st.executeQuery("select motDePasse from Role where nom ='" + nom + "'");
-            if (!(rs.next())) return null;
-            return rs.getString(0);
+            rs.next();
+            return rs.getString(1).equals(nom);
         } catch (SQLException e) {
-            return null;
+            return false;
         }
     }
 
@@ -33,6 +34,18 @@ public class RoleConnexion {
                     "insert into Utilisateur (nom, password, role_id) values (admin, admin, 1), (organisateur, organisateur, 2)");
         } catch (SQLException e) {
             System.out.println("Erreur d'insertion : addDefaultRole");
+        }
+    }
+
+    public int getRole() throws SQLException {
+        try {
+            Statement st = laConnexion.createStatement();
+            ResultSet rs = st.executeQuery("select role_id from Role where nom_role = 'admin'");
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
+            System.out.println("Erreur d'insertion : getRole");
+            return 0;
         }
     }
 
