@@ -33,7 +33,9 @@ public class RoleConnexion {
                 return null;
             return rs.getString(1);
         } catch (SQLException e) {
+            System.out.println("Erreur : getPassWord");
             return null;
+            // throw e;
         }
     }
 
@@ -42,15 +44,40 @@ public class RoleConnexion {
      */
     public static void addDefaultRole() {
         try {
-            Statement st = laConnexion.createStatement();
-            st.executeUpdate("insert into Role (role_id, nom_role) values (1, 'admin')");
-            st.executeUpdate("insert into Role (role_id, nom_role) values (2, 'organsiateur')");
-            st.executeUpdate("insert into Role (role_id, nom_role) values (3, 'visiteur')");
-
-            st.executeUpdate(
-                    "insert into Utilisateur (nom, password, role_id) values (admin, admin, 1), (organisateur, organisateur, 2)");
+            // test if empty
+            ResultSet rs_test = laConnexion.createStatement().executeQuery("select COUNT(role_id) from Role;");
+            System.out.println("TEST : "+(!(rs_test.next())) +" : "+ rs_test.wasNull() +" : "+ (rs_test.getInt(1) < 4) +" : "+ (getMaxIdUser() < 3));
+            
+            rs_test = laConnexion.createStatement().executeQuery("select COUNT(role_id) from Role;");
+            
+            if (!(rs_test.next()) || rs_test.wasNull() || rs_test.getInt(1) < 4 || getMaxIdUser() < 3) {
+                System.out.println("Role reset");
+                System.out.println("Role delete");
+                laConnexion.createStatement().execute("SET FOREIGN_KEY_CHECKS = 0;");
+                laConnexion.createStatement().execute("DELETE FROM Role;");
+                laConnexion.createStatement()
+                        .execute("DELETE FROM Utilisateur where nom in ('admin', 'organisateur', 'visiteur');");
+                laConnexion.createStatement().execute("SET FOREIGN_KEY_CHECKS = 1;");
+                Statement st = laConnexion.createStatement();
+                System.out.println("Default Role insert");
+                st.executeUpdate("insert into Role (role_id, nom_role) values (0, null);");
+                st.executeUpdate("insert into Role (role_id, nom_role) values (1, 'admin');");
+                st.executeUpdate("insert into Role (role_id, nom_role) values (2, 'organsiateur');");
+                st.executeUpdate("insert into Role (role_id, nom_role) values (3, 'visiteur');");
+                System.out.println("Default user insert");
+                st.executeUpdate(
+                        "insert into Utilisateur (nom, password, role_id) values ('admin', '"
+                                + String.valueOf("admin".hashCode()) + "' , 1), ('organisateur', '"
+                                + String.valueOf("organisateur".hashCode()) + "', 2) , ('visiteur' , '"
+                                + String.valueOf("visiteur".hashCode()) + "' , 3);");
+                // System.out.println("addDefaultRole success");
+            }
         } catch (SQLException e) {
+            // e.printStackTrace();
             System.out.println("Erreur : addDefaultRole");
+        } catch (Exception e) {
+            System.out.println("Erreur : addDefaultRole");
+            // e.printStackTrace();
         }
     }
 
@@ -62,13 +89,16 @@ public class RoleConnexion {
     public static int getRole(String nom, String password) {
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("select role_id from Utilisateur natural left join Role where Utilisateur.nom='"+nom+"' && Utilisateur.password='"+password+"';");
+            ResultSet rs = st
+                    .executeQuery("select role_id from Utilisateur natural left join Role where Utilisateur.nom='" + nom
+                            + "' && Utilisateur.password='" + password + "';");
             if (!(rs.next()))
                 return -1;
             int tmp = rs.getInt(1);
-            return (rs.wasNull())? -1:tmp;
+            return (rs.wasNull()) ? -1 : tmp;
         } catch (SQLException e) {
             System.out.println("Erreur : getRole");
+            // e.printStackTrace();
             return -1;
         }
     }
@@ -81,12 +111,13 @@ public class RoleConnexion {
     public static int getMaxIdUser() {
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("select max(utilisateur_id) from Utilisateur");
+            ResultSet rs = st.executeQuery("select COUNT(nom) from Utilisateur;");
             if (!(rs.next()))
                 return -1;
             return rs.getInt(1);
         } catch (SQLException e) {
-            System.out.println("Erreur : getIdUserProchain");
+            System.out.println("Erreur : getMaxIdUser");
+            // e.printStackTrace();
             return -1;
         }
     }
@@ -106,22 +137,21 @@ public class RoleConnexion {
      * 
      * @param nom      String
      * @param password String le str du hash du mdp
-     * @return int status
+     * @throws SQLException SQLException
      */
-    public static int ajouteVisiteur(String nom, String password) {
+    public static void ajouteVisiteur(String nom, String password) throws SQLException {
         try {
             PreparedStatement ps = laConnexion.prepareStatement(
-                    "insert into Visiteur (nom, password, role_id) values (?,?,?)");
+                    "insert into Utilisateur (nom, password, role_id) values (?,?,?);");
 
             ps.setString(1, nom);
             ps.setString(2, password);
             ps.setInt(3, 3);
 
             ps.executeUpdate();
-            return 1;
         } catch (SQLException e) {
             System.out.println("Erreur d'insertion : ajouteVisiteur");
-            return -1;
+            throw e;
         }
     }
 }

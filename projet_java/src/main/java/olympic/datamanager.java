@@ -48,19 +48,24 @@ public class datamanager {
     private datamanager() {
     }
 
-    public static void init(){
+    public static void init() {
+        System.out.println("datamanager init");
         try {
             conn = new ConnexionMySQL();
             conn.connecter(null, null, null, null);
             RoleConnexion.setlaConnexion(conn);
+            // System.out.println("conn set");
             RoleConnexion.addDefaultRole();
+            // System.out.println("default role set");
             default_dataset();
+            // System.out.println("default data");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("erreur datamanager init");
+            // e.printStackTrace();
         }
     }
 
-    public static ConnexionMySQL getMySQL(){
+    public static ConnexionMySQL getMySQL() {
         return conn;
     }
 
