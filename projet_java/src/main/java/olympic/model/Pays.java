@@ -19,16 +19,20 @@ public class Pays {
     private int Medaille_bronze;
     /** List[Athlete] lesAthletes */
     private List<Athlete> lesAthletes;
+    /** private final JeuxOlympique JO */
+    private final JeuxOlympique JO;
 
     /**
      * Pays
      * 
+     * @param JO              JeuxOlympique
      * @param Nom             String
      * @param Medaille_or     int
      * @param Medaille_argent int
      * @param Medaille_bronze int
      */
-    public Pays(String Nom, int Medaille_or, int Medaille_argent, int Medaille_bronze) {
+    public Pays(JeuxOlympique JO, String Nom, int Medaille_or, int Medaille_argent, int Medaille_bronze) {
+        this.JO = JO;
         this.Nom = Nom;
         this.Medaille_or = Medaille_or;
         this.Medaille_argent = Medaille_argent;
@@ -38,12 +42,21 @@ public class Pays {
     }
 
     /**
+     * getJO
+     * 
+     * @return JeuxOlympique
+     */
+    public JeuxOlympique getJO() {
+        return JO;
+    }
+
+    /**
      * getNom
      * 
      * @return String
      */
     public String getNom() {
-        return this.Nom;
+        return Nom;
     }
 
     /**
@@ -52,7 +65,7 @@ public class Pays {
      * @return int
      */
     public int getMedaille_or() {
-        return this.Medaille_or;
+        return Medaille_or;
     }
 
     /**
@@ -61,7 +74,7 @@ public class Pays {
      * @return int
      */
     public int getMedaille_argent() {
-        return this.Medaille_argent;
+        return Medaille_argent;
     }
 
     /**
@@ -70,7 +83,7 @@ public class Pays {
      * @return int
      */
     public int getMedaille_bronze() {
-        return this.Medaille_bronze;
+        return Medaille_bronze;
     }
 
     /**

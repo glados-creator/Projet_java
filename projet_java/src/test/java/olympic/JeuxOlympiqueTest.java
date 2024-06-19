@@ -25,7 +25,7 @@ public class JeuxOlympiqueTest {
 
     @Test
     public void testAddSport() {
-        Sport sport = new Sport("Athletisme", "m",1,1,1) {};
+        Sport sport = new Sport(jeuxOlympique,"Athletisme", "m",1,1,1) {};
         jeuxOlympique.ajouter_sports(sport);
         assertEquals(1, jeuxOlympique.les_sports().size());
         assertEquals(sport, jeuxOlympique.les_sports().get(0));

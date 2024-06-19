@@ -2,8 +2,6 @@ package olympic.model;
 
 // TODO: sync with datamanager
 
-// TODO : implement comparable ?
-
 /**
  * Participant
  */

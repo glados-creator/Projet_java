@@ -55,31 +55,31 @@ public class datamanager {
         // epreuves = ["Natation 100 brasse", "Natation relais libre", "Handball",
         // "Volley-Ball", "Escrime fleuret", "Escrime épée", "Athétisme 110 haies",
         // "Athlétisme relais 400m"]
-        Natation nat = new Natation();
+        Natation nat = new Natation(jo);
         nat.ajouter_epreuve(new Epreuve(nat, false, "Natation 100 brasse"));
         nat.ajouter_epreuve(new Epreuve(nat, true, "Natation 100 brasse"));
         nat.ajouter_epreuve(new Epreuve(nat, false, "Natation relais libre"));
         nat.ajouter_epreuve(new Epreuve(nat, true, "Natation relais libre"));
         jo.ajouter_sports(nat);
 
-        HandBall hand = new HandBall();
+        HandBall hand = new HandBall(jo);
         hand.ajouter_epreuve(new Epreuve(hand, false, "Handball"));
         hand.ajouter_epreuve(new Epreuve(hand, true, "Handball"));
         jo.ajouter_sports(hand);
 
-        VolleyBall voley = new VolleyBall();
+        VolleyBall voley = new VolleyBall(jo);
         voley.ajouter_epreuve(new Epreuve(voley, false, "Voley-Ball"));
         voley.ajouter_epreuve(new Epreuve(voley, true, "Voley-Ball"));
         jo.ajouter_sports(voley);
 
-        Escrime escr = new Escrime();
+        Escrime escr = new Escrime(jo);
         escr.ajouter_epreuve(new Epreuve(escr, false, "Escrime fleuret"));
         escr.ajouter_epreuve(new Epreuve(escr, true, "Escrime fleuret"));
         escr.ajouter_epreuve(new Epreuve(escr, false, "Escrime épée"));
         escr.ajouter_epreuve(new Epreuve(escr, true, "Escrime épée"));
         jo.ajouter_sports(escr);
 
-        Athletisme athle = new Athletisme();
+        Athletisme athle = new Athletisme(jo);
         athle.ajouter_epreuve(new Epreuve(athle, false, "Athétisme 110 haies"));
         athle.ajouter_epreuve(new Epreuve(athle, true, "Athétisme 110 haies"));
         athle.ajouter_epreuve(new Epreuve(athle, false, "Athlétisme relais 400m"));

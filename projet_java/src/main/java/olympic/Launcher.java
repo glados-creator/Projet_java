@@ -145,7 +145,7 @@ public class Launcher {
                         try {
                             datamanager.create_jo(new JeuxOlympique(annee, lieux));
                         } catch (Exception e) {
-                            // TODO: handle exception
+                            // myTODO: handle exception
                             e.printStackTrace();
                         }
                     } else {
@@ -192,7 +192,7 @@ public class Launcher {
                             case "retour":
                             case "r":
                                 break loop;
-                            // TODO : next
+                            // myTODO : next
                         }
                     }
                 }
@@ -245,7 +245,7 @@ public class Launcher {
                         try {
                             datamanager.create_jo(new JeuxOlympique(annee, lieux));
                         } catch (Exception e) {
-                            // TODO: handle exception
+                            // myTODO: handle exception
                             e.printStackTrace();
                         }
                     } else {
@@ -292,7 +292,7 @@ public class Launcher {
                             case "retour":
                             case "r":
                                 break loop;
-                            // TODO : next
+                            // myTODO : next
                         }
                     }
                 }
@@ -345,7 +345,7 @@ public class Launcher {
                         try {
                             datamanager.create_jo(new JeuxOlympique(annee, lieux));
                         } catch (Exception e) {
-                            // TODO: handle exception
+                            // myTODO: handle exception
                             e.printStackTrace();
                         }
                     } else {
@@ -392,7 +392,7 @@ public class Launcher {
                             case "retour":
                             case "r":
                                 break loop;
-                            // TODO : next
+                            // myTODO : next
                         }
                     }
                 }

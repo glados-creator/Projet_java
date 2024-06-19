@@ -1,11 +1,9 @@
 package olympic.graphic;
 
-import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 /** class ControlerJeu implements EventHandler[ActionEvent] */
 public class ControlerVue implements EventHandler<ActionEvent>  {
@@ -27,14 +25,8 @@ public class ControlerVue implements EventHandler<ActionEvent>  {
         Button button = (Button) (event.getSource());
 
         switch (button.getText()) {
-            case "Connexion":
-                appli.modeConnexion();
-                break;
-            case "Inscription":
-                appli.modeInscription();
-                break;
-            case "S'inscrire": {
-
+            case "S'Inscrire": {
+                /*
                 if (!passwordField.getText().equals(confirmPasswordField.getText())) {
                     errorLabel.setText("Les mots de passe ne correspondent pas");
                 } else {
@@ -59,9 +51,11 @@ public class ControlerVue implements EventHandler<ActionEvent>  {
                 } catch (SQLException e) {
                     System.out.println("Erreur d'inscription : " + e.getMessage());
 
-                }
+                }*/
+                appli.Switch_modeAccueil();
             }
-            case "Connecter": {
+            case "Se Connecter": {
+                /*
                 TextField usernameField = appli.getUsernameField();
                 TextField passwordField = appli.getPasswordField();
 
@@ -75,6 +69,8 @@ public class ControlerVue implements EventHandler<ActionEvent>  {
                     System.out.println("Échec de la connexion");
 
                 }
+                    */
+                    appli.Switch_modeAccueil();
             }
             case "Accueil":
             // TODO : NON

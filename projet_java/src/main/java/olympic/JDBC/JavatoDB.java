@@ -4,6 +4,7 @@ import java.sql.*;
 
 import olympic.model.Epreuve;
 import olympic.model.JeuxOlympique;
+import olympic.model.Pays;
 import olympic.model.Sport;
 
 public class JavatoDB {
@@ -38,6 +39,8 @@ public class JavatoDB {
         }
     }
 
+
+    // TODO : just fait getMaxIdAthlete
     public int getIdAthleteProchain() throws SQLException {
         try {
             st = laConnexion.createStatement();
@@ -48,6 +51,7 @@ public class JavatoDB {
             return 0;
         }
     }
+    // TODO : just fait getMaxIdAthlete
 
     public int getIdEpreuveProchain() throws SQLException {
         try {
@@ -64,7 +68,8 @@ public class JavatoDB {
         try {
             PreparedStatement st = this.laConnexion.prepareStatement("insert into JO values (?,?)");
 
-            st.setInt(1, jo.getAnnee());
+            // st.setInt(1, jo.getAnnee());
+            // setint marche pas ?
             st.setString(2, jo.getLieux());
 
             st.executeUpdate();
@@ -86,11 +91,11 @@ public class JavatoDB {
         }
     }
 
-    public void ajoutePays(String nomPays) throws SQLException {
+    public void ajoutePays(Pays nomPays) throws SQLException {
         try {
             PreparedStatement st = this.laConnexion.prepareStatement("insert into Pays values (?,?)");
 
-            st.setString(1, nomPays);
+            st.setString(1, nomPays.getNom());
             st.setString(2, nomPays.getJO().getLieux());
 
             st.executeUpdate();
@@ -105,8 +110,8 @@ public class JavatoDB {
 
             st.setInt(1, this.getIdEpreuveProchain());
             st.setString(2, ep.getNom());
-            st.setBoolean(3, ep.getCollectif());
-            st.setString(4, ep.getSexe());
+            // st.setBoolean(3, ep.getCollectif());
+            st.setString(4, (ep.getSex()? "M":"F"));
             st.setString(5, ep.getSport().getNom());
             st.setString(6, ep.getSport().getJO().getAnnee());
 

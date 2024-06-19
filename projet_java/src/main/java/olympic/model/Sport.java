@@ -17,6 +17,8 @@ public abstract class Sport {
     private boolean Plus_haut_score;
     /** List[Epreuve] LesEpreuves */
     private List<Epreuve> LesEpreuves;
+    /** private final JeuxOlympique JO */
+    private final JeuxOlympique JO;
 
     /** double Coef_Force */
     private double Coef_Force;
@@ -28,6 +30,7 @@ public abstract class Sport {
     /**
      * Sport
      * 
+     * @param JO              JeuxOlympique
      * @param Nom             String
      * @param Uniter          String
      * @param Coef_Force      double
@@ -35,8 +38,9 @@ public abstract class Sport {
      * @param Coef_Endurance  double
      * @param Plus_haut_score boolean
      */
-    public Sport(String Nom, String Uniter, double Coef_Force, double Coef_Agilite,
+    public Sport(JeuxOlympique JO, String Nom, String Uniter, double Coef_Force, double Coef_Agilite,
             double Coef_Endurance, boolean Plus_haut_score) {
+        this.JO = JO;
         this.Nom = Nom;
         this.Uniter = Uniter;
         this.Plus_haut_score = Plus_haut_score;
@@ -49,14 +53,24 @@ public abstract class Sport {
     /**
      * Sport
      * 
+     * @param JO             JeuxOlympique
      * @param Nom            String
      * @param Uniter         String
      * @param Coef_Force     double
      * @param Coef_Agilite   double
      * @param Coef_Endurance double
      */
-    public Sport(String Nom, String Uniter, double Coef_Force, double Coef_Agilite, double Coef_Endurance) {
-        this(Nom, Uniter, Coef_Force, Coef_Agilite, Coef_Endurance, true);
+    public Sport(JeuxOlympique JO, String Nom, String Uniter, double Coef_Force, double Coef_Agilite, double Coef_Endurance) {
+        this(JO, Nom, Uniter, Coef_Force, Coef_Agilite, Coef_Endurance, true);
+    }
+
+    /**
+     * getJO
+     * 
+     * @return JeuxOlympique
+     */
+    public JeuxOlympique getJO() {
+        return JO;
     }
 
     /**
