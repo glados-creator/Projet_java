@@ -63,7 +63,7 @@
               <transformers>
                 <transformer
                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>olympic.App</mainClass>
+                  <mainClass>olympic.graphic.Vue</mainClass>
                 </transformer>
               </transformers>
             </configuration>

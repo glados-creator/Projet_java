@@ -7,19 +7,20 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Epreuve
  */
 public class Epreuve {
-    /** private String nom */
-    private String nom;
-    /** private boolean sex */
-    private boolean sex;
-    /** private List[Participant] les_participants */
-    private List<Participant> les_participants;
-    /** private final Sport sport */
-    private final Sport sport;
+    /** private String Nom */
+    private String Nom;
+    /** private boolean Sex */
+    private boolean Sex;
+    /** private List[Participant] LesParticipants */
+    private List<Participant> LesParticipants;
+    /** private final Sport LeSport */
+    private final Sport LeSport;
 
     /** private List[Participant] Classement; */
     private List<Participant> Classement;
@@ -30,24 +31,28 @@ public class Epreuve {
     /**
      * Constructeur Epreuve
      *
-     * @param sex boolean
-     * @param nom String
+     * @param LeSport Sport
+     * @param Sex boolean
+     * @param Nom String
      */
-    public Epreuve(Sport sport, boolean sex, String nom) {
-        this.sport = sport;
-        this.sex = sex;
-        this.nom = nom;
+    public Epreuve(Sport LeSport, boolean Sex, String Nom) {
+        this.LeSport = LeSport;
+        this.Sex = Sex;
+        this.Nom = Nom;
         this.Scores = new HashMap<>();
         Classement = new ArrayList<>();
-        les_participants = new ArrayList<>();
+        LesParticipants = new ArrayList<>();
     }
 
     /** private void do_simule() */
     private void do_simule() {
-        les_participants = new ArrayList<>();
+        LesParticipants = new ArrayList<>();
         Scores = new HashMap<>();
-        for (Participant pa : les_participants) {
-            Scores.put(pa, Double.valueOf(pa.participe(this)));
+        Random rand = new Random();
+        for (Participant pa : LesParticipants) {
+            // aleatoir -> entre 0 et sum(coef participant)
+            int lmax = (int)(pa.getForce()+pa.getAgilite()+pa.getEndurance());
+            Scores.put(pa, Double.valueOf(pa.participe(this)+rand.nextInt((lmax) + 1)));
         }
         // Classement
         List<Map.Entry<Participant, Double>> list = new ArrayList<>(Scores.entrySet());
@@ -56,7 +61,7 @@ public class Epreuve {
         list.sort(new Comparator<Map.Entry<Participant, Double>>() {
             @Override
             public int compare(Map.Entry<Participant, Double> o1, Map.Entry<Participant, Double> o2) {
-                if (god.sport.getPlus_haut_score()) {
+                if (god.LeSport.getPlus_haut_score()) {
                     // plus haut
                     return o2.getValue().compareTo(o1.getValue());
                 } else {
@@ -78,7 +83,7 @@ public class Epreuve {
      * @return List[Participant] le Classement
      */
     public List<Participant> getClassement() {
-        if (Classement.size() != les_participants.size())
+        if (Classement.size() != LesParticipants.size())
             do_simule();
         return Classement;
     }
@@ -98,7 +103,7 @@ public class Epreuve {
      * @return HashMap[Participant,Double] les scores
      */
     public HashMap<Participant, Double> getScores() {
-        if (Classement.size() != les_participants.size())
+        if (Classement.size() != LesParticipants.size())
             do_simule();
         return Scores;
     }
@@ -106,10 +111,10 @@ public class Epreuve {
     /**
      * getNom
      * 
-     * @return String son nom
+     * @return String son Nom
      */
     public String getNom() {
-        return nom;
+        return Nom;
     }
 
     /**
@@ -117,26 +122,26 @@ public class Epreuve {
      * 
      * @param String Nom
      */
-    public void setNom_a(String nom) {
-        this.nom = nom;
+    public void setNom_a(String Nom) {
+        this.Nom = Nom;
     }
 
     /**
      * getSex
      * 
-     * @return boolean sex false -> men , true -> woman
+     * @return boolean Sex false -> men , true -> woman
      */
     public boolean getSex() {
-        return sex;
+        return Sex;
     }
 
     /**
      * setSex_a admin
      * 
-     * @param sex boolean false -> men , true -> woman
+     * @param Sex boolean false -> men , true -> woman
      */
-    public void setSex_a(boolean sex) {
-        this.sex = sex;
+    public void setSex_a(boolean Sex) {
+        this.Sex = Sex;
     }
 
     /**
@@ -144,8 +149,8 @@ public class Epreuve {
      * 
      * @return List[Participant]
      */
-    public List<Participant> getLes_participants() {
-        return les_participants;
+    public List<Participant> getLesParticipants() {
+        return LesParticipants;
     }
 
     /**
@@ -154,7 +159,7 @@ public class Epreuve {
      * @return Sport
      */
     public Sport getSport() {
-        return sport;
+        return LeSport;
     }
 
     /**
@@ -166,10 +171,10 @@ public class Epreuve {
     @Override
     public String toString() {
         return "{" +
-                " nom='" + getNom() + "'" +
-                ", sex='" + getSex() + "'" +
-                ", les_participants='" + getLes_participants() + "'" +
-                ", sport='" + getSport() + "'" +
+                " Nom='" + getNom() + "'" +
+                ", Sex='" + getSex() + "'" +
+                ", LesParticipants='" + getLesParticipants() + "'" +
+                ", LeSport='" + getSport() + "'" +
                 ", Classement='" + getClassement() + "'" +
                 ", Scores='" + getScores() + "'" +
                 "}";

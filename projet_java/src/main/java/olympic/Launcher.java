@@ -1,11 +1,12 @@
 package olympic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+// import java.util.ArrayList;
+// import java.util.Arrays;
+// import java.util.List;
+// import java.util.Scanner;
 
-import olympic.model.JeuxOlympique;
+import olympic.graphic.Vue;
+// import olympic.model.JeuxOlympique;
 
 /**
  * Launcher
@@ -32,13 +33,16 @@ public class Launcher {
      */
     public final static void run_term() {
         datamanager.default_dataset();
-        System.out.println(datamanager.load_jo());
-        datamanager.load_jo().get(0).simule();
+        System.out.println(datamanager.list_jo());
+        datamanager.list_jo().get(0).simule();
 
         System.out.println(datamanager.load_jo().get(0));
 
         System.exit(0);
 
+        Vue.launch("");
+        
+        /*
         // String newLine = System.getProperty("line.separator");
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         user_t user = null;
@@ -91,16 +95,17 @@ public class Launcher {
                 break;
         }
         scan.close();
+        */
         datamanager.save_data();
         Prettyprintlib.print_header("Au Revoir", false, null);
     }
-
-    /**
+    /*
+    ###**
      * private final static void inspect_jo(Scanner scan, boolean admin)
      * 
      * @param scan  Scanner of the term
      * @param admin boolean wheather the user is admin
-     */
+     *###
     private final static void inspect_jo(Scanner scan, boolean admin) {
         while (true) {
             Prettyprintlib.print_header("que voulez vous faire ?", false,
@@ -195,12 +200,12 @@ public class Launcher {
         }
     }
 
-    /**
+    ###**
      * private final static void inspect_athlete(Scanner scan, boolean admin)
      * 
      * @param scan  Scanner of the term
      * @param admin boolean wheather the user is admin
-     */
+     *###
     private final static void inspect_athlete(Scanner scan, boolean admin) {
         while (true) {
             Prettyprintlib.print_header("que voulez vous faire ?", false,
@@ -295,12 +300,12 @@ public class Launcher {
         }
     }
 
-    /**
+    ###**
      * private final static void inspect_pay(Scanner scan, boolean admin)
      * 
      * @param scan  Scanner of the term
      * @param admin boolean wheather the user is admin
-     */
+     *###
     private final static void inspect_pay(Scanner scan, boolean admin) {
         while (true) {
             Prettyprintlib.print_header("que voulez vous faire ?", false,
@@ -395,16 +400,16 @@ public class Launcher {
         }
     }
 
-    /**
+    ###**
      * void admin_menu
      * menu for admin panel
      * can do anything , no safegard
-     */
-    /**
+     *###
+    ###**
      * private final static void admin_menu(Scanner scan)
      * 
      * @param scan Scanner of the term
-     */
+     *###
     private final static void admin_menu(Scanner scan) {
         System.out.println("admin panel");
 
@@ -464,26 +469,26 @@ public class Launcher {
         }
     }
 
-    /**
+    ###**
      * private final static void presentateur_menu()
      * void presentateur_menu()
      * menu for presentateur panel
      * mainly for display so idk if we won't just
      * launch the GUI for that
-     */
+     *###
     private final static void presentateur_menu() {
         System.out.println("presentateur panel");
         // olympic.graphic.GUI_presentateur.main(new String[] {});
     }
 
-    /**
+    ###**
      * private final static void organistateur_menu(Scanner scan)
      * void organistateur_menu
      * menu for organistateur
      * used for inputing values
      * 
      * @param scan Scanner of the term
-     */
+     *###
     private final static void organistateur_menu(Scanner scan) {
         System.out.println("organisateur panel");
 
@@ -542,4 +547,5 @@ public class Launcher {
             }
         }
     }
+        */
 }

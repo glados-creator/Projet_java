@@ -10,34 +10,31 @@ import java.util.List;
  */
 public class Equipe implements Participant {
 
-    /** private String nom */
-    private final String nom;
+    /** private String Nom */
+    private final String Nom;
     /** private boolean Sex */
     private final boolean Sex;
     /** private boolean Mix */
     private boolean Mix;
     /** private Pays Origine */
     private final Pays Origine;
-    /** List[Athlete] les_athletes */
-    private List<Athlete> les_athletes;
+    /** List[Athlete] LesAthletes */
+    private List<Athlete> LesAthletes;
 
-    // TODO : remove athlete copy
-    /** private double force */
-    private double force;
-    /** private double Agilite */
-    private double Agilite;
-    /** private double endurance */
-    private double endurance;
-
-    public Equipe(String nom, boolean Sex, Pays Origine) {
-        this.nom = nom;
+    /**
+     * Equipe constructor
+     * 
+     * @param Nom     String
+     * @param Sex     boolean
+     * @param Origine Pays
+     */
+    public Equipe(String Nom, boolean Sex, Pays Origine) {
+        this.Nom = Nom;
         this.Sex = Sex;
         this.Origine = Origine;
         Mix = false;
-        this.les_athletes = new ArrayList<Athlete>();
+        this.LesAthletes = new ArrayList<Athlete>();
     }
-
-    // TODO : this is athlete code
 
     /**
      * getNom
@@ -45,7 +42,7 @@ public class Equipe implements Participant {
      * @return String
      */
     public String getNom() {
-        return nom;
+        return Nom;
     }
 
     /**
@@ -63,16 +60,7 @@ public class Equipe implements Participant {
      * @return double
      */
     public double getForce() {
-        return force;
-    }
-
-    /**
-     * setForce_a admin
-     * 
-     * @param force double
-     */
-    public void setForce_a(double force) {
-        this.force = force;
+        return LesAthletes.stream().mapToDouble(ath -> ath.getForce()).average().getAsDouble();
     }
 
     /**
@@ -81,16 +69,7 @@ public class Equipe implements Participant {
      * @return double
      */
     public double getAgilite() {
-        return Agilite;
-    }
-
-    /**
-     * setAgilite_a admin
-     * 
-     * @param Agilite double
-     */
-    public void setAgilite_a(double Agilite) {
-        this.Agilite = Agilite;
+        return LesAthletes.stream().mapToDouble(ath -> ath.getAgilite()).average().getAsDouble();
     }
 
     /**
@@ -99,16 +78,7 @@ public class Equipe implements Participant {
      * @return double
      */
     public double getEndurance() {
-        return endurance;
-    }
-
-    /**
-     * setEndurance_a admin
-     * 
-     * @param endurance double
-     */
-    public void setEndurance_a(double endurance) {
-        this.endurance = endurance;
+        return LesAthletes.stream().mapToDouble(ath -> ath.getEndurance()).average().getAsDouble();
     }
 
     /**
@@ -120,34 +90,42 @@ public class Equipe implements Participant {
         return Origine;
     }
 
-    // TODO : comment signature and remove uneccessary
-
+    /**
+     * getMix
+     * @return boolean
+     */
     public boolean getMix() {
         return this.Mix;
     }
-
-    public void setMix(boolean Mix) {
+    /**
+     * setMix_a admin
+     * @param Mix boolean
+     */
+    public void setMix_a(boolean Mix) {
         this.Mix = Mix;
     }
-
-    public List<Athlete> getLes_athletes() {
-        return this.les_athletes;
+    /**
+     * getLesAthletes
+     * @return List[Athlete]
+     */
+    public List<Athlete> getLesAthletes() {
+        return this.LesAthletes;
     }
 
-    public void setLes_athletes(List<Athlete> les_athletes) {
-        this.les_athletes = les_athletes;
-    }
-
+    /** toString
+     * @return String
+     */
     @Override
     public String toString() {
         return "{" +
-                " nom='" + getNom() + "'" +
+                " Nom='" + getNom() + "'" +
                 ", Origine='" + getOrigine() + "'" +
                 ", Sex='" + getSex() + "'" +
+                ", Mix='" + getMix() + "'" +
                 ", force='" + getForce() + "'" +
                 ", Agilite='" + getAgilite() + "'" +
                 ", endurance='" + getEndurance() + "'" +
-                ", les_athletes='" + getLes_athletes() + "'" +
+                ", LesAthletes='" + getLesAthletes() + "'" +
                 "}";
     }
 
