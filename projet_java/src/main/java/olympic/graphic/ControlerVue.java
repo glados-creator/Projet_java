@@ -1,5 +1,8 @@
 package olympic.graphic;
 
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -34,26 +37,42 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     appli.PageConnexion_error.setText("Les mots de passe ne correspondent pas");
                     break;
                 }
-                int status = RoleConnexion.ajouteVisiteur(appli.usernameField.getText(), String.valueOf(appli.passwordField.getText().hashCode()));
-                if (status < 0){
+                try {
+                    RoleConnexion.ajouteVisiteur(appli.usernameField.getText(),
+                            String.valueOf(appli.passwordField.getText().hashCode()));
+                } catch (SQLIntegrityConstraintViolationException e) {
+                    e.printStackTrace();
+                    appli.PageConnexion_error.setText("identifiant existe déja");
+                    return;
+                } catch (SQLException e) {
                     appli.PageConnexion_error.setText("erreur d'inscription");
-                    break;
+                    return;
+                } catch (Exception e) {
+                    appli.PageConnexion_error.setText("erreur général");
+                    return;
                 }
                 appli.Create_PaneLive(false, false);
                 appli.Switch_modeAccueil();
             }
             case "Se Connecter": {
-                /* String hash =  RoleConnexion.getPW(appli.usernameField.getText());
-                if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))){
+                String hash = RoleConnexion.getPW(appli.usernameField.getText());
+                if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))) {
                     appli.PageConnexion_error.setText("mauvais mot de passe ou identifiant");
-                    break;
+                    // TODO: uncomment
+                    // no u
+                    // break;
                 }
-                int role_id = RoleConnexion.getRole(appli.usernameField.getText(),String.valueOf(appli.passwordField.getText().hashCode()));
-                if (role_id < 0){
+                int role_id = RoleConnexion.getRole(appli.usernameField.getText(),
+                        String.valueOf(appli.passwordField.getText().hashCode()));
+                if (role_id < 0) {
                     appli.PageConnexion_error.setText("authorisation corrompu");
-                    break;
-                } */
-               int role_id = 0;
+                    // TODO: uncomment
+                    // no u
+                    // break;
+                }
+                System.out.println("old role gathered : " + role_id);
+                // TODO : remove
+                role_id = 0;
                 appli.Create_PaneLive(role_id == 1, role_id == 0);
                 appli.Switch_modeAccueil();
             }
