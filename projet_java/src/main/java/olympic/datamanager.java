@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import olympic.JDBC.ConnexionMySQL;
+import olympic.JDBC.RoleConnexion;
 import olympic.model.sport_type.*;
 import olympic.model.Epreuve;
 import olympic.model.JeuxOlympique;
@@ -45,6 +46,22 @@ public class datamanager {
 
     /** private datamanager c'est une lib */
     private datamanager() {
+    }
+
+    public static void init(){
+        try {
+            conn = new ConnexionMySQL();
+            conn.connecter(null, null, null, null);
+            RoleConnexion.setlaConnexion(conn);
+            RoleConnexion.addDefaultRole();
+            default_dataset();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static ConnexionMySQL getMySQL(){
+        return conn;
     }
 
     /** public final static void default_dataset() */

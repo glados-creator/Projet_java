@@ -3,16 +3,17 @@ package olympic.JDBC;
 import java.sql.*;
 
 public class RoleConnexion {
-    ConnexionMySQL laConnexion;
-    Statement st;
+    private static ConnexionMySQL laConnexion;
 
-    public RoleConnexion(ConnexionMySQL laConnexion) {
-        this.laConnexion = laConnexion;
+    public static void setlaConnexion(ConnexionMySQL laConnexion_truc) {
+        laConnexion = laConnexion_truc;
     }
 
-    public boolean getPW(String nom) {
+    private RoleConnexion(){}
+
+    public static boolean getPW(String nom) {
         try {
-            st = laConnexion.createStatement();
+            Statement st = laConnexion.createStatement();
             ResultSet rs = st.executeQuery("select motDePasse from Role where nom ='" + nom + "'");
             rs.next();
             return rs.getString(1).equals(nom);
@@ -21,9 +22,9 @@ public class RoleConnexion {
         }
     }
 
-    public void addDefaultRole() throws SQLException {
+    public static void addDefaultRole() throws SQLException {
         try {
-            st = laConnexion.createStatement();
+            Statement st = laConnexion.createStatement();
             st.executeUpdate("insert into Role (role_id, nom_role) values (1, 'admin')");
             st.executeUpdate("insert into Role (role_id, nom_role) values (2, 'organsiateur')");
             st.executeUpdate("insert into Role (role_id, nom_role) values (3, 'visiteur')");
@@ -35,8 +36,9 @@ public class RoleConnexion {
         }
     }
 
-    public int getIdUserProchain() throws SQLException {
+    public static int getIdUserProchain() throws SQLException {
         try {
+            Statement st = laConnexion.createStatement();
             ResultSet rs = st.executeQuery("select max(utilisateur_id) from Utilisateur");
             rs.next();
             return rs.getInt(1) + 1;
@@ -45,9 +47,9 @@ public class RoleConnexion {
         }
     }
 
-    public void ajouteVisiteur(String nom, String prenom, String password) throws SQLException {
+    public static void ajouteVisiteur(String nom, String password) throws SQLException {
         try {
-            PreparedStatement ps = this.laConnexion.prepareStatement(
+            PreparedStatement ps = laConnexion.prepareStatement(
                     "insert into Visiteur (nom, password, role_id) values (?,?,?)");
 
             ps.setString(1, nom);

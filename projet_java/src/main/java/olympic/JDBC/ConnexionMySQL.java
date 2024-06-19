@@ -15,7 +15,7 @@ public class ConnexionMySQL {
 		this.mysql=null;
 		this.connecte=false;
 		this.mysql = DriverManager.getConnection(
-					"jdbc:mysql://"+"servinfo-maria"+":3306/"+"DBcarrat","carrat", "carrat");
+					"jdbc:mysql://"+"servinfo-maria"+":3306/"+"DBpavard","pavard", "pavard");
 		this.connecte=true;
 	}
 	public void close() throws SQLException {

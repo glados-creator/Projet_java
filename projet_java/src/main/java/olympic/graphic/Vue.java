@@ -23,6 +23,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import olympic.datamanager;
 import olympic.model.Athlete;
 import olympic.model.Pays;
 import olympic.model.Sport;
@@ -31,8 +32,10 @@ import olympic.model.Sport;
 public class Vue extends Application {
     /** private BorderPane fenetre */
     private BorderPane fenetre;
-    /** private BorderPane PaneConnexion */
-    private BorderPane PaneConnexion;
+    /** private BorderPane Titre */
+    private BorderPane Titre;
+    /** private BorderPane PageConnexion */
+    private HBox PageConnexion;
     /** private BorderPane PageAccueil */
     private BorderPane PageAccueil;
     /** private BorderPane PagePays */
@@ -55,6 +58,14 @@ public class Vue extends Application {
     private Button BPays;
     /** private Button BSports */
     private Button BSports;
+    /** TextField usernameField */
+    public TextField usernameField;
+    /** PasswordField passwordField */
+    public PasswordField passwordField;
+    /** PasswordField confirmPasswordField */
+    public PasswordField confirmPasswordField;
+    /** Label PageConnexion_error */
+    public Label PageConnexion_error;
 
     public static Color NotreBlue = Color.valueOf("#3C5A9C");
     public static Color NotreBlueClaire = Color.valueOf("#CFE4FF");
@@ -63,6 +74,7 @@ public class Vue extends Application {
     /** void init() */
     @Override
     public void init() {
+        datamanager.init();
         Create_PageConnexion();
     }
 
@@ -533,7 +545,7 @@ public class Vue extends Application {
 
     /** void Switch_Connexion() */
     public void Switch_Connexion() {
-        fenetre.setCenter(PaneConnexion);
+        fenetre.setCenter(PageConnexion);
     }
 
     public void Create_PaneLive(boolean organisateur, boolean admin) {
@@ -543,31 +555,36 @@ public class Vue extends Application {
     }
 
     public void Create_PageConnexion() {
-        String root_style = "-fx-background-color: #"+NotreBlue+"; -fx-text-fill: #"+Color.WHITE+";";
-        HBox root = new HBox();
+        String root_style_light = "-fx-background-color: "+color_format(NotreBlueClaire)+"; -fx-text-fill: "+color_format(Color.WHITE)+";";
+        String root_style_dark = "-fx-background-color: "+color_format(NotreBlue)+"; -fx-text-fill: "+color_format(Color.WHITE)+";";
+        PageConnexion = new HBox();
+        HBox root = PageConnexion;
 
-        TextField usernameField = new TextField();
+        usernameField = new TextField();
         usernameField.setPromptText("Identifiant");
-        usernameField.setMaxWidth(320);
         usernameField.setAlignment(Pos.CENTER);
 
-        PasswordField passwordField = new PasswordField();
+        passwordField = new PasswordField();
         passwordField.setPromptText("Mot de passe");
-        passwordField.setMaxWidth(320);
         passwordField.setAlignment(Pos.CENTER);
+
+        confirmPasswordField = new PasswordField();
+        confirmPasswordField.setPromptText("Mot de passe");
+        confirmPasswordField.setAlignment(Pos.CENTER);
+
 
         // Partie connection
         GridPane paneconn = new GridPane();
-        paneconn.setPadding(new Insets(20));
-        paneconn.setBackground(new Background(new BackgroundFill(NotreBlueClaire, CornerRadii.EMPTY, Insets.EMPTY)));
+        // paneconn.setPadding(new Insets(20));
+        paneconn.setStyle(root_style_light);
         paneconn.setAlignment(Pos.CENTER);
 
         Label paneconn_label = new Label("Connection");
         paneconn_label.setFont(NoteFont);
         paneconn_label.setAlignment(Pos.CENTER);
-        paneconn_label.setStyle(root_style);
+        paneconn_label.setStyle(root_style_light);
         GridPane.setMargin(paneconn_label, new Insets(0, 0, 40, 0));
-        paneconn.add(paneconn_label, 0, 0,1,2);
+        paneconn.add(paneconn_label, 0, 0,2,1);
 
         Label paneconn_id = new Label("identifiant");
         paneconn_id.setFont(NoteFont);
@@ -583,26 +600,25 @@ public class Vue extends Application {
         GridPane.setMargin(paneconn_mdp, new Insets(0, 0, 40, 0));
         paneconn.add(paneconn_mdp, 0, 2);
         
-        paneconn.add(passwordField, 2, 1);
+        paneconn.add(passwordField, 1, 2);
 
         Button paneconn_connect = new Button("Se Connecter");
-        paneconn_connect.setStyle(root_style);
-        paneconn_connect.setPrefWidth(320);
-        paneconn_connect.setPrefHeight(25);
-        paneconn.add(paneconn_connect, 3, 0,1,2);
+        paneconn_connect.setStyle(root_style_dark);
+        paneconn_connect.setOnAction(new ControlerVue(this));
+        paneconn.add(paneconn_connect, 0, 3,2,1);
 
         // Partie inscription
         GridPane paneinsc = new GridPane();
         paneinsc.setPadding(new Insets(20));
-        paneinsc.setBackground(new Background(new BackgroundFill(NotreBlueClaire, CornerRadii.EMPTY, Insets.EMPTY)));
+        paneinsc.setStyle(root_style_light);
         paneinsc.setAlignment(Pos.CENTER);
 
         Label paneinsc_label = new Label("Inscription");
         paneinsc_label.setFont(NoteFont);
         paneinsc_label.setAlignment(Pos.CENTER);
-        paneinsc_label.setStyle(root_style);
+        paneinsc_label.setStyle(root_style_light);
         GridPane.setMargin(paneinsc_label, new Insets(0, 0, 40, 0));
-        paneinsc.add(paneinsc_label, 0, 0,1,2);
+        paneinsc.add(paneinsc_label, 0, 0,2,1);
 
         Label paneinsc_id = new Label("identifiant");
         paneinsc_id.setFont(NoteFont);
@@ -618,19 +634,34 @@ public class Vue extends Application {
         GridPane.setMargin(paneinsc_mdp, new Insets(0, 0, 40, 0));
         paneinsc.add(paneinsc_mdp, 0, 2);
         
-        paneinsc.add(passwordField, 2, 1);
+        paneinsc.add(passwordField, 1, 2);
+
+        Label paneinsc_mdpconf = new Label("confirmer mot de passe");
+        paneinsc_mdpconf.setFont(NoteFont);
+        paneinsc_mdpconf.setAlignment(Pos.CENTER);
+        GridPane.setMargin(paneinsc_mdpconf, new Insets(0, 0, 40, 0));
+        paneinsc.add(paneinsc_mdpconf, 0, 3);
+        
+        paneinsc.add(confirmPasswordField, 1, 3);
 
         Button connecterButton = new Button("S'Inscrire");
-        connecterButton.setStyle(root_style);
-        connecterButton.setPrefWidth(320);
-        connecterButton.setPrefHeight(25);
-        paneinsc.add(connecterButton, 4, 0,1,2);
+        connecterButton.setStyle(root_style_dark);
+        connecterButton.setOnAction(new ControlerVue(this));
+        paneinsc.add(connecterButton, 0, 4,2,1);
 
         
         Region divrect = new Region();
         divrect.setPrefSize(200, 200);
-        divrect.setStyle("-fx-background-color: #"+NotreBlue+"; -fx-background-radius: 10 10 0 10");
+        divrect.setStyle(root_style_dark+ " -fx-background-radius: 10 10 0 10;");
         root.getChildren().addAll(paneconn,divrect,paneinsc);
+    }
+
+    private String color_format(Color c) {
+        int r = (int)Math.round(c.getRed() * 255.0);
+        int g = (int)Math.round(c.getGreen() * 255.0);
+        int b = (int)Math.round(c.getBlue() * 255.0);
+        int o = (int)Math.round(c.getOpacity() * 255.0);
+        return String.format("#%02x%02x%02x%02x" , r, g, b, o);
     }
 
     /** start
@@ -641,22 +672,22 @@ public class Vue extends Application {
         stage.setTitle("Jeux IUT'Olympiques");
         fenetre = new BorderPane();
 
-        BorderPane Titre = new BorderPane();
+        Titre = new BorderPane();
         Titre.setPadding(new Insets(20));
 
         Label TitreLabel = new Label("Jeux IUT'Olympiques");
         Font font = Font.font("Arial", 24);
         TitreLabel.setFont(font);
-        TitreLabel.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
+        TitreLabel.setTextFill(Color.WHITE);
+        
         HBox titleBox = new HBox();
         titleBox.setAlignment(Pos.CENTER);
+        titleBox.setBackground(new Background(new BackgroundFill(NotreBlue, CornerRadii.EMPTY, Insets.EMPTY)));
         titleBox.getChildren().add(TitreLabel);
         Titre.setCenter(titleBox);
 
         fenetre.setTop(Titre);
-        fenetre.setCenter(PaneConnexion);
+        fenetre.setCenter(PageConnexion);
         Scene scene = new Scene(fenetre, 800, 600);
         stage.setScene(scene);
         stage.show();
