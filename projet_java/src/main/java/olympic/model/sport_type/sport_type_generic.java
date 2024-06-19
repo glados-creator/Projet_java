@@ -6,7 +6,7 @@ import olympic.model.Sport;
 /**
  * generic
  */
-public class generic extends Sport {
+public class sport_type_generic extends Sport {
     /**
      * generic
      * 
@@ -18,7 +18,7 @@ public class generic extends Sport {
      * @param Coef_Endurance  double
      * @param Plus_haut_score boolean
      */
-    public generic(JeuxOlympique JO, String Nom, String Uniter, double Coef_Force, double Coef_Agilite,
+    public sport_type_generic(JeuxOlympique JO, String Nom, String Uniter, double Coef_Force, double Coef_Agilite,
             double Coef_Endurance, boolean Plus_haut_score) {
         super(JO, Nom,
                 Uniter,
