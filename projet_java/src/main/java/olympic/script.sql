@@ -1,50 +1,58 @@
-DROP TABLE PARTICIPE_EQUIPE; 
-DROP TABLE PARTICIPE_ATHLETE; 
-DROP TABLE APPARTIENT; 
-DROP TABLE Athlete; 
-DROP TABLE Equipe; 
-DROP TABLE Epreuve; 
-DROP TABLE Sport; 
-DROP TABLE Pays; 
-DROP TABLE JO; 
+SET FOREIGN_KEY_CHECKS = 0;
 
-DROP TABLE Utilisateur; 
-DROP TABLE Role; 
+DROP TABLE IF EXISTS PARTICIPE_EQUIPE;
+DROP TABLE IF EXISTS PARTICIPE_ATHLETE;
+DROP TABLE IF EXISTS APPARTIENT;
+DROP TABLE IF EXISTS Athlete;
+DROP TABLE IF EXISTS Equipe;
+DROP TABLE IF EXISTS Epreuve;
+DROP TABLE IF EXISTS Sport;
+DROP TABLE IF EXISTS Pays;
+DROP TABLE IF EXISTS JO;
+
+DROP TABLE IF EXISTS Utilisateur; 
+DROP TABLE IF EXISTS Role; 
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Création des tables principales
 
 CREATE TABLE JO (
-    annee int PRIMARY KEY,
+    annee INT PRIMARY KEY,
     lieux VARCHAR(100)
 );
 
 CREATE TABLE Pays (
     nom_pays VARCHAR(100),
-    annee INT REFERENCES JO(annee),
-    PRIMARY KEY (nom_pays, annee)
+    annee INT,
+    FOREIGN KEY (annee) REFERENCES JO(annee),
+    PRIMARY KEY (nom_pays, annee)    
 );
 
 CREATE TABLE Sport (
     nom_sport VARCHAR(100),
-    annee INT REFERENCES JO(annee),
-    PRIMARY KEY (nom_sport, annee)
+    annee INT,
+    FOREIGN KEY (annee) REFERENCES JO(annee),
+    PRIMARY KEY (nom_sport, annee)    
 );
 
 CREATE TABLE Epreuve (
     epreuve_id INT PRIMARY KEY,
     nom_epreuve VARCHAR(100),
-    collectifs boolean,
+    collectifs BOOLEAN,
     genre VARCHAR(1),
-    nom_sport INT REFERENCES Sport(nom_sport),
-    annee INT REFERENCES Sport(annee)
+    nom_sport VARCHAR(100),
+    annee INT,
+    FOREIGN KEY (nom_sport, annee) REFERENCES Sport(nom_sport, annee)
 );
-
 
 CREATE TABLE Equipe (
     equipe_id INT PRIMARY KEY,
     nom_equipe VARCHAR(100),
-    nom_pays INT,
-    annee int
+    nom_pays VARCHAR(100),
+    annee INT,
+    FOREIGN KEY (nom_pays, annee) REFERENCES Pays(nom_pays, annee)
 );
-
 
 CREATE TABLE Athlete (
     athlete_id INT PRIMARY KEY,
@@ -54,33 +62,38 @@ CREATE TABLE Athlete (
     forceA INT,
     enduranceA INT,
     agiliteA INT,
-    nom_pays INT,
-    annnee INT
+    nom_pays VARCHAR(100),
+    annee INT,
+    FOREIGN KEY (nom_pays, annee) REFERENCES Pays(nom_pays, annee)
 );
-
 
 CREATE TABLE PARTICIPE_ATHLETE (
     PARTICIPE_ATHLETE_id INT PRIMARY KEY,
-    athlete_id INT REFERENCES Athlete(athlete_id),
-    epreuve_id INT REFERENCES Epreuve(epreuve_id)
+    athlete_id INT,
+    epreuve_id INT,
+    FOREIGN KEY (athlete_id) REFERENCES Athlete(athlete_id),
+    FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id)
 );
 
 CREATE TABLE PARTICIPE_EQUIPE (
     PARTICIPE_EQUIPE_id INT PRIMARY KEY,
-    equipe_id INT REFERENCES Equipe(equipe_id),
-    epreuve_id INT REFERENCES Epreuve(epreuve_id)
+    equipe_id INT,
+    epreuve_id INT,
+    FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id),
+    FOREIGN KEY (epreuve_id) REFERENCES Epreuve(epreuve_id)
 );
 
 CREATE TABLE APPARTIENT (
-    equipe_id INT REFERENCES Equipe(equipe_id),
-    athlete_id INT REFERENCES Athlete(athlete_id)
+    equipe_id INT,
+    athlete_id INT,
+    PRIMARY KEY (equipe_id, athlete_id),
+    FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id),
+    FOREIGN KEY (athlete_id) REFERENCES Athlete(athlete_id)
 );
 
 
 
-----------------------------------------------------------------
-
---Creation des tables de connexion
+-- Création des tables de connexion
 
 CREATE TABLE Role (
     role_id INT PRIMARY KEY,
