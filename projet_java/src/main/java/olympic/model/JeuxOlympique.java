@@ -20,7 +20,21 @@ public class JeuxOlympique {
 
     private final List<Pays> LesPays;
 
-    /** void simule()
+    /**
+     * JeuxOlympique
+     * 
+     * @param annee String
+     * @param lieux String
+     */
+    public JeuxOlympique(int annee, String lieux) {
+        this.annee = annee;
+        this.lieux = lieux;
+        LesSports = new ArrayList<>();
+        LesPays = new ArrayList<>();
+    }
+
+    /**
+     * void simule()
      * fait une simulation olympique
      */
     public void simule() {
@@ -28,11 +42,11 @@ public class JeuxOlympique {
             for (Epreuve ep : sp.getLesEpreuves()) {
                 List<Participant> classement = ep.simule();
                 Pays pays_or = classement.get(0).getOrigine();
-                pays_or.setMedaille_or_a(1+pays_or.getMedaille_or());
+                pays_or.setMedaille_or_a(1 + pays_or.getMedaille_or());
                 Pays pays_argent = classement.get(1).getOrigine();
-                pays_argent.setMedaille_argent_a(1+pays_argent.getMedaille_argent());
+                pays_argent.setMedaille_argent_a(1 + pays_argent.getMedaille_argent());
                 Pays pays_bronze = classement.get(2).getOrigine();
-                pays_bronze.setMedaille_bronze_a(1+pays_bronze.getMedaille_bronze());
+                pays_bronze.setMedaille_bronze_a(1 + pays_bronze.getMedaille_bronze());
             }
         }
     }
@@ -57,18 +71,6 @@ public class JeuxOlympique {
 
     public List<Pays> LesPays() {
         return LesPays;
-    }
-
-    /**
-     * JeuxOlympique
-     * 
-     * @param annee String
-     * @param lieux String
-     */
-    public JeuxOlympique(int annee, String lieux) {
-        this.annee = annee;
-        this.lieux = lieux;
-        LesSports = new ArrayList<>();
     }
 
     /**

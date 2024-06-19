@@ -23,7 +23,7 @@ public class DBtoJava {
         List<JeuxOlympique> jeux = new ArrayList<JeuxOlympique>();
         try {
             st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM JO");
+            ResultSet rs = st.executeQuery("SELECT annee, lieux FROM JO");
             while (rs.next()) {
                 int annee = rs.getInt(1);
                 String lieux = rs.getString(2);
