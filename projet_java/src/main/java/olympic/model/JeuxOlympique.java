@@ -12,7 +12,7 @@ import java.util.Objects;
 public class JeuxOlympique {
 
     /** String annee */
-    private String annee;
+    private final String annee;
     /** String lieux */
     private String lieux;
     /** List[Sport] les_sports */

@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Pays {
     /** String Nom */
-    private String Nom;
+    private final String Nom;
     /** int Medaille_or */
     private int Medaille_or;
     /** int Medaille_argent */
@@ -104,14 +104,6 @@ public class Pays {
         return lesAthletes;
     }
 
-    /**
-     * Nom setNom_a
-     * 
-     * @param Nom String
-     */
-    public void setNom_a(String Nom) {
-        this.Nom = Nom;
-    }
 
     /**
      * setMedaille_or_a admin

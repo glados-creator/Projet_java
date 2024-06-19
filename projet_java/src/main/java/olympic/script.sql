@@ -14,15 +14,13 @@ CREATE TABLE JO(
 
 CREATE TABLE Pays (
     nom_pays VARCHAR(100),
-    annee INT,
-    FOREIGN KEY (annee) REFERENCES JO(annee),
+    annee INT REFERENCES JO(annee),
     PRIMARY KEY (nom_pays, annee)
 );
 
 CREATE TABLE Sport (
     nom_sport VARCHAR(100),
-    annee INT,
-    FOREIGN KEY (annee) REFERENCES JO(annee),
+    annee INT REFERENCES JO(annee),
     PRIMARY KEY (nom_sport, annee)
 );
 

@@ -7,8 +7,10 @@ package olympic.model;
  */
 public class Athlete implements Participant {
 
-    /** private String nom */
-    private final String nom;
+    /** private String Nom */
+    private final String Nom;
+    /** private String Prenom */
+    private String Prenom;
     /** private boolean Sex */
     private boolean Sex;
     /** private double force */
@@ -26,15 +28,17 @@ public class Athlete implements Participant {
     /**
      * constructeur
      * 
-     * @param nom       String
+     * @param Nom       String
+     * @param prenom    String
      * @param Sex       boolean
      * @param force     double
      * @param Agilite   double
      * @param endurance double
      * @param Origine   Pays
      */
-    public Athlete(String nom, boolean Sex, double force, double Agilite, double endurance, Pays Origine) {
-        this.nom = nom;
+    public Athlete(String Nom, String Prenom, boolean Sex, double force, double Agilite, double endurance, Pays Origine) {
+        this.Nom = Nom;
+        this.Prenom = Prenom;
         this.Sex = Sex;
         this.force = force;
         this.Agilite = Agilite;
@@ -48,7 +52,25 @@ public class Athlete implements Participant {
      * @return String
      */
     public String getNom() {
-        return nom;
+        return Nom;
+    }
+
+    /**
+     * getPrenom
+     * 
+     * @return String
+     */
+    public String getPrenom() {
+        return Prenom;
+    }
+
+    /**
+     * setPrenom_a admin
+     * 
+     * @param Prenom String
+     */
+    public void setPrenom_a(String Prenom) {
+        this.Prenom = Prenom;
     }
 
     /**
@@ -172,7 +194,7 @@ public class Athlete implements Participant {
     @Override
     public String toString() {
         return "{" +
-                "nom='" + getNom() + "'" +
+                "Nom='" + getNom() + "'" +
                 ", Sex='" + getSex() + "'" +
                 ", force='" + getForce() + "'" +
                 ", Agilite='" + getAgilite() + "'" +

@@ -120,7 +120,7 @@ public class Epreuve {
     /**
      * setNom_a admin
      * 
-     * @param String Nom
+     * @param Nom String son Nom
      */
     public void setNom_a(String Nom) {
         this.Nom = Nom;

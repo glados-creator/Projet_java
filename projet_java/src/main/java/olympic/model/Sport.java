@@ -10,7 +10,7 @@ import java.util.List;
  */
 public abstract class Sport {
     /** String Nom */
-    private String Nom;
+    private final String Nom;
     /** String Uniter */
     private String Uniter;
     /** private boolean Plus_haut_score */
@@ -80,15 +80,6 @@ public abstract class Sport {
      */
     public String getNom() {
         return Nom;
-    }
-
-    /**
-     * setNom_a admin
-     * 
-     * @param Nom String
-     */
-    public void setNom_a(String Nom) {
-        this.Nom = Nom;
     }
 
     /**
