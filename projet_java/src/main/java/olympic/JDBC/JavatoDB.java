@@ -2,6 +2,7 @@ package olympic.JDBC;
 
 import java.sql.*;
 
+import olympic.model.Epreuve;
 import olympic.model.JeuxOlympique;
 import olympic.model.Sport;
 
@@ -60,48 +61,59 @@ public class JavatoDB {
     }
 
     public void ajouteJO(JeuxOlympique jo) throws SQLException {
-        try{
-        PreparedStatement st = this.laConnexion.prepareStatement("insert into JO values (?,?)");
+        try {
+            PreparedStatement st = this.laConnexion.prepareStatement("insert into JO values (?,?)");
 
-        st.setInt(1, jo.getAnnee());
-        st.setString(2, jo.getLieux());
+            st.setInt(1, jo.getAnnee());
+            st.setString(2, jo.getLieux());
 
-        st.executeUpdate();
-        }catch (Exception e){
-            System.out.println("Erreur : ajouteJO, de type : "+ e);
+            st.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Erreur : ajouteJO, de type : " + e);
         }
     }
 
     public void ajouteSport(Sport sport) throws SQLException {
-        try{       PreparedStatement st = this.laConnexion.prepareStatement("insert into Sport values (?;?)");
+        try {
+            PreparedStatement st = this.laConnexion.prepareStatement("insert into Sport values (?;?)");
 
-        st.setString(1, sport.getNom());
-        st.setString(2, sport.getJO().getAnnee());
+            st.setString(1, sport.getNom());
+            st.setString(2, sport.getJO().getAnnee());
 
-        st.executeUpdate();}catch (Exception e){
-            System.out.println("Erreur : ajouteSport, de type : "+ e);
+            st.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Erreur : ajouteSport, de type : " + e);
         }
     }
 
     public void ajoutePays(String nomPays) throws SQLException {
-        try{
-        PreparedStatement st = this.laConnexion.prepareStatement("insert into Pays values (?,?)");
+        try {
+            PreparedStatement st = this.laConnexion.prepareStatement("insert into Pays values (?,?)");
 
-        st.setString(1, nomPays);
-        st.setString(2, nomPays.getJO().getLieux());
+            st.setString(1, nomPays);
+            st.setString(2, nomPays.getJO().getLieux());
 
-        st.executeUpdate();}
-        catch(Exception e){
-            System.out.println("Erreur : ajoutePays, de type : "+ e);
+            st.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Erreur : ajoutePays, de type : " + e);
         }
     }
 
     public void ajouteEpreuve(Epreuve ep) throws SQLException {
-        try{
-            PreparedStatement st = this.laConnexion.prepareStatement("insert into Eprecision values (?,?,?,?,?,?)");
+        try {
+            PreparedStatement st = this.laConnexion.prepareStatement("insert into Epreuve values (?,?,?,?,?,?)");
 
-            st.setInt(1, his.getId)
+            st.setInt(1, this.getIdEpreuveProchain());
+            st.setString(2, ep.getNom());
+            st.setBoolean(3, ep.getCollectif());
+            st.setString(4, ep.getSexe());
+            st.setString(5, ep.getSport().getNom());
+            st.setString(6, ep.getSport().getJO().getAnnee());
+
+            st.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Erreur : ajouteEpreuve, de type : " + e);
         }
 
-
+    }
 }
