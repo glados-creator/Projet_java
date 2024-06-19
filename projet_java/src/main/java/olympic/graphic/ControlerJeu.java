@@ -54,7 +54,7 @@ public class ControlerJeu implements EventHandler<ActionEvent>  {
         else if (button.getText().contains("Sports")){
             this.appli.modeSports();     
         }
-        else if (button.getText().contains("Accueil")){
+        else if (button.getText().contains("Résultat")){
             this.appli.modeJournaliste();     
         }
     }

@@ -39,7 +39,7 @@ public class Vue extends Application {
     private Button Connexion;
     private Button Inscription;
 
-    private Button Accueil;
+    private Button Resultat;
     private Button Athletes;
     private Button Pays;
     private Button Sports;
@@ -260,8 +260,8 @@ public class Vue extends Application {
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerJeu(this));
     
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerJeu(this));
+        Resultat = new Button("Résultat");
+        Resultat.setOnAction(new ControlerJeu(this));
         Athletes = new Button("Athlètes");
         Athletes.setOnAction(new ControlerJeu(this));
         Pays = new Button("Pays");
@@ -270,7 +270,7 @@ public class Vue extends Application {
         Sports.setOnAction(new ControlerJeu(this));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        Accueil.setStyle(buttonStyle);
+        Resultat.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
@@ -282,7 +282,7 @@ public class Vue extends Application {
     
         HBox menuBox = new HBox(10);
         menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+        menuBox.getChildren().addAll(Resultat, Athletes, Pays, Sports);
     
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
@@ -346,8 +346,8 @@ public class Vue extends Application {
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerJeu(this));
     
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerJeu(this));
+        Resultat = new Button("Résutlat");
+        Resultat.setOnAction(new ControlerJeu(this));
         Athletes = new Button("Athlètes");
         Athletes.setOnAction(new ControlerJeu(this));
         Pays = new Button("Pays");
@@ -356,7 +356,7 @@ public class Vue extends Application {
         Sports.setOnAction(new ControlerJeu(this));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        Accueil.setStyle(buttonStyle);
+        Resultat.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
@@ -368,7 +368,7 @@ public class Vue extends Application {
     
         HBox menuBox = new HBox(10);
         menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+        menuBox.getChildren().addAll(Resultat, Athletes, Pays, Sports);
     
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
@@ -397,8 +397,8 @@ public class Vue extends Application {
         backButton.setOnAction(new ControlerJeu(this));
     
 
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerJeu(this));
+        Resultat = new Button("Résultat");
+        Resultat.setOnAction(new ControlerJeu(this));
         Athletes = new Button("Athlètes");
         Athletes.setOnAction(new ControlerJeu(this));
         Pays = new Button("Pays");
@@ -407,7 +407,7 @@ public class Vue extends Application {
         Sports.setOnAction(new ControlerJeu(this));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        Accueil.setStyle(buttonStyle);
+        Resultat.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
@@ -419,7 +419,7 @@ public class Vue extends Application {
     
         HBox menuBox = new HBox(10);
         menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+        menuBox.getChildren().addAll(Resultat, Athletes, Pays, Sports);
     
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
@@ -450,8 +450,8 @@ public void modeAthletes() {
     backButton.setOnAction(new ControlerJeu(this));
 
 
-    Accueil = new Button("Accueil");
-    Accueil.setOnAction(new ControlerJeu(this));
+    Resultat = new Button("Résultat");
+    Resultat.setOnAction(new ControlerJeu(this));
     Athletes = new Button("Athlètes");
     Athletes.setOnAction(new ControlerJeu(this));
     Pays = new Button("Pays");
@@ -460,7 +460,7 @@ public void modeAthletes() {
     Sports.setOnAction(new ControlerJeu(this));
 
     String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-    Accueil.setStyle(buttonStyle);
+    Resultat.setStyle(buttonStyle);
     Athletes.setStyle(buttonStyle);
     Pays.setStyle(buttonStyle);
     Sports.setStyle(buttonStyle);
@@ -472,7 +472,7 @@ public void modeAthletes() {
 
     HBox menuBox = new HBox(10);
     menuBox.setAlignment(Pos.TOP_RIGHT);
-    menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+    menuBox.getChildren().addAll(Resultat, Athletes, Pays, Sports);
 
     BorderPane topPane = new BorderPane();
     topPane.setLeft(topBox);
@@ -530,8 +530,8 @@ public void modePays(){
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerJeu(this));
     
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerJeu(this));
+        Resultat = new Button("Résultat");
+        Resultat.setOnAction(new ControlerJeu(this));
         Athletes = new Button("Athlètes");
         Athletes.setOnAction(new ControlerJeu(this));
         Pays = new Button("Pays");
@@ -540,7 +540,7 @@ public void modePays(){
         Sports.setOnAction(new ControlerJeu(this));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        Accueil.setStyle(buttonStyle);
+        Resultat.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
@@ -552,7 +552,7 @@ public void modePays(){
     
         HBox menuBox = new HBox(10);
         menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+        menuBox.getChildren().addAll(Resultat, Athletes, Pays, Sports);
     
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
@@ -600,8 +600,8 @@ public void modePays(){
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerJeu(this));
     
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerJeu(this));
+        Resultat = new Button("Résultat");
+        Resultat.setOnAction(new ControlerJeu(this));
         Athletes = new Button("Athlètes");
         Athletes.setOnAction(new ControlerJeu(this));
         Pays = new Button("Pays");
@@ -610,7 +610,7 @@ public void modePays(){
         Sports.setOnAction(new ControlerJeu(this));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        Accueil.setStyle(buttonStyle);
+        Resultat.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
@@ -622,7 +622,7 @@ public void modePays(){
     
         HBox menuBox = new HBox(10);
         menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+        menuBox.getChildren().addAll(Resultat, Athletes, Pays, Sports);
     
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
