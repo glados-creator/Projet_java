@@ -100,12 +100,12 @@ public class JavatoDB {
         }
     }
 
-    public void ajoutePays(String nomPays) throws SQLException {
+    public void ajoutePays(Pays pa) throws SQLException {
         try {
             PreparedStatement st = this.laConnexion.prepareStatement("insert into Pays values (?,?)");
 
-            st.setString(1, nomPays);
-            st.setString(2, nomPays.getJO().getLieux());
+            st.setString(1, pa.getNom());
+            st.setString(2, pa.getJO().getLieux());
 
             st.executeUpdate();
         } catch (Exception e) {
