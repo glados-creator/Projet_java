@@ -1,4 +1,4 @@
-package olympic.modelTest.sport_type;
+package olympic.sport_type;
 
 import olympic.model.JeuxOlympique;
 import olympic.model.sport_type.*;
@@ -6,13 +6,13 @@ import olympic.model.sport_type.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import junit.framework.TestCase;
 
 /**
- * VolleyBallTest
+ * Athletisme
  */
-public class VolleyBallTest{
-    private olympic.model.sport_type.VolleyBall internal;
+public class AthletismeTest extends TestCase{
+    private olympic.model.sport_type.Athletisme internal;
     private olympic.model.JeuxOlympique JO;
 
     private final static double Test_Coef_Force = 0.4;
@@ -23,7 +23,7 @@ public class VolleyBallTest{
     @BeforeEach
     public void setUp() {
         JO = new JeuxOlympique(0, "test");
-        internal = new VolleyBall(JO);
+        internal = new Athletisme(JO);
     }
 
     

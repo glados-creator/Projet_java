@@ -11,6 +11,6 @@ public class Natation extends Sport {
      * @param JO JeuxOlympique
     */
     public Natation(JeuxOlympique JO) {
-        super(JO, "Natation", "s", 0.30, 0.30, 0.40, false);
+        super(JO, "Natation", "sec", 0.30, 0.30, 0.40, false);
     }
 }

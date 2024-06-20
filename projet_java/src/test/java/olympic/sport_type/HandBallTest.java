@@ -1,4 +1,4 @@
-package olympic.modelTest.sport_type;
+package olympic.sport_type;
 
 import olympic.model.JeuxOlympique;
 import olympic.model.sport_type.*;
@@ -6,30 +6,30 @@ import olympic.model.sport_type.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import junit.framework.TestCase;
 
 /**
- * sport_type_genericTest
+ * HandBallTest
  */
-public class sport_type_genericTest{
-    private olympic.model.sport_type.sport_type_generic internal;
+public class HandBallTest extends TestCase{
+    private olympic.model.sport_type.HandBall internal;
     private olympic.model.JeuxOlympique JO;
 
-    private final static double Test_Coef_Force = 0.4;
-    private final static double Test_Coef_Agilite = 0.3;
-    private final static double Test_Coef_Endurance = 0.3;
-    private final static String Test_uniter = "sec";
+    private final static double Test_Coef_Force = 0.35;
+    private final static double Test_Coef_Agilite = 0.25;
+    private final static double Test_Coef_Endurance = 0.4;
+    private final static String Test_uniter = "points";
 
     @BeforeEach
     public void setUp() {
         JO = new JeuxOlympique(0, "test");
-        internal = new sport_type_generic(JO,"test_nom","test_uniter",1/3,1/3,1/3,false);
+        internal = new HandBall(JO);
     }
 
     
     @Test
     public void testToString() throws Exception {
-        assertEquals(internal.toString(),"{ Nom='Athletisme', Uniter='sec', Plus_haut_score='false', LesEpreuves='[]', Coef_Force='0.4', Coef_Agilite='0.3', Coef_Endurance='0.3'}");
+        assertEquals(internal.toString(),"{ Nom='HandBall', Uniter='points', Plus_haut_score='true', LesEpreuves='[]', Coef_Force='0.35', Coef_Agilite='0.25', Coef_Endurance='0.4'}");
     }
 
     @Test
@@ -39,7 +39,7 @@ public class sport_type_genericTest{
 
     @Test
     public void Test_getNom() {
-        assertEquals(internal.getNom(),"Athletisme");
+        assertEquals(internal.getNom(),"HandBall");
     }
 
     @Test
@@ -57,7 +57,7 @@ public class sport_type_genericTest{
 
     @Test
     public void Test_getPlus_haut_score() {
-        assertEquals(internal.getPlus_haut_score(),false);
+        assertEquals(internal.getPlus_haut_score(),true);
     }
 
     @Test

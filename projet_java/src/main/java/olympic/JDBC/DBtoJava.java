@@ -93,7 +93,7 @@ public final class DBtoJava {
                         sports.add(new olympic.model.sport_type.VolleyBall(jeux));
                         break;
                     default:
-                        sports.add(new sport_type_generic(jeux, nom, "uniter", 1/3, 1/3, 1/3, true));
+                        sports.add(new sport_type_generic(jeux, nom, "uniter", (double)1/3, (double)1/3, (double)1/3, true));
                         break;
                 }
             }
