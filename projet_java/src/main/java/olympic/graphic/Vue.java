@@ -104,6 +104,13 @@ public class Vue extends Application {
         Inscription = new Button("Inscription");
         Inscription.setOnAction(new ControlerVue(this));
 
+        Connexion.setOnMouseEntered(e -> Connexion.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK; -fx-font-size: 18;"));
+        Connexion.setOnMouseExited(e -> Connexion.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE; -fx-font-size: 18;"));
+        
+        Inscription.setOnMouseEntered(e -> Inscription.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK; -fx-font-size: 18;"));
+        Inscription.setOnMouseExited(e -> Inscription.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE; -fx-font-size: 18;"));
+        
+
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff; -fx-font-size: 18px;";
 
         Connexion.setStyle(buttonStyle);
@@ -142,6 +149,9 @@ public class Vue extends Application {
         });
         backButton.setOnAction(new ControlerVue(this));
 
+        backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
 
@@ -165,11 +175,17 @@ public class Vue extends Application {
         connecterButton.setPrefHeight(25);
         connecterButton.setOnAction(new ControlerVue(this));
 
+        connecterButton.setOnMouseEntered(e -> connecterButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        connecterButton.setOnMouseExited(e -> connecterButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
         Button inscription = new Button("Inscription");
         inscription.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #3C5A9C;");
         inscription.setPrefWidth(320);
         inscription.setPrefHeight(25);
         inscription.setOnAction(new ControlerVue(this));
+
+        inscription.setOnMouseEntered(e -> inscription.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: 3C5A9C;"));
+        inscription.setOnMouseExited(e -> inscription.setStyle("-fx-background-color: #FFFFFF; -fx-text-fill: 3C5A9C;"));
 
         if (PageConnexion_error==null) PageConnexion_error = new Label();
         PageConnexion_error.setTextFill(Color.RED);
@@ -206,6 +222,9 @@ public class Vue extends Application {
         });
         backButton.setOnAction(new ControlerVue(this));
 
+        backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
 
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -233,15 +252,18 @@ public class Vue extends Application {
         Label errorLabel = PageConnexion_error;
         errorLabel.setTextFill(Color.RED);
 
-        Button connecterButton = new Button("S'inscrire");
-        connecterButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-        connecterButton.setPrefWidth(320);
-        connecterButton.setPrefHeight(25);
-        connecterButton.setOnAction(new ControlerVue(this));
+        Button Inscrirebutton = new Button("S'inscrire");
+        Inscrirebutton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        Inscrirebutton.setPrefWidth(320);
+        Inscrirebutton.setPrefHeight(25);
+        Inscrirebutton.setOnAction(new ControlerVue(this));
+
+        Inscrirebutton.setOnMouseEntered(e -> Inscrirebutton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Inscrirebutton.setOnMouseExited(e -> Inscrirebutton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
 
 
         contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, confirmPasswordField,
-                connecterButton, errorLabel);
+                Inscrirebutton, errorLabel);
 
         HBox topBox = new HBox();
         topBox.getChildren().add(backButton);
@@ -282,6 +304,21 @@ public class Vue extends Application {
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
+
+        Accueil.setOnMouseEntered(e -> Accueil.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Accueil.setOnMouseExited(e -> Accueil.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Athletes.setOnMouseEntered(e -> Athletes.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Athletes.setOnMouseExited(e -> Athletes.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Pays.setOnMouseEntered(e -> Pays.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Pays.setOnMouseExited(e -> Pays.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Sports.setOnMouseEntered(e -> Sports.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Sports.setOnMouseExited(e -> Sports.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
     
         HBox topBox = new HBox(10);
         topBox.setPadding(new Insets(0, 0, 0, 0));
@@ -297,10 +334,7 @@ public class Vue extends Application {
         topPane.setRight(menuBox);
     
         // Création de la barre de recherche avec le texte indicatif
-        TextField barreDeRecherche = new TextField();
-        barreDeRecherche.setPromptText("Recherche par Pays et Epreuve");
-        barreDeRecherche.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
-        barreDeRecherche.setPrefWidth(300); // Ajustez la largeur selon vos besoins
+        
     
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.setValue("Sports");
@@ -317,9 +351,6 @@ public class Vue extends Application {
         bRechercher.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         bRechercher.setGraphic(ImageViewL);
     
-        HBox searchBox = new HBox(10);
-        searchBox.setAlignment(Pos.CENTER);
-        searchBox.getChildren().addAll(barreDeRecherche,bRechercher, comboBox);
     
         TableView<Athlete> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -349,7 +380,7 @@ public class Vue extends Application {
         bottomBox.setAlignment(Pos.BOTTOM_LEFT);
         bottomBox.getChildren().add(backButton);
     
-        mainBox.getChildren().addAll(topPane, searchBox, contentBox, bottomBox);
+        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
         mainBox.setMaxWidth(750);
         mainBox.setMaxHeight(500);
     
@@ -388,12 +419,30 @@ public class Vue extends Application {
         Pays.setOnAction(new ControlerVue(this));
         Sports = new Button("Sports");
         Sports.setOnAction(new ControlerVue(this));
+
+        Accueil.setOnMouseEntered(e -> Accueil.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Accueil.setOnMouseExited(e -> Accueil.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Athletes.setOnMouseEntered(e -> Athletes.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Athletes.setOnMouseExited(e -> Athletes.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Pays.setOnMouseEntered(e -> Pays.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Pays.setOnMouseExited(e -> Pays.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Sports.setOnMouseEntered(e -> Sports.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Sports.setOnMouseExited(e -> Sports.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
         Accueil.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
+
+        
+
     
         HBox topBox = new HBox(10);
         topBox.setPadding(new Insets(0, 0, 0, 0));
@@ -407,6 +456,31 @@ public class Vue extends Application {
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
         topPane.setRight(menuBox);
+
+        TextField barreDeRecherche = new TextField();
+        barreDeRecherche.setPromptText("Rechercher un Athlète");
+        barreDeRecherche.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        barreDeRecherche.setPrefWidth(300); 
+
+        
+
+        Image ImageL = new Image("file:projet_java/src/main/java/olympic/graphic/img/image.png");
+        ImageView ImageViewL = new ImageView(ImageL);
+
+        ImageViewL.setFitWidth(20);
+        ImageViewL.setFitHeight(20);
+    
+        Button bRechercher = new Button();
+        bRechercher.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        bRechercher.setGraphic(ImageViewL);
+
+        bRechercher.setOnMouseEntered(e -> bRechercher.setStyle("-fx-background-color: #CFE4FF;"));
+        bRechercher.setOnMouseExited(e -> bRechercher.setStyle("-fx-background-color: #3C5A9C;"));
+        
+    
+        HBox searchBox = new HBox(10);
+        searchBox.setAlignment(Pos.CENTER);
+        searchBox.getChildren().addAll(barreDeRecherche,bRechercher);
     
         TableView<Athlete> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -430,13 +504,13 @@ public class Vue extends Application {
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
-        contentBox.getChildren().add(table);
+        contentBox.getChildren().addAll(table);
     
         HBox bottomBox = new HBox(10);
         bottomBox.setAlignment(Pos.BOTTOM_LEFT);
         bottomBox.getChildren().add(backButton);
     
-        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
+        mainBox.getChildren().addAll(topPane, searchBox, contentBox, bottomBox);
         mainBox.setMaxWidth(750);
         mainBox.setMaxHeight(500);
     
@@ -465,6 +539,21 @@ public class Vue extends Application {
         Pays.setOnAction(new ControlerVue(this));
         Sports = new Button("Sports");
         Sports.setOnAction(new ControlerVue(this));
+
+        Accueil.setOnMouseEntered(e -> Accueil.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Accueil.setOnMouseExited(e -> Accueil.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Athletes.setOnMouseEntered(e -> Athletes.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Athletes.setOnMouseExited(e -> Athletes.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Pays.setOnMouseEntered(e -> Pays.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Pays.setOnMouseExited(e -> Pays.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Sports.setOnMouseEntered(e -> Sports.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Sports.setOnMouseExited(e -> Sports.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
     
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
         Accueil.setStyle(buttonStyle);
@@ -484,6 +573,29 @@ public class Vue extends Application {
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
         topPane.setRight(menuBox);
+
+        TextField barreDeRecherche = new TextField();
+        barreDeRecherche.setPromptText("Rechercher un Pays");
+        barreDeRecherche.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        barreDeRecherche.setPrefWidth(300);
+
+
+        Image ImageL = new Image("file:projet_java/src/main/java/olympic/graphic/img/image.png");
+        ImageView ImageViewL = new ImageView(ImageL);
+
+        ImageViewL.setFitWidth(20);  
+        ImageViewL.setFitHeight(20); 
+    
+        Button bRechercher = new Button();
+        bRechercher.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        bRechercher.setGraphic(ImageViewL);
+
+        bRechercher.setOnMouseEntered(e -> bRechercher.setStyle("-fx-background-color: #CFE4FF;"));
+        bRechercher.setOnMouseExited(e -> bRechercher.setStyle("-fx-background-color: #3C5A9C;"));
+    
+        HBox searchBox = new HBox(10);
+        searchBox.setAlignment(Pos.CENTER);
+        searchBox.getChildren().addAll(barreDeRecherche,bRechercher);
     
         TableView<Pays> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -500,13 +612,13 @@ public class Vue extends Application {
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
-        contentBox.getChildren().add(table);
+        contentBox.getChildren().addAll(table);
     
         HBox bottomBox = new HBox(10);
         bottomBox.setAlignment(Pos.BOTTOM_LEFT);
         bottomBox.getChildren().add(backButton);
     
-        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
+        mainBox.getChildren().addAll(topPane, searchBox, contentBox, bottomBox);
         mainBox.setMaxWidth(750);
         mainBox.setMaxHeight(500);
     
@@ -533,7 +645,22 @@ public class Vue extends Application {
         Pays.setOnAction(new ControlerVue(this));
         Sports = new Button("Sports");
         Sports.setOnAction(new ControlerVue(this));
-    
+
+        Accueil.setOnMouseEntered(e -> Accueil.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Accueil.setOnMouseExited(e -> Accueil.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Athletes.setOnMouseEntered(e -> Athletes.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Athletes.setOnMouseExited(e -> Athletes.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Pays.setOnMouseEntered(e -> Pays.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Pays.setOnMouseExited(e -> Pays.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        Sports.setOnMouseEntered(e -> Sports.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        Sports.setOnMouseExited(e -> Sports.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+        backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+        backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
         Accueil.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
@@ -552,6 +679,28 @@ public class Vue extends Application {
         BorderPane topPane = new BorderPane();
         topPane.setLeft(topBox);
         topPane.setRight(menuBox);
+
+        TextField barreDeRecherche = new TextField();
+        barreDeRecherche.setPromptText("Rechercher un Sport");
+        barreDeRecherche.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        barreDeRecherche.setPrefWidth(300);
+
+        Image ImageL = new Image("file:projet_java/src/main/java/olympic/graphic/img/image.png");
+        ImageView ImageViewL = new ImageView(ImageL);
+
+        ImageViewL.setFitWidth(20);  
+        ImageViewL.setFitHeight(20); 
+    
+        Button bRechercher = new Button();
+        bRechercher.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        bRechercher.setGraphic(ImageViewL);
+
+        bRechercher.setOnMouseEntered(e -> bRechercher.setStyle("-fx-background-color: #CFE4FF;"));
+        bRechercher.setOnMouseExited(e -> bRechercher.setStyle("-fx-background-color: #3C5A9C;"));
+    
+        HBox searchBox = new HBox(10);
+        searchBox.setAlignment(Pos.CENTER);
+        searchBox.getChildren().addAll(barreDeRecherche,bRechercher);
     
         TableView<Sport> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -568,13 +717,13 @@ public class Vue extends Application {
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
-        contentBox.getChildren().add(table);
+        contentBox.getChildren().addAll(table);
     
         HBox bottomBox = new HBox(10);
         bottomBox.setAlignment(Pos.BOTTOM_LEFT);
         bottomBox.getChildren().add(backButton);
     
-        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
+        mainBox.getChildren().addAll(topPane, searchBox, contentBox, bottomBox);
         mainBox.setMaxWidth(750);
         mainBox.setMaxHeight(500);
     
