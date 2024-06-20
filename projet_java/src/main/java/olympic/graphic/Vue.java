@@ -354,25 +354,6 @@ public class Vue extends Application {
     
         TableView<Athlete> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-<<<<<<< HEAD
-
-        TableColumn<Athlete, String> place = new TableColumn<>("Classement");
-        place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
-
-        TableColumn<Athlete, String> pays = new TableColumn<>("Pays");
-        pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
-
-        TableColumn<Athlete, String> medOr = new TableColumn<>("or");
-        medOr.setCellValueFactory(new PropertyValueFactory<>("or"));
-
-        TableColumn<Athlete, String> medAr = new TableColumn<>("argent");
-        medAr.setCellValueFactory(new PropertyValueFactory<>("argent"));
-
-        TableColumn<Athlete, String> medBr = new TableColumn<>("bronze");
-        medBr.setCellValueFactory(new PropertyValueFactory<>("bronze"));
-
-        table.getColumns().addAll(Arrays.asList(place, pays, medOr, medAr, medBr));
-=======
     
         TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
         prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
@@ -390,7 +371,6 @@ public class Vue extends Application {
         sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
     
         table.getColumns().addAll(Arrays.asList(prenomCol, nomCol, sexeCol, paysCol, sportsCol));
->>>>>>> refs/remotes/origin/main
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
