@@ -48,8 +48,8 @@ public class Epreuve {
         Scores = new HashMap<>();
         Random rand = new Random();
         for (Participant pa : LesParticipants) {
-            // aleatoir -> entre 0 et sum(coef participant)
-            int lmax = (int)(pa.getForce()+pa.getAgilite()+pa.getEndurance());
+            // aleatoir -> entre 0 et sum(rand x coef participant)
+            int lmax = (int)((rand.nextDouble()*pa.getForce())+(rand.nextDouble()*pa.getAgilite())+(rand.nextDouble()*pa.getEndurance()));
             Scores.put(pa, Double.valueOf(pa.participe(this)+rand.nextInt((lmax) + 1)));
         }
         // Classement

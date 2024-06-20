@@ -8,7 +8,6 @@ import olympic.JDBC.RoleConnexion;
 import olympic.model.sport_type.*;
 import olympic.model.Epreuve;
 import olympic.model.JeuxOlympique;
-import olympic.model.Pays;
 
 // 1 début
 // 2 load-csv
@@ -33,8 +32,6 @@ public final class datamanager {
 
     /** private static List[JeuxOlympique] glob_JO */
     private static List<JeuxOlympique> glob_JO = new ArrayList<>();
-    /** private static List[Pays] glob_pays */
-    private static List<Pays> glob_pays = new ArrayList<>();
 
     /** enum load_file_format */
     public enum load_file_format {
@@ -173,39 +170,5 @@ public final class datamanager {
      */
     public final static List<JeuxOlympique> list_jo() {
         return glob_JO;
-    }
-
-    /**
-     * public final static void create_pays(Pays pays)
-     * 
-     * @param pays Pays le pays a créé
-     */
-    public final static void create_pays(Pays pays) {
-    }
-
-    /** public final static void save_pays() */
-    public final static void save_pays() {
-    }
-
-    /** public final static void delete_pays() */
-    public final static void delete_pays() {
-    }
-
-    /**
-     * public final static List[Pays] load_pays()
-     * 
-     * @return List[Pays]
-     */
-    public final static List<Pays> load_pays() {
-        return null;
-    }
-
-    /**
-     * public final static List[Pays] list_pays()
-     * 
-     * @return List[Pays]
-     */
-    public final static List<Pays> list_pays() {
-        return glob_pays;
     }
 }
