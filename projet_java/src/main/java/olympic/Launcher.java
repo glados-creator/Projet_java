@@ -5,7 +5,7 @@ package olympic;
 // import java.util.List;
 // import java.util.Scanner;
 
-import olympic.graphic.Vue;
+// import olympic.graphic.Vue;
 // import olympic.model.JeuxOlympique;
 
 /**
@@ -32,15 +32,15 @@ public class Launcher {
      * entry point for term interface
      */
     public final static void run_term() {
-        datamanager.default_dataset();
-        System.out.println(datamanager.list_jo());
-        datamanager.list_jo().get(0).simule();
-
-        System.out.println(datamanager.load_jo().get(0));
-
-        System.exit(0);
-
-        Vue.launch("");
+        // atamanager.default_dataset();
+        // ystem.out.println(datamanager.list_jo());
+        // atamanager.list_jo().get(0).simule();
+        // 
+        // ystem.out.println(datamanager.load_jo().get(0));
+        // 
+        // ystem.exit(0);
+        
+        olympic.graphic.Vue.main(new String[0]);
         
         /*
         // String newLine = System.getProperty("line.separator");

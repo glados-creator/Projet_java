@@ -1,14 +1,17 @@
 package olympic.JDBC;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import olympic.model.Athlete;
+import olympic.model.Epreuve;
 import olympic.model.Equipe;
-import olympic.model.Pays;
 import olympic.model.JeuxOlympique;
+import olympic.model.Pays;
 import olympic.model.Sport;
-import olympic.model.sport_type.*;
+import olympic.model.sport_type.sport_type_generic;
 
 /** final class DBtoJava */
 public final class DBtoJava {
@@ -20,7 +23,7 @@ public final class DBtoJava {
      * 
      * @param laConnexion_i ConnexionMySQL
      */
-    public void setSQL(ConnexionMySQL laConnexion_i) {
+    public static final void setSQL(ConnexionMySQL laConnexion_i) {
         laConnexion = laConnexion_i;
     }
 
@@ -32,9 +35,8 @@ public final class DBtoJava {
      * getJeuxOlympique
      * 
      * @return List[JeuxOlympique]
-     * @throws SQLException SQLException
      */
-    public List<JeuxOlympique> getJeuxOlympique() throws SQLException {
+    public static final List<JeuxOlympique> getJeuxOlympique() {
         List<JeuxOlympique> jeux = new ArrayList<JeuxOlympique>();
         try {
             Statement st = laConnexion.createStatement();
@@ -45,17 +47,18 @@ public final class DBtoJava {
 
                 JeuxOlympique jeuxTest = new JeuxOlympique(annee, lieux);
                 getSport(jeuxTest).forEach(sport -> {
-                    jeuxTest.LesSports().add(sport);
+                    jeuxTest.getLesSports().add(sport);
                 });
 
                 getPays(jeuxTest).forEach(pays -> {
-                    jeuxTest.LesPays().add(pays);
+                    jeuxTest.getLesPays().add(pays);
                 });
-
+                jeuxTest.simule();
                 jeux.add(jeuxTest);
             }
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
+            // System.out.println("Error: " + e.getMessage());
 
         }
         return jeux;
@@ -66,13 +69,13 @@ public final class DBtoJava {
      * 
      * @param jeux JeuxOlympique
      * @return List[JeuxOlympique]
-     * @throws SQLException
+     * 
      */
-    public List<Sport> getSport(JeuxOlympique jeux) throws SQLException {
+    public static final List<Sport> getSport(JeuxOlympique jeux) {
         List<Sport> sports = new ArrayList<Sport>();
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM Sport where jo_id = " + jeux.getAnnee());
+            ResultSet rs = st.executeQuery("SELECT nom_sport FROM Sport where jo_id = " + jeux.getAnnee());
             while (rs.next()) {
                 String nom = rs.getString(1);
 
@@ -93,12 +96,18 @@ public final class DBtoJava {
                         sports.add(new olympic.model.sport_type.VolleyBall(jeux));
                         break;
                     default:
-                        sports.add(new sport_type_generic(jeux, nom, "uniter", (double)1/3, (double)1/3, (double)1/3, true));
+                        sports.add(new sport_type_generic(jeux, nom, "uniter", (double) 1 / 3, (double) 1 / 3,
+                                (double) 1 / 3, true));
                         break;
                 }
+                getEpreuves(sports.get(sports.size() - 1)).forEach(
+                        epreuve -> {
+                            sports.get(sports.size() - 1).ajouter_epreuve(epreuve);
+                        });
             }
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
+            // System.out.println("Error: " + e.getMessage());
         }
         return sports;
     }
@@ -107,9 +116,22 @@ public final class DBtoJava {
      * getEpreuves
      * 
      * @param p Sport
-     * @throws SQLException SQLException
+     * @return List[Epreuve]
      */
-    public void getEpreuves(Sport p) throws SQLException {
+    public static final List<Epreuve> getEpreuves(Sport p) {
+        List<Epreuve> ret = new ArrayList<>();
+        try {
+            ResultSet rs = laConnexion.createStatement().executeQuery(
+                    "select nom_epreuve ,genre from Epreuve natural join Sport where nom_sport='"
+                            +
+                            p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
+            while (rs.next()) {
+                ret.add(new Epreuve(p,rs.getString(2).charAt(0) == 'F',rs.getString(1)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ret;
     }
 
     /**
@@ -117,9 +139,8 @@ public final class DBtoJava {
      * 
      * @param jeux JeuxOlympique
      * @return List[Pays]
-     * @throws SQLException SQLException
      */
-    public List<Pays> getPays(JeuxOlympique jeux) throws SQLException {
+    public static final List<Pays> getPays(JeuxOlympique jeux) {
         List<Pays> pays = new ArrayList<Pays>();
         try {
             Statement st = laConnexion.createStatement();
@@ -133,6 +154,7 @@ public final class DBtoJava {
                     paysTest.lesAthletes().add(athlete);
                 });
                 pays.add(paysTest);
+                link_athlete_equipe_epreuve(paysTest);
 
             }
         } catch (Exception e) {
@@ -146,10 +168,19 @@ public final class DBtoJava {
      * 
      * @param p Pays
      * @return List[Athlete]
-     * @throws SQLException SQLException
      */
-    public List<Athlete> getAthlete(Pays p) throws SQLException {
-        return null;
+    public static final List<Athlete> getAthlete(Pays p) {
+        List<Athlete> ret = new ArrayList<>();
+        try {
+            ResultSet rs = laConnexion.createStatement().executeQuery("select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_sport='"
+            + p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
+            while (rs.next()) {
+                ret.add(new Athlete(rs.getString(1), rs.getString(2), rs.getString(3).charAt(0) == 'F', rs.getDouble(4), rs.getDouble(5), rs.getDouble(6), p));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ret;
     }
 
     /**
@@ -157,9 +188,24 @@ public final class DBtoJava {
      * 
      * @param p Pays
      * @return List[Equipe]
-     * @throws SQLException SQLException
      */
-    public List<Equipe> getEquipes(Pays p) throws SQLException {
-        return null;
+    public static final List<Equipe> getEquipes(Pays p) {
+        List<Equipe> ret = new ArrayList<>();
+        try {
+            // APPARTIENT
+            ResultSet rs = laConnexion.createStatement().executeQuery(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
+    /**
+     * link_athlete_equipe_epreuve
+     * 
+     * @param pays Pays
+     */
+    public static final void link_athlete_equipe_epreuve(Pays pays) {
+
     }
 }

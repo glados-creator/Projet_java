@@ -59,16 +59,15 @@ CREATE TABLE Athlete (
     nom VARCHAR(100),
     prenom VARCHAR(100),
     sexe VARCHAR(1),
-    forceA INT,
-    enduranceA INT,
-    agiliteA INT,
+    forceA Decimal(6.6),
+    enduranceA Decimal(6.6),
+    agiliteA Decimal(6.6),
     nom_pays VARCHAR(100),
     annee INT,
     FOREIGN KEY (nom_pays, annee) REFERENCES Pays(nom_pays, annee)
 );
 
 CREATE TABLE PARTICIPE_ATHLETE (
-    PARTICIPE_ATHLETE_id INT PRIMARY KEY,
     athlete_id INT,
     epreuve_id INT,
     FOREIGN KEY (athlete_id) REFERENCES Athlete(athlete_id),
@@ -76,7 +75,6 @@ CREATE TABLE PARTICIPE_ATHLETE (
 );
 
 CREATE TABLE PARTICIPE_EQUIPE (
-    PARTICIPE_EQUIPE_id INT PRIMARY KEY,
     equipe_id INT,
     epreuve_id INT,
     FOREIGN KEY (equipe_id) REFERENCES Equipe(equipe_id),
