@@ -41,19 +41,17 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     RoleConnexion.ajouteVisiteur(appli.usernameField.getText(),
                             String.valueOf(appli.passwordField.getText().hashCode()));
                 } catch (SQLIntegrityConstraintViolationException e) {
-                    // e.printStackTrace();
                     appli.PageConnexion_error.setText("identifiant existe déja");
                     return;
                 } catch (SQLException e) {
-                    // e.printStackTrace();
                     appli.PageConnexion_error.setText("erreur d'inscription");
                     return;
                 } catch (Exception e) {
-                    // e.printStackTrace();
                     appli.PageConnexion_error.setText("erreur général");
                     return;
                 }
                 appli.modeJournaliste();
+                break;
             }
             case "Connecter": {
                 appli.PageConnexion_error.setText("");
@@ -61,39 +59,36 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 String hash = RoleConnexion.getPW(appli.usernameField.getText());
                 if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))) {
                     appli.PageConnexion_error.setText("mauvais mot de passe ou identifiant");
-                    // TODO: uncomment
-                    // no u
-                    // break;
+                    break;
                 }
                 int role_id = RoleConnexion.getRole(appli.usernameField.getText(),
                         String.valueOf(appli.passwordField.getText().hashCode()));
                 if (role_id < 0) {
                     appli.PageConnexion_error.setText("authorisation corrompu");
-                    // TODO: uncomment
-                    // no u
-                    // break;
-                }
-                System.out.println("old role gathered : " + role_id);
-                // TODO : remove
-                role_id = 0;
-                switch (role_id) {
-                    case 0:
-                    System.out.println("inscription modeAdministrateur");
-                        appli.modeAdministrateur();
-                        break;
-                    case 1:
-                    System.out.println("inscription modeOrganisateur");
-                    appli.modeOrganisateur();
-                        break;
-                    case 2:
-                    System.out.println("inscription modeJournaliste");
-                    appli.modeJournaliste();
-                        break;
-                    default:
-                    System.out.println("inscription modeJournaliste");
-                    appli.modeJournaliste();    
                     break;
                 }
+
+                System.out.println("old role gathered : " + role_id);
+
+                switch (role_id) {
+                    case 1:
+                        System.out.println("inscription modeAdministrateur");
+                        appli.modeAdministrateur();
+                        break;
+                    case 2:
+                        System.out.println("inscription modeOrganisateur");
+                        appli.modeOrganisateur();
+                        break;
+                    case 3:
+                        System.out.println("inscription modeJournaliste");
+                        appli.modeJournaliste();
+                        break;
+                    default:
+                        System.out.println("inscription modeJournaliste");
+                        appli.modeJournaliste();
+                        break;
+                }
+                break;
             }
             case "Connexion":
                 appli.modeConnexion();
@@ -102,8 +97,27 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 appli.modeInscription();
                 break;
             case "Accueil":
-                System.out.println("Page d'accueil");
-                appli.modeJournaliste();
+                int role_id = RoleConnexion.getRole(appli.usernameField.getText(),
+                            String.valueOf(appli.passwordField.getText().hashCode()));
+                switch (role_id) {
+                    case 1:
+                    System.out.println("Page d'accueil");
+                        appli.modeAdministrateur();
+                        break;
+                    case 2:
+                    System.out.println("Page d'accueil");
+                    appli.modeOrganisateur();
+                        break;
+                    case 3:
+                    System.out.println("Page d'accueil");
+                    appli.modeJournaliste();
+                        break;
+                    default:
+                    System.out.println("Page d'accueil");
+                    appli.modeJournaliste();
+
+                    break;
+                }
                 break;
             case "Athlètes":
                 System.out.println("Page des athlètes");
