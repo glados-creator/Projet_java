@@ -23,12 +23,12 @@ epreuves = {
     ,"Handball":["Handball"]
     
     ,"Athletisme" : ["Athletisme"]
+    ,"VolleyBall" : ["VolleyBall"]
     ,"Escrime" : ["Escrime"]
-    ,"HandBall" : ["HandBall"]
     ,"generic" : ["generic"]
 
     # ,"Natation" : ["Natation"]
-    # ,"VolleyBall" : ["VolleyBall"]
+    # ,"HandBall" : ["HandBall"]
 }
 
 annee = [(2024, "France"), (2028, "Etats-Unis"), (2032, "Australie")]
