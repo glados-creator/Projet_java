@@ -355,22 +355,22 @@ public class Vue extends Application {
         TableView<Athlete> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     
-        TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
-        prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        TableColumn<Athlete, String> place = new TableColumn<>("Classement");
+        place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
     
-        TableColumn<Athlete, String> nomCol = new TableColumn<>("Nom");
-        nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        TableColumn<Athlete, String> pays = new TableColumn<>("Pays");
+        pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
     
-        TableColumn<Athlete, String> sexeCol = new TableColumn<>("Sexe");
-        sexeCol.setCellValueFactory(new PropertyValueFactory<>("sexe"));
+        TableColumn<Athlete, String> medOr = new TableColumn<>("Médaille d'or");
+        medOr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'or"));
     
-        TableColumn<Athlete, String> paysCol = new TableColumn<>("Pays");
-        paysCol.setCellValueFactory(new PropertyValueFactory<>("pays"));
+        TableColumn<Athlete, String> medAr = new TableColumn<>("Médaille d'argent");
+        medAr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'argent"));
     
-        TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
-        sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
+        TableColumn<Athlete, String> medBr = new TableColumn<>("Médaille de bronze");
+        medBr.setCellValueFactory(new PropertyValueFactory<>("Médaille de bronze"));
     
-        table.getColumns().addAll(Arrays.asList(prenomCol, nomCol, sexeCol, paysCol, sportsCol));
+        table.getColumns().addAll(Arrays.asList(place, pays, medOr, medAr, medBr));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
