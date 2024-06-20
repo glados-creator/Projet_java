@@ -9,12 +9,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -255,20 +258,16 @@ public class Vue extends Application {
 
     public void modeJournaliste() {
         panelCentral.getChildren().clear();
-
+    
         VBox mainBox = new VBox(20);
         mainBox.setPadding(new Insets(20));
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        Button backButton = new Button("Retour");
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Déconnexion");
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerVue(this));
-
-
-        HBox topBox = new HBox(20);
+    
         Accueil = new Button("Accueil");
         Accueil.setOnAction(new ControlerVue(this));
         Athletes = new Button("Athlètes");
@@ -277,32 +276,89 @@ public class Vue extends Application {
         Pays.setOnAction(new ControlerVue(this));
         Sports = new Button("Sports");
         Sports.setOnAction(new ControlerVue(this));
-
-
+    
         String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
         Accueil.setStyle(buttonStyle);
         Athletes.setStyle(buttonStyle);
         Pays.setStyle(buttonStyle);
         Sports.setStyle(buttonStyle);
-
-
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(Accueil);
+    
         HBox menuBox = new HBox(10);
         menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+        menuBox.getChildren().addAll(Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+        // Création de la barre de recherche avec le texte indicatif
+        TextField barreDeRecherche = new TextField();
+        barreDeRecherche.setPromptText("Recherche par Pays et Epreuve");
+        barreDeRecherche.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
+        barreDeRecherche.setPrefWidth(300); // Ajustez la largeur selon vos besoins
+    
+        ComboBox<String> comboBox = new ComboBox<>();
+        comboBox.setValue("Sports");
+        comboBox.getItems().addAll("Natation", "Volley-ball", "Escrime", "Athlétisme", "Handball");
+    
+        // Chargement de l'image
+        Image ImageL = new Image("file:projet_java/src/main/java/olympic/graphic/img/image.png");
+        ImageView ImageViewL = new ImageView(ImageL);
 
-
-        topBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
-        topBox.setAlignment(Pos.CENTER);
-
-        Region spacer = new Region();
-        spacer.setPrefHeight(10);
-
-        mainBox.getChildren().addAll(topBox, spacer);
-        mainBox.setMaxWidth(700);
-        mainBox.setMaxHeight(400);
-
+        ImageViewL.setFitWidth(20);  // Largeur de l'image
+        ImageViewL.setFitHeight(20); // Hauteur de l'image 
+    
+        Button bRechercher = new Button();
+        bRechercher.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        bRechercher.setGraphic(ImageViewL);
+    
+        HBox searchBox = new HBox(10);
+        searchBox.setAlignment(Pos.CENTER);
+        searchBox.getChildren().addAll(barreDeRecherche,bRechercher, comboBox);
+    
+        TableView<Athlete> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    
+        TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
+        prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+    
+        TableColumn<Athlete, String> nomCol = new TableColumn<>("Nom");
+        nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
+    
+        TableColumn<Athlete, String> sexeCol = new TableColumn<>("Sexe");
+        sexeCol.setCellValueFactory(new PropertyValueFactory<>("sexe"));
+    
+        TableColumn<Athlete, String> paysCol = new TableColumn<>("Pays");
+        paysCol.setCellValueFactory(new PropertyValueFactory<>("pays"));
+    
+        TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
+        sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
+    
+        table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+        contentBox.getChildren().addAll(table);
+    
+        HBox bottomBox = new HBox(10);
+        bottomBox.setAlignment(Pos.BOTTOM_LEFT);
+        bottomBox.getChildren().add(backButton);
+    
+        mainBox.getChildren().addAll(topPane, searchBox, contentBox, bottomBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
+    
         panelCentral.setCenter(mainBox);
     }
+    
+    
+    
+    
 
     public void modeOrganisateur() {
         //TODO
@@ -525,9 +581,11 @@ public class Vue extends Application {
         panelCentral.setCenter(mainBox);
     }
 
-    public void afficherMessage(String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, message, ButtonType.OK);
-        alert.showAndWait();
+    public Alert popUpMessageDeconexion() {
+        // A implementer
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Voulez-vous vous déconnecter ? ", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Attention");
+        return alert;
     }
 
     @Override

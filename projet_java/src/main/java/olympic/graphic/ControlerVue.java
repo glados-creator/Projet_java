@@ -2,11 +2,13 @@ package olympic.graphic;
 
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import olympic.JDBC.RoleConnexion;
 
 public class ControlerVue implements EventHandler<ActionEvent> {
@@ -113,9 +115,18 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 break;
             case "Sports":
                 System.out.println("Page des sports");
+    
                 appli.modeSports();
                 break;
             case "Déconnexion":
+                System.out.println("Retour à la page de log");
+                Optional<ButtonType> reponse = appli.popUpMessageDeconexion().showAndWait();
+
+                if (reponse.isPresent() && reponse.get().equals(ButtonType.YES)){
+                    appli.modeLog();
+                }
+                break;
+                case "Retour":
                 System.out.println("Retour à la page de log");
                 appli.modeLog();
                 break;
