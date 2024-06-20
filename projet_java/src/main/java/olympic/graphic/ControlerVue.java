@@ -115,7 +115,7 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 System.out.println("Page des sports");
                 appli.modeSports();
                 break;
-            case "Retour":
+            case "Déconnexion":
                 System.out.println("Retour à la page de log");
                 appli.modeLog();
                 break;

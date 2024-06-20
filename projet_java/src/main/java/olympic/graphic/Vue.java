@@ -203,6 +203,7 @@ public class Vue extends Application {
         });
         backButton.setOnAction(new ControlerVue(this));
 
+
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
 
@@ -234,15 +235,7 @@ public class Vue extends Application {
         connecterButton.setPrefWidth(320);
         connecterButton.setPrefHeight(25);
         connecterButton.setOnAction(new ControlerVue(this));
-        // connecterButton.setOnAction(e -> {
-        // if (!passwordField.getText().equals(confirmPasswordField.getText())) {
-        // errorLabel.setText("Les mots de passe ne correspondent pas");
-        // } else {
-        // // Proceed with registration logic
-        // System.out.println("Inscription réussie");
-        // errorLabel.setText("");
-        // }
-        // });
+
 
         contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, confirmPasswordField,
                 connecterButton, errorLabel);
@@ -270,6 +263,11 @@ public class Vue extends Application {
         panelCentral.setBackground(
                 new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
 
+        Button backButton = new Button("Retour");
+        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerVue(this));
+
+
         HBox topBox = new HBox(20);
         Accueil = new Button("Accueil");
         Accueil.setOnAction(new ControlerVue(this));
@@ -279,6 +277,19 @@ public class Vue extends Application {
         Pays.setOnAction(new ControlerVue(this));
         Sports = new Button("Sports");
         Sports.setOnAction(new ControlerVue(this));
+
+
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+
+
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
+
 
         topBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
         topBox.setAlignment(Pos.CENTER);
@@ -294,167 +305,223 @@ public class Vue extends Application {
     }
 
     public void modeOrganisateur() {
-        panelCentral.getChildren().clear();
-
-        VBox mainBox = new VBox(20);
-        mainBox.setPadding(new Insets(20));
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        HBox topBox = new HBox(20);
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerVue(this));
-        Athletes = new Button("Athlètes");
-        Athletes.setOnAction(new ControlerVue(this));
-        Pays = new Button("Pays");
-        Pays.setOnAction(new ControlerVue(this));
-        Sports = new Button("Sports");
-        Sports.setOnAction(new ControlerVue(this));
-
-        topBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
-        topBox.setAlignment(Pos.CENTER);
-
-        Region spacer = new Region();
-        spacer.setPrefHeight(10);
-
-        mainBox.getChildren().addAll(topBox, spacer);
-        mainBox.setMaxWidth(700);
-        mainBox.setMaxHeight(400);
-
-        panelCentral.setCenter(mainBox);
+        //TODO
     }
 
     public void modeAdministrateur() {
-        panelCentral.getChildren().clear();
-
-        VBox mainBox = new VBox(20);
-        mainBox.setPadding(new Insets(20));
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        HBox topBox = new HBox(20);
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerVue(this));
-        Athletes = new Button("Athlètes");
-        Athletes.setOnAction(new ControlerVue(this));
-        Pays = new Button("Pays");
-        Pays.setOnAction(new ControlerVue(this));
-        Sports = new Button("Sports");
-        Sports.setOnAction(new ControlerVue(this));
-
-        topBox.getChildren().addAll(Accueil, Athletes, Pays, Sports);
-        topBox.setAlignment(Pos.CENTER);
-
-        Region spacer = new Region();
-        spacer.setPrefHeight(10);
-
-        mainBox.getChildren().addAll(topBox, spacer);
-        mainBox.setMaxWidth(700);
-        mainBox.setMaxHeight(400);
-
-        panelCentral.setCenter(mainBox);
+        //TODO
     }
 
     public void modeAthletes() {
         panelCentral.getChildren().clear();
-
+    
         VBox mainBox = new VBox(20);
         mainBox.setPadding(new Insets(20));
-        mainBox.setAlignment(Pos.CENTER);
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        TableView<Athlete> athleteTable = new TableView<>();
-        athleteTable.setPrefWidth(500);
-        athleteTable.setPrefHeight(300);
-
-        TableColumn<Athlete, Integer> idCol = new TableColumn<>("ID");
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-
-        TableColumn<Athlete, String> nameCol = new TableColumn<>("Nom");
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
-
-        TableColumn<Athlete, Integer> ageCol = new TableColumn<>("Age");
-        ageCol.setCellValueFactory(new PropertyValueFactory<>("age"));
-
-        TableColumn<Athlete, String> sportCol = new TableColumn<>("Sport");
-        sportCol.setCellValueFactory(new PropertyValueFactory<>("sport"));
-
-        athleteTable.getColumns().addAll(Arrays.asList(idCol, nameCol, ageCol, sportCol));
-
-        Button backButton = new Button("Retour");
-        backButton.setOnAction(new ControlerVue(this));
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Déconnexion");
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-
-        mainBox.getChildren().addAll(athleteTable, backButton);
+        backButton.setOnAction(new ControlerVue(this));
+    
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerVue(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerVue(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerVue(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerVue(this));
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(Accueil);
+    
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+        TableView<Athlete> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    
+        TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
+        prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+    
+        TableColumn<Athlete, String> nomCol = new TableColumn<>("Nom");
+        nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
+    
+        TableColumn<Athlete, String> sexeCol = new TableColumn<>("Sexe");
+        sexeCol.setCellValueFactory(new PropertyValueFactory<>("sexe"));
+    
+        TableColumn<Athlete, String> paysCol = new TableColumn<>("Pays");
+        paysCol.setCellValueFactory(new PropertyValueFactory<>("pays"));
+    
+        TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
+        sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
+    
+        table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+        contentBox.getChildren().add(table);
+    
+        HBox bottomBox = new HBox(10);
+        bottomBox.setAlignment(Pos.BOTTOM_LEFT);
+        bottomBox.getChildren().add(backButton);
+    
+        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
+    
         panelCentral.setCenter(mainBox);
     }
+    
+    
 
     public void modePays() {
         panelCentral.getChildren().clear();
-
+    
         VBox mainBox = new VBox(20);
         mainBox.setPadding(new Insets(20));
-        mainBox.setAlignment(Pos.CENTER);
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        TableView<Pays> paysTable = new TableView<>();
-        paysTable.setPrefWidth(500);
-        paysTable.setPrefHeight(300);
-
-        TableColumn<Pays, Integer> idCol = new TableColumn<>("ID");
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-
-        TableColumn<Pays, String> nameCol = new TableColumn<>("Nom");
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
-
-        paysTable.getColumns().addAll(Arrays.asList(idCol, nameCol));
-
-        Button backButton = new Button("Retour");
-        backButton.setOnAction(new ControlerVue(this));
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Déconnexion");
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerVue(this));
+    
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerVue(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerVue(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerVue(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerVue(this));
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(Accueil);
+    
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+        TableView<Pays> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        mainBox.getChildren().addAll(paysTable, backButton);
+        TableColumn<Pays, String> NomPaysCol = new TableColumn<>("Nom du Pays");
+        NomPaysCol.setCellValueFactory(new PropertyValueFactory<>("Nom du Pays"));
+
+        TableColumn<Pays, String> DrapeauCol = new TableColumn<>("Drapeau du pays");
+        DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Drapeau du pays"));
+
+
+
+        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+        contentBox.getChildren().add(table);
+    
+        HBox bottomBox = new HBox(10);
+        bottomBox.setAlignment(Pos.BOTTOM_LEFT);
+        bottomBox.getChildren().add(backButton);
+    
+        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
+    
         panelCentral.setCenter(mainBox);
     }
 
     public void modeSports() {
         panelCentral.getChildren().clear();
-
+    
         VBox mainBox = new VBox(20);
         mainBox.setPadding(new Insets(20));
-        mainBox.setAlignment(Pos.CENTER);
-        mainBox.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(
-                new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        TableView<Sport> sportTable = new TableView<>();
-        sportTable.setPrefWidth(500);
-        sportTable.setPrefHeight(300);
-
-        TableColumn<Sport, Integer> idCol = new TableColumn<>("ID");
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-
-        TableColumn<Sport, String> nameCol = new TableColumn<>("Nom");
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
-
-        sportTable.getColumns().addAll(Arrays.asList(idCol, nameCol));
-
-        Button backButton = new Button("Retour");
-        backButton.setOnAction(new ControlerVue(this));
+        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
+    
+        Button backButton = new Button("Déconnexion");
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        backButton.setOnAction(new ControlerVue(this));
+    
+        Accueil = new Button("Accueil");
+        Accueil.setOnAction(new ControlerVue(this));
+        Athletes = new Button("Athlètes");
+        Athletes.setOnAction(new ControlerVue(this));
+        Pays = new Button("Pays");
+        Pays.setOnAction(new ControlerVue(this));
+        Sports = new Button("Sports");
+        Sports.setOnAction(new ControlerVue(this));
+    
+        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+        Accueil.setStyle(buttonStyle);
+        Athletes.setStyle(buttonStyle);
+        Pays.setStyle(buttonStyle);
+        Sports.setStyle(buttonStyle);
+    
+        HBox topBox = new HBox(10);
+        topBox.setPadding(new Insets(0, 0, 0, 0));
+        topBox.setAlignment(Pos.TOP_LEFT);
+        topBox.getChildren().add(Accueil);
+    
+        HBox menuBox = new HBox(10);
+        menuBox.setAlignment(Pos.TOP_RIGHT);
+        menuBox.getChildren().addAll(Athletes, Pays, Sports);
+    
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBox);
+        topPane.setRight(menuBox);
+    
+        TableView<Sport> table = new TableView<>();
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        mainBox.getChildren().addAll(sportTable, backButton);
+        TableColumn<Sport, String> NomPaysCol = new TableColumn<>("Nom du Sport");
+        NomPaysCol.setCellValueFactory(new PropertyValueFactory<>("Nom du Sport"));
+
+        TableColumn<Sport, String> DrapeauCol = new TableColumn<>("Nombre de participants");
+        DrapeauCol.setCellValueFactory(new PropertyValueFactory<>("Nombre de participants"));
+
+
+
+        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+    
+        VBox contentBox = new VBox(20);
+        contentBox.setAlignment(Pos.CENTER);
+        contentBox.getChildren().add(table);
+    
+        HBox bottomBox = new HBox(10);
+        bottomBox.setAlignment(Pos.BOTTOM_LEFT);
+        bottomBox.getChildren().add(backButton);
+    
+        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
+        mainBox.setMaxWidth(750);
+        mainBox.setMaxHeight(500);
+    
         panelCentral.setCenter(mainBox);
     }
 
@@ -469,7 +536,7 @@ public class Vue extends Application {
         stage.setScene(scene);
         stage.setTitle("Jeux IUT'Olympiques");
         stage.show();
-        modeLog();
+        modeAthletes();
     }
 
     public static void main(String[] args) {
