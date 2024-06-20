@@ -50,7 +50,6 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     appli.PageConnexion_error.setText("erreur général");
                     return;
                 }
-                appli.modeJournaliste();
                 break;
             }
             case "Connecter": {
