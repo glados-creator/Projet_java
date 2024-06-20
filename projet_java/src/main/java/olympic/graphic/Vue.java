@@ -45,13 +45,13 @@ public class Vue extends Application {
     private Button Sports;
 
     /** TextField usernameField */
-    public TextField usernameField;
+    public TextField usernameField = null;
     /** PasswordField passwordField */
-    public PasswordField passwordField;
+    public PasswordField passwordField = null;
     /** PasswordField confirmPasswordField */
-    public PasswordField confirmPasswordField;
+    public PasswordField confirmPasswordField = null;
     /** Label PageConnexion_error */
-    public Label PageConnexion_error;
+    public Label PageConnexion_error = null;
 
     @Override
     public void init() {
@@ -168,7 +168,10 @@ public class Vue extends Application {
         inscription.setPrefHeight(25);
         inscription.setOnAction(new ControlerVue(this));
 
-        contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscription);
+        if (PageConnexion_error==null) PageConnexion_error = new Label();
+        PageConnexion_error.setTextFill(Color.RED);
+        
+        contentBox.getChildren().addAll(connexionLabel, usernameField, passwordField, connecterButton, inscription, PageConnexion_error);
 
         HBox topBox = new HBox();
         topBox.getChildren().add(backButton);
@@ -222,7 +225,7 @@ public class Vue extends Application {
         confirmPasswordField.setPromptText("Confirmez le mot de passe");
         confirmPasswordField.setMaxWidth(320);
 
-        PageConnexion_error = new Label();
+        if (PageConnexion_error==null) PageConnexion_error = new Label();
         Label errorLabel = PageConnexion_error;
         errorLabel.setTextFill(Color.RED);
 

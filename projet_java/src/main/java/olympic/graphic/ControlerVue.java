@@ -29,6 +29,7 @@ public class ControlerVue implements EventHandler<ActionEvent> {
 
         switch (button.getText()) {
             case "S'inscrire": {
+                appli.PageConnexion_error.setText("");
                 System.out.println("TEST S'inscrire");
                 if (!(appli.passwordField.getText().equals(appli.confirmPasswordField.getText()))) {
                     appli.PageConnexion_error.setText("Les mots de passe ne correspondent pas");
@@ -38,21 +39,22 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     RoleConnexion.ajouteVisiteur(appli.usernameField.getText(),
                             String.valueOf(appli.passwordField.getText().hashCode()));
                 } catch (SQLIntegrityConstraintViolationException e) {
-                    e.printStackTrace();
+                    // e.printStackTrace();
                     appli.PageConnexion_error.setText("identifiant existe déja");
                     return;
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    // e.printStackTrace();
                     appli.PageConnexion_error.setText("erreur d'inscription");
                     return;
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    // e.printStackTrace();
                     appli.PageConnexion_error.setText("erreur général");
                     return;
                 }
                 appli.modeJournaliste();
             }
             case "Connecter": {
+                appli.PageConnexion_error.setText("");
                 System.out.println("TEST Connecter");
                 String hash = RoleConnexion.getPW(appli.usernameField.getText());
                 if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))) {

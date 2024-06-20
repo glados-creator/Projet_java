@@ -28,11 +28,12 @@ public class RoleConnexion {
     public static String getPW(String nom) {
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("select motDePasse from Role where nom ='" + nom + "'");
+            ResultSet rs = st.executeQuery("select password from Utilisateur where nom ='" + nom + "'");
             if (!(rs.next()))
                 return null;
             return rs.getString(1);
         } catch (SQLException e) {
+            e.printStackTrace();
             System.out.println("Erreur : getPassWord");
             return null;
             // throw e;
