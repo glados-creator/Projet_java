@@ -29,7 +29,6 @@ public class ControlerVue implements EventHandler<ActionEvent> {
 
         switch (button.getText()) {
             case "S'inscrire": {
-                try {
                 System.out.println("TEST S'inscrire");
                 if (!(appli.passwordField.getText().equals(appli.confirmPasswordField.getText()))) {
                     appli.PageConnexion_error.setText("Les mots de passe ne correspondent pas");
@@ -43,18 +42,18 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     appli.PageConnexion_error.setText("identifiant existe déja");
                     return;
                 } catch (SQLException e) {
+                    e.printStackTrace();
                     appli.PageConnexion_error.setText("erreur d'inscription");
                     return;
                 } catch (Exception e) {
+                    e.printStackTrace();
                     appli.PageConnexion_error.setText("erreur général");
                     return;
                 }
                 appli.modeJournaliste();
-            } catch (Exception e){;}
             }
             case "Connecter": {
                 System.out.println("TEST Connecter");
-                try {
                 String hash = RoleConnexion.getPW(appli.usernameField.getText());
                 if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))) {
                     appli.PageConnexion_error.setText("mauvais mot de passe ou identifiant");
@@ -91,7 +90,6 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                     appli.modeJournaliste();    
                     break;
                 }
-            } catch (Exception e){;}
             }
             case "Connexion":
                 appli.modeConnexion();

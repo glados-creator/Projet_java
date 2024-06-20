@@ -27,6 +27,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import olympic.datamanager;
 import olympic.model.Athlete;
 import olympic.model.Pays;
 import olympic.model.Sport;
@@ -54,6 +55,7 @@ public class Vue extends Application {
 
     @Override
     public void init() {
+        datamanager.init();
     }
 
     private Scene laScene() {
@@ -207,16 +209,16 @@ public class Vue extends Application {
         connexionLabel.setAlignment(Pos.CENTER);
         VBox.setMargin(connexionLabel, new Insets(0, 0, 40, 0));
 
-        TextField usernameField = new TextField();
+        usernameField = new TextField();
         usernameField.setPromptText("Identifiant");
         usernameField.setMaxWidth(320);
 
-        PasswordField passwordField = new PasswordField();
+        passwordField = new PasswordField();
         passwordField.setPromptText("Mot de passe");
         passwordField.setMaxWidth(320);
 
         // New Password Confirmation Field
-        PasswordField confirmPasswordField = new PasswordField();
+        confirmPasswordField = new PasswordField();
         confirmPasswordField.setPromptText("Confirmez le mot de passe");
         confirmPasswordField.setMaxWidth(320);
 
