@@ -525,9 +525,11 @@ public class Vue extends Application {
         panelCentral.setCenter(mainBox);
     }
 
-    public void afficherMessage(String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, message, ButtonType.OK);
-        alert.showAndWait();
+    public Alert popUpMessageDeconexion() {
+        // A implementer
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Voulez-vous vous déconnecter ? ", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Attention");
+        return alert;
     }
 
     @Override
