@@ -354,23 +354,23 @@ public class Vue extends Application {
     
         TableView<Athlete> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-    
-        TableColumn<Athlete, String> prenomCol = new TableColumn<>("Prénom");
-        prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-    
-        TableColumn<Athlete, String> nomCol = new TableColumn<>("Nom");
-        nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
-    
-        TableColumn<Athlete, String> sexeCol = new TableColumn<>("Sexe");
-        sexeCol.setCellValueFactory(new PropertyValueFactory<>("sexe"));
-    
-        TableColumn<Athlete, String> paysCol = new TableColumn<>("Pays");
-        paysCol.setCellValueFactory(new PropertyValueFactory<>("pays"));
-    
-        TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
-        sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
-    
-        table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+
+        TableColumn<Athlete, String> place = new TableColumn<>("Classement");
+        place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
+
+        TableColumn<Athlete, String> pays = new TableColumn<>("Pays");
+        pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
+
+        TableColumn<Athlete, String> medOr = new TableColumn<>("or");
+        medOr.setCellValueFactory(new PropertyValueFactory<>("or"));
+
+        TableColumn<Athlete, String> medAr = new TableColumn<>("argent");
+        medAr.setCellValueFactory(new PropertyValueFactory<>("argent"));
+
+        TableColumn<Athlete, String> medBr = new TableColumn<>("bronze");
+        medBr.setCellValueFactory(new PropertyValueFactory<>("bronze"));
+
+        table.getColumns().addAll(Arrays.asList(place, pays, medOr, medAr, medBr));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -410,6 +410,10 @@ public class Vue extends Application {
         Button backButton = new Button("Déconnexion");
         backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
         backButton.setOnAction(new ControlerVue(this));
+
+        Button bAjouteEpreuve = new Button("Ajouter une épreuve");
+        bAjouteEpreuve.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+        bAjouteEpreuve.setOnAction(new ControlerVue(this));
     
         Accueil = new Button("Accueil");
         Accueil.setOnAction(new ControlerVue(this));
@@ -500,7 +504,7 @@ public class Vue extends Application {
         TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
         sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
     
-        table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+        table.getColumns().addAll(Arrays.asList(prenomCol, nomCol, sexeCol, paysCol, sportsCol));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -608,7 +612,7 @@ public class Vue extends Application {
 
 
 
-        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+        table.getColumns().addAll(Arrays.asList(NomPaysCol, DrapeauCol));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -713,7 +717,7 @@ public class Vue extends Application {
 
 
 
-        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+        table.getColumns().addAll(Arrays.asList(NomPaysCol, DrapeauCol));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -743,8 +747,8 @@ public class Vue extends Application {
         stage.setScene(scene);
         stage.setTitle("Jeux IUT'Olympiques");
         stage.show();
-        modeAthletes();
-    }
+        modeLog();
+        }
 
     public static void main(String[] args) {
         launch();
