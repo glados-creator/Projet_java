@@ -28,27 +28,27 @@ public class EscrimeTest extends TestCase{
 
     
     @Test
-    public void testToString() throws Exception {
+    public void test_ToString() {
         assertEquals(internal.toString(),"{ Nom='Escrime', Uniter='points', Plus_haut_score='true', LesEpreuves='[]', Coef_Force='0.3', Coef_Agilite='0.5', Coef_Endurance='0.2'}");
     }
 
     @Test
-    public void Test_getJO() {
+    public void test_getJO() {
         assertEquals(internal.getJO(),JO);
     }
 
     @Test
-    public void Test_getNom() {
+    public void test_getNom() {
         assertEquals(internal.getNom(),"Escrime");
     }
 
     @Test
-    public void Test_getUniter() {
+    public void test_getUniter() {
         assertEquals(internal.getUniter(),Test_uniter);
     }
 
     @Test
-    public void Test_setUniter_a() {
+    public void test_setUniter_a() {
         internal.setUniter_a("test");
         assertEquals(internal.getUniter(),"test");
         internal.setUniter_a(Test_uniter);
@@ -56,12 +56,12 @@ public class EscrimeTest extends TestCase{
     }
 
     @Test
-    public void Test_getPlus_haut_score() {
+    public void test_getPlus_haut_score() {
         assertEquals(internal.getPlus_haut_score(),true);
     }
 
     @Test
-    public void Test_setPlus_haut_score_a() {
+    public void test_setPlus_haut_score_a() {
         boolean old = internal.getPlus_haut_score();
         internal.setPlus_haut_score_a(!old);
         assertEquals(internal.getPlus_haut_score(),!old);
@@ -71,12 +71,12 @@ public class EscrimeTest extends TestCase{
 
 
     @Test
-    public void Test_getCoef_Force() {
+    public void test_getCoef_Force() {
         assertEquals(internal.getCoef_Force(),Test_Coef_Force);
     }
 
     @Test
-    public void Test_setCoef_Force_a() {
+    public void test_setCoef_Force_a() {
         internal.setCoef_Force_a(0.01);
         assertEquals(internal.getCoef_Force(),0.01);
         internal.setCoef_Force_a(Test_Coef_Force);
@@ -84,12 +84,12 @@ public class EscrimeTest extends TestCase{
     }
 
     @Test
-    public void Test_getCoef_Agilite() {
+    public void test_getCoef_Agilite() {
         assertEquals(internal.getCoef_Agilite(),Test_Coef_Agilite);
     }
 
     @Test
-    public void Test_setCoef_Agilite_a() {
+    public void test_setCoef_Agilite_a() {
             internal.setCoef_Agilite_a(0.01);
             assertEquals(internal.getCoef_Agilite(),0.01);
             internal.setCoef_Agilite_a(Test_Coef_Agilite);
@@ -97,12 +97,12 @@ public class EscrimeTest extends TestCase{
     }
 
     @Test
-    public void Test_getCoef_Endurance() {
+    public void test_getCoef_Endurance() {
         assertEquals(internal.getCoef_Endurance(),Test_Coef_Endurance);
     }
     
     @Test
-    public void Test_setCoef_Endurance_a() {
+    public void test_setCoef_Endurance_a() {
             internal.setCoef_Endurance_a(0.01);
             assertEquals(internal.getCoef_Endurance(),0.01);
             internal.setCoef_Endurance_a(Test_Coef_Endurance);

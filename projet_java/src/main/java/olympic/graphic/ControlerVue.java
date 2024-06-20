@@ -3,7 +3,6 @@ package olympic.graphic;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -68,7 +67,7 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 }
 
                 System.out.println("old role gathered : " + role_id);
-
+                role_id = 1;
                 switch (role_id) {
                     case 1:
                         System.out.println("inscription modeAdministrateur");

@@ -27,7 +27,7 @@ public class Athlete implements Participant {
      * constructeur
      * 
      * @param Nom       String
-     * @param prenom    String
+     * @param Prenom    String
      * @param Sex       boolean
      * @param force     double
      * @param Agilite   double
@@ -158,7 +158,7 @@ public class Athlete implements Participant {
      * @return boolean , si l'athlete est dans une equipe
      */
     public boolean isMembre() {
-        return membre == null;
+        return !(membre == null);
     }
 
     /**

@@ -58,17 +58,13 @@ public class ControlerVue_arthur implements EventHandler<ActionEvent> {
                 String hash = RoleConnexion.getPW(appli.usernameField.getText());
                 if (hash == null || !(String.valueOf(appli.passwordField.getText().hashCode()).equals(hash))) {
                     appli.PageConnexion_error.setText("mauvais mot de passe ou identifiant");
-                    // TODO: uncomment
-                    // no u
-                    // break;
+                    break;
                 }
                 int role_id = RoleConnexion.getRole(appli.usernameField.getText(),
                         String.valueOf(appli.passwordField.getText().hashCode()));
                 if (role_id < 0) {
                     appli.PageConnexion_error.setText("authorisation corrompu");
-                    // TODO: uncomment
-                    // no u
-                    // break;
+                    break;
                 }
                 System.out.println("old role gathered : " + role_id);
                 // TODO : remove
@@ -93,7 +89,6 @@ public class ControlerVue_arthur implements EventHandler<ActionEvent> {
                 break;
             default:
                 System.out.println("Bouton non reconnu");
-                // TODO : alert peut etre
                 break;
         }
     }

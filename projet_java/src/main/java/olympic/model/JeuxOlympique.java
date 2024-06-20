@@ -2,17 +2,16 @@ package olympic.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * JeuxOlympique
  */
 public class JeuxOlympique {
 
-    /** String annee */
-    private int annee;
-    /** String lieux */
-    private String lieux;
+    /** String Annee */
+    private int Annee;
+    /** String Lieux */
+    private String Lieux;
     /** List[Sport] LesSports */
     private final List<Sport> LesSports;
 
@@ -21,12 +20,12 @@ public class JeuxOlympique {
     /**
      * JeuxOlympique
      * 
-     * @param annee String
-     * @param lieux String
+     * @param Annee String
+     * @param Lieux String
      */
-    public JeuxOlympique(int annee, String lieux) {
-        this.annee = annee;
-        this.lieux = lieux;
+    public JeuxOlympique(int Annee, String Lieux) {
+        this.Annee = Annee;
+        this.Lieux = Lieux;
         LesSports = new ArrayList<>();
         LesPays = new ArrayList<>();
     }
@@ -50,24 +49,19 @@ public class JeuxOlympique {
     }
 
     /**
-     * ajouteSport
-     * 
-     * @param sport Sport
-     */
-    public void ajouteSport(Sport sport) {
-        LesSports.add(sport);
-    }
-
-    /**
-     * LesSports admin
+     * LesSports
      * 
      * @return List[Sport]
      */
-    public List<Sport> LesSports() {
+    public List<Sport> getLesSports() {
         return LesSports;
     }
 
-    public List<Pays> LesPays() {
+    /**
+     * getLesPays
+     * @return List[Pays]
+     */
+    public List<Pays> getLesPays() {
         return LesPays;
     }
 
@@ -77,7 +71,7 @@ public class JeuxOlympique {
      * @return String
      */
     public int getAnnee() {
-        return this.annee;
+        return Annee;
     }
 
     /**
@@ -86,45 +80,16 @@ public class JeuxOlympique {
      * @return String
      */
     public String getLieux() {
-        return this.lieux;
+        return Lieux;
     }
 
     /**
-     * lieux admin
+     * setLieux admin
      * 
-     * @param lieux String
-     * @return JeuxOlympique
+     * @param Lieux String
      */
-    public JeuxOlympique lieux(String lieux) {
-        this.lieux = lieux;
-        return this;
-    }
-
-    /**
-     * equals
-     * 
-     * @param o Object
-     * @return boolean
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof JeuxOlympique)) {
-            return false;
-        }
-        JeuxOlympique jeuxOlympique = (JeuxOlympique) o;
-        return Objects.equals(annee, jeuxOlympique.annee) && Objects.equals(lieux, jeuxOlympique.lieux);
-    }
-
-    /**
-     * hashCode
-     * 
-     * @return int
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(annee, lieux);
+    public void setLieux(String Lieux) {
+        this.Lieux = Lieux;
     }
 
     /**
@@ -135,8 +100,8 @@ public class JeuxOlympique {
     @Override
     public String toString() {
         return "{" +
-                " annee='" + getAnnee() + "'" +
-                ", lieux='" + getLieux() + "'" +
+                " Annee='" + getAnnee() + "'" +
+                ", Lieux='" + getLieux() + "'" +
                 "}";
     }
 

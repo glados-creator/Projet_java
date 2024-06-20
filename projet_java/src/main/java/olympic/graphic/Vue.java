@@ -370,7 +370,7 @@ public class Vue extends Application {
         TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
         sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
     
-        table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+        table.getColumns().addAll(Arrays.asList(prenomCol, nomCol, sexeCol, paysCol, sportsCol));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -500,7 +500,7 @@ public class Vue extends Application {
         TableColumn<Athlete, String> sportsCol = new TableColumn<>("Sports");
         sportsCol.setCellValueFactory(new PropertyValueFactory<>("sports"));
     
-        table.getColumns().addAll(prenomCol, nomCol, sexeCol, paysCol, sportsCol);
+        table.getColumns().addAll(Arrays.asList(prenomCol, nomCol, sexeCol, paysCol, sportsCol));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -608,7 +608,7 @@ public class Vue extends Application {
 
 
 
-        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+        table.getColumns().addAll(Arrays.asList(NomPaysCol, DrapeauCol));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -713,7 +713,7 @@ public class Vue extends Application {
 
 
 
-        table.getColumns().addAll(NomPaysCol, DrapeauCol);
+        table.getColumns().addAll(Arrays.asList(NomPaysCol, DrapeauCol));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
