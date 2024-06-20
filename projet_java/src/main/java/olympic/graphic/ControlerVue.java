@@ -67,7 +67,7 @@ public class ControlerVue implements EventHandler<ActionEvent> {
                 }
 
                 System.out.println("old role gathered : " + role_id);
-                role_id = 1;
+                
                 switch (role_id) {
                     case 1:
                         System.out.println("inscription modeAdministrateur");
