@@ -1,8 +1,14 @@
 package olympic.graphic;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -32,6 +38,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import olympic.datamanager;
 import olympic.model.Athlete;
+import olympic.model.JeuxOlympique;
 import olympic.model.Pays;
 import olympic.model.Sport;
 
@@ -352,26 +359,29 @@ public class Vue extends Application {
         bRechercher.setGraphic(ImageViewL);
     
     
-        TableView<Athlete> table = new TableView<>();
+        TableView<PaysFictif> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     
-        TableColumn<Athlete, String> place = new TableColumn<>("Classement");
+        TableColumn<PaysFictif, Integer> place = new TableColumn<>("Classement");
         place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
     
-        TableColumn<Athlete, String> pays = new TableColumn<>("Pays");
+        TableColumn<PaysFictif, String> pays = new TableColumn<>("Pays");
         pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
     
-        TableColumn<Athlete, String> medOr = new TableColumn<>("Médaille d'or");
+        TableColumn<PaysFictif, Integer> medOr = new TableColumn<>("Médaille d'or");
         medOr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'or"));
     
-        TableColumn<Athlete, String> medAr = new TableColumn<>("Médaille d'argent");
+        TableColumn<PaysFictif, Integer> medAr = new TableColumn<>("Médaille d'argent");
         medAr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'argent"));
     
-        TableColumn<Athlete, String> medBr = new TableColumn<>("Médaille de bronze");
+        TableColumn<PaysFictif, Integer> medBr = new TableColumn<>("Médaille de bronze");
         medBr.setCellValueFactory(new PropertyValueFactory<>("Médaille de bronze"));
     
-        table.getColumns().addAll(Arrays.asList(place, pays, medOr, medAr, medBr));
-    
+        table.getColumns().addAll(place, pays, medOr, medAr, medBr);
+        table.getItems().addAll(getPaysList());
+
+
+
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
         contentBox.getChildren().addAll(table);
@@ -386,6 +396,32 @@ public class Vue extends Application {
     
         panelCentral.setCenter(mainBox);
     }
+    
+    public List<PaysFictif> getPaysList() {
+        List<PaysFictif> pays = new ArrayList<PaysFictif>();
+
+        for (JeuxOlympique jo : datamanager.list_jo()){
+            System.out.println("1");
+            for (Pays pay : jo.getLesPays()) {
+                int or = pay.getMedaille_or();
+                int argent = pay.getMedaille_argent();
+                int bronze = pay.getMedaille_bronze();
+                List<Pays> pays_triée = new ArrayList<Pays>(jo.getLesPays());
+                Collections.sort(pays_triée, new TriPays());
+                int pos = 0;
+                for (Pays paysTets : pays_triée){
+                    if (paysTets.getNom().equals(pay.getNom())){
+                        pos = pays_triée.indexOf(paysTets) + 1;
+                    }
+                }
+                PaysFictif res = new PaysFictif(pos, pay.getNom(),or, argent, bronze);
+                pays.add(res);
+            }
+        }
+        return pays;
+    }
+    
+    
 
     public void modeOrganisateur() {
         panelCentral.getChildren().clear();
@@ -728,6 +764,8 @@ public class Vue extends Application {
         panelCentral.setCenter(mainBox);
     }
     
+    
+
     public void modePays() {
         panelCentral.getChildren().clear();
     
@@ -964,4 +1002,3 @@ public class Vue extends Application {
 
     }
 }
-

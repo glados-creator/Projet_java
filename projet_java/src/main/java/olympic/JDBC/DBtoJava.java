@@ -40,7 +40,7 @@ public final class DBtoJava {
         List<JeuxOlympique> jeux = new ArrayList<JeuxOlympique>();
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("SELECT annee, lieux FROM JO");
+            ResultSet rs = st.executeQuery("SELECT annee, lieux FROM JO;");
             while (rs.next()) {
                 int annee = rs.getInt(1);
                 String lieux = rs.getString(2);
@@ -75,7 +75,7 @@ public final class DBtoJava {
         List<Sport> sports = new ArrayList<Sport>();
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("SELECT nom_sport FROM Sport where jo_id = " + jeux.getAnnee());
+            ResultSet rs = st.executeQuery("SELECT nom_sport FROM Sport where jo_id = " + jeux.getAnnee()+";");
             while (rs.next()) {
                 String nom = rs.getString(1);
 
@@ -145,7 +145,7 @@ public final class DBtoJava {
         try {
             Statement st = laConnexion.createStatement();
             ResultSet rs = st
-                    .executeQuery("SELECT nom_pays, annee FROM Pays natural join JO where annee = " + jeux.getAnnee());
+                    .executeQuery("SELECT nom_pays, annee FROM Pays natural join JO where annee = " + jeux.getAnnee()+";");
             while (rs.next()) {
                 String nom = rs.getString(1);
                 Pays paysTest = new Pays(jeux, nom, 0, 0, 0);

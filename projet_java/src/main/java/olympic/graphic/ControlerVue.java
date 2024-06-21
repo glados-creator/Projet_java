@@ -12,8 +12,8 @@ import olympic.JDBC.RoleConnexion;
 
 public class ControlerVue implements EventHandler<ActionEvent> {
 
-    private Vue appli;
-    private RoleConnexion roleConnexion;
+    Vue appli;
+    RoleConnexion roleConnexion;
 
     public ControlerVue(Vue appli, RoleConnexion roleConnexion) {
         this.appli = appli;
