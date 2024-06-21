@@ -386,10 +386,6 @@ public class Vue extends Application {
     
         panelCentral.setCenter(mainBox);
     }
-    
-    
-    
-    
 
     public void modeOrganisateur() {
         panelCentral.getChildren().clear();
@@ -732,8 +728,6 @@ public class Vue extends Application {
         panelCentral.setCenter(mainBox);
     }
     
-    
-
     public void modePays() {
         panelCentral.getChildren().clear();
     
@@ -970,3 +964,4 @@ public class Vue extends Application {
 
     }
 }
+
