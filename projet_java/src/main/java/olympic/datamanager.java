@@ -59,7 +59,7 @@ public final class datamanager {
             DBtoJava.getJeuxOlympique().forEach(JO -> {glob_JO.add(JO);});
             // System.out.println("default data");
 
-            System.err.println(glob_JO);
+            // System.err.println(glob_JO);
         } catch (Exception e) {
             System.out.println("erreur datamanager init");
             e.printStackTrace();

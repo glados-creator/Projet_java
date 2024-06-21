@@ -38,7 +38,7 @@ public final class DBtoJava {
      * @return List[JeuxOlympique]
      */
     public static final List<JeuxOlympique> getJeuxOlympique() {
-        System.out.println("IMPORT JO");
+        // System.out.println("IMPORT JO");
         List<JeuxOlympique> jeux = new ArrayList<JeuxOlympique>();
         try {
             Statement st = laConnexion.createStatement();
@@ -60,7 +60,7 @@ public final class DBtoJava {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            // System.out.println("Error: " + e.getMessage());
+            // // System.out.println("Error: " + e.getMessage());
 
         }
         return jeux;
@@ -74,7 +74,7 @@ public final class DBtoJava {
      * 
      */
     public static final List<Sport> getSport(JeuxOlympique jeux) {
-        System.out.println("IMPORT SPORT");
+        // System.out.println("IMPORT SPORT");
         List<Sport> sports = new ArrayList<Sport>();
         try {
             Statement st = laConnexion.createStatement();
@@ -110,7 +110,7 @@ public final class DBtoJava {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            // System.out.println("Error: " + e.getMessage());
+            // // System.out.println("Error: " + e.getMessage());
         }
         return sports;
     }
@@ -122,16 +122,14 @@ public final class DBtoJava {
      * @return List[Epreuve]
      */
     public static final List<Epreuve> getEpreuves(Sport p) {
-        System.out.println("IMPORT EPREUVE");
+        // System.out.println("IMPORT EPREUVE");
         List<Epreuve> ret = new ArrayList<>();
         try {
             ResultSet rs = laConnexion.createStatement().executeQuery(
                     "select nom_epreuve ,genre,collectifs from Epreuve natural join Sport where nom_sport='"
                             +
                             p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
-            System.out.println("select nom_epreuve ,genre,collectifs from Epreuve natural join Sport where nom_sport='"
-                    +
-                    p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
+            // System.out.println("select nom_epreuve ,genre,collectifs from Epreuve natural join Sport where nom_sport='"+p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
             while (rs.next()) {
                 ret.add(new Epreuve(p, rs.getString(2).charAt(0) == 'F', rs.getString(1)));
                 if (rs.getBoolean(3)) {
@@ -157,7 +155,7 @@ public final class DBtoJava {
      * @return List[Pays]
      */
     public static final List<Pays> getPays(JeuxOlympique jeux) {
-        System.out.println("IMPORT PAYS");
+        // System.out.println("IMPORT PAYS");
         List<Pays> pays = new ArrayList<Pays>();
         try {
             Statement st = laConnexion.createStatement();
@@ -176,7 +174,7 @@ public final class DBtoJava {
                 pays.add(paysTest);
             }
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            // System.out.println("Error: " + e.getMessage());
         }
         return pays;
     }
@@ -188,15 +186,13 @@ public final class DBtoJava {
      * @return List[Athlete]
      */
     public static final List<Athlete> getAthlete(Pays p) {
-        System.out.println("IMPORT ATHLETES");
+        // System.out.println("IMPORT ATHLETES");
         List<Athlete> ret = new ArrayList<>();
         try {
             ResultSet rs = laConnexion.createStatement().executeQuery(
                     "select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_pays='"
                             + p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
-            System.out.println(
-                    "select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_pays='"
-                            + p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
+            // System.out.println("select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_pays='"+ p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
             while (rs.next()) {
                 ret.add(new Athlete(rs.getString(1), rs.getString(2), rs.getString(3).charAt(0) == 'F', rs.getDouble(4),
                         rs.getDouble(5), rs.getDouble(6), p));
@@ -218,7 +214,7 @@ public final class DBtoJava {
         try {
             String query = "SELECT nom_equipe, nom_pays, annee FROM Equipe WHERE nom_pays='"
                     + p.getNom() + "' AND annee=" + p.getJO().getAnnee() + ";";
-            System.out.println(query);
+            // System.out.println(query);
             ResultSet rs = laConnexion.createStatement().executeQuery(query);
             while (rs.next()) {
                 ret.add(new Equipe(rs.getString(1), false, p));
@@ -239,7 +235,7 @@ public final class DBtoJava {
                        "NATURAL JOIN Epreuve ep  " +
                        "WHERE ep.nom_epreuve = '"+ep.getNom()+"' AND ep.genre = '"+ep.getSex()+"';";
 
-            System.out.println(query);
+            // System.out.println(query);
             ResultSet rs = laConnexion.createStatement().executeQuery(query);
             while (rs.next()) {
                 String nomEquipe = rs.getString("nom_equipe");
@@ -274,7 +270,7 @@ public final class DBtoJava {
                            "NATURAL JOIN Epreuve ep " +
                            "WHERE ep.nom_epreuve = '"+ep.getNom()+"' AND ep.genre = '"+ep.getSex()+"';";
                            
-            System.out.println(query);
+            // System.out.println(query);
             ResultSet rs = laConnexion.createStatement().executeQuery(query);
             while (rs.next()) {
                 String nomAthlete = rs.getString("nom");
