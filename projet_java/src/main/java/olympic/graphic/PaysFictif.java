@@ -1,27 +1,38 @@
 package olympic.graphic;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class PaysFictif {
-    private final SimpleIntegerProperty classement;
-    private final SimpleStringProperty nom;
-    private final SimpleIntegerProperty medailleOr;
-    private final SimpleIntegerProperty medailleArgent;
-    private final SimpleIntegerProperty medailleBronze;
+    private final Integer classement;
+    private final String nom;
+    private final Integer medailleOr;
+    private final Integer medailleArgent;
+    private final Integer medailleBronze;
 
     public PaysFictif(Integer classement, String nom, Integer medailleOr, Integer medailleArgent, Integer medailleBronze) {
-        this.classement = new SimpleIntegerProperty(classement);
-        this.nom = new SimpleStringProperty(nom);
-        this.medailleOr = new SimpleIntegerProperty(medailleOr);
-        this.medailleArgent = new SimpleIntegerProperty(medailleArgent);
-        this.medailleBronze = new SimpleIntegerProperty(medailleBronze);
+        this.classement = classement;
+        this.nom = nom;
+        this.medailleOr = medailleOr;
+        this.medailleArgent = medailleArgent;
+        this.medailleBronze = medailleBronze;
     }
 
     // Getters and setters
-    public int getClassement() { return classement.get(); }
-    public String getNom() { return nom.get(); }
-    public int getMedailleOr() { return medailleOr.get(); }
-    public int getMedailleArgent() { return medailleArgent.get(); }
-    public int getMedailleBronze() { return medailleBronze.get(); }
+    public int getClassement() { return classement; }
+    public String getNom() { return nom; }
+    public int getMedailleOr() { return medailleOr; }
+    public int getMedailleArgent() { return medailleArgent; }
+    public int getMedailleBronze() { return medailleBronze; }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "classement=" + classement +
+                ", nom=" + nom +
+                ", medailleOr=" + medailleOr +
+                ", medailleArgent=" + medailleArgent +
+                ", medailleBronze=" + medailleBronze +
+                "}";
+    
+    }
 }

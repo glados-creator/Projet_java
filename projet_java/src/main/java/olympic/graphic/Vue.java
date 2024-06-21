@@ -366,16 +366,16 @@ public class Vue extends Application {
         place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
     
         TableColumn<PaysFictif, String> pays = new TableColumn<>("Pays");
-        pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
+        pays.setCellValueFactory(new PropertyValueFactory<>("nom"));
     
         TableColumn<PaysFictif, Integer> medOr = new TableColumn<>("Médaille d'or");
-        medOr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'or"));
+        medOr.setCellValueFactory(new PropertyValueFactory<>("medailleOr"));
     
         TableColumn<PaysFictif, Integer> medAr = new TableColumn<>("Médaille d'argent");
-        medAr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'argent"));
+        medAr.setCellValueFactory(new PropertyValueFactory<>("medailleArgent"));
     
         TableColumn<PaysFictif, Integer> medBr = new TableColumn<>("Médaille de bronze");
-        medBr.setCellValueFactory(new PropertyValueFactory<>("Médaille de bronze"));
+        medBr.setCellValueFactory(new PropertyValueFactory<>("medailleBronze"));
     
         table.getColumns().addAll(place, pays, medOr, medAr, medBr);
         table.getItems().addAll(getPaysList());
@@ -403,9 +403,9 @@ public class Vue extends Application {
         for (JeuxOlympique jo : datamanager.list_jo()){
             System.out.println("1");
             for (Pays pay : jo.getLesPays()) {
-                int or = pay.getMedaille_or();
-                int argent = pay.getMedaille_argent();
-                int bronze = pay.getMedaille_bronze();
+                Integer or = pay.getMedaille_or();
+                Integer argent = pay.getMedaille_argent();
+                Integer bronze = pay.getMedaille_bronze();
                 List<Pays> pays_triée = new ArrayList<Pays>(jo.getLesPays());
                 Collections.sort(pays_triée, new TriPays());
                 int pos = 0;
@@ -418,6 +418,7 @@ public class Vue extends Application {
                 pays.add(res);
             }
         }
+        System.out.println(pays.toString());
         return pays;
     }
     
@@ -497,25 +498,26 @@ public class Vue extends Application {
         bRechercher.setGraphic(ImageViewL);
     
     
-        TableView<Athlete> table = new TableView<>();
+        TableView<PaysFictif> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     
-        TableColumn<Athlete, String> place = new TableColumn<>("Classement");
+        TableColumn<PaysFictif, Integer> place = new TableColumn<>("Classement");
         place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
     
-        TableColumn<Athlete, String> pays = new TableColumn<>("Pays");
-        pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
+        TableColumn<PaysFictif, String> pays = new TableColumn<>("Pays");
+        pays.setCellValueFactory(new PropertyValueFactory<>("nom"));
     
-        TableColumn<Athlete, String> medOr = new TableColumn<>("Médaille d'or");
-        medOr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'or"));
+        TableColumn<PaysFictif, Integer> medOr = new TableColumn<>("Médaille d'or");
+        medOr.setCellValueFactory(new PropertyValueFactory<>("medailleOr"));
     
-        TableColumn<Athlete, String> medAr = new TableColumn<>("Médaille d'argent");
-        medAr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'argent"));
+        TableColumn<PaysFictif, Integer> medAr = new TableColumn<>("Médaille d'argent");
+        medAr.setCellValueFactory(new PropertyValueFactory<>("medailleArgent"));
     
-        TableColumn<Athlete, String> medBr = new TableColumn<>("Médaille de bronze");
-        medBr.setCellValueFactory(new PropertyValueFactory<>("Médaille de bronze"));
+        TableColumn<PaysFictif, Integer> medBr = new TableColumn<>("Médaille de bronze");
+        medBr.setCellValueFactory(new PropertyValueFactory<>("medailleBronze"));
     
-        table.getColumns().addAll(Arrays.asList(place, pays, medOr, medAr, medBr));
+        table.getColumns().addAll(place, pays, medOr, medAr, medBr);
+        table.getItems().addAll(getPaysList());
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -607,25 +609,26 @@ public class Vue extends Application {
         bRechercher.setGraphic(ImageViewL);
     
     
-        TableView<Athlete> table = new TableView<>();
+        TableView<PaysFictif> table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     
-        TableColumn<Athlete, String> place = new TableColumn<>("Classement");
+        TableColumn<PaysFictif, Integer> place = new TableColumn<>("Classement");
         place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
     
-        TableColumn<Athlete, String> pays = new TableColumn<>("Pays");
-        pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
+        TableColumn<PaysFictif, String> pays = new TableColumn<>("Pays");
+        pays.setCellValueFactory(new PropertyValueFactory<>("nom"));
     
-        TableColumn<Athlete, String> medOr = new TableColumn<>("Médaille d'or");
-        medOr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'or"));
+        TableColumn<PaysFictif, Integer> medOr = new TableColumn<>("Médaille d'or");
+        medOr.setCellValueFactory(new PropertyValueFactory<>("medailleOr"));
     
-        TableColumn<Athlete, String> medAr = new TableColumn<>("Médaille d'argent");
-        medAr.setCellValueFactory(new PropertyValueFactory<>("Médaille d'argent"));
+        TableColumn<PaysFictif, Integer> medAr = new TableColumn<>("Médaille d'argent");
+        medAr.setCellValueFactory(new PropertyValueFactory<>("medailleArgent"));
     
-        TableColumn<Athlete, String> medBr = new TableColumn<>("Médaille de bronze");
-        medBr.setCellValueFactory(new PropertyValueFactory<>("Médaille de bronze"));
+        TableColumn<PaysFictif, Integer> medBr = new TableColumn<>("Médaille de bronze");
+        medBr.setCellValueFactory(new PropertyValueFactory<>("medailleBronze"));
     
-        table.getColumns().addAll(Arrays.asList(place, pays, medOr, medAr, medBr));
+        table.getColumns().addAll(place, pays, medOr, medAr, medBr);
+        table.getItems().addAll(getPaysList());
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
