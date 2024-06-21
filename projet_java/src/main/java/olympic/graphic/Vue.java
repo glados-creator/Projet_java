@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -63,9 +64,15 @@ public class Vue extends Application {
     /** Label PageConnexion_error */
     public Label PageConnexion_error = null;
 
+    private ComboBox<Integer> comboB;
+
     @Override
     public void init() {
         datamanager.init();
+        this.comboB = new ComboBox<>();
+        comboB.getItems().addAll(2024, 2028, 2032);
+        comboB.setValue(2024);
+        
     }
 
     private Scene laScene() {
@@ -286,122 +293,133 @@ public class Vue extends Application {
     }
 
     public void modeJournaliste() {
-        panelCentral.getChildren().clear();
-    
-        VBox mainBox = new VBox(20);
-        mainBox.setPadding(new Insets(20));
-        mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-    
-        Button backButton = new Button("Déconnexion");
-        backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-        backButton.setOnAction(new ControlerVue(this));
-    
-        Accueil = new Button("Accueil");
-        Accueil.setOnAction(new ControlerVue(this));
-        Athletes = new Button("Athlètes");
-        Athletes.setOnAction(new ControlerVue(this));
-        Pays = new Button("Pays");
-        Pays.setOnAction(new ControlerVue(this));
-        Sports = new Button("Sports");
-        Sports.setOnAction(new ControlerVue(this));
-    
-        String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
-        Accueil.setStyle(buttonStyle);
-        Athletes.setStyle(buttonStyle);
-        Pays.setStyle(buttonStyle);
-        Sports.setStyle(buttonStyle);
+    panelCentral.getChildren().clear();
 
-        Accueil.setOnMouseEntered(e -> Accueil.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
-        Accueil.setOnMouseExited(e -> Accueil.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+    VBox mainBox = new VBox(20);
+    mainBox.setPadding(new Insets(20));
+    mainBox.setBackground(new Background(new BackgroundFill(Color.valueOf("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+    panelCentral.setBackground(new Background(new BackgroundFill(Color.valueOf("#CFE4FF"), CornerRadii.EMPTY, Insets.EMPTY)));
 
-        Athletes.setOnMouseEntered(e -> Athletes.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
-        Athletes.setOnMouseExited(e -> Athletes.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+    Button backButton = new Button("Déconnexion");
+    backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+    backButton.setOnAction(new ControlerVue(this));
 
-        Pays.setOnMouseEntered(e -> Pays.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
-        Pays.setOnMouseExited(e -> Pays.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+    Accueil = new Button("Accueil");
+    Accueil.setOnAction(new ControlerVue(this));
+    Athletes = new Button("Athlètes");
+    Athletes.setOnAction(new ControlerVue(this));
+    Pays = new Button("Pays");
+    Pays.setOnAction(new ControlerVue(this));
+    Sports = new Button("Sports");
+    Sports.setOnAction(new ControlerVue(this));
 
-        Sports.setOnMouseEntered(e -> Sports.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
-        Sports.setOnMouseExited(e -> Sports.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+    String buttonStyle = "-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;";
+    Accueil.setStyle(buttonStyle);
+    Athletes.setStyle(buttonStyle);
+    Pays.setStyle(buttonStyle);
+    Sports.setStyle(buttonStyle);
 
-        backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
-        backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
-    
-        HBox topBox = new HBox(10);
-        topBox.setPadding(new Insets(0, 0, 0, 0));
-        topBox.setAlignment(Pos.TOP_LEFT);
-        topBox.getChildren().add(Accueil);
-    
-        HBox menuBox = new HBox(10);
-        menuBox.setAlignment(Pos.TOP_RIGHT);
-        menuBox.getChildren().addAll(Athletes, Pays, Sports);
-    
-        BorderPane topPane = new BorderPane();
-        topPane.setLeft(topBox);
-        topPane.setRight(menuBox);
-    
-        // Création de la barre de recherche avec le texte indicatif
-        
-    
-        ComboBox<String> comboBox = new ComboBox<>();
-        comboBox.setValue("Sports");
-        comboBox.getItems().addAll("Natation", "Volley-ball", "Escrime", "Athlétisme", "Handball");
-    
-        // Chargement de l'image
-        Image ImageL = new Image("file:projet_java/src/main/java/olympic/graphic/img/image.png");
-        ImageView ImageViewL = new ImageView(ImageL);
+    Accueil.setOnMouseEntered(e -> Accueil.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+    Accueil.setOnMouseExited(e -> Accueil.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
 
-        ImageViewL.setFitWidth(20);  // Largeur de l'image
-        ImageViewL.setFitHeight(20); // Hauteur de l'image 
-    
-        Button bRechercher = new Button();
-        bRechercher.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
-        bRechercher.setGraphic(ImageViewL);
-    
-    
-        TableView<PaysFictif> table = new TableView<>();
-        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-    
-        TableColumn<PaysFictif, Integer> place = new TableColumn<>("Classement");
-        place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
-    
-        TableColumn<PaysFictif, String> pays = new TableColumn<>("Pays");
-        pays.setCellValueFactory(new PropertyValueFactory<>("nom"));
-    
-        TableColumn<PaysFictif, Integer> medOr = new TableColumn<>("Médaille d'or");
-        medOr.setCellValueFactory(new PropertyValueFactory<>("medailleOr"));
-    
-        TableColumn<PaysFictif, Integer> medAr = new TableColumn<>("Médaille d'argent");
-        medAr.setCellValueFactory(new PropertyValueFactory<>("medailleArgent"));
-    
-        TableColumn<PaysFictif, Integer> medBr = new TableColumn<>("Médaille de bronze");
-        medBr.setCellValueFactory(new PropertyValueFactory<>("medailleBronze"));
-    
-        table.getColumns().addAll(place, pays, medOr, medAr, medBr);
-        table.getItems().addAll(getPaysList());
+    Athletes.setOnMouseEntered(e -> Athletes.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+    Athletes.setOnMouseExited(e -> Athletes.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
 
+    Pays.setOnMouseEntered(e -> Pays.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+    Pays.setOnMouseExited(e -> Pays.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
 
+    Sports.setOnMouseEntered(e -> Sports.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+    Sports.setOnMouseExited(e -> Sports.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
 
-        VBox contentBox = new VBox(20);
-        contentBox.setAlignment(Pos.CENTER);
-        contentBox.getChildren().addAll(table);
+    backButton.setOnMouseEntered(e -> backButton.setStyle("-fx-background-color: #CFE4FF; -fx-text-fill: BLACK;"));
+    backButton.setOnMouseExited(e -> backButton.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: WHITE;"));
+
+    HBox topBox = new HBox(10);
+    topBox.setPadding(new Insets(0, 0, 0, 0));
+    topBox.setAlignment(Pos.TOP_LEFT);
+
+    // Ajout de la ComboBox sous le bouton "Accueil"
     
-        HBox bottomBox = new HBox(10);
-        bottomBox.setAlignment(Pos.BOTTOM_LEFT);
-        bottomBox.getChildren().add(backButton);
     
-        mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
-        mainBox.setMaxWidth(750);
-        mainBox.setMaxHeight(500);
+
+    topBox.getChildren().addAll(Accueil, this.comboB);
+
+    HBox menuBox = new HBox(10);
+    menuBox.setAlignment(Pos.TOP_RIGHT);
+    menuBox.getChildren().addAll(Athletes, Pays, Sports);
+
+    BorderPane topPane = new BorderPane();
+    topPane.setLeft(topBox);
+    topPane.setRight(menuBox);
+
+    // Création de la barre de recherche avec le texte indicatif
+    ComboBox<String> comboBox = new ComboBox<>();
+    comboBox.setValue("Sports");
+    comboBox.getItems().addAll("Natation", "Volley-ball", "Escrime", "Athlétisme", "Handball");
+
+    // Chargement de l'image
+    Image ImageL = new Image("file:projet_java/src/main/java/olympic/graphic/img/image.png");
+    ImageView ImageViewL = new ImageView(ImageL);
+    ImageViewL.setFitWidth(20);  // Largeur de l'image
+    ImageViewL.setFitHeight(20); // Hauteur de l'image
+
+    Button bRechercher = new Button();
+    bRechercher.setStyle("-fx-background-color: #3C5A9C; -fx-text-fill: #ffffff;");
+    bRechercher.setGraphic(ImageViewL);
+
+    TableView<PaysFictif> table = new TableView<>();
+    table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+    TableColumn<PaysFictif, Integer> place = new TableColumn<>("Classement");
+    place.setCellValueFactory(new PropertyValueFactory<>("Classement"));
+
+    TableColumn<PaysFictif, String> pays = new TableColumn<>("Pays");
+    pays.setCellValueFactory(new PropertyValueFactory<>("nom"));
+
+    TableColumn<PaysFictif, Integer> medOr = new TableColumn<>("Médaille d'or");
+    medOr.setCellValueFactory(new PropertyValueFactory<>("medailleOr"));
+
+    TableColumn<PaysFictif, Integer> medAr = new TableColumn<>("Médaille d'argent");
+    medAr.setCellValueFactory(new PropertyValueFactory<>("medailleArgent"));
+
+    TableColumn<PaysFictif, Integer> medBr = new TableColumn<>("Médaille de bronze");
+    medBr.setCellValueFactory(new PropertyValueFactory<>("medailleBronze"));
+
+    table.getColumns().addAll(place, pays, medOr, medAr, medBr);
+    table.getItems().addAll(getPaysList(2024));
+
+    comboB.valueProperty().addListener((observable, oldValue, newValue) -> {
+        if (newValue != null) {
+            int selectedYear = newValue;
+            System.out.println("Nouvelle sélection : " + selectedYear);
+            // Vous pouvez utiliser la nouvelle valeur sélectionnée ici pour effectuer des actions en conséquence
+            // Par exemple, recharger la TableView avec les données de l'année sélectionnée
+            table.getItems().clear(); // Effacer les données actuelles de la table
+            table.getItems().addAll(getPaysList(selectedYear)); // Charger les nouvelles données
+        }
+    });
+
+    VBox contentBox = new VBox(20);
+    contentBox.setAlignment(Pos.CENTER);
+    contentBox.getChildren().addAll(table);
+
+    HBox bottomBox = new HBox(10);
+    bottomBox.setAlignment(Pos.BOTTOM_LEFT);
+    bottomBox.getChildren().add(backButton);
+
+    mainBox.getChildren().addAll(topPane, contentBox, bottomBox);
+    mainBox.setMaxWidth(750);
+    mainBox.setMaxHeight(500);
+
+    panelCentral.setCenter(mainBox);
+}
+
     
-        panelCentral.setCenter(mainBox);
-    }
-    
-    public List<PaysFictif> getPaysList() {
+    public List<PaysFictif> getPaysList(int annee) {
         List<PaysFictif> pays = new ArrayList<PaysFictif>();
 
         for (JeuxOlympique jo : datamanager.list_jo()){
-            System.out.println("1");
+            if (jo.getAnnee() == annee)
             for (Pays pay : jo.getLesPays()) {
                 Integer or = pay.getMedaille_or();
                 Integer argent = pay.getMedaille_argent();
@@ -418,7 +436,6 @@ public class Vue extends Application {
                 pays.add(res);
             }
         }
-        System.out.println(pays.toString());
         return pays;
     }
     
@@ -517,7 +534,7 @@ public class Vue extends Application {
         medBr.setCellValueFactory(new PropertyValueFactory<>("medailleBronze"));
     
         table.getColumns().addAll(place, pays, medOr, medAr, medBr);
-        table.getItems().addAll(getPaysList());
+        table.getItems().addAll(getPaysList(2024));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -628,7 +645,7 @@ public class Vue extends Application {
         medBr.setCellValueFactory(new PropertyValueFactory<>("medailleBronze"));
     
         table.getColumns().addAll(place, pays, medOr, medAr, medBr);
-        table.getItems().addAll(getPaysList());
+        table.getItems().addAll(getPaysList(2024));
     
         VBox contentBox = new VBox(20);
         contentBox.setAlignment(Pos.CENTER);
@@ -993,7 +1010,7 @@ public class Vue extends Application {
         stage.setScene(scene);
         stage.setTitle("Jeux IUT'Olympiques");
         stage.show();
-        modeLog();
+        modeJournaliste();
         }
 
     public static void main(String[] args) {
