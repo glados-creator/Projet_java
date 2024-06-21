@@ -8,7 +8,7 @@ public class Athlete implements Participant {
     /** private String Nom */
     private final String Nom;
     /** private String Prenom */
-    private String Prenom;
+    private final String Prenom;
     /** private boolean Sex */
     private boolean Sex;
     /** private double force */
@@ -60,15 +60,6 @@ public class Athlete implements Participant {
      */
     public String getPrenom() {
         return Prenom;
-    }
-
-    /**
-     * setPrenom_a admin
-     * 
-     * @param Prenom String
-     */
-    public void setPrenom_a(String Prenom) {
-        this.Prenom = Prenom;
     }
 
     /**
@@ -192,11 +183,11 @@ public class Athlete implements Participant {
     @Override
     public String toString() {
         return "{" +
-                "Nom='" + getNom() + "'" +
-                ", Sex='" + getSex() + "'" +
-                ", force='" + getForce() + "'" +
-                ", Agilite='" + getAgilite() + "'" +
-                ", endurance='" + getEndurance() + "'" +
+                "'Nom':'" + getNom() + "'" +
+                ", 'Sex':'" + getSex() + "'" +
+                ", 'force':'" + getForce() + "'" +
+                ", 'Agilite':'" + getAgilite() + "'" +
+                ", 'endurance':'" + getEndurance() + "'" +
                 "}";
     }
 

@@ -112,9 +112,12 @@ public class JeuxOlympique {
     @Override
     public String toString() {
         return "{" +
-                " Annee='" + getAnnee() + "'" +
-                ", Lieux='" + getLieux() + "'" +
-                "}";
+            " 'Annee':'" + getAnnee() + "'" +
+            ", 'Lieux':'" + getLieux() + "'" +
+            ", 'LesSports':" + getLesSports() + "" +
+            ", 'LesPays':" + getLesPays() + "" +
+            "}";
     }
+    
 
 }

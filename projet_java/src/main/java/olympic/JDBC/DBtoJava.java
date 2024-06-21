@@ -1,6 +1,5 @@
 package olympic.JDBC;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -39,6 +38,7 @@ public final class DBtoJava {
      * @return List[JeuxOlympique]
      */
     public static final List<JeuxOlympique> getJeuxOlympique() {
+        System.out.println("IMPORT JO");
         List<JeuxOlympique> jeux = new ArrayList<JeuxOlympique>();
         try {
             Statement st = laConnexion.createStatement();
@@ -74,10 +74,11 @@ public final class DBtoJava {
      * 
      */
     public static final List<Sport> getSport(JeuxOlympique jeux) {
+        System.out.println("IMPORT SPORT");
         List<Sport> sports = new ArrayList<Sport>();
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("SELECT nom_sport FROM Sport where annee = " + jeux.getAnnee()+";");
+            ResultSet rs = st.executeQuery("SELECT nom_sport FROM Sport where annee = " + jeux.getAnnee() + ";");
             while (rs.next()) {
                 String nom = rs.getString(1);
 
@@ -121,18 +122,26 @@ public final class DBtoJava {
      * @return List[Epreuve]
      */
     public static final List<Epreuve> getEpreuves(Sport p) {
+        System.out.println("IMPORT EPREUVE");
         List<Epreuve> ret = new ArrayList<>();
         try {
             ResultSet rs = laConnexion.createStatement().executeQuery(
                     "select nom_epreuve ,genre,collectifs from Epreuve natural join Sport where nom_sport='"
                             +
                             p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
+            System.out.println("select nom_epreuve ,genre,collectifs from Epreuve natural join Sport where nom_sport='"
+                    +
+                    p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
             while (rs.next()) {
-                ret.add(new Epreuve(p,rs.getString(2).charAt(0) == 'F',rs.getString(1)));
-                if (rs.getBoolean(3)){
-                    link_equipe_epreuve(ret.get(ret.size()-1));
+                ret.add(new Epreuve(p, rs.getString(2).charAt(0) == 'F', rs.getString(1)));
+                if (rs.getBoolean(3)) {
+                    link_equipe_epreuve(ret.get(ret.size() - 1)).forEach(elem -> {
+                        ret.get(ret.size() - 1).getLesParticipants().add(elem);
+                    });
                 } else {
-                    link_athlete_epreuve(ret.get(ret.size()-1));
+                    link_athlete_epreuve(ret.get(ret.size() - 1)).forEach(elem -> {
+                        ret.get(ret.size() - 1).getLesParticipants().add(elem);
+                    });
                 }
             }
         } catch (Exception e) {
@@ -148,20 +157,22 @@ public final class DBtoJava {
      * @return List[Pays]
      */
     public static final List<Pays> getPays(JeuxOlympique jeux) {
+        System.out.println("IMPORT PAYS");
         List<Pays> pays = new ArrayList<Pays>();
         try {
             Statement st = laConnexion.createStatement();
             ResultSet rs = st
-                    .executeQuery("SELECT nom_pays, annee FROM Pays natural join JO where annee = " + jeux.getAnnee()+";");
+                    .executeQuery(
+                            "SELECT nom_pays, annee FROM Pays natural join JO where annee = " + jeux.getAnnee() + ";");
+            System.out
+                    .println("SELECT nom_pays, annee FROM Pays natural join JO where annee = " + jeux.getAnnee() + ";");
             while (rs.next()) {
                 String nom = rs.getString(1);
                 Pays paysTest = new Pays(jeux, nom, 0, 0, 0);
 
                 getAthlete(paysTest).forEach(athlete -> {
                     paysTest.lesAthletes().add(athlete);
-                }); 
-
-                getEquipes(paysTest);
+                });
                 pays.add(paysTest);
             }
         } catch (Exception e) {
@@ -177,12 +188,18 @@ public final class DBtoJava {
      * @return List[Athlete]
      */
     public static final List<Athlete> getAthlete(Pays p) {
+        System.out.println("IMPORT ATHLETES");
         List<Athlete> ret = new ArrayList<>();
         try {
-            ResultSet rs = laConnexion.createStatement().executeQuery("select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_pays='"
-            + p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
+            ResultSet rs = laConnexion.createStatement().executeQuery(
+                    "select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_pays='"
+                            + p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
+            System.out.println(
+                    "select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_pays='"
+                            + p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
             while (rs.next()) {
-                ret.add(new Athlete(rs.getString(1), rs.getString(2), rs.getString(3).charAt(0) == 'F', rs.getDouble(4), rs.getDouble(5), rs.getDouble(6), p));
+                ret.add(new Athlete(rs.getString(1), rs.getString(2), rs.getString(3).charAt(0) == 'F', rs.getDouble(4),
+                        rs.getDouble(5), rs.getDouble(6), p));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -199,11 +216,12 @@ public final class DBtoJava {
     public static final List<Equipe> getEquipes(Pays p) {
         List<Equipe> ret = new ArrayList<>();
         try {
-            String query = "SELECT nom_equipe, nom_pays, annee FROM Equipe WHERE nom_pays='" 
-                + p.getNom() + "' AND annee=" + p.getJO().getAnnee() + ";";
+            String query = "SELECT nom_equipe, nom_pays, annee FROM Equipe WHERE nom_pays='"
+                    + p.getNom() + "' AND annee=" + p.getJO().getAnnee() + ";";
+            System.out.println(query);
             ResultSet rs = laConnexion.createStatement().executeQuery(query);
             while (rs.next()) {
-                ret.add(new Equipe(rs.getString(1),false, p));
+                ret.add(new Equipe(rs.getString(1), false, p));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -211,77 +229,74 @@ public final class DBtoJava {
         return ret;
     }
 
-    public static final void link_equipe_epreuve(Epreuve ep) {
-    try {
-        String query = "SELECT e.equipe_id, e.nom_equipe, p.nom_pays " +
+    public static final List<Equipe> link_equipe_epreuve(Epreuve ep) {
+        List<Equipe> ret = new ArrayList<>();
+        try {
+            String query = "SELECT e.equipe_id, e.nom_equipe, p.nom_pays " +
                        "FROM PARTICIPE_EQUIPE pe " +
-                       "JOIN Equipe e ON pe.equipe_id = e.equipe_id " +
-                       "JOIN Pays p ON e.nom_pays = p.nom_pays " +
-                       "JOIN Epreuve ep ON pe.epreuve_id = ep.epreuve_id " +
-                       "WHERE ep.nom_epreuve = ? AND ep.genre = ?";
-        
-        PreparedStatement pstmt = laConnexion.prepareStatement(query);
-        pstmt.setString(1, ep.getNom());
-        pstmt.setString(2, ep.getSex() ? "F" : "M");
-        
-        ResultSet rs = pstmt.executeQuery();
-        while (rs.next()) {
-            String nomEquipe = rs.getString("nom_equipe");
-            String nomPays = rs.getString("nom_pays");
-            
-            // Recherche de l'équipe dans les pays associés à l'épreuve
-            for (Pays pays : ep.getSport().getJO().getLesPays()) {
-                if (pays.getNom().equals(nomPays)) {
-                    for (Equipe equipe : getEquipes(pays)) {
-                        if (equipe.getNom().equals(nomEquipe)) {
-                            ep.getLesParticipants().add(equipe);
-                            break;
+                       "NATURAL JOIN Equipe e " +
+                       "NATURAL JOIN Pays p " +
+                       "NATURAL JOIN Epreuve ep  " +
+                       "WHERE ep.nom_epreuve = '"+ep.getNom()+"' AND ep.genre = '"+ep.getSex()+"';";
+
+            System.out.println(query);
+            ResultSet rs = laConnexion.createStatement().executeQuery(query);
+            while (rs.next()) {
+                String nomEquipe = rs.getString("nom_equipe");
+                String nomPays = rs.getString("nom_pays");
+
+                // Recherche de l'équipe dans les pays associés à l'épreuve
+                for (Pays pays : ep.getSport().getJO().getLesPays()) {
+                    if (pays.getNom().equals(nomPays)) {
+                        for (Equipe equipe : getEquipes(pays)) {
+                            if (equipe.getNom().equals(nomEquipe)) {
+                                ret.add(equipe);
+                                break;
+                            }
                         }
+                        break; // Sortie de la boucle pays une fois l'équipe trouvée
                     }
-                    break; // Sortie de la boucle pays une fois l'équipe trouvée
                 }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return ret;
     }
-}
 
+    public static final List<Athlete> link_athlete_epreuve(Epreuve ep) {
+        List<Athlete> ret = new ArrayList<>();
+        try {
+            String query = "SELECT a.nom, a.prenom, p.nom_pays " +
+                           "FROM PARTICIPE_ATHLETE pa " +
+                           "NATURAL JOIN Athlete a " +
+                           "NATURAL JOIN Pays p " +
+                           "NATURAL JOIN Epreuve ep " +
+                           "WHERE ep.nom_epreuve = '"+ep.getNom()+"' AND ep.genre = '"+ep.getSex()+"';";
+                           
+            System.out.println(query);
+            ResultSet rs = laConnexion.createStatement().executeQuery(query);
+            while (rs.next()) {
+                String nomAthlete = rs.getString("nom");
+                String prenomAthlete = rs.getString("prenom");
+                String nomPays = rs.getString("nom_pays");
 
-public static final void link_athlete_epreuve(Epreuve ep) {
-    try {
-        String query = "SELECT a.nom, a.prenom, p.nom_pays " +
-                       "FROM PARTICIPE_ATHLETE pa " +
-                       "JOIN Athlete a ON pa.athlete_id = a.athlete_id " +
-                       "JOIN Pays p ON a.nom_pays = p.nom_pays " +
-                       "JOIN Epreuve e ON pa.epreuve_id = e.epreuve_id " +
-                       "WHERE e.nom_epreuve = ? AND e.genre = ?";
-        
-        PreparedStatement pstmt = laConnexion.prepareStatement(query);
-        pstmt.setString(1, ep.getNom());
-        pstmt.setString(2, ep.getSex() ? "F" : "M");
-        
-        ResultSet rs = pstmt.executeQuery();
-        while (rs.next()) {
-            String nomAthlete = rs.getString("nom");
-            String prenomAthlete = rs.getString("prenom");
-            String nomPays = rs.getString("nom_pays");
-            
-            // Recherche de l'athlète dans les pays associés à l'épreuve
-            for (Pays pays : ep.getSport().getJO().getLesPays()) {
-                if (pays.getNom().equals(nomPays)) {
-                    for (Athlete athlete : pays.lesAthletes()) {
-                        if (athlete.getNom().equals(nomAthlete) && athlete.getPrenom().equals(prenomAthlete)) {
-                            ep.getLesParticipants().add(athlete);
+                // Recherche de l'athlète dans les pays associés à l'épreuve
+                for (Pays pays : ep.getSport().getJO().getLesPays()) {
+                    if (pays.getNom().equals(nomPays)) {
+                        for (Athlete athlete : pays.lesAthletes()) {
+                            if (athlete.getNom().equals(nomAthlete) && athlete.getPrenom().equals(prenomAthlete)) {
+                                ret.add(athlete);
+                            }
                         }
+                        break; // Sortie de la boucle pays une fois tous les athlètes trouvés pour cette ligne
                     }
-                    break; // Sortie de la boucle pays une fois tous les athlètes trouvés pour cette ligne
                 }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return ret;
     }
-}
 
 }

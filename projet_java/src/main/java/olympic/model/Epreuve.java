@@ -169,11 +169,11 @@ public class Epreuve {
     @Override
     public String toString() {
         return "{" +
-                " Nom='" + getNom() + "'" +
-                ", Sex='" + getSex() + "'" +
-                ", LesParticipants='" + getLesParticipants() + "'" +
-                ", Classement='" + getClassement() + "'" +
-                ", Scores='" + getScores() + "'" +
+                " 'Nom':'" + getNom() + "'" +
+                ", 'Sex':'" + getSex() + "'" +
+                ", 'LesParticipants':" + getLesParticipants() + "" +
+                ", 'Classement':" + getClassement() + "" +
+                ", 'Scores':" + getScores() + "" +
                 "}";
     }
 

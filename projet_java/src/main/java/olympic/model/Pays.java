@@ -138,10 +138,10 @@ public class Pays {
     @Override
     public String toString() {
         return "{" +
-                " Nom='" + getNom() + "'" +
-                ", Medaille_or='" + getMedaille_or() + "'" +
-                ", Medaille_argent='" + getMedaille_argent() + "'" +
-                ", Medaille_bronze='" + getMedaille_bronze() + "'" +
+                " 'Nom':'" + getNom() + "'" +
+                ", 'Medaille_or':'" + getMedaille_or() + "'" +
+                ", 'Medaille_argent':'" + getMedaille_argent() + "'" +
+                ", 'Medaille_bronze':'" + getMedaille_bronze() + "'" +
                 "}";
     }
 

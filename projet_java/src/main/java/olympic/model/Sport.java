@@ -205,13 +205,13 @@ public abstract class Sport {
     @Override
     public String toString() {
         return "{" +
-                " Nom='" + getNom() + "'" +
-                ", Uniter='" + getUniter() + "'" +
-                ", Plus_haut_score='" + getPlus_haut_score() + "'" +
-                ", LesEpreuves='" + getLesEpreuves() + "'" +
-                ", Coef_Force='" + getCoef_Force() + "'" +
-                ", Coef_Agilite='" + getCoef_Agilite() + "'" +
-                ", Coef_Endurance='" + getCoef_Endurance() + "'" +
+                " 'Nom':'" + getNom() + "'" +
+                ", 'Uniter':'" + getUniter() + "'" +
+                ", 'Plus_haut_score':'" + getPlus_haut_score() + "'" +
+                ", 'LesEpreuves':" + getLesEpreuves() + "" +
+                ", 'Coef_Force':'" + getCoef_Force() + "'" +
+                ", 'Coef_Agilite':'" + getCoef_Agilite() + "'" +
+                ", 'Coef_Endurance':'" + getCoef_Endurance() + "'" +
                 "}";
     }
 

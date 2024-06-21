@@ -116,14 +116,14 @@ public class Equipe implements Participant {
     @Override
     public String toString() {
         return "{" +
-                " Nom='" + getNom() + "'" +
-                ", Origine='" + getOrigine() + "'" +
-                ", Sex='" + getSex() + "'" +
-                ", Mix='" + getMix() + "'" +
-                ", force='" + getForce() + "'" +
-                ", Agilite='" + getAgilite() + "'" +
-                ", endurance='" + getEndurance() + "'" +
-                ", LesAthletes='" + getLesAthletes() + "'" +
+                " 'Nom':'" + getNom() + "'" +
+                ", 'Origine':'" + getOrigine() + "'" +
+                ", 'Sex':'" + getSex() + "'" +
+                ", 'Mix':'" + getMix() + "'" +
+                ", 'force':'" + getForce() + "'" +
+                ", 'Agilite':'" + getAgilite() + "'" +
+                ", 'endurance':'" + getEndurance() + "'" +
+                ", 'LesAthletes':" + getLesAthletes() + "" +
                 "}";
     }
 
