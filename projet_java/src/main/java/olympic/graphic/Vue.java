@@ -1010,7 +1010,7 @@ public class Vue extends Application {
         stage.setScene(scene);
         stage.setTitle("Jeux IUT'Olympiques");
         stage.show();
-        modeJournaliste();
+        modeLog();
         }
 
     public static void main(String[] args) {
