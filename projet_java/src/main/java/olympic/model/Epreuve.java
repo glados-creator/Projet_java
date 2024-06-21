@@ -172,7 +172,6 @@ public class Epreuve {
                 " Nom='" + getNom() + "'" +
                 ", Sex='" + getSex() + "'" +
                 ", LesParticipants='" + getLesParticipants() + "'" +
-                ", LeSport='" + getSport() + "'" +
                 ", Classement='" + getClassement() + "'" +
                 ", Scores='" + getScores() + "'" +
                 "}";

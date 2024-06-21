@@ -75,7 +75,7 @@ public final class DBtoJava {
         List<Sport> sports = new ArrayList<Sport>();
         try {
             Statement st = laConnexion.createStatement();
-            ResultSet rs = st.executeQuery("SELECT nom_sport FROM Sport where jo_id = " + jeux.getAnnee()+";");
+            ResultSet rs = st.executeQuery("SELECT nom_sport FROM Sport where annee = " + jeux.getAnnee()+";");
             while (rs.next()) {
                 String nom = rs.getString(1);
 
@@ -172,7 +172,7 @@ public final class DBtoJava {
     public static final List<Athlete> getAthlete(Pays p) {
         List<Athlete> ret = new ArrayList<>();
         try {
-            ResultSet rs = laConnexion.createStatement().executeQuery("select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_sport='"
+            ResultSet rs = laConnexion.createStatement().executeQuery("select nom,prenom,sexe,forceA,enduranceA,agiliteA from Athlete natural join Pays where nom_pays='"
             + p.getNom() + "' && annee=" + p.getJO().getAnnee() + ";");
             while (rs.next()) {
                 ret.add(new Athlete(rs.getString(1), rs.getString(2), rs.getString(3).charAt(0) == 'F', rs.getDouble(4), rs.getDouble(5), rs.getDouble(6), p));

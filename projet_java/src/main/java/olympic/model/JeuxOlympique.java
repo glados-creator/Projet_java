@@ -38,12 +38,24 @@ public class JeuxOlympique {
         for (Sport sp : LesSports) {
             for (Epreuve ep : sp.getLesEpreuves()) {
                 List<Participant> classement = ep.simule();
-                Pays pays_or = classement.get(0).getOrigine();
-                pays_or.setMedaille_or_a(1 + pays_or.getMedaille_or());
-                Pays pays_argent = classement.get(1).getOrigine();
-                pays_argent.setMedaille_argent_a(1 + pays_argent.getMedaille_argent());
-                Pays pays_bronze = classement.get(2).getOrigine();
-                pays_bronze.setMedaille_bronze_a(1 + pays_bronze.getMedaille_bronze());
+                try {
+                    Pays pays_or = classement.get(0).getOrigine();
+                    pays_or.setMedaille_or_a(1 + pays_or.getMedaille_or());
+                } catch (Exception e) {
+                    System.out.println("error : simule medaille");
+                }
+                try {
+                    Pays pays_argent = classement.get(1).getOrigine();
+                    pays_argent.setMedaille_argent_a(1 + pays_argent.getMedaille_argent());
+                } catch (Exception e) {
+                    System.out.println("error : simule medaille");
+                }
+                try {
+                    Pays pays_bronze = classement.get(2).getOrigine();
+                    pays_bronze.setMedaille_bronze_a(1 + pays_bronze.getMedaille_bronze());
+                } catch (Exception e) {
+                    System.out.println("error : simule medaille");
+                }
             }
         }
     }

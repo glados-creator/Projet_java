@@ -55,6 +55,7 @@ public final class datamanager {
             // System.out.println("conn set");
             RoleConnexion.addDefaultRole();
             // System.out.println("default role set");
+            DBtoJava.setSQL(conn);
             DBtoJava.getJeuxOlympique().forEach(JO -> {glob_JO.add(JO);});
             // System.out.println("default data");
         } catch (Exception e) {
