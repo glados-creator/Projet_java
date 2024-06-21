@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import olympic.JDBC.ConnexionMySQL;
+import olympic.JDBC.DBtoJava;
 import olympic.JDBC.RoleConnexion;
 import olympic.model.sport_type.*;
 import olympic.model.Epreuve;
@@ -54,11 +55,11 @@ public final class datamanager {
             // System.out.println("conn set");
             RoleConnexion.addDefaultRole();
             // System.out.println("default role set");
-            default_dataset();
+            DBtoJava.getJeuxOlympique().forEach(JO -> {glob_JO.add(JO);});
             // System.out.println("default data");
         } catch (Exception e) {
             System.out.println("erreur datamanager init");
-            // e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
